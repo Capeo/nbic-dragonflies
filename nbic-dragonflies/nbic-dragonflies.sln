@@ -12,6 +12,8 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		nbic-dragonflies\nbic_dragonflies\nbic_dragonflies.projitems*{175cf5a5-cbe5-4a3c-b18a-c44cce208474}*SharedItemsImports = 13
+		nbic-dragonflies\nbic_dragonflies\nbic_dragonflies.projitems*{38e59858-942e-4bbd-9b50-e54a8f455c33}*SharedItemsImports = 4
+		nbic-dragonflies\nbic_dragonflies\nbic_dragonflies.projitems*{7e750310-e96a-49bc-9529-ec201115bda4}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

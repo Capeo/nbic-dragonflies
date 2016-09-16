@@ -18,7 +18,7 @@ namespace nbic_dragonflies
 					Children = {
 						new Label {
 							HorizontalTextAlignment = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
+							Text = "Welcome to Xamarin Forms! Hello World"
 						}
 					}
 				}
