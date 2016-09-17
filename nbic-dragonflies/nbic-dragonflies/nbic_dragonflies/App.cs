@@ -11,7 +11,8 @@ namespace nbic_dragonflies
 	{
 		public App ()
 		{
-			// The root page of your application
+            // The root page of your application
+            //MainPage = new HomePage();
 			MainPage = new ContentPage {
 				Content = new StackLayout {
 					VerticalOptions = LayoutOptions.Center,
