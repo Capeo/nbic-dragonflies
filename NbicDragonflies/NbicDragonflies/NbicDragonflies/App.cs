@@ -9,7 +9,7 @@ namespace NbicDragonflies {
     public class App : Application {
         public App() {
             // The root page of your application
-            MasterDetailPage content = new Home();
+            MasterDetailPage content = new NavigationDetail();
             //var content = new ContentPage {
             //    Title = "NbicDragonflies",
             //    Content = new StackLayout {
