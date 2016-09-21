@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Home">
-  <MasterDetailPage.Master>
-    <views:Navigation x:Name="Navigation"/>
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <ContentPage>
-      <Label Text="Hello World! Hei" VerticalOptions="Center" HorizontalOptions="Center" />
-    </ContentPage>
-  </MasterDetailPage.Detail>
-</MasterDetailPage>
+  <Label Text="This is the home page." VerticalOptions="Center" HorizontalOptions="Center" />
+</ContentPage>
