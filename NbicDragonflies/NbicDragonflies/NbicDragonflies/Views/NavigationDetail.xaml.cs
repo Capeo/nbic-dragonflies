@@ -17,8 +17,9 @@ namespace NbicDragonflies.Views {
 
         void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {
             var item = e.SelectedItem as NavigationListItem;
-            if (item != null) {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+            if (item != null)
+            {
+                Detail = (Page)Activator.CreateInstance(item.TargetType);
                 Navigation.ListView.SelectedItem = null;
                 IsPresented = false;
             }

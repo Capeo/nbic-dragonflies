@@ -6,7 +6,7 @@
              Icon="hamburger.png">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="NavigationList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" BackgroundColor="Gray">
+      <ListView x:Name="NavigationList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}"/>
