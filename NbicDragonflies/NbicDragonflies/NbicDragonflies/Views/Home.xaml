@@ -8,7 +8,7 @@
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <ContentPage>
-      <Label Text="Hello World!" VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label Text="Hello World! Hei" VerticalOptions="Center" HorizontalOptions="Center" />
     </ContentPage>
   </MasterDetailPage.Detail>
 </MasterDetailPage>
