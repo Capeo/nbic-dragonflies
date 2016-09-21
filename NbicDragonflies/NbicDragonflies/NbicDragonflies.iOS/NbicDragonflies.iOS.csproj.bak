@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>NbicDragonflies.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>NbicDragonfliesiOS</AssemblyName>
+    <AssemblyName>NbicDragonflies.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
