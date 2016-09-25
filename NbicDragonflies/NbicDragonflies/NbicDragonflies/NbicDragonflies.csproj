@@ -50,6 +50,10 @@
     <Compile Include="Views\NavigationDetail.xaml.cs">
       <DependentUpon>NavigationDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GalleryItem.cs" />
+    <Compile Include="Views\GalleryDetail.xaml.cs">
+      <DependentUpon>GalleryDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -73,6 +77,9 @@
     <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GalleryDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

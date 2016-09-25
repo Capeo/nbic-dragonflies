@@ -3,54 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using NbicDragonflies.Models;
 using Xamarin.Forms;
+
 
 namespace NbicDragonflies.Views
 {
 	public partial class Gallery : ContentPage
 	{
+		public ListView ListView { get { return GalleryList; } }
+
 		public Gallery()
 		{
 			InitializeComponent();
 
-			Label header = new Label
-			{
-				Text = "Gallery",
-				FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-				HorizontalOptions = LayoutOptions.Center
-			};
+			var galleryPageItems = new List<GalleryImages>();
 
-			TableView tableView = new TableView
+			galleryPageItems.Add(new GalleryImages
 			{
-				Intent = TableIntent.Form,
-				Root = new TableRoot
-				{
-					new TableSection
-					{
-						new ImageCell
-						{
-							ImageSource = ImageSource.FromFile("dragonfly1.jpg"),
-							Text = "Dragonfly 1",
-							Detail = "This is dragonfly 1",
-							DetailColor = Color.Aqua,
-						}
-					}
-				}
-			};
+				ImageSource = "dragonfly1.jpg",
+				Text = "Dragonfly 1",
+				Detail = "This is dragonfly 1",
+				TargetType = typeof(Home)
+			});
 
-			this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
-
-			this.Content = new StackLayout
+			galleryPageItems.Add(new GalleryImages
 			{
-				Children =
-				{
-					header,
-					tableView
-				}
-			};
+				ImageSource = "dragonfly2.jpg",
+				Text = "Dragonfly 2",
+				Detail = "This is dragonfly 2",
+				TargetType = typeof(Home)
+			});
+
+			GalleryList.ItemsSource = galleryPageItems;
 		}
 	}
 }
+
+
+
+
 
 		
