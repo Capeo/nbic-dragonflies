@@ -2,35 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.Identify"
-             Title="Identify Species Page"
-             Padding="0, 0, 0, 0">
-  <ContentPage.Content>
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefintion Height="2*" />
-        <RowDefintion Height="1*" />     
-      </Grid.RowDefinitions>
-
-      <Grid Grid.Row="0">
-        <!-- Alternatives -->
-
-        <!-- TODO: Implement alternatives list -->
-        <Label>Alternatives should come here</Label>
-      </Grid>
-
-      <Grid Grid.Row="1">
-        <!-- Results -->
-
-        <ScrollView>
-          <ListView x:Name="ResultsList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-              <DataTemplate>
-                <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
-              </DataTemplate>
-            </ListView.ItemTemplate>
-          </ListView>
-        </ScrollView>
-      </Grid>
-    </Grid>   
-  </ContentPage.Content>
+             Title="Identify Species Page">
+  <ContentPage.Padding>
+      0, 0, 0, 0
+    </ContentPage.Padding>
+    <ContentPage.Content>
+    
+    <StackLayout x:Name="IdentifyLayout" Spacing="0">
+      <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
+          <Frame.Content>
+            <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+              <Label x:Name="PropertyTitle" Text="Hvilestilling"/>
+              <ListView x:Name="AlternativesList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+              </ListView>
+            </StackLayout>
+          </Frame.Content>
+        </Frame>
+        <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
+          <Frame.Content>
+            <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+              <Label x:Name="ResultsTitle" Text="Resultater:"/>
+              <ScrollView>
+                <ListView x:Name="ResultsList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+                  <ListView.ItemTemplate>
+                    <DataTemplate>
+                      <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
+                    </DataTemplate>
+                  </ListView.ItemTemplate>
+                </ListView>
+              </ScrollView>
+            </StackLayout>
+          </Frame.Content>
+        </Frame>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content> 
 </ContentPage>
