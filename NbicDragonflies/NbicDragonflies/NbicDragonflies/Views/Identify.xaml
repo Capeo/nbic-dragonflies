@@ -6,17 +6,19 @@
              Padding="0, 0, 0, 0">
   <ContentPage.Content>
     <Grid>
+      <!--
       <Grid.RowDefinitions>
         <RowDefintion Height="2*" />
         <RowDefintion Height="1*" />     
       </Grid.RowDefinitions>
 
-      <Grid Grid.Row="0">
+      <Grid Grid.Row="0"> -->
         <!-- Alternatives -->
 
         <!-- TODO: Implement alternatives list -->
+      <!--
         <Label>Alternatives should come here</Label>
-      </Grid>
+      </Grid> -->
 
       <Grid Grid.Row="1">
         <!-- Results -->
