@@ -15,6 +15,8 @@ namespace NbicDragonflies.Views {
             NavigationMaster.ListView.ItemSelected += OnItemSelected;
         }
 
+        // EventHandler for itemSelection in NavigationList.
+        // Creates new Page and sets the page as current detail.
         void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {
             var item = e.SelectedItem as NavigationListItem;
             if (item != null)
