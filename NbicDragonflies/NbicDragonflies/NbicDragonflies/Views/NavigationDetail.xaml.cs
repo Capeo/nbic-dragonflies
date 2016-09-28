@@ -13,6 +13,7 @@ namespace NbicDragonflies.Views {
             InitializeComponent();
 
             Navigation.ListView.ItemSelected += OnItemSelected;
+
         }
 
         void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {

@@ -7,32 +7,24 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
-
-    public partial class Navigation : ContentPage {
-
-        public ListView ListView { get { return NavigationList; } }
+    public partial class Navigation : MasterDetailPage {
 
         public Navigation() {
             InitializeComponent();
 
-            var navigationPageItems = new List<NavigationListItem>();
-
-            navigationPageItems.Add(new NavigationListItem {
-                Title = "Home",
-                IconSource = "hamburger.png",
-                TargetType = typeof(Home)
-            });
-
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Gallery",
-                IconSource = "hamburger.png",
-                TargetType = typeof(Gallery)
-            });
-
-            NavigationList.ItemsSource = navigationPageItems;
+            NavigationMaster.ListView.ItemSelected += OnItemSelected;
         }
 
-
+        void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {
+            var item = e.SelectedItem as NavigationListItem;
+            if (item != null)
+            {
+                NavigationPage page = new NavigationPage((Page) Activator.CreateInstance(item.TargetType));
+                page.BarBackgroundColor = Utility.Constants.NbicBrown;
+                Detail = page;
+                NavigationMaster.ListView.SelectedItem = null;
+                IsPresented = false;
+            }
+        }
     }
 }

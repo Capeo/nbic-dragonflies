@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>NbicDragonflies.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>NbicDragonflies.iOS</AssemblyName>
+    <AssemblyName>NbicDragonfliesiOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -114,6 +114,8 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\dragonfly1.jpg" />
+    <BundleResource Include="Resources\dragonfly2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
