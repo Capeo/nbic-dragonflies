@@ -19,7 +19,15 @@ namespace NbicDragonflies.Views {
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = "Home",
-                IconSource = "hamburger.png"
+                IconSource = "dragonfly2.jpg",
+                TargetType = typeof(Home)
+            });
+
+            navigationPageItems.Add(new NavigationListItem
+            {
+                Title = "Gallery",
+                IconSource = "dragonfly1.jpg",
+                TargetType = typeof(Gallery)
             });
 
             NavigationList.ItemsSource = navigationPageItems;
