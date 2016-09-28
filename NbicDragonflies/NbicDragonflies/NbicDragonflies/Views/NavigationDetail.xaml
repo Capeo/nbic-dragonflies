@@ -9,4 +9,7 @@
   <MasterDetailPage.Detail>
     <views:Home x:Name="Home"/>
   </MasterDetailPage.Detail>
+  <MasterDetailPage.Detail>
+    <views:Identify x:Name="Identify"/>
+  </MasterDetailPage.Detail>
 </MasterDetailPage>
