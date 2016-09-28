@@ -51,16 +51,10 @@
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="Views\NavigationDetail.xaml.cs">
-      <DependentUpon>NavigationDetail.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\GalleryItem.cs" />
     <Compile Include="Views\GalleryDetail.xaml.cs">
       <DependentUpon>GalleryDetail.xaml</DependentUpon>
     </Compile>
->>>>>>> 3b81f0fc35acd2f271a40ffa8c2efcb4c08fa3c7
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
