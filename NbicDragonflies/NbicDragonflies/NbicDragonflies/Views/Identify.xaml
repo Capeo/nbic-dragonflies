@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.Identify"
+<<<<<<< HEAD
              Title="Identify Species Page">
   <ContentPage.Padding>
       0, 0, 0, 0
@@ -43,4 +44,39 @@
       </StackLayout>
     </StackLayout>
   </ContentPage.Content> 
+=======
+             Title="Identify Species Page"
+             Padding="0, 0, 0, 0">
+  <ContentPage.Content>
+    <Grid>
+      <!--
+      <Grid.RowDefinitions>
+        <RowDefintion Height="2*" />
+        <RowDefintion Height="1*" />     
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0"> -->
+        <!-- Alternatives -->
+
+        <!-- TODO: Implement alternatives list -->
+      <!--
+        <Label>Alternatives should come here</Label>
+      </Grid> -->
+
+      <Grid Grid.Row="1">
+        <!-- Results -->
+
+        <ScrollView>
+          <ListView x:Name="ResultsList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </ScrollView>
+      </Grid>
+    </Grid>   
+  </ContentPage.Content>
+>>>>>>> 94e90ff1302cadb1c48a7944a2e36ce59a4856a3
 </ContentPage>
