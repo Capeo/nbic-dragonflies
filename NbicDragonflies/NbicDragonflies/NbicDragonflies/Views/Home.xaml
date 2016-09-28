@@ -1,6 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NbicDragonflies.Views.Home">
-  <Label Text="This is the home page." VerticalOptions="Center" HorizontalOptions="Center" />
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.Home"
+             Title="Home">
+  <ContentPage.Padding>
+    0, 0, 0, 0
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <StackLayout x:Name="HomeLayout" Spacing="0">
+      <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
+        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
+      </AbsoluteLayout>
+      <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView.Content>
+          <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
+              <Frame.Content>
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
+                  <Label x:Name="InfoTitle" />
+                  <Label x:Name="InfoText" />
+                  <Image x:Name="InfoImage" />
+                </RelativeLayout>
+              </Frame.Content>
+            </Frame>
+            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
+              <Frame.Content>
+                <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                  <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner:"/>
+                  <ListView x:Name="Recen">
+                    <ListView.ItemTemplate>
+                      <DataTemplate>
+                        
+                      </DataTemplate>
+                    </ListView.ItemTemplate>
+                  </ListView>
+                </StackLayout>
+              </Frame.Content>
+            </Frame>
+          </StackLayout>
+        </ScrollView.Content>
+      </ScrollView>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
