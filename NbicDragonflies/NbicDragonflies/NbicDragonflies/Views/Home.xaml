@@ -28,6 +28,13 @@
               <Frame.Content>
                 <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                   <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner:"/>
+                  <ListView x:Name="Recen">
+                    <ListView.ItemTemplate>
+                      <DataTemplate>
+                        
+                      </DataTemplate>
+                    </ListView.ItemTemplate>
+                  </ListView>
                 </StackLayout>
               </Frame.Content>
             </Frame>
