@@ -11,7 +11,7 @@ namespace NbicDragonflies.Views
 		{
 			InitializeComponent();
 
-			Gallery.ListView.ItemSelected += OnItemSelected;
+			/*Gallery.ListView.ItemSelected += OnItemSelected;
 		}
 
 		void OnItemSelected(Object sender, SelectedItemChangedEventArgs e)
@@ -22,7 +22,7 @@ namespace NbicDragonflies.Views
 				Detail = (Page)Activator.CreateInstance(item.TargetType);
 				Gallery.ListView.SelectedItem = null;
 				IsPresented = false;
-			}
+			}*/
 		}
 	}
 }
