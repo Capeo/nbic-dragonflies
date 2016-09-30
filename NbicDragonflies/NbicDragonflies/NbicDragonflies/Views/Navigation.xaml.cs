@@ -7,23 +7,17 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
-
-    public partial class Navigation : ContentPage {
-
-        public ListView ListView { get { return NavigationList; } }
+    public partial class Navigation : MasterDetailPage {
 
         public Navigation() {
             InitializeComponent();
 
-            var navigationPageItems = new List<NavigationListItem>();
+            NavigationMaster.ListView.ItemSelected += OnItemSelected;
+        }
 
-            navigationPageItems.Add(new NavigationListItem {
-                Title = "Home",
-                IconSource = "hamburger.png",
-                TargetType = typeof(Home)
-            });
-
-            navigationPageItems.Add(new NavigationListItem
+        void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {
+            var item = e.SelectedItem as NavigationListItem;
+            if (item != null)
             {
                 Title = "Observation",
                 IconSource = "hamburger.png",
@@ -38,8 +32,12 @@ namespace NbicDragonflies.Views {
             });
 
             NavigationList.ItemsSource = navigationPageItems;
+                NavigationPage page = new NavigationPage((Page) Activator.CreateInstance(item.TargetType));
+                page.BarBackgroundColor = Utility.Constants.NbicBrown;
+                Detail = page;
+                NavigationMaster.ListView.SelectedItem = null;
+                IsPresented = false;
         }
-
-
     }
+}
 }

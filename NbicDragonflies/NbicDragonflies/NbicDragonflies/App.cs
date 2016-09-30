@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NbicDragonflies.Utility;
 using NbicDragonflies.Views;
 using Xamarin.Forms;
 
@@ -9,21 +10,9 @@ namespace NbicDragonflies {
     public class App : Application {
         public App() {
             // The root page of your application
-            MasterDetailPage content = new NavigationDetail();
-            //var content = new ContentPage {
-            //    Title = "NbicDragonflies",
-            //    Content = new StackLayout {
-            //        VerticalOptions = LayoutOptions.Center,
-            //        Children = {
-            //            new Label {
-            //                HorizontalTextAlignment = TextAlignment.Center,
-            //                Text = "Welcome to Xamarin Forms!"
-            //            }
-            //        }
-            //    }
-            //};
+            MasterDetailPage content = new Navigation();
 
-            MainPage = new NavigationPage(content);
+            MainPage = content;
         }
 
         protected override void OnStart() {

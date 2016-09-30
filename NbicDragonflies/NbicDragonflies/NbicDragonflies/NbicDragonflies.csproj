@@ -37,18 +37,28 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
+    <Compile Include="Models\AlternativeItem.cs" />
+    <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Constants.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
       <DependentUpon>Gallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Identify.xaml.cs">
+      <DependentUpon>Identify.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NavigationMaster.xaml.cs">
+      <DependentUpon>NavigationMaster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NavigationDetail.xaml.cs">
-      <DependentUpon>NavigationDetail.xaml</DependentUpon>
+    <Compile Include="Models\GalleryItem.cs" />
+    <Compile Include="Views\GalleryDetail.xaml.cs">
+      <DependentUpon>GalleryDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Observation.xaml.cs">
       <DependentUpon>Observation.xaml</DependentUpon>
@@ -77,9 +87,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\GalleryDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Navigation.xaml">
+    <EmbeddedResource Include="Views\NavigationMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -91,7 +104,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\NavigationDetail.xaml">
+    <EmbeddedResource Include="Views\Navigation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Identify.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

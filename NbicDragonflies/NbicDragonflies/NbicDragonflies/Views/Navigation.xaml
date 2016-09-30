@@ -1,18 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Navigation"
-             Title="Navigation"
-             Icon="hamburger.png">
-  <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="NavigationList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}"/>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </StackLayout>
-  </ContentPage.Content>
-</ContentPage>
+             MasterBehavior="Popover"
+             Title="Navigation">
+  <MasterDetailPage.Master>
+    <NavigationPage BarBackgroundColor="{x:Static utility:Constants.NbicBrown}" Title="Test">
+      <x:Arguments>
+        <views:NavigationMaster x:Name="NavigationMaster"/>
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
+      <x:Arguments>
+        <views:Home/>
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>
