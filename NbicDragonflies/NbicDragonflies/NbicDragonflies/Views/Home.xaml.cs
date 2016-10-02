@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Views.ListItems;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
+
+        public ListView ListView { get { return RecentObservationsList; } } 
 
         public Home()
         {
@@ -49,6 +52,35 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToParent((parent) => parent.Height * 0.7));
 
             RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
+
+            // Add items to RecentObservations list
+            var recentObservations = new List<ObservationsCell>();
+
+            recentObservations.Add(new ObservationsCell
+            {
+                Species = "Brun øyenstikker",
+                LocationTime = "Trondehim, 30.09.16",
+                User = "Odd Cappelen",
+                ImageFilename = "dragonfly2.jpg"
+            });
+
+            recentObservations.Add(new ObservationsCell
+            {
+                Species = "Blå øyenstikker",
+                LocationTime = "Trondheim, 29.09.16",
+                User = "Odd Cappelen",
+                ImageFilename = "dragonfly1.jpg"
+            });
+
+            recentObservations.Add(new ObservationsCell
+            {
+                Species = "Gul øyenstikker",
+                LocationTime = "Trondheim, 28.09.16",
+                User = "Odd Cappelen",
+                ImageFilename = ""
+            });
+
+            RecentObservationsList.ItemsSource = recentObservations;
         }
     }
 }

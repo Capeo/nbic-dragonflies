@@ -2228,6 +2228,12 @@ namespace NbicDragonflies.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f07009c
+			public const int Image = 2131165340;
+			
+			// aapt resource value: 0x7f070098
+			public const int Text = 2131165336;
+			
 			// aapt resource value: 0x7f07008b
 			public const int action0 = 2131165323;
 			
@@ -2423,6 +2429,9 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070041
 			public const int list_item = 2131165249;
 			
+			// aapt resource value: 0x7f07009a
+			public const int locationTimeText = 2131165338;
+			
 			// aapt resource value: 0x7f07008e
 			public const int media_actions = 2131165326;
 			
@@ -2603,8 +2612,8 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070013
 			public const int showTitle = 2131165203;
 			
-			// aapt resource value: 0x7f070098
-			public const int sliding_tabs = 2131165336;
+			// aapt resource value: 0x7f07009d
+			public const int sliding_tabs = 2131165341;
 			
 			// aapt resource value: 0x7f07006c
 			public const int snackbar_action = 2131165292;
@@ -2617,6 +2626,9 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f070045
 			public const int spacer = 2131165253;
+			
+			// aapt resource value: 0x7f070099
+			public const int speciesText = 2131165337;
 			
 			// aapt resource value: 0x7f070008
 			public const int split_action_bar = 2131165192;
@@ -2660,8 +2672,8 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070048
 			public const int title_template = 2131165256;
 			
-			// aapt resource value: 0x7f070099
-			public const int toolbar = 2131165337;
+			// aapt resource value: 0x7f07009e
+			public const int toolbar = 2131165342;
 			
 			// aapt resource value: 0x7f070032
 			public const int top = 2131165234;
@@ -2677,6 +2689,9 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f070014
 			public const int useLogo = 2131165204;
+			
+			// aapt resource value: 0x7f07009b
+			public const int userText = 2131165339;
 			
 			// aapt resource value: 0x7f07000a
 			public const int view_offset_helper = 2131165194;
@@ -2919,22 +2934,25 @@ namespace NbicDragonflies.Droid
 			public const int notification_template_part_time = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int select_dialog_item_material = 2130903091;
+			public const int ObservationCellLayout = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int select_dialog_multichoice_material = 2130903092;
+			public const int select_dialog_item_material = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int select_dialog_singlechoice_material = 2130903093;
+			public const int select_dialog_multichoice_material = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int support_simple_spinner_dropdown_item = 2130903094;
+			public const int select_dialog_singlechoice_material = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int Tabbar = 2130903095;
+			public const int support_simple_spinner_dropdown_item = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int Toolbar = 2130903096;
+			public const int Tabbar = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public const int Toolbar = 2130903097;
 			
 			static Layout()
 			{

@@ -5,7 +5,7 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Navigation">
   <MasterDetailPage.Master>
-        <views:NavigationMaster x:Name="NavigationMaster" Padding="40"/>
+        <views:NavigationMaster x:Name="NavigationMaster" Padding="0" HeightRequest="100"/>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
