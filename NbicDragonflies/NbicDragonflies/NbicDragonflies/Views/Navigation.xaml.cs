@@ -19,25 +19,12 @@ namespace NbicDragonflies.Views {
             var item = e.SelectedItem as NavigationListItem;
             if (item != null)
             {
-                Title = "Observation",
-                IconSource = "hamburger.png",
-                TargetType = typeof(Observation)
-            });
-
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Gallery",
-                IconSource = "hamburger.png",
-                TargetType = typeof(Gallery)
-            });
-
-            NavigationList.ItemsSource = navigationPageItems;
-                NavigationPage page = new NavigationPage((Page) Activator.CreateInstance(item.TargetType));
+                NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 page.BarBackgroundColor = Utility.Constants.NbicBrown;
                 Detail = page;
                 NavigationMaster.ListView.SelectedItem = null;
                 IsPresented = false;
+            }
         }
     }
-}
 }
