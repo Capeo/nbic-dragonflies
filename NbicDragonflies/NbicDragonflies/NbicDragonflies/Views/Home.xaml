@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Home"
-             Title="Home">
-  <ContentPage.Padding>
-    0, 0, 0, 0
-  </ContentPage.Padding>
+             Title="Home"
+             Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
       <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
         <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
       </AbsoluteLayout>
+      
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -28,10 +28,10 @@
               <Frame.Content>
                 <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                   <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner:"/>
-                  <ListView x:Name="Recen">
+                  <ListView x:Name="RecentObservationsList">
                     <ListView.ItemTemplate>
                       <DataTemplate>
-                        
+                        <listItems:ObservationsCell Species="{Binding Species}" LocationTime="{Binding LocationTime}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
                       </DataTemplate>
                     </ListView.ItemTemplate>
                   </ListView>

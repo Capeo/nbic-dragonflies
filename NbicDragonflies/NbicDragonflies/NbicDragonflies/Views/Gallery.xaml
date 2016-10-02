@@ -5,12 +5,31 @@
 			Title = "Gallery"
 			Padding = "0, 20, 0, 0">
 	<ContentPage.Content>
-	<ListView x:Name="GalleryList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
+		<Grid>
+		  <Grid.RowDefinitions>
+		    <RowDefinition Height="*" />
+		    <RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		  </Grid.RowDefinitions>
+		  <Grid.ColumnDefinitions>
+		    <ColumnDefinition Width="*" />
+		    <ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		  </Grid.ColumnDefinitions>
+			
+			<Image Source="dragonfly1.jpg" Grid.Row="0" Grid.Column="0" />
+			<Image Source="dragonfly2.jpg" Grid.Row="0" Grid.Column="1" />
+			<Image Source="dragonfly1.jpg" Grid.Row="0" Grid.Column="2" />
+			<Image Source="dragonfly2.jpg"  Grid.Row="1" Grid.Column="0" />
+			<Image Source="dragonfly1.jpg" Grid.Row="1" Grid.Column="1" />
+			<Image Source="dragonfly2.jpg" Grid.Row="1" Grid.Column="2" />
+			<Image Source="dragonfly1.jpg" Grid.Row="2" Grid.Column="0" />
+			<Image Source="dragonfly2.jpg" Grid.Row="2" Grid.Column="1" />
+			<Image Source="dragonfly1.jpg" Grid.Row="2" Grid.Column="2" />
+
+
+	
+   	
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

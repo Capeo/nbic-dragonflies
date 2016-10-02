@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NbicDragonflies.Models {
+
+    // Item structure used in Navigation List
     class NavigationListItem {
 
         public string Title { get; set; }

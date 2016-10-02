@@ -11,13 +11,31 @@ namespace NbicDragonflies.Views
 {
 	public partial class Gallery : ContentPage
 	{
-		public ListView ListView { get { return GalleryList; } }
+		//public ListView ListView { get { return GalleryList; } }
 
 		public Gallery()
 		{
 			InitializeComponent();
+			/*
+			var image1 = new Image();
+			image1.Source = "dragonfly1.jpg";
 
-			var galleryPageItems = new List<GalleryImages>();
+
+			var grid = new Grid();
+			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+			var topLeft = new Label { Text = "Top Left" };
+			var topRight = new Label { Text = "Top Right" };
+			var bottomLeft = new Label { Text = "Bottom Left" };
+			var bottomRight = new Label { Text = "Bottom Right" };
+			grid.Children.Add(image1, 0, 0);
+			grid.Children.Add(topRight, 0, 1);
+			grid.Children.Add(bottomLeft, 1, 0);
+			grid.Children.Add(bottomRight, 1, 1);
+*/
+			/*var galleryPageItems = new List<GalleryImages>();
 
 			galleryPageItems.Add(new GalleryImages
 			{
@@ -35,7 +53,7 @@ namespace NbicDragonflies.Views
 				TargetType = typeof(Home)
 			});
 
-			GalleryList.ItemsSource = galleryPageItems;
+			GalleryList.ItemsSource = galleryPageItems;*/
 		}
 	}
 }
