@@ -21,20 +21,13 @@ namespace NbicDragonflies.Views {
             AbsoluteLayout.SetLayoutFlags(SearchBar, AbsoluteLayoutFlags.PositionProportional);
             SearchLayout.Children.Add(SearchBar);
 
-            // Add dummy content to the InfoLayout
-            InfoTitle.Text = "Lorem Ipsum";
-            InfoTitle.FontAttributes = FontAttributes.Bold;
-            InfoText.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et interdum ipsum.";
-            InfoImage.Source =
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Sympetrum_flaveolum_-_side_%28aka%29.jpg/1920px-Sympetrum_flaveolum_-_side_%28aka%29.jpg";
-            InfoImage.Aspect = Aspect.AspectFit;
-
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
                 Constraint.RelativeToParent((parent) => parent.X),
                 Constraint.RelativeToParent((parent) => parent.Y),
                 Constraint.RelativeToParent((parent) => parent.Width*0.5),
                 Constraint.RelativeToParent((parent) => parent.Height*0.2));
+            InfoTitle.FontAttributes = FontAttributes.Bold;
 
             // Position text within InfoLayout
             InfoLayout.Children.Add(InfoText,
@@ -50,8 +43,13 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToView(InfoText, (parent, sibling) => (sibling.Y)),
                 Constraint.RelativeToParent((parent) => (parent.Width * 0.45)),
                 Constraint.RelativeToParent((parent) => parent.Height * 0.7));
+            InfoImage.Aspect = Aspect.AspectFit;
 
             RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
+
+
+            SetInfo("Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et interdum ipsum.", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Sympetrum_flaveolum_-_side_%28aka%29.jpg/1920px-Sympetrum_flaveolum_-_side_%28aka%29.jpg");
+
 
             // Add items to RecentObservations list
             var recentObservations = new List<ObservationsCell>();
@@ -81,6 +79,31 @@ namespace NbicDragonflies.Views {
             });
 
             RecentObservationsList.ItemsSource = recentObservations;
+        }
+
+        public void FillRecentObservationsList(List<ObservationItem> observations)
+        {
+            var recentObservations = new List<ObservationsCell>();
+            foreach (var observation in observations)
+            {
+                ObservationsCell cell = new ObservationsCell
+                {
+                    Species = observation.Species,
+                    LocationTime = observation.Location + ", " + observation.Date,
+                    User = observation.User,
+                    ImageFilename = observation.Image
+                };
+                recentObservations.Add(cell);
+            }
+            RecentObservationsList.ItemsSource = recentObservations;
+        }
+
+
+        public void SetInfo(string title, string text, string imageFilename)
+        {
+            InfoTitle.Text = title;
+            InfoText.Text = text;
+            InfoImage.Source = imageFilename;
         }
     }
 }
