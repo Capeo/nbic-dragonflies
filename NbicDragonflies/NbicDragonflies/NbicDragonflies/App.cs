@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NbicDragonflies.Data;
 using NbicDragonflies.Utility;
 using NbicDragonflies.Views;
 using Xamarin.Forms;
 
 namespace NbicDragonflies {
     public class App : Application {
+
+        public static ApplicationDataManager ApplicationManager { get; private set; }
+
         public App() {
+            ApplicationManager = new ApplicationDataManager(new RestService());
+
             // The root page of your application
             MasterDetailPage content = new Navigation();
 
