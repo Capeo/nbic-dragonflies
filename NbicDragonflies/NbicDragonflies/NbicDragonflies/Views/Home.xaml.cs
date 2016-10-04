@@ -91,7 +91,7 @@ namespace NbicDragonflies.Views {
                     Species = observation.Species,
                     LocationTime = observation.Location + ", " + observation.Date,
                     User = observation.User,
-                    ImageFilename = observation.Image
+                    ImageFilename = observation.ImageFilename
                 };
                 recentObservations.Add(cell);
             }

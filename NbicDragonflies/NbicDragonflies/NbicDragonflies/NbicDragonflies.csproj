@@ -38,6 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
+    <Compile Include="Models\ObservationItem.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Constants.cs" />
