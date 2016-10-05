@@ -16,7 +16,7 @@ namespace NbicDragonflies.Data
     {
         HttpClient client;
 
-        public List<TaxonItem> Items { get; private set; }
+        public List<TaxonItem> Items { get; set; }
 
         public RestService ()
         {

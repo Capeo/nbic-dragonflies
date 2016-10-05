@@ -9,6 +9,7 @@ namespace NbicDragonflies.Data
 {
     public interface IRestService
     {
-        Task<List<ObservationItem>> RefreshDataAsync ();
+        Task<List<TaxonItem>> RefreshDataAsync ();
+        
     }
 }

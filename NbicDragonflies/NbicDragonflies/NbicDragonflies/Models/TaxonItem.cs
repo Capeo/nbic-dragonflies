@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace NbicDragonflies.Models
 {
-    class TaxonItem
+    public class TaxonItem
     {
         public int Id { get; set; }
-
         public string Name { get; set; }
 
         // Other characteristics

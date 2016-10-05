@@ -16,9 +16,12 @@ namespace NbicDragonflies.Data
             restService = service;
         }
 
+        // Call this method to get the list of data retrieved from RefreshDataAsync
         public Task<List<TaxonItem>> GetTasksAsync ()
         {
-            return restService.RefreshDataAsync ();
+            Task<List<TaxonItem>> tasks = restService.RefreshDataAsync ();
+
+            return tasks;
         }
     }
 }
