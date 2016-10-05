@@ -13,9 +13,7 @@ namespace NbicDragonflies {
         public static ApplicationDataManager ApplicationManager { get; private set; }
 
         public App() {
-            System.Diagnostics.Debug.WriteLine("2");
             ApplicationManager = new ApplicationDataManager(new RestService ());
-            System.Diagnostics.Debug.WriteLine("3");
             ApplicationManager.GetTasksAsync();
 
             // The root page of your application
