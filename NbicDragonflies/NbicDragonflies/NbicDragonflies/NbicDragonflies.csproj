@@ -45,6 +45,7 @@
     <Compile Include="Models\TaxonItem.cs" />
     <Compile Include="Models\ObservationItem.cs" />
     <Compile Include="Models\ResultItem.cs" />
+    <Compile Include="Models\TaxonItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Constants.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
