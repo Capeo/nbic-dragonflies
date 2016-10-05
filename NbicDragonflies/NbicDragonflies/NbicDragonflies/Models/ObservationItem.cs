@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NbicDragonflies.Models
 {
-    class ObservationItem
+    public class ObservationItem
     {
         public string Date { get; set; }
 
