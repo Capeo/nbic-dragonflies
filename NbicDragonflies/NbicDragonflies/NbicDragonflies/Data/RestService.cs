@@ -9,6 +9,7 @@ using NbicDragonflies.Views;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.IO;
 
 namespace NbicDragonflies.Data
 {
@@ -23,12 +24,12 @@ namespace NbicDragonflies.Data
             client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
         }
-
+        
 
         public async Task<List<TaxonItem>> RefreshDataAsync ()
         {
-            Items = new List<TaxonItem> (); 
-            
+            Items = new List<TaxonItem> ();
+
             // Initalize URI
             var uri = new Uri (string.Format(Constants.TaxonRestUrl, string.Empty));
 
@@ -36,16 +37,29 @@ namespace NbicDragonflies.Data
             {
                 // GET method
                 var response = await client.GetAsync (uri);
+
                 if (response.IsSuccessStatusCode)
                 {
+                    // TODO: Is this the right way to do it? (How to create Items of TaxonItem objects based on json?)
                     var content = await response.Content.ReadAsStringAsync ();
-                    Items = JsonConvert.DeserializeObject <List<TaxonItem>> (content);
+                    Items = JsonConvert.DeserializeObject <List<TaxonItem>> (content);   
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
+
+            /*
+            // Get TaxonID and ScientificName from json
+            int taxonId = Items["taxonID"];
+            JsonValue scientificNames = json["scientificNames"];
+            int scientificNameID = scientificNames["scientificNameID"];
+
+            TaxonItem taxon = new TaxonItem(taxonId, scientificNameID);
+
+            Items.Add(taxon);
+            */
 
             return Items;
         }
