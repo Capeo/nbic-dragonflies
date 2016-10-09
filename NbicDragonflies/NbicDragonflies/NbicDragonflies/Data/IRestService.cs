@@ -9,6 +9,6 @@ namespace NbicDragonflies.Data
 {
     public interface IRestService
     {
-        Task<List<TaxonItem>> RefreshDataAsync ();
+        Task<string> FetchTaxonsAsync (string urlSuffix);
     }
 }

@@ -78,6 +78,7 @@
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
+    <None Include="Resources\odonata.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -151,9 +152,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\ObservationList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

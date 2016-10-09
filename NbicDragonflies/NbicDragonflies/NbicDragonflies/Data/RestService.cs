@@ -15,34 +15,26 @@ namespace NbicDragonflies.Data
 {
     public class RestService : IRestService
     {
-        HttpClient client;
 
-        public List<TaxonItem> Items { get; set; }
-
-        public RestService ()
+        public async Task<string> FetchTaxonsAsync (string urlSuffix)
         {
-            client = new HttpClient ();
+            var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
-        }
-        
-
-        public async Task<List<TaxonItem>> RefreshDataAsync ()
-        {
-            Items = new List<TaxonItem> ();
-
-            // Initalize URI
-            var uri = new Uri (string.Format(Constants.TaxonRestUrl, string.Empty));
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var address = Constants.TaxonRestUrl + $"{urlSuffix}";
 
             try
             {
                 // GET method
-                var response = await client.GetAsync (uri);
+                var response = await client.GetAsync (address);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // TODO: Is this the right way to do it? (How to create Items of TaxonItem objects based on json?)
-                    var content = await response.Content.ReadAsStringAsync ();
-                    Items = JsonConvert.DeserializeObject <List<TaxonItem>> (content);   
+                    var taxonsJson = response.Content.ReadAsStringAsync().Result;
+
+                    //var rootobject = JsonConvert.DeserializeObject<Rootobject>(taxonsJson);
+
+                    return taxonsJson;
                 }
             }
             catch (Exception ex)
@@ -61,7 +53,7 @@ namespace NbicDragonflies.Data
             Items.Add(taxon);
             */
 
-            return Items;
+            return "";
         }
 
     }

@@ -9,8 +9,8 @@ namespace NbicDragonflies
     public static class Constants
     {
         // URL of REST service
-        public static string TaxonRestUrl = "http://data.beta.artsdatabanken.no/api/taxon/all";
-        public static string ObservationRestUrl = "http://data.beta.artsdatabanken.no/api/taxon/all"; // specify url for observations here
+        public static string TaxonRestUrl = "http://data.beta.artsdatabanken.no/api/";
+        public static string ObservationRestUrl = "http://data.beta.artsdatabanken.no/api/taxon/107"; // specify url for observations here
     
         // Credentials that are hard coded into the REST service
         public static string Username = "Xamarin";

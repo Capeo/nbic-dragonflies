@@ -14,7 +14,8 @@ namespace NbicDragonflies {
 
         public App() {
             ApplicationManager = new ApplicationDataManager(new RestService ());
-            ApplicationManager.GetTasksAsync();
+            var allTaxons = ApplicationManager.GetTaxonsAsync("taxon/all");
+            System.Diagnostics.Debug.WriteLine("Successfull REST call");
 
             // The root page of your application
             MasterDetailPage content = new Navigation();
