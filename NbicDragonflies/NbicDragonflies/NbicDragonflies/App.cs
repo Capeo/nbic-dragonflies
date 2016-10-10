@@ -10,18 +10,23 @@ using Xamarin.Forms;
 namespace NbicDragonflies {
     public class App : Application {
 
-        public static ApplicationDataManager ApplicationManager { get; private set; }
+        public static ApplicationDataManager ApplicationDataManager { get; private set; }
 
         public App() {
-            ApplicationManager = new ApplicationDataManager(new RestService ());
-            var allTaxons = ApplicationManager.GetTaxonsAsync("taxon/all");
-            System.Diagnostics.Debug.WriteLine("Successfull REST call");
+			RunApplicationDataManager();
 
             // The root page of your application
             MasterDetailPage content = new Navigation();
-
             MainPage = content;
         }
+
+		public async void RunApplicationDataManager()
+		{
+			ApplicationDataManager = new ApplicationDataManager(new RestService());
+			var allTaxons = await ApplicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
+			System.Diagnostics.Debug.WriteLine("Successfull REST call");
+			System.Diagnostics.Debug.WriteLine(allTaxons);
+		}
 
         protected override void OnStart() {
             // Handle when your app starts

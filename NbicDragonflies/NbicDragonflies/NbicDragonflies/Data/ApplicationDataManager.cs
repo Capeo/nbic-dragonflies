@@ -14,12 +14,13 @@ namespace NbicDragonflies.Data
         public ApplicationDataManager (IRestService service)
         {
             restService = service;
+
         }
 
         // Call this method to get the list of data retrieved from RefreshDataAsync
-        public Task<string> GetTaxonsAsync (string urlSuffix)
+        public async Task<string> GetTaxonsAsync (string urlSuffix)
         {
-            Task<string> taxons = restService.FetchTaxonsAsync (urlSuffix);
+            var taxons = await restService.FetchTaxonsAsync (urlSuffix);
 
             return taxons;
         }
