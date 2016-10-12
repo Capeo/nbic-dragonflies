@@ -16,7 +16,7 @@ namespace NbicDragonflies.Helpers
 
             if (type == "scientificName")
             {
-                int charactersticIndex = json.IndexOf(type + "'"); // Change this to """ for real json
+                int charactersticIndex = json.IndexOf(type + '"'); // Change this to """ for real json
                 int nextCommaIndex = json.Substring(charactersticIndex).IndexOf(",");
 
                 return json.Substring(charactersticIndex + typeLength + 2, nextCommaIndex - (typeLength + 2));
@@ -37,8 +37,8 @@ namespace NbicDragonflies.Helpers
 
             string scientificNameIdString = this.GetCharacteristic(json, "scientificNameID");
             string taxonIdString = this.GetCharacteristic(json, "taxonID");
-            System.Diagnostics.Debug.WriteLine(taxonIdString);
             string scientificName = this.GetCharacteristic(json, "scientificName");
+
 
             int scientificNameId;
             int taxonId;

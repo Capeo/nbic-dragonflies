@@ -25,7 +25,7 @@ namespace NbicDragonflies {
 		{
 			ApplicationDataManager = new ApplicationDataManager(new RestService());
 
-            var taxons = await ApplicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
+            var taxons = await ApplicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=family&higherClassificationID=127526");
 
             System.Diagnostics.Debug.WriteLine("Successfull REST call");
 		}
