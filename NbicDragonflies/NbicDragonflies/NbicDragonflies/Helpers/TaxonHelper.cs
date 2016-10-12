@@ -19,7 +19,7 @@ namespace NbicDragonflies.Helpers
                 int charactersticIndex = json.IndexOf(type + '"'); // Change this to """ for real json
                 int nextCommaIndex = json.Substring(charactersticIndex).IndexOf(",");
 
-                return json.Substring(charactersticIndex + typeLength + 2, nextCommaIndex - (typeLength + 2));
+                return json.Substring(charactersticIndex + typeLength + 3, nextCommaIndex - (typeLength + 2));
             }
             else
             {

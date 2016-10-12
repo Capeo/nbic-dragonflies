@@ -74,6 +74,12 @@
     <Compile Include="Views\ObservationList.xaml.cs">
       <DependentUpon>ObservationList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TaxonButton.xaml.cs">
+      <DependentUpon>TaxonButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaxonTree.xaml.cs">
+      <DependentUpon>TaxonTree.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -153,9 +159,20 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TaxonTree.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ObservationList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TaxonButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
