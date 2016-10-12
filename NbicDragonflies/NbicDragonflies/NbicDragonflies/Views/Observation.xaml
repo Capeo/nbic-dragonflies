@@ -2,8 +2,10 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Observation"
-             Title="Observasjoner">
+             Title="Observasjoner"
+             BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
   <TabbedPage.Children >
     <ContentPage Title="List">
       <local:ObservationList />
