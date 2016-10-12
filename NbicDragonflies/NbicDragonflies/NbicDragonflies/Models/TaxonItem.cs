@@ -8,15 +8,15 @@ namespace NbicDragonflies.Models
 {
     public class TaxonItem
     {
-        public int TaxonId { get; set; }
-        public int ScientificNameID { get; set; }
+        public int scientificNameId;
+        public int taxonId;
+        public string scientificName;
 
-        // Other characteristics
-
-        public TaxonItem (int taxonId, int scientificNameId)
+        public TaxonItem (int scientificNameId, int taxonId, string scientificName)
         {
-            this.TaxonId = taxonId;
-            this.ScientificNameID = scientificNameId;
+            this.scientificNameId = scientificNameId;
+            this.taxonId = taxonId;
+            this.scientificName = scientificName;
         }
     }
 }
