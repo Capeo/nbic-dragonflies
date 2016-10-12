@@ -5,6 +5,7 @@ using System.Text;
 using NbicDragonflies.Data;
 using NbicDragonflies.Utility;
 using NbicDragonflies.Views;
+using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies {
@@ -23,9 +24,10 @@ namespace NbicDragonflies {
 		public async void RunApplicationDataManager()
 		{
 			ApplicationDataManager = new ApplicationDataManager(new RestService());
-			var allTaxons = await ApplicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
-			System.Diagnostics.Debug.WriteLine("Successfull REST call");
-			System.Diagnostics.Debug.WriteLine(allTaxons);
+
+            var taxons = await ApplicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
+
+            System.Diagnostics.Debug.WriteLine("Successfull REST call");
 		}
 
         protected override void OnStart() {

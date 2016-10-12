@@ -40,6 +40,7 @@
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
+    <Compile Include="Helpers\TaxonHelper.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
     <Compile Include="Models\TaxonItem.cs" />
