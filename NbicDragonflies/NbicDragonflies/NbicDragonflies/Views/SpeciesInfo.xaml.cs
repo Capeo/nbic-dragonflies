@@ -26,14 +26,12 @@ namespace NbicDragonflies.Views {
 
         public SpeciesInfo() {
             InitializeComponent();
-
-            TopImage.Aspect = Aspect.AspectFit;
         }
 
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
         {
-            TopImage.Source = species.TopImage;
+            TopImage.Image = species.TopImage;
 
             foreach (var attribute in species.Attributes)
             {

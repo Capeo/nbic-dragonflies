@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
 
-    public partial class SpeciesImageView : ContentPage
+    public partial class SpeciesImageView : ContentView
     {
 
         private SpeciesImage _image;
