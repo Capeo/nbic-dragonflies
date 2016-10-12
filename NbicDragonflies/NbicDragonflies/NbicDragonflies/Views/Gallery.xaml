@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Gallery"
 			Title = "Gallery"
 			Padding = "0, 20, 0, 0">
 	<ContentPage.Content>
+		
 		<Grid>
 		  <Grid.RowDefinitions>
 		    <RowDefinition Height="*" />
@@ -17,19 +19,17 @@
 			<ColumnDefinition Width="*" />
 		  </Grid.ColumnDefinitions>
 			
-			<Image Source="dragonfly1.jpg" Grid.Row="0" Grid.Column="0" />
-			<Image Source="dragonfly2.jpg" Grid.Row="0" Grid.Column="1" />
-			<Image Source="dragonfly1.jpg" Grid.Row="0" Grid.Column="2" />
-			<Image Source="dragonfly2.jpg"  Grid.Row="1" Grid.Column="0" />
-			<Image Source="dragonfly1.jpg" Grid.Row="1" Grid.Column="1" />
-			<Image Source="dragonfly2.jpg" Grid.Row="1" Grid.Column="2" />
-			<Image Source="dragonfly1.jpg" Grid.Row="2" Grid.Column="0" />
-			<Image Source="dragonfly2.jpg" Grid.Row="2" Grid.Column="1" />
-			<Image Source="dragonfly1.jpg" Grid.Row="2" Grid.Column="2" />
 
-
-	
-   	
+			<views:SpeciesImageView x:Name="p00" Grid.Row="0" Grid.Column="0"/>
+			<views:SpeciesImageView x:Name="p01" Grid.Row="0" Grid.Column="1"/>
+			<views:SpeciesImageView x:Name="p02" Grid.Row="0" Grid.Column="2"/>
+			<views:SpeciesImageView x:Name="p10" Grid.Row="1" Grid.Column="0"/>
+   			<views:SpeciesImageView x:Name="p11" Grid.Row="1" Grid.Column="1"/>
+			<views:SpeciesImageView x:Name="p12" Grid.Row="1" Grid.Column="2"/>
+			<views:SpeciesImageView x:Name="p20" Grid.Row="2" Grid.Column="0"/>
+			<views:SpeciesImageView x:Name="p21" Grid.Row="2" Grid.Column="1"/>
+			<views:SpeciesImageView x:Name="p22" Grid.Row="2" Grid.Column="2"/>
+			
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

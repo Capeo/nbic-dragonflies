@@ -60,7 +60,6 @@
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\GalleryItem.cs" />
     <Compile Include="Views\GalleryDetail.xaml.cs">
       <DependentUpon>GalleryDetail.xaml</DependentUpon>
     </Compile>

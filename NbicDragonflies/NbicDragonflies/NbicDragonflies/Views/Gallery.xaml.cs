@@ -11,55 +11,89 @@ namespace NbicDragonflies.Views
 {
 	public partial class Gallery : ContentPage
 	{
-		//public ListView ListView { get { return GalleryList; } }
-
+		int tapCount = 0;
 		public Gallery()
 		{
 			InitializeComponent();
-			/*
-			var image1 = new Image();
-			image1.Source = "dragonfly1.jpg";
+
+			var tgr = new TapGestureRecognizer { NumberOfTapsRequired = 1 };
+			tgr.Tapped += (sender, args) =>
+			{
+				tapCount++;
+
+				System.Diagnostics.Debug.WriteLine("tapped ");
+
+			};
+
+			p00.GestureRecognizers.Add(tgr);
+			p01.GestureRecognizers.Add(tgr);
+			p02.GestureRecognizers.Add(tgr);
+			p10.GestureRecognizers.Add(tgr);
+			p11.GestureRecognizers.Add(tgr);
+			p12.GestureRecognizers.Add(tgr);
+			p20.GestureRecognizers.Add(tgr);
+			p21.GestureRecognizers.Add(tgr);
+			p22.GestureRecognizers.Add(tgr);
 
 
-			var grid = new Grid();
-			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-			var topLeft = new Label { Text = "Top Left" };
-			var topRight = new Label { Text = "Top Right" };
-			var bottomLeft = new Label { Text = "Bottom Left" };
-			var bottomRight = new Label { Text = "Bottom Right" };
-			grid.Children.Add(image1, 0, 0);
-			grid.Children.Add(topRight, 0, 1);
-			grid.Children.Add(bottomLeft, 1, 0);
-			grid.Children.Add(bottomRight, 1, 1);
-*/
-			/*var galleryPageItems = new List<GalleryImages>();
 
-			galleryPageItems.Add(new GalleryImages
+
+			p00.Image = new SpeciesImage
 			{
 				ImageSource = "dragonfly1.jpg",
-				Text = "Dragonfly 1",
-				Detail = "This is dragonfly 1",
-				TargetType = typeof(Home)
-			});
-
-			galleryPageItems.Add(new GalleryImages
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p01.Image = new SpeciesImage
 			{
-				ImageSource = "dragonfly2.jpg",
-				Text = "Dragonfly 2",
-				Detail = "This is dragonfly 2",
-				TargetType = typeof(Home)
-			});
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p02.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p10.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p11.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
 
-			GalleryList.ItemsSource = galleryPageItems;*/
+			p12.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p20.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p21.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
+			p22.Image = new SpeciesImage
+			{
+				ImageSource = "dragonfly1.jpg",
+				Owner = "Phrida Norrhall",
+				Caption = "23 Januari, 2012"
+			};
 		}
 	}
 }
-
-
-
-
-
-		
+	
