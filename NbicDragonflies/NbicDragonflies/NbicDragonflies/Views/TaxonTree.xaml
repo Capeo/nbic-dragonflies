@@ -5,8 +5,7 @@
              Title="Arter">
   <ContentPage.Content>
     <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-      <StackLayout x:Name="TaxonLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
-      </StackLayout>
+      <StackLayout x:Name="TaxonLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0"/>
     </ScrollView>
   </ContentPage.Content>
 </ContentPage>
