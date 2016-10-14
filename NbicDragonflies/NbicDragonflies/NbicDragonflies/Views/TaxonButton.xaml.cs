@@ -30,6 +30,8 @@ namespace NbicDragonflies.Views {
 
         public int Level { get; set; }
 
+        public List<TaxonButton> Subclasses { get; set; }
+
         public TaxonButton(TaxonItem taxon, int level)
         {
             InitializeComponent();
@@ -47,6 +49,8 @@ namespace NbicDragonflies.Views {
             Icon.Aspect = Aspect.AspectFit;
             Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
 
+            Subclasses = new List<TaxonButton>();
+
         }
 
         private void SetTaxon(TaxonItem taxon)
@@ -59,12 +63,12 @@ namespace NbicDragonflies.Views {
             if (Open)
             {
                 Open = false;
-                Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_down.png");
+                Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
             }
             else
             {
                 Open = true;
-                Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
+                Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_down.png");
             }
         }
 

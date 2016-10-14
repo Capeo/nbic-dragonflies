@@ -37,6 +37,7 @@ namespace NbicDragonflies.Views {
             foreach (var taxon in children)
             {
                 TaxonButton button = new TaxonButton(taxon, 1);
+                rootButton.Subclasses.Add(button);
                 button.NavigationTap.Tapped += HandleNavigationClick;
                 button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
                 TaxonLayout.Children.Add(button);
@@ -62,6 +63,7 @@ namespace NbicDragonflies.Views {
 
                     foreach (var taxon in children) {
                         TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
+                        parent.Subclasses.Add(button);
                         button.NavigationTap.Tapped += HandleNavigationClick;
                         button.Padding = new Thickness(offset * button.Level, 0, 0, 0);
                         TaxonLayout.Children.Insert(i, button);
@@ -70,7 +72,8 @@ namespace NbicDragonflies.Views {
                 }
                 else
                 {
-                    // TODO
+                    parent.SwitchState();
+                    RemoveAllDescendants(parent);
                 }
                 
             }
@@ -92,6 +95,17 @@ namespace NbicDragonflies.Views {
                 }
             }
             return null;
+        }
+
+        // Recursivly removes all descendants of a TaxonButton from the TaxonLayout stack layout
+        private void RemoveAllDescendants(TaxonButton parent)
+        {
+            foreach (var button in parent.Subclasses)
+            {
+                RemoveAllDescendants(button);
+                TaxonLayout.Children.Remove(button);
+            }
+            parent.Subclasses.Clear();
         }
     }
 }
