@@ -28,8 +28,8 @@ namespace NbicDragonflies.Views {
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Arter",
-                IconSource = "",
-                TargetType = typeof(SpeciesInfo)
+                IconSource = "hamburger.png",
+                TargetType = typeof(TaxonTree)
             });
 
             navigationPageItems.Add(new NavigationListItem

@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 namespace NbicDragonflies.Models {
     public class Species {
 
+        public Species(int taxonId)
+        {
+            
+        }
+
         public SpeciesImage TopImage { get; set; }
 
         public List<Tuple<string, string>> Attributes { get; set; }

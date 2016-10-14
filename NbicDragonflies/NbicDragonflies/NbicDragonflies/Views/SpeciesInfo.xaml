@@ -6,8 +6,20 @@
   <ContentPage.Content>
     <ScrollView x:Name="ContentView" HorizontalOptions="FillAndExpand">
       <views:SpeciesImageView x:Name="TopImage"/>
-      <Frame>
-        <StackLayout x:Name="Attributes"/>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
+      </Frame>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
+      </Frame>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
       </Frame>
     </ScrollView>
   </ContentPage.Content>
