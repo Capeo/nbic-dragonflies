@@ -17,15 +17,15 @@ namespace NbicDragonflies.Views
 		{
 			InitializeComponent();
 
-			p00.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p01.Image = new SpeciesImage("dragonfly2.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p02.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p10.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p11.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p12.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p20.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p21.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
-			p22.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
+			p00.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p01.Image = new SpeciesImage("dragonfly2.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p02.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p10.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p11.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p12.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p20.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p21.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p22.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
 
 			p00.GalleryTap.Tapped += HandleImageClick;
 			p01.GalleryTap.Tapped += HandleImageClick;
@@ -66,15 +66,9 @@ namespace NbicDragonflies.Views
 		public async void HandleNextPageClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Debug.WriteLine("Tapped");
-			if (sender.GetType() == typeof(Button))
-			{
-				Navigation.PushAsync(new Gallery());
-
-
-			}
 		}
 
-		// Returns the TaxonButton view to which an element belongs
+		// Returns the SpeciesImage view to which an element belongs
 		private SpeciesImageView GetAncestor(VisualElement e)
 		{
 			if (e != null)
