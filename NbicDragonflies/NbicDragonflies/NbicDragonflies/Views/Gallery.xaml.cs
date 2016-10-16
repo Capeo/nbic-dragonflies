@@ -11,6 +11,8 @@ namespace NbicDragonflies.Views
 {
 	public partial class Gallery : ContentPage
 	{
+		public TapGestureRecognizer NextPageTapped;
+
 		public Gallery()
 		{
 			InitializeComponent();
@@ -25,29 +27,48 @@ namespace NbicDragonflies.Views
 			p21.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
 			p22.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "23 Januari, 2012", "LC4400");
 
-			p00.GalleryTap.Tapped += HandleNavigationClick;
-			p01.GalleryTap.Tapped += HandleNavigationClick;
-			p02.GalleryTap.Tapped += HandleNavigationClick;
-			p10.GalleryTap.Tapped += HandleNavigationClick;
-			p11.GalleryTap.Tapped += HandleNavigationClick;
-			p12.GalleryTap.Tapped += HandleNavigationClick;
-			p20.GalleryTap.Tapped += HandleNavigationClick;
-			p21.GalleryTap.Tapped += HandleNavigationClick;
-			p22.GalleryTap.Tapped += HandleNavigationClick;
+			p00.GalleryTap.Tapped += HandleImageClick;
+			p01.GalleryTap.Tapped += HandleImageClick;
+			p02.GalleryTap.Tapped += HandleImageClick;
+			p10.GalleryTap.Tapped += HandleImageClick;
+			p11.GalleryTap.Tapped += HandleImageClick;
+			p12.GalleryTap.Tapped += HandleImageClick;
+			p20.GalleryTap.Tapped += HandleImageClick;
+			p21.GalleryTap.Tapped += HandleImageClick;
+			p22.GalleryTap.Tapped += HandleImageClick;
+
+			NextPageTapped = new TapGestureRecognizer();
+			nextPage.GestureRecognizers.Add(NextPageTapped);
+
+			NextPageTapped.Tapped += HandleNextPageClick;
+
+
 
 
 		}
 
 
 
-		// Handle tap on navigation part of TaxonButton
-		public async void HandleNavigationClick(object sender, EventArgs e)
+		// Handle tap on image in Gallery
+		public async void HandleImageClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine("Button");
+			System.Diagnostics.Debug.WriteLine("Tapped");
 			if (sender.GetType() == typeof(Frame))
 			{
 				SpeciesImageView parent = GetAncestor((Frame)sender);
 				Navigation.PushAsync(new GalleryImage(parent.Image));
+
+
+			}
+		}
+
+		//Handle tap on "Next page" button
+		public async void HandleNextPageClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Debug.WriteLine("Tapped");
+			if (sender.GetType() == typeof(Button))
+			{
+				Navigation.PushAsync(new Gallery());
 
 
 			}

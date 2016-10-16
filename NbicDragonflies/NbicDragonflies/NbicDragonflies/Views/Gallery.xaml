@@ -4,9 +4,11 @@
 			 xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Gallery"
 			Title = "Gallery"
-			Padding = "0, 20, 0, 0">
+			Padding = "0, 0, 0, 0">
 	<ContentPage.Content>
-		
+		<Frame x:Name="GalleryFrame" HorizontalOptions="FillAndExpand" Padding="10">
+		<Frame.Content>
+		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 		<Grid>
 		  <Grid.RowDefinitions>
 		    <RowDefinition Height="*" />
@@ -29,7 +31,12 @@
 			<views:SpeciesImageView x:Name="p20" Grid.Row="2" Grid.Column="0"/>
 			<views:SpeciesImageView x:Name="p21" Grid.Row="2" Grid.Column="1"/>
 			<views:SpeciesImageView x:Name="p22" Grid.Row="2" Grid.Column="2"/>
-			
+
+
 		</Grid>
+			<Button x:Name="nextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="End"/>
+		</StackLayout>	
+		</Frame.Content>
+		</Frame>
 	</ContentPage.Content>
 </ContentPage>

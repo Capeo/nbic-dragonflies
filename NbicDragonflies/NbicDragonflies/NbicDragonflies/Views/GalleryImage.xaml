@@ -4,14 +4,15 @@
 		xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
 		x:Class="NbicDragonflies.GalleryImage">
 	<ContentPage.Content>
-		<Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="5">
+		<Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="10">
     <Frame.Content>
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Image x:Name="BigImage"/>
-		<Label x:Name="Photographer"/>
-		<Label x:Name="SpeciesInformation"/>
-		<Label x:Name="Date"/>
-		<Label x:Name="License"/>
+        <Image x:Name="BigImage" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+		<Label x:Name="SpeciesName" HorizontalTextAlignment="Start" TextColor="Black" FontSize="20"/>
+		<Label x:Name="SpeciesInformation" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="10"/>
+		<Label x:Name="Photographer" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="10"/>
+		<Label x:Name="Date" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="10"/>
+		<Label x:Name="License" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="10"/>
       </StackLayout>
     </Frame.Content>
   </Frame>
