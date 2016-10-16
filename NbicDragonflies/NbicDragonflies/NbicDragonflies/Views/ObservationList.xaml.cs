@@ -1,4 +1,5 @@
-﻿using NbicDragonflies.Views.ListItems;
+﻿using NbicDragonflies.Data;
+using NbicDragonflies.Views.ListItems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,33 +15,27 @@ namespace NbicDragonflies.Views
         public ObservationList()
         {
             InitializeComponent();
-            var recentObservations = new List<ObservationsCell>();
 
-            recentObservations.Add(new ObservationsCell
+            FillRecentObservationsList();
+        }
+
+        public async void FillRecentObservationsList()
+        {
+            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
+            Models.ObservationList recentObservationsList = await applicationDataManager.GetObservationListAsync("list");
+            var recentObservationsCells = new List<ObservationsCell>();
+            foreach (Models.Observation observation in recentObservationsList.Observations)
             {
-                Species = "Brun øyenstikker",
-                LocationTime = "Trondehim, 30.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = "dragonfly2.jpg"
-            });
-
-            recentObservations.Add(new ObservationsCell
-            {
-                Species = "Blå øyenstikker",
-                LocationTime = "Trondheim, 29.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = "dragonfly1.jpg"
-            });
-
-            recentObservations.Add(new ObservationsCell
-            {
-                Species = "Gul øyenstikker",
-                LocationTime = "Trondheim, 28.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = ""
-            });
-
-            RecentObservationsList.ItemsSource = recentObservations;
+                ObservationsCell cell = new ObservationsCell
+                {
+                    Species = observation.Name,
+                    LocationTime = observation.GetLocationText() + ", " + observation.CollctedDate,
+                    User = observation.Collector,
+                    ImageFilename = "hamburger.png" //TODO
+                };
+                recentObservationsCells.Add(cell);
+            }
+            RecentObservationsList.ItemsSource = recentObservationsCells;
         }
     }
 }

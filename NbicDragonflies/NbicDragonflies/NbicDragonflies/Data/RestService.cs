@@ -54,6 +54,31 @@ namespace NbicDragonflies.Data
             return "";
         }
 
+        //FIXME avoid repetition, use a design pattern
+        public async Task<string> FetchObservationsAsync(string urlSuffix)
+        {
+            var client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var address = Constants.ObservationRestUrl + $"{urlSuffix}";
+
+            try
+            {
+                // GET method
+                var response = await client.GetAsync(address);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var observationsJson = response.Content.ReadAsStringAsync().Result;
+                    return observationsJson;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return "";
+        }
     }
 }
 
