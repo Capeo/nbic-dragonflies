@@ -32,6 +32,7 @@ namespace NbicDragonflies.Views {
             TaxonButton rootButton = new TaxonButton(root, 0);
             rootButton.SwitchState();
             rootButton.NavigationTap.Tapped += HandleNavigationClick;
+            rootButton.InfoTap.Tapped += HandleInfoClick;
             TaxonLayout.Children.Add(rootButton);
 
             foreach (var taxon in children)
@@ -39,6 +40,7 @@ namespace NbicDragonflies.Views {
                 TaxonButton button = new TaxonButton(taxon, 1);
                 rootButton.Subclasses.Add(button);
                 button.NavigationTap.Tapped += HandleNavigationClick;
+                button.InfoTap.Tapped += HandleInfoClick;
                 button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
                 TaxonLayout.Children.Add(button);
             }
@@ -81,6 +83,7 @@ namespace NbicDragonflies.Views {
                                 {
                                     button.NavigationTap.Tapped += HandleNavigationClick;
                                 }
+                                button.InfoTap.Tapped += HandleInfoClick;
                                 TaxonLayout.Children.Insert(i, button);
                                 i++;
                             } 
@@ -93,6 +96,19 @@ namespace NbicDragonflies.Views {
                     RemoveAllDescendants(parent);
                 }
                 
+            }
+        }
+
+        public void HandleInfoClick(object sender, EventArgs e)
+        {
+            if (sender.GetType() == typeof(Frame))
+            {
+                TaxonButton parent = GetAncestor((Frame)sender);
+
+                SpeciesInfo speciesInfoView = new SpeciesInfo();
+                speciesInfoView.Title = parent.Taxon.scientificName;
+
+                Navigation.PushAsync(speciesInfoView);
             }
         }
 
