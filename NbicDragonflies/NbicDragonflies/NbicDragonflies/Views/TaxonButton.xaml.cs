@@ -10,7 +10,7 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views {
     public partial class TaxonButton : ContentView
     {
-
+    
         private TaxonItem _taxon;
 
         public TaxonItem Taxon
@@ -58,7 +58,7 @@ namespace NbicDragonflies.Views {
 
         private void SetTaxon(TaxonItem taxon)
         {
-            Name.Text = taxon.scientificName;
+            Name.Text = taxon.vernacularName;
         }
 
         public void SwitchState()
@@ -74,6 +74,5 @@ namespace NbicDragonflies.Views {
                 Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_down.png");
             }
         }
-
     }
 }
