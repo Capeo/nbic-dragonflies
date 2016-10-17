@@ -46,9 +46,12 @@ namespace NbicDragonflies.Views {
             InfoFrame.GestureRecognizers.Add(InfoTap);
 
             Open = false;
-            Icon.Aspect = Aspect.AspectFit;
-            Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
-
+            if (Taxon.taxonRank != Utility.Constants.order.ElementAt(Utility.Constants.order.Count - 1))
+            {
+                Icon.Aspect = Aspect.AspectFit;
+                Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
+            }
+            
             Subclasses = new List<TaxonButton>();
 
         }
