@@ -8,7 +8,7 @@
       <ListView x:Name="RecentObservationsList">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <listItems:ObservationsCell Species="{Binding Species}" LocationTime="{Binding LocationTime}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
+            <listItems:ObservationsCell Species="{Binding Species}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

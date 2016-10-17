@@ -18,12 +18,20 @@ namespace NbicDragonflies.Views.ListItems {
             set { SetValue(SpeciesProperty, value); }
         }
 
-        public static readonly BindableProperty LocationTimeProperty = BindableProperty.Create("LocationTime", typeof(string), typeof(ObservationsCell), "");
+        public static readonly BindableProperty LocationProperty = BindableProperty.Create("Location", typeof(string), typeof(ObservationsCell), "");
 
-        public string LocationTime
+        public string Location
         {
-            get { return (string) GetValue(LocationTimeProperty); }
-            set { SetValue(LocationTimeProperty, value); }
+            get { return (string)GetValue(LocationProperty); }
+            set { SetValue(LocationProperty, value); }
+        }
+
+        public static readonly BindableProperty DateProperty = BindableProperty.Create("Date", typeof(string), typeof(ObservationsCell), "");
+
+        public string Date
+        {
+            get { return (string)GetValue(DateProperty); }
+            set { SetValue(DateProperty, value); }
         }
 
         public static readonly BindableProperty UserProperty = BindableProperty.Create("User", typeof(string), typeof(ObservationsCell), "");

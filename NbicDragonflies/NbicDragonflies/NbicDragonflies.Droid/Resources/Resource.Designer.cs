@@ -2228,8 +2228,8 @@ namespace NbicDragonflies.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07009c
-			public const int Image = 2131165340;
+			// aapt resource value: 0x7f07009d
+			public const int Image = 2131165341;
 			
 			// aapt resource value: 0x7f070098
 			public const int Text = 2131165336;
@@ -2333,6 +2333,9 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f07004f
 			public const int customPanel = 2131165263;
 			
+			// aapt resource value: 0x7f07009b
+			public const int dateText = 2131165339;
+			
 			// aapt resource value: 0x7f070058
 			public const int decor_content_parent = 2131165272;
 			
@@ -2430,7 +2433,7 @@ namespace NbicDragonflies.Droid
 			public const int list_item = 2131165249;
 			
 			// aapt resource value: 0x7f07009a
-			public const int locationTimeText = 2131165338;
+			public const int locationText = 2131165338;
 			
 			// aapt resource value: 0x7f07008e
 			public const int media_actions = 2131165326;
@@ -2612,8 +2615,8 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070013
 			public const int showTitle = 2131165203;
 			
-			// aapt resource value: 0x7f07009d
-			public const int sliding_tabs = 2131165341;
+			// aapt resource value: 0x7f07009e
+			public const int sliding_tabs = 2131165342;
 			
 			// aapt resource value: 0x7f07006c
 			public const int snackbar_action = 2131165292;
@@ -2672,8 +2675,8 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070048
 			public const int title_template = 2131165256;
 			
-			// aapt resource value: 0x7f07009e
-			public const int toolbar = 2131165342;
+			// aapt resource value: 0x7f07009f
+			public const int toolbar = 2131165343;
 			
 			// aapt resource value: 0x7f070032
 			public const int top = 2131165234;
@@ -2690,8 +2693,8 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f070014
 			public const int useLogo = 2131165204;
 			
-			// aapt resource value: 0x7f07009b
-			public const int userText = 2131165339;
+			// aapt resource value: 0x7f07009c
+			public const int userText = 2131165340;
 			
 			// aapt resource value: 0x7f07000a
 			public const int view_offset_helper = 2131165194;

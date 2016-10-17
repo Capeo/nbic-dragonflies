@@ -66,10 +66,10 @@ namespace NbicDragonflies.Views {
             {
                 ObservationsCell cell = new ObservationsCell
                 {
-                    Species = observation.Name,
-                    LocationTime = observation.GetLocationText() + ", " + observation.CollctedDate,
+                    Species = observation.Name == null ? observation.ScientificName : observation.Name + ", " + observation.ScientificName,
+                    Location = observation.GetLocationText(),
+                    Date = observation.CollctedDate,
                     User = observation.Collector,
-                    ImageFilename = "hamburger.png" //TODO
                 };
                 recentObservationsCells.Add(cell);
             }
