@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -66,10 +66,6 @@
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\GalleryItem.cs" />
-    <Compile Include="Views\GalleryDetail.xaml.cs">
-      <DependentUpon>GalleryDetail.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Observation.xaml.cs">
       <DependentUpon>Observation.xaml</DependentUpon>
     </Compile>
@@ -87,6 +83,9 @@
     </Compile>
     <Compile Include="Views\TaxonTree.xaml.cs">
       <DependentUpon>TaxonTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GalleryImage.xaml.cs">
+      <DependentUpon>GalleryImage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +132,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GalleryDetail.xaml">
+    <EmbeddedResource Include="Views\GalleryImage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
