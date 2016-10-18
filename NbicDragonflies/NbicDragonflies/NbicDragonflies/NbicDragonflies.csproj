@@ -44,7 +44,7 @@
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
     <Compile Include="Models\TaxonItem.cs" />
-    <Compile Include="Models\ObservationItem.cs" />
+    <Compile Include="Models\ObservationList.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />

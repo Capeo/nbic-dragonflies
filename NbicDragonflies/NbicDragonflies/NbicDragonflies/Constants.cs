@@ -10,7 +10,7 @@ namespace NbicDragonflies
     {
         // URL of REST service
         public static string TaxonRestUrl = "http://data.beta.artsdatabanken.no/Api/";
-        public static string ObservationRestUrl = "http://data.beta.artsdatabanken.no/api/taxon/107"; // specify url for observations here
+        public static string ObservationRestUrl = "http://pavlov.itea.ntnu.no/artskart/Api/Observations/";
     
         // Credentials that are hard coded into the REST service
         public static string Username = "Xamarin";
