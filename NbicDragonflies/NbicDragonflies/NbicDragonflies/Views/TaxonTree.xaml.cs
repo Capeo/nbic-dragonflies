@@ -27,11 +27,12 @@ namespace NbicDragonflies.Views {
         {
             var children = await applicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
 
-            TaxonItem root = new TaxonItem(107, 107, "Odonata");
+            TaxonItem root = new TaxonItem(107, 107, "Odonata", "order");
 
             TaxonButton rootButton = new TaxonButton(root, 0);
             rootButton.SwitchState();
             rootButton.NavigationTap.Tapped += HandleNavigationClick;
+            rootButton.InfoTap.Tapped += HandleInfoClick;
             TaxonLayout.Children.Add(rootButton);
 
             foreach (var taxon in children)
@@ -39,6 +40,7 @@ namespace NbicDragonflies.Views {
                 TaxonButton button = new TaxonButton(taxon, 1);
                 rootButton.Subclasses.Add(button);
                 button.NavigationTap.Tapped += HandleNavigationClick;
+                button.InfoTap.Tapped += HandleInfoClick;
                 button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
                 TaxonLayout.Children.Add(button);
             }
@@ -47,28 +49,46 @@ namespace NbicDragonflies.Views {
         // Handle tap on navigation part of TaxonButton
         public async void HandleNavigationClick(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Button");
             if (sender.GetType() == typeof(Frame))
             {
                 TaxonButton parent = GetAncestor((Frame) sender);
 
                 if (!parent.Open)
                 {
+
                     parent.SwitchState();
+
                     int i = TaxonLayout.Children.IndexOf(parent) + 1;
+                    int currentOrderIndex = Utility.Constants.order.IndexOf(parent.Taxon.taxonRank);
 
-                    var children = await applicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
-
-                    System.Diagnostics.Debug.WriteLine(children.Count);
-
-                    foreach (var taxon in children) {
-                        TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
-                        parent.Subclasses.Add(button);
-                        button.NavigationTap.Tapped += HandleNavigationClick;
-                        button.Padding = new Thickness(offset * button.Level, 0, 0, 0);
-                        TaxonLayout.Children.Insert(i, button);
-                        i++;
-                    } 
+                    if(currentOrderIndex + 1 < Utility.Constants.order.Count)
+                    {
+                        if (parent.Subclasses.Count > 0)
+                        {
+                            var children = parent.Subclasses;
+                            foreach (var taxonButton in children)
+                            {
+                                TaxonLayout.Children.Insert(i, taxonButton);
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            var children = await applicationDataManager.GetTaxonsAsync($"Taxon/ScientificName?taxonRank={Utility.Constants.order.ElementAt(currentOrderIndex + 1)}&higherClassificationID={parent.Taxon.scientificNameId}");
+                            foreach (var taxon in children) {
+                                TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
+                                parent.Subclasses.Add(button);
+                                button.Padding = new Thickness(offset * button.Level, 0, 0, 0);
+                                if (taxon.taxonRank != Utility.Constants.order.ElementAt(Utility.Constants.order.Count - 1))
+                                {
+                                    button.NavigationTap.Tapped += HandleNavigationClick;
+                                }
+                                button.InfoTap.Tapped += HandleInfoClick;
+                                TaxonLayout.Children.Insert(i, button);
+                                i++;
+                            } 
+                        }
+                    }
                 }
                 else
                 {
@@ -76,6 +96,19 @@ namespace NbicDragonflies.Views {
                     RemoveAllDescendants(parent);
                 }
                 
+            }
+        }
+
+        public void HandleInfoClick(object sender, EventArgs e)
+        {
+            if (sender.GetType() == typeof(Frame))
+            {
+                TaxonButton parent = GetAncestor((Frame)sender);
+
+                SpeciesInfo speciesInfoView = new SpeciesInfo();
+                speciesInfoView.Title = parent.Taxon.scientificName;
+
+                Navigation.PushAsync(speciesInfoView);
             }
         }
 

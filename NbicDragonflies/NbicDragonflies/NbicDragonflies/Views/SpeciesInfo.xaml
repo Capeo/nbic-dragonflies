@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NbicDragonflies.Views.SpeciesInfo">
+             xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.SpeciesInfo"
+             Title="">
   <ContentPage.Content>
     <ScrollView x:Name="ContentView" HorizontalOptions="FillAndExpand">
-      <Image x:Name="TopImage" HorizontalOptions="FillAndExpand"/>
-      <Frame>
-        <StackLayout x:Name="Attributes"/>
+      <views:SpeciesImageView x:Name="TopImage"/>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
+      </Frame>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
+      </Frame>
+      <Frame HorizontalOptions="FillAndExpand">
+        <Frame.Content>
+          <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand"/>
+        </Frame.Content>
       </Frame>
     </ScrollView>
   </ContentPage.Content>

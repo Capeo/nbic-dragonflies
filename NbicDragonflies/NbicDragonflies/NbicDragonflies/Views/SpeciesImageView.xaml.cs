@@ -42,6 +42,7 @@ namespace NbicDragonflies.Views {
             ImageContent.Aspect = Aspect.AspectFit;
         }
 
+<<<<<<< HEAD
 		public SpeciesImageView()
 		{
 			InitializeComponent();
@@ -53,6 +54,15 @@ namespace NbicDragonflies.Views {
 			// Style the view
 			ImageContent.Aspect = Aspect.AspectFit;
 		}
+=======
+        public SpeciesImageView(SpeciesImage image)
+        {
+            InitializeComponent();
+
+            ImageContent.Aspect = Aspect.AspectFit;
+            SetImage(image);
+        }
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
 
         // Fill view with content from image
         private void SetImage(SpeciesImage image)

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" ?>
+=======
+﻿<?xml version="1.0" encoding="utf-8" ?>
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.SpeciesImageView">

@@ -10,7 +10,10 @@ namespace NbicDragonflies.Utility {
     {
 
         // Colors taken from NBIC webpage
-        public static Color NbicBrown = Color.FromHex("4f453e");
-        public static Color NbicOrange = Color.FromHex("e86c19");
+        public static readonly Color NbicBrown = Color.FromHex("4f453e");
+        public static readonly Color NbicOrange = Color.FromHex("e86c19");
+
+        // Hierarchy of orders
+        public static readonly List<string> order = new List<string> { "kingdom", "phylum", "subphylum", "class", "order", "suborder", "family", "genus", "species" };
     }
 }

@@ -28,10 +28,15 @@ namespace NbicDragonflies.Views {
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Arter",
+<<<<<<< HEAD
 
                 IconSource = "hamburger.png",
                 TargetType = typeof(TaxonTree)
 
+=======
+                IconSource = "hamburger.png",
+                TargetType = typeof(TaxonTree)
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
             });
 
             navigationPageItems.Add(new NavigationListItem

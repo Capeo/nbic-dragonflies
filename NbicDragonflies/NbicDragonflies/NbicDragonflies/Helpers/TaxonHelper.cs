@@ -14,12 +14,12 @@ namespace NbicDragonflies.Helpers
         {
             int typeLength = type.Length;
 
-            if (type == "scientificName")
+            if (type == "scientificName" || type == "taxonRank")
             {
                 int charactersticIndex = json.IndexOf(type + '"'); // Change this to """ for real json
                 int nextCommaIndex = json.Substring(charactersticIndex).IndexOf(",");
 
-                return json.Substring(charactersticIndex + typeLength + 3, nextCommaIndex - (typeLength + 3));
+                return json.Substring(charactersticIndex + typeLength + 3, nextCommaIndex - (typeLength + 4));
             }
             else
             {
@@ -38,6 +38,7 @@ namespace NbicDragonflies.Helpers
             string scientificNameIdString = this.GetCharacteristic(json, "scientificNameID");
             string taxonIdString = this.GetCharacteristic(json, "taxonID");
             string scientificName = this.GetCharacteristic(json, "scientificName");
+            string taxonRank = this.GetCharacteristic(json, "taxonRank");
 
 
             int scientificNameId;
@@ -48,7 +49,7 @@ namespace NbicDragonflies.Helpers
                 scientificNameId = Int32.Parse(scientificNameIdString);
                 taxonId = Int32.Parse(taxonIdString);
 
-                taxon = new TaxonItem(scientificNameId, taxonId, scientificName);
+                taxon = new TaxonItem(scientificNameId, taxonId, scientificName, taxonRank);
 
                 return taxon;
             }
@@ -57,7 +58,7 @@ namespace NbicDragonflies.Helpers
                 System.Diagnostics.Debug.WriteLine(e.Message);
             }
 
-            return new TaxonItem(0, 0, "Error");
+            return new TaxonItem(0, 0, "Error", "Error");
         }
         
     }

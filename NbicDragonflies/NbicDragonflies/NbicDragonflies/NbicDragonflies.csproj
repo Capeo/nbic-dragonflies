@@ -44,7 +44,7 @@
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
     <Compile Include="Models\TaxonItem.cs" />
-    <Compile Include="Models\ObservationItem.cs" />
+    <Compile Include="Models\ObservationList.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
@@ -77,15 +77,22 @@
     </Compile>
     <Compile Include="Views\SpeciesInfo.xaml.cs">
       <DependentUpon>SpeciesInfo.xaml</DependentUpon>
+<<<<<<< HEAD
 </Compile>
+=======
+	</Compile>
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
     <Compile Include="Views\TaxonButton.xaml.cs">
       <DependentUpon>TaxonButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TaxonTree.xaml.cs">
       <DependentUpon>TaxonTree.xaml</DependentUpon>
+<<<<<<< HEAD
     </Compile>
     <Compile Include="Views\GalleryImage.xaml.cs">
       <DependentUpon>GalleryImage.xaml</DependentUpon>
+=======
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +186,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
     <EmbeddedResource Include="Views\SpeciesInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -187,18 +197,25 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SpeciesImageView.xaml">
+<<<<<<< HEAD
 
  
 
+=======
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     
 
     <EmbeddedResource Include="Views\TaxonButton.xaml">
 
+=======
+    <EmbeddedResource Include="Views\TaxonButton.xaml">
+>>>>>>> 17da7f527cfc052708a2bfe28121920c5d047ab1
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
