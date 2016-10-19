@@ -25,9 +25,11 @@ namespace NbicDragonflies.Views {
 
         public async void CreateInitialTaxons()
         {
-            var children = await applicationDataManager.GetTaxonsAsync("Taxon/ScientificName?taxonRank=suborder&higherClassificationID=107");
+            var children = await applicationDataManager.GetTaxonsAsync("ScientificName?taxonRank=suborder&higherClassificationID=107");
 
             TaxonItem root = new TaxonItem(107, 107, "Odonata", "order");
+
+            root.vernacularName = await applicationDataManager.GetVernacularNameAsync($"{root.taxonId}");
 
             TaxonButton rootButton = new TaxonButton(root, 0);
             rootButton.SwitchState();
@@ -37,6 +39,8 @@ namespace NbicDragonflies.Views {
 
             foreach (var taxon in children)
             {
+                taxon.vernacularName = await applicationDataManager.GetVernacularNameAsync($"{taxon.taxonId}");
+                
                 TaxonButton button = new TaxonButton(taxon, 1);
                 rootButton.Subclasses.Add(button);
                 button.NavigationTap.Tapped += HandleNavigationClick;
@@ -74,8 +78,11 @@ namespace NbicDragonflies.Views {
                         }
                         else
                         {
-                            var children = await applicationDataManager.GetTaxonsAsync($"Taxon/ScientificName?taxonRank={Utility.Constants.order.ElementAt(currentOrderIndex + 1)}&higherClassificationID={parent.Taxon.scientificNameId}");
+                            var children = await applicationDataManager.GetTaxonsAsync($"ScientificName?taxonRank={Utility.Constants.order.ElementAt(currentOrderIndex + 1)}&higherClassificationID={parent.Taxon.scientificNameId}");
+
                             foreach (var taxon in children) {
+                                taxon.vernacularName = await applicationDataManager.GetVernacularNameAsync($"{taxon.taxonId}");
+        
                                 TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
                                 parent.Subclasses.Add(button);
                                 button.Padding = new Thickness(offset * button.Level, 0, 0, 0);

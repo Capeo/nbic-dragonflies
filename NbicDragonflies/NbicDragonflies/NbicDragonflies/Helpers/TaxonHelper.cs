@@ -14,7 +14,7 @@ namespace NbicDragonflies.Helpers
         {
             int typeLength = type.Length;
 
-            if (type == "scientificName" || type == "taxonRank")
+            if (type == "scientificName" || type == "taxonRank" || type == "vernacularName")
             {
                 int charactersticIndex = json.IndexOf(type + '"'); // Change this to """ for real json
                 int nextCommaIndex = json.Substring(charactersticIndex).IndexOf(",");

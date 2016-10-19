@@ -12,6 +12,7 @@ namespace NbicDragonflies.Models
         public int taxonId { get; set; }
         public string scientificName { get; set; }
         public string taxonRank { get; set; }
+        public string vernacularName { get; set; }
 
         public TaxonItem (int scientificNameId, int taxonId, string scientificName, string taxonRank)
         {
@@ -20,5 +21,6 @@ namespace NbicDragonflies.Models
             this.scientificName = scientificName;
             this.taxonRank = taxonRank;
         }
+
     }
 }

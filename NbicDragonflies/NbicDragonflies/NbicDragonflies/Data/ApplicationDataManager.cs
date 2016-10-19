@@ -14,33 +14,33 @@ namespace NbicDragonflies.Data
     {
         IRestService restService;
 
-        public ApplicationDataManager (IRestService service)
+        public ApplicationDataManager(IRestService service)
         {
             restService = service;
 
         }
 
-        public async Task<ObservationList> GetObservationListAsync (string urlSuffix)
+        public async Task<ObservationList> GetObservationListAsync(string urlSuffix)
         {
             string observationsJson = await restService.FetchObservationsAsync(urlSuffix);
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
         // Call this method to get the list of data retrieved from RefreshDataAsync
-        public async Task<string> GetTaxonsJsonAsync (string urlSuffix)
+        public async Task<string> GetTaxonsJsonAsync(string urlSuffix)
         {
-            var taxonsJson = await restService.FetchTaxonsAsync (urlSuffix);
+            var taxonsJson = await restService.FetchTaxonsAsync(urlSuffix);
             Debug.WriteLine(taxonsJson);
 
             return taxonsJson;
         }
 
         // Create Taxons from Json and return them
-        public async Task<List<TaxonItem>> GetTaxonsAsync (string urlSuffix)
+        public async Task<List<TaxonItem>> GetTaxonsAsync(string urlSuffix)
         {
-            String taxonsJson = await this.GetTaxonsJsonAsync (urlSuffix);
+            String taxonsJson = await this.GetTaxonsJsonAsync(urlSuffix);
 
-            TaxonHelper taxonHelper = new TaxonHelper ();
+            TaxonHelper taxonHelper = new TaxonHelper();
 
             List<TaxonItem> taxons = new List<TaxonItem>();
 
@@ -73,7 +73,7 @@ namespace NbicDragonflies.Data
                     elementIndex += 1;
                 }
             }
-            
+
             // Remove this loop if don't want to print the discovered taxons
             foreach (TaxonItem taxon in taxons)
             {
@@ -81,6 +81,18 @@ namespace NbicDragonflies.Data
             }
 
             return taxons;
+        }
+
+        // Get vernacularName from Json and return it
+        public async Task<String> GetVernacularNameAsync(string urlSuffix)
+        {
+            String json = await this.GetTaxonsJsonAsync(urlSuffix);
+
+            TaxonHelper taxonHelper = new TaxonHelper();
+
+            String vernacularName = taxonHelper.GetCharacteristic(json, "vernacularName");
+
+            return vernacularName;
         }
     }
 }

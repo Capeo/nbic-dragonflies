@@ -58,7 +58,15 @@ namespace NbicDragonflies.Views {
 
         private void SetTaxon(TaxonItem taxon)
         {
-            Name.Text = taxon.vernacularName;
+            if (taxon.vernacularName.Length > 0)
+            {
+                Name.Text = taxon.vernacularName;
+            }
+
+            else
+            {
+                Name.Text = taxon.scientificName;
+            }
         }
 
         public void SwitchState()
