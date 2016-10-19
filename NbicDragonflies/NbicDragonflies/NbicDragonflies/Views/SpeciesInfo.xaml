@@ -6,22 +6,26 @@
              Title="">
   <ContentPage.Content>
     <ScrollView x:Name="ContentView" HorizontalOptions="FillAndExpand">
-      <views:SpeciesImageView x:Name="TopImage"/>
-      <Frame HorizontalOptions="FillAndExpand">
-        <Frame.Content>
-          <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand"/>
-        </Frame.Content>
-      </Frame>
-      <Frame HorizontalOptions="FillAndExpand">
-        <Frame.Content>
-          <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand"/>
-        </Frame.Content>
-      </Frame>
-      <Frame HorizontalOptions="FillAndExpand">
-        <Frame.Content>
-          <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand"/>
-        </Frame.Content>
-      </Frame>
+      <StackLayout>
+        <views:SpeciesImageView x:Name="TopImage" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        <Frame HorizontalOptions="FillAndExpand">
+          <Frame.Content>
+            <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand"/>
+          </Frame.Content>
+        </Frame>
+        <Frame HorizontalOptions="FillAndExpand">
+          <Frame.Content>
+            <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand"/>
+          </Frame.Content>
+        </Frame>
+        <Frame HorizontalOptions="FillAndExpand">
+          <Frame.Content>
+            <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand">
+              <Label Text="Bilder" FontAttributes="Bold"/>
+            </StackLayout>
+          </Frame.Content>
+        </Frame>
+      </StackLayout>
     </ScrollView>
   </ContentPage.Content>
 </ContentPage>
