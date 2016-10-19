@@ -119,6 +119,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\dragonfly1.jpg" />
     <BundleResource Include="Resources\dragonfly2.jpg" />
+    <BundleResource Include="Resources\hamburger.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
