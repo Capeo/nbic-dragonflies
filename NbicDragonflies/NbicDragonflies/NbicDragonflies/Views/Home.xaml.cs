@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using NbicDragonflies.Views.ListItems;
 using Xamarin.Forms;
+using NbicDragonflies.Data;
 
 namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
 
-        public ListView ListView { get { return RecentObservationsList; } } 
-
+        public ListView ListView { get { return RecentObservationsList; } }
+         
         public Home()
         {
             InitializeComponent();
@@ -52,50 +53,27 @@ namespace NbicDragonflies.Views {
 
 
             // Add items to RecentObservations list
-            var recentObservations = new List<ObservationsCell>();
-
-            recentObservations.Add(new ObservationsCell
-            {
-                Species = "Brun øyenstikker",
-                LocationTime = "Trondehim, 30.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = "dragonfly2.jpg"
-            });
-
-            recentObservations.Add(new ObservationsCell
-            {
-                Species = "Blå øyenstikker",
-                LocationTime = "Trondheim, 29.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = "dragonfly1.jpg"
-            });
-
-            recentObservations.Add(new ObservationsCell
-            {
-                Species = "Gul øyenstikker",
-                LocationTime = "Trondheim, 28.09.16",
-                User = "Odd Cappelen",
-                ImageFilename = ""
-            });
-
-            RecentObservationsList.ItemsSource = recentObservations;
+            FillRecentObservationsList();            
         }
 
-        public void FillRecentObservationsList(List<ObservationItem> observations)
+        public async void FillRecentObservationsList()
         {
-            var recentObservations = new List<ObservationsCell>();
-            foreach (var observation in observations)
+            //FIXME: refine url to filter nearest observations
+            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
+            Models.ObservationList recentObservationsList = await applicationDataManager.GetObservationListAsync("list");
+            var recentObservationsCells = new List<ObservationsCell>();
+            foreach (Models.Observation observation in recentObservationsList.Observations)
             {
                 ObservationsCell cell = new ObservationsCell
                 {
-                    Species = observation.Species,
-                    LocationTime = observation.Location + ", " + observation.Date,
-                    User = observation.User,
-                    ImageFilename = observation.ImageFilename
+                    Species = observation.Name == null ? observation.ScientificName : observation.Name + ", " + observation.ScientificName,
+                    Location = observation.GetLocationText(),
+                    Date = observation.CollctedDate,
+                    User = observation.Collector,
                 };
-                recentObservations.Add(cell);
+                recentObservationsCells.Add(cell);
             }
-            RecentObservationsList.ItemsSource = recentObservations;
+            RecentObservationsList.ItemsSource = recentObservationsCells;
         }
 
 

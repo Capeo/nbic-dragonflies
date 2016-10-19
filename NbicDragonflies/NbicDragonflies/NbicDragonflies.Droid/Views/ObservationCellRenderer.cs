@@ -33,7 +33,8 @@ namespace NbicDragonflies.Droid.Views {
             }
 
             view.FindViewById<TextView>(Resource.Id.speciesText).Text = x.Species;
-            view.FindViewById<TextView>(Resource.Id.locationTimeText).Text = x.LocationTime;
+            view.FindViewById<TextView>(Resource.Id.locationText).Text = x.Location;
+            view.FindViewById<TextView>(Resource.Id.dateText).Text = x.Date;
             view.FindViewById<TextView>(Resource.Id.userText).Text = x.User;
 
             if (view.FindViewById<ImageView>(Resource.Id.Image).Drawable != null)

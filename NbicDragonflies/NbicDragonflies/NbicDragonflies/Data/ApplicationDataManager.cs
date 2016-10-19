@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using NbicDragonflies.Helpers;
+using Newtonsoft.Json;
 
 namespace NbicDragonflies.Data
 {
@@ -18,11 +20,17 @@ namespace NbicDragonflies.Data
 
         }
 
+        public async Task<ObservationList> GetObservationListAsync (string urlSuffix)
+        {
+            string observationsJson = await restService.FetchObservationsAsync(urlSuffix);
+            return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
+        }
+
         // Call this method to get the list of data retrieved from RefreshDataAsync
         public async Task<string> GetTaxonsJsonAsync (string urlSuffix)
         {
             var taxonsJson = await restService.FetchTaxonsAsync (urlSuffix);
-            System.Diagnostics.Debug.WriteLine(taxonsJson);
+            Debug.WriteLine(taxonsJson);
 
             return taxonsJson;
         }

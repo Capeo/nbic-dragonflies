@@ -1,13 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.SpeciesImageView">
-  <Frame HorizontalOptions="FillAndExpand" Padding="5">
+  <Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="5">
     <Frame.Content>
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Image x:Name="ImageContent" HorizontalOptions="FillAndExpand"/>
         <Label x:Name="Owner" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
-        <Label x:Name="Caption" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+        <Label x:Name="Date" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+		<Label x:Name="License" HorizontalOptions="FillAndExpand" TextColor="Black"/>
       </StackLayout>
     </Frame.Content>
   </Frame>

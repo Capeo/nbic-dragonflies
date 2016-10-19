@@ -32,7 +32,7 @@ namespace NbicDragonflies.iOS.Views {
                 // Need to specify path, or find way to set image from URL
                 i = UIImage.FromFile("");
             }
-            c.UpdateCell(x.Species, x.LocationTime, x.User, i);
+            c.UpdateCell(x.Species, x.Location, x.Date, x.User, i);
 
             return c;
         }
