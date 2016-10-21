@@ -119,6 +119,15 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\dragonfly1.jpg" />
     <BundleResource Include="Resources\dragonfly2.jpg" />
+    <BundleResource Include="Resources\artsdatabanken.png" />
+    <BundleResource Include="Resources\ic_home.png" />
+    <BundleResource Include="Resources\ic_home%402x.png" />
+    <BundleResource Include="Resources\ic_home%403x.png" />
+    <BundleResource Include="Resources\arter.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\gallery.png" />
+    <BundleResource Include="Resources\identify.png" />
+    <BundleResource Include="Resources\observations.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

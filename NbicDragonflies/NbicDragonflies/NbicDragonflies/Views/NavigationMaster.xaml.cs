@@ -20,35 +20,35 @@ namespace NbicDragonflies.Views {
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = "Hjem",
-                IconSource = "hamburger.png",
+                IconSource = "home.png",
                 TargetType = typeof(Home)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Arter",
-                IconSource = "hamburger.png",
+                IconSource = "arter.png",
                 TargetType = typeof(TaxonTree)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Observasjoner",
-                IconSource = "hamburger.png",
+                IconSource = "observations.png",
                 TargetType = typeof(Observation)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Galleri",
-                IconSource = "hamburger.png",
+                IconSource = "gallery.png",
                 TargetType = typeof(Gallery)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
                 Title = "Identifiser art",
-                IconSource = "hamburger.png",
+                IconSource = "identify.png",
                 TargetType = typeof(Identify)
             });
 
