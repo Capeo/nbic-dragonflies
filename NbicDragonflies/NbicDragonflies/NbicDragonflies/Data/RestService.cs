@@ -79,6 +79,29 @@ namespace NbicDragonflies.Data
             }
             return "";
         }
+
+        public async Task<string> FetchSearchResultsAsync(string searchText)
+        {
+            var client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var address = Constants.SearchUrl + $"{searchText}";
+
+            try
+            {
+                var response = await client.GetAsync(address);
+                if (response.IsSuccessStatusCode)
+                {
+                    var searchResultPage = response.Content.ReadAsStringAsync().Result;
+                    return searchResultPage;
+                }
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(@"				ERROR {0}", e.Message);
+            }
+            return "";
+        }
     }
 }
 

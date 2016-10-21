@@ -9,12 +9,12 @@
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
       <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
+        <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
       </AbsoluteLayout>
       
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
-          <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+          <StackLayout x:Name="HomeStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
               <Frame.Content>
                 <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">

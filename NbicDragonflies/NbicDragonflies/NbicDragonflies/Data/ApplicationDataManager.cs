@@ -26,6 +26,13 @@ namespace NbicDragonflies.Data
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
+        public async Task<Object> GetSearchResultAsync(string searchText)
+        {
+            string searchResult = await restService.FetchSearchResultsAsync(searchText);
+            Debug.WriteLine(searchResult);
+            return new object();
+        }
+
         // Call this method to get the list of data retrieved from RefreshDataAsync
         public async Task<string> GetTaxonsJsonAsync (string urlSuffix)
         {

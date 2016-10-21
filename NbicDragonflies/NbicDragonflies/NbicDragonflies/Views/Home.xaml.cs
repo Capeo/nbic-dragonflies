@@ -12,15 +12,35 @@ namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
 
         public ListView ListView { get { return RecentObservationsList; } }
-         
+        public SearchBar SearchBar { get { return SpeciesSearchBar; } }
+        public Label resultsLabel;
+        public async void OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            HomeStackLayout.Children.Clear();
+            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
+            var test = await applicationDataManager.GetSearchResultAsync("insekter");
+            System.Diagnostics.Debug.WriteLine(test);
+        }
+
+
+
         public Home()
         {
             InitializeComponent();
 
+            resultsLabel = new Label
+            {
+                Text = "Result will appear here.",
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                FontSize = 25
+            };
+            SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
+
             // Position Search Bar within layout 
-            AbsoluteLayout.SetLayoutBounds(SearchBar, new Rectangle(.5, 0, -1, -1));
-            AbsoluteLayout.SetLayoutFlags(SearchBar, AbsoluteLayoutFlags.PositionProportional);
-            SearchLayout.Children.Add(SearchBar);
+            AbsoluteLayout.SetLayoutBounds(SpeciesSearchBar, new Rectangle(.5, 0, -1, -1));
+            AbsoluteLayout.SetLayoutFlags(SpeciesSearchBar, AbsoluteLayoutFlags.PositionProportional);
+            SearchLayout.Children.Add(SpeciesSearchBar);
+            //SpeciesSearchBar.SearchCommand = new Command(() => { resultsLabel.Text = "Result: " + SpeciesSearchBar.Text + " is what you asked for."; });
 
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
@@ -54,6 +74,11 @@ namespace NbicDragonflies.Views {
 
             // Add items to RecentObservations list
             FillRecentObservationsList();            
+        }
+
+        private void SpeciesSearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public async void FillRecentObservationsList()
