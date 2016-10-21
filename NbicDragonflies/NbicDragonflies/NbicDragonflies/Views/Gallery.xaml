@@ -6,12 +6,12 @@
 			Title = "Gallery"
 			Padding = "0, 0, 0, 0">
 	<ContentPage.Content>
-		<Frame x:Name="GalleryFrame" HorizontalOptions="FillAndExpand" Padding="10">
-		<Frame.Content>
-		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+		<ScrollView>
+		<StackLayout>
+			
 		<Grid>
 		  <Grid.RowDefinitions>
-		    <RowDefinition Height="*" />
+		    <RowDefinition Height="*"/>
 		    <RowDefinition Height="*" />
 			<RowDefinition Height="*" />
 		  </Grid.RowDefinitions>
@@ -22,7 +22,7 @@
 		  </Grid.ColumnDefinitions>
 			
 
-			<views:SpeciesImageView x:Name="p00" Grid.Row="0" Grid.Column="0"/>
+			<views:SpeciesImageView x:Name="p00" Grid.Row="0" Grid.Column="0" />
 			<views:SpeciesImageView x:Name="p01" Grid.Row="0" Grid.Column="1"/>
 			<views:SpeciesImageView x:Name="p02" Grid.Row="0" Grid.Column="2"/>
 			<views:SpeciesImageView x:Name="p10" Grid.Row="1" Grid.Column="0"/>
@@ -35,8 +35,8 @@
 
 		</Grid>
 			<Button x:Name="nextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="End"/>
+				
 		</StackLayout>	
-		</Frame.Content>
-		</Frame>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
