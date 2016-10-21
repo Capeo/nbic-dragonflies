@@ -28,6 +28,12 @@ namespace NbicDragonflies.Views {
             InitializeComponent();
         }
 
+        public SpeciesInfo(Species species) {
+            InitializeComponent();
+
+            SetSpecies(species);
+        }
+
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
         {
@@ -41,12 +47,15 @@ namespace NbicDragonflies.Views {
                 };
                 Label title = new Label
                 {
-                    Text = attribute.Item1
+                    Text = attribute.Item1,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
                 };
                 title.FontAttributes = FontAttributes.Bold;
                 Label info = new Label
                 {
-                    Text = attribute.Item2
+                    Text = attribute.Item2,
+                    VerticalOptions = LayoutOptions.FillAndExpand
                 };
                 s.Children.Add(title);
                 s.Children.Add(info);
@@ -64,8 +73,8 @@ namespace NbicDragonflies.Views {
                 {
                     Text = paragraph.Item2
                 };
-                AttributesLayout.Children.Add(title);
-                AttributesLayout.Children.Add(info);
+                InfoLayout.Children.Add(title);
+                InfoLayout.Children.Add(info);
             }
 
             foreach (var image in species.Images)
