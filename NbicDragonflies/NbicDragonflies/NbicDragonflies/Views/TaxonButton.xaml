@@ -7,7 +7,7 @@
         <Frame.Content>
           <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
             <Image x:Name="Icon" VerticalOptions="CenterAndExpand"/>
-            <Label x:Name="Name" VerticalOptions="CenterAndExpand" TextColor="Black"/>
+            <Label x:Name="NameLabel" VerticalOptions="CenterAndExpand" TextColor="Black"/>
           </StackLayout>
         </Frame.Content>
       </Frame>

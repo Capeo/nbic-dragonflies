@@ -40,17 +40,6 @@ namespace NbicDragonflies.Data
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
 
-            /*
-            // Get TaxonID and ScientificName from json
-            int taxonId = Items["taxonID"];
-            JsonValue scientificNames = json["scientificNames"];
-            int scientificNameID = scientificNames["scientificNameID"];
-
-            TaxonItem taxon = new TaxonItem(taxonId, scientificNameID);
-
-            Items.Add(taxon);
-            */
-
             return "";
         }
 

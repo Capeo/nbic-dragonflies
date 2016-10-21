@@ -40,11 +40,10 @@
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
-    <Compile Include="Helpers\TaxonHelper.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
-    <Compile Include="Models\TaxonItem.cs" />
+    <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\ObservationList.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
