@@ -8,7 +8,7 @@
         <views:NavigationMaster x:Name="NavigationMaster" Padding="0" HeightRequest="100"/>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
-    <NavigationPage BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
+    <NavigationPage x:Name="StartPage" BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
       <x:Arguments>
         <views:Home/>
       </x:Arguments>

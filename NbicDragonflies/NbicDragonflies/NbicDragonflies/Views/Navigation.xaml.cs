@@ -9,8 +9,13 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views {
     public partial class Navigation : MasterDetailPage {
 
+        private ToolbarItem LanguageButton { get; }
+
         public Navigation() {
             InitializeComponent();
+
+            LanguageButton = new ToolbarItem("", "Norway.png", ChangeLanguage);
+            StartPage.ToolbarItems.Add(LanguageButton);
 
             NavigationMaster.ListView.ItemSelected += OnItemSelected;
         }
@@ -23,9 +28,23 @@ namespace NbicDragonflies.Views {
             {
                 NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 page.BarBackgroundColor = Utility.Constants.NbicBrown;
+                page.ToolbarItems.Add(LanguageButton);
                 Detail = page;
                 NavigationMaster.ListView.SelectedItem = null;
                 IsPresented = false;
+            }
+        }
+
+        void ChangeLanguage()
+        {
+            Utility.Language.Languages l = Utility.Language.SwitchLanguage();
+            if (l == Utility.Language.Languages.En)
+            {
+                LanguageButton.Icon.File = "United-Kingdom.png";
+            }
+            else
+            {
+                LanguageButton.Icon.File = "Norway.png";
             }
         }
     }

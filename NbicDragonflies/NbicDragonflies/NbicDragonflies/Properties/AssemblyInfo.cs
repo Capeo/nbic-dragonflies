@@ -13,8 +13,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("NbicDragonflies")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("en")]
+[assembly: AssemblyCulture("no")]
+[assembly: NeutralResourcesLanguage("no")]
 
 // Version information for an assembly consists of the following four values:
 //

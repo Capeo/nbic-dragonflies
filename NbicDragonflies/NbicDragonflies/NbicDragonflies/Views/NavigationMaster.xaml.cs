@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
@@ -20,35 +21,35 @@ namespace NbicDragonflies.Views {
             var navigationPageItems = new List<NavigationListItem>();
 
             navigationPageItems.Add(new NavigationListItem {
-                Title = "Hjem",
+                Title = LanguageResource.HomeLabel,
                 IconSource = "hamburger.png",
                 TargetType = typeof(Home)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
-                Title = "Arter",
+                Title = LanguageResource.SpeciesLabel,
                 IconSource = "hamburger.png",
                 TargetType = typeof(TaxonTree)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
-                Title = "Observasjoner",
+                Title = LanguageResource.ObservationsLabel,
                 IconSource = "hamburger.png",
                 TargetType = typeof(Observation)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
-                Title = "Galleri",
+                Title = LanguageResource.GalleryLabel,
                 IconSource = "hamburger.png",
                 TargetType = typeof(Gallery)
             });
 
             navigationPageItems.Add(new NavigationListItem
             {
-                Title = "Identifiser art",
+                Title = LanguageResource.IdentifyLabel,
                 IconSource = "hamburger.png",
                 TargetType = typeof(Identify)
             });

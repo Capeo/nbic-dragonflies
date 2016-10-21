@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
-             x:Class="NbicDragonflies.Views.Gallery"
-			Title = "Gallery"
+			 xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+			 x:Class="NbicDragonflies.Views.Gallery"
+			Title="{x:Static resources:LanguageResource.GalleryLabel}"
 			Padding = "0, 0, 0, 0">
 	<ContentPage.Content>
 		<Frame x:Name="GalleryFrame" HorizontalOptions="FillAndExpand" Padding="10">
