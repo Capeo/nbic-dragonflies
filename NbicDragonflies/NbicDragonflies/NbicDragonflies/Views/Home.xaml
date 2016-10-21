@@ -8,9 +8,11 @@
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
-      <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" WidthRequest="300" HorizontalOptions="FillAndExpand"/>
-      </AbsoluteLayout>
+      <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
+        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                    Property=Width, 
+                                    Factor=1}" Margin="12,8,12,0"/>
+      </RelativeLayout>
       
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
