@@ -7,7 +7,7 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
-    public partial class Identify : ContentPage {
+    public partial class Identify : TabbedPage {
 
         public ListView ListView1 { get { return ResultsList; } }
         public ListView ListView2 { get { return AlternativesList; } }

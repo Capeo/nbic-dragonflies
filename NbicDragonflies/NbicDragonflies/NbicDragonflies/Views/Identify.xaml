@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.Identify"
              Title="Identify Species Page">
-  <ContentPage.Padding>
-      0, 0, 0, 0
-    </ContentPage.Padding>
-    <ContentPage.Content>
-    
-    <StackLayout x:Name="IdentifyLayout" Spacing="0">
+  <TabbedPage.Children >
+    <ContentPage Title="Sporsmal">
       <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
           <Frame.Content>
@@ -24,10 +20,13 @@
             </StackLayout>
           </Frame.Content>
         </Frame>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Resultater">
+      <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
           <Frame.Content>
             <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-              <Label x:Name="ResultsTitle" Text="Resultater:"/>
               <ScrollView>
                 <ListView x:Name="ResultsList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
                   <ListView.ItemTemplate>
@@ -41,6 +40,6 @@
           </Frame.Content>
         </Frame>
       </StackLayout>
-    </StackLayout>
-  </ContentPage.Content> 
-</ContentPage>
+    </ContentPage>
+  </TabbedPage.Children>
+</TabbedPage>
