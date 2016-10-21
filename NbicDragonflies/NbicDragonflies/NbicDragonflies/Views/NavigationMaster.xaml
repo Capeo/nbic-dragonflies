@@ -7,6 +7,9 @@
              Title="Navigation"
              Icon="hamburger.png">
   <ContentPage.Content>
+    <StackLayout>
+      <Image Source="logo128.png" WidthRequest="128" HeightRequest="128"/>
+    </StackLayout>
     <StackLayout VerticalOptions="FillAndExpand">
       <ListView x:Name="NavigationList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
         <ListView.ItemTemplate>
