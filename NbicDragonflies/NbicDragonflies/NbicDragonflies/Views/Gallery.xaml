@@ -6,19 +6,19 @@
 			Title = "Gallery"
 			Padding = "0, 0, 0, 0">
 	<ContentPage.Content>
-		<ScrollView>
+	
 		<StackLayout>
 			
 		<Grid>
 		  <Grid.RowDefinitions>
-		    <RowDefinition Height="*"/>
-		    <RowDefinition Height="*" />
-			<RowDefinition Height="*" />
+		    <RowDefinition Height="1*"/>
+		    <RowDefinition Height="1*"/>
+			<RowDefinition Height="1*" />
 		  </Grid.RowDefinitions>
 		  <Grid.ColumnDefinitions>
-		    <ColumnDefinition Width="*" />
-		    <ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
+		    <ColumnDefinition Width="1*" />
+		    <ColumnDefinition Width="1*" />
+			<ColumnDefinition Width="1*" />
 		  </Grid.ColumnDefinitions>
 			
 
@@ -37,6 +37,5 @@
 			<Button x:Name="nextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="End"/>
 				
 		</StackLayout>	
-		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

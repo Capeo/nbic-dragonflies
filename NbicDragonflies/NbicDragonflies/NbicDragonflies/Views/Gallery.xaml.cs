@@ -17,7 +17,7 @@ namespace NbicDragonflies.Views
 		{
 			InitializeComponent();
 
-			p00.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			p00.Image = new SpeciesImage("dragonfly1.jpg", "Sara Phrida Kristina Norrhall", "12/3-14", "VERYLONGLICENSE");
 			p01.Image = new SpeciesImage("dragonfly2.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
 			p02.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
 			p10.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
