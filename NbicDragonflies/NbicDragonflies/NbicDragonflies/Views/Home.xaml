@@ -4,12 +4,12 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Home"
-             Title="Home"
+             Title="Hjem"
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
       <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" WidthRequest="380"/>
+        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" WidthRequest="300" HorizontalOptions="FillAndExpand"/>
       </AbsoluteLayout>
       
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
