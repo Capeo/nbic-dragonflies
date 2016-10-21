@@ -18,8 +18,19 @@ namespace NbicDragonflies.Views {
         {
             HomeStackLayout.Children.Clear();
             ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
-            var test = await applicationDataManager.GetSearchResultAsync("insekter");
-            System.Diagnostics.Debug.WriteLine(test);
+            List<SearchResultItem> searchResults= await applicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
+            if (searchResults.Capacity == 0)
+            {
+                HomeStackLayout.Children.Add(new Label { Text = "Could not find" });
+            }
+            else
+            {
+                ListView searchResultList = new ListView
+                {
+                    ItemsSource = searchResults[0].ScientificName,
+                };
+                HomeStackLayout.Children.Add(searchResultList);
+            }
         }
 
 
