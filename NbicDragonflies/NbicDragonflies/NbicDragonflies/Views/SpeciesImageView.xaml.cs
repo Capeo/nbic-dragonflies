@@ -24,27 +24,42 @@ namespace NbicDragonflies.Views {
             }
         }
 
-        public SpeciesImageView() {
+		public List<SpeciesImageView> Images { get; set; }
+
+		public TapGestureRecognizer GalleryTap;
+
+		public SpeciesImageView(SpeciesImage image) {
             InitializeComponent();
 
+			Image = image;
+
+			GalleryTap = new TapGestureRecognizer();
+			ImageFrame.GestureRecognizers.Add(GalleryTap);
+
+			Images = new List<SpeciesImageView>();
             // Style the view
             ImageContent.Aspect = Aspect.AspectFit;
         }
 
-        public SpeciesImageView(SpeciesImage image)
-        {
-            InitializeComponent();
+		public SpeciesImageView()
+		{
+			InitializeComponent();
 
-            ImageContent.Aspect = Aspect.AspectFit;
-            SetImage(image);
-        }
+			GalleryTap = new TapGestureRecognizer();
+			ImageFrame.GestureRecognizers.Add(GalleryTap);
+
+			Images = new List<SpeciesImageView>();
+			// Style the view
+			ImageContent.Aspect = Aspect.AspectFit;
+		}
 
         // Fill view with content from image
         private void SetImage(SpeciesImage image)
         {
             ImageContent.Source = image.ImageSource;
             Owner.Text = image.Owner;
-            Caption.Text = image.Caption;
+            Date.Text = image.Date;
+			License.Text = image.License;
         }
     }
 }
