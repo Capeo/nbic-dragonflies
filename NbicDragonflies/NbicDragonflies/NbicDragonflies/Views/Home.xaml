@@ -12,7 +12,6 @@
       <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
         <SearchBar x:Name="SearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="White"/>
       </AbsoluteLayout>
-      
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">

@@ -17,13 +17,7 @@ namespace NbicDragonflies.Utility {
             No
         }
 
-        private static Languages _currentCulture = Languages.No;
-
-        public static Languages CurrentCulture
-        {
-            get { return _currentCulture; }
-            private set { _currentCulture = value; }
-        }
+        public static Languages CurrentCulture { get; private set; } = Languages.No;
 
         public static Languages SwitchLanguage()
         {
@@ -37,10 +31,20 @@ namespace NbicDragonflies.Utility {
             else
             {
                 CurrentCulture = Languages.En;
+                System.Diagnostics.Debug.WriteLine(CurrentCulture.ToString());
                 ci = new CultureInfo(CurrentCulture.ToString());
             }
             LanguageResource.Culture = ci;
             return CurrentCulture;
+        }
+
+        public static bool CompareToCurrent(string language)
+        {
+            if (language == "nb-NO" && CurrentCulture == Languages.No)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

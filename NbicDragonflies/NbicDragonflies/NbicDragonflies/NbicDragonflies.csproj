@@ -139,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\LanguageResource.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResource.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LanguageResource.resx">
