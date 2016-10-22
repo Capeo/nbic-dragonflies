@@ -81,8 +81,7 @@ namespace NbicDragonflies.Data
                 var response = await client.GetAsync(address);
                 if (response.IsSuccessStatusCode)
                 {
-                    var searchResultPage = response.Content.ReadAsStringAsync().Result;
-                    return searchResultPage;
+                    return response.Content.ReadAsStringAsync().Result;
                 }
             }
             catch(Exception e)

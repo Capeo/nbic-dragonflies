@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.SearchResultList"
+             Title="Home"
+             Padding="0">
+  <ContentPage.Content>
+    <StackLayout x:Name="HomeLayout" Spacing="0">
+      <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
+        <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
+      </AbsoluteLayout>
+
+      <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView.Content>
+          <StackLayout x:Name="SearchStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label x:Name="LabelHeader" Text="Did you mean" TextColor="Gray" HorizontalOptions="FillAndExpand" FontSize="18"/>
+          </StackLayout>
+        </ScrollView.Content>
+      </ScrollView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

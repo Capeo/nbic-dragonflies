@@ -72,6 +72,12 @@
     <Compile Include="Views\ObservationList.xaml.cs">
       <DependentUpon>ObservationList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchResultButton.xaml.cs">
+      <DependentUpon>SearchResultButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchResultList.xaml.cs">
+      <DependentUpon>SearchResultList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SpeciesImageView.xaml.cs">
       <DependentUpon>SpeciesImageView.xaml</DependentUpon>
     </Compile>
@@ -192,6 +198,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TaxonButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SearchResultList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SearchResultButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
