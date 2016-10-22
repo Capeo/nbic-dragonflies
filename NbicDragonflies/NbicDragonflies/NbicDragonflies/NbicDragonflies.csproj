@@ -48,7 +48,18 @@
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\LanguageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LanguageResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Utility\Language.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
       <DependentUpon>Gallery.xaml</DependentUpon>
     </Compile>
@@ -126,6 +137,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\LanguageResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LanguageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>

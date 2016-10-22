@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
@@ -15,47 +16,45 @@ namespace NbicDragonflies.Views {
         public NavigationMaster() {
             InitializeComponent();
 
-
             // Add items to navigation list
+            ReDrawNavigationList();
+        }
+
+        public void ReDrawNavigationList()
+        {
             var navigationPageItems = new List<NavigationListItem>();
 
             navigationPageItems.Add(new NavigationListItem {
-                Title = "Hjem",
-                IconSource = "home.png",
+                Title = LanguageResource.HomeLabel,
+                IconSource = "hamburger.png",
                 TargetType = typeof(Home)
             });
 
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Arter",
-                IconSource = "arter.png",
+            navigationPageItems.Add(new NavigationListItem {
+                Title = LanguageResource.SpeciesLabel,
+                IconSource = "hamburger.png",
                 TargetType = typeof(TaxonTree)
             });
 
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Observasjoner",
-                IconSource = "observations.png",
+            navigationPageItems.Add(new NavigationListItem {
+                Title = LanguageResource.ObservationsLabel,
+                IconSource = "hamburger.png",
                 TargetType = typeof(Observation)
             });
 
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Galleri",
-                IconSource = "gallery.png",
+            navigationPageItems.Add(new NavigationListItem {
+                Title = LanguageResource.GalleryLabel,
+                IconSource = "hamburger.png",
                 TargetType = typeof(Gallery)
             });
 
-            navigationPageItems.Add(new NavigationListItem
-            {
-                Title = "Identifiser art",
-                IconSource = "identify.png",
+            navigationPageItems.Add(new NavigationListItem {
+                Title = LanguageResource.IdentifyLabel,
+                IconSource = "hamburger.png",
                 TargetType = typeof(Identify)
             });
 
             NavigationList.ItemsSource = navigationPageItems;
         }
-
-
     }
 }
