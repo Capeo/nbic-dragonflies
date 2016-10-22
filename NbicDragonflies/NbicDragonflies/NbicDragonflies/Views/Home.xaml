@@ -1,16 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Home"
-             Title="Home"
+             Title="Hjem"
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
-      <AbsoluteLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White"/>
-      </AbsoluteLayout>
+      <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
+        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                    Property=Width, 
+                                    Factor=1}" Margin="12,8,12,0"/>
+      </RelativeLayout>
       
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>

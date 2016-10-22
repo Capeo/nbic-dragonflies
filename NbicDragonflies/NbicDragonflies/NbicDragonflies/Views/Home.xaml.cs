@@ -17,11 +17,6 @@ namespace NbicDragonflies.Views {
         {
             InitializeComponent();
 
-            // Position Search Bar within layout 
-            AbsoluteLayout.SetLayoutBounds(SearchBar, new Rectangle(.5, 0, -1, -1));
-            AbsoluteLayout.SetLayoutFlags(SearchBar, AbsoluteLayoutFlags.PositionProportional);
-            SearchLayout.Children.Add(SearchBar);
-
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
                 Constraint.RelativeToParent((parent) => parent.X),
