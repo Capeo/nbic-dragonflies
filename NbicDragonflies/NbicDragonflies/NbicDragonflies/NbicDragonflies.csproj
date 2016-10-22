@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -40,10 +40,9 @@
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
-    <Compile Include="Helpers\TaxonHelper.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
-    <Compile Include="Models\TaxonItem.cs" />
+    <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\ObservationList.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
@@ -77,7 +76,7 @@
     </Compile>
     <Compile Include="Views\SpeciesInfo.xaml.cs">
       <DependentUpon>SpeciesInfo.xaml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Views\TaxonButton.xaml.cs">
       <DependentUpon>TaxonButton.xaml</DependentUpon>
     </Compile>
@@ -92,7 +91,6 @@
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
-    <None Include="Resources\odonata.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -195,6 +193,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
