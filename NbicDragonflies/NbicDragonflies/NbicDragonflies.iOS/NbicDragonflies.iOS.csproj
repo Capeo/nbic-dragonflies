@@ -129,6 +129,8 @@
     <BundleResource Include="Resources\identify.png" />
     <BundleResource Include="Resources\observations.png" />
     <BundleResource Include="Resources\hamburger.png" />
+    <BundleResource Include="Resources\artsdatabanken_trans.png" />
+    <BundleResource Include="Resources\drawer_dragonfly.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

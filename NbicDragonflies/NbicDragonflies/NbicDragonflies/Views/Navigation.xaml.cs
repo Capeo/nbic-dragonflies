@@ -22,7 +22,7 @@ namespace NbicDragonflies.Views {
             if (item != null)
             {
                 NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                page.BarBackgroundColor = Utility.Constants.NbicBrown;
+				page.BarBackgroundColor = Utility.Constants.NbicOrange;
                 Detail = page;
                 NavigationMaster.ListView.SelectedItem = null;
                 IsPresented = false;

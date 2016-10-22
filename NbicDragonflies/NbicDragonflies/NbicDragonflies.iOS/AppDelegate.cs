@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using CoreGraphics;
 
 namespace NbicDragonflies.iOS {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -20,6 +21,7 @@ namespace NbicDragonflies.iOS {
         //
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
+	
 			UINavigationBar.Appearance.TintColor = UIColor.White;
 			UISearchBar.Appearance.BarTintColor = UIColor.Black;
             global::Xamarin.Forms.Forms.Init();

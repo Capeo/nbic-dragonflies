@@ -8,7 +8,7 @@
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
-      <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
+      <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicOrange}" HeightRequest="60" HorizontalOptions="FillAndExpand">
         <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
                                     Factor=1}" Margin="12,8,12,0"/>
@@ -17,7 +17,7 @@
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
+            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="false">
               <Frame.Content>
                 <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
                   <Label x:Name="InfoTitle" />

@@ -15,6 +15,7 @@ namespace NbicDragonflies.Views {
         public NavigationMaster() {
             InitializeComponent();
 
+
             // Add items to navigation list
             var navigationPageItems = new List<NavigationListItem>();
 

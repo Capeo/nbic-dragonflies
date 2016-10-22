@@ -142,6 +142,8 @@
     <AndroidResource Include="Resources\drawable\observations.png" />
     <AndroidResource Include="Resources\drawable-hdpi\observations_hdpi.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\observations_xxhdpi.png" />
+    <AndroidResource Include="Resources\drawable\artsdatabanken_trans.png" />
+    <AndroidResource Include="Resources\drawable\drawer_dragonfly.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
