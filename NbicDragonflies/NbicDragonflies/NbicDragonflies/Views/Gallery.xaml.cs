@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Utility;
 using Xamarin.Forms;
 
 
@@ -11,43 +12,71 @@ namespace NbicDragonflies.Views
 {
 	public partial class Gallery : ContentPage
 	{
-		public TapGestureRecognizer NextPageTapped;
+		public List<SpeciesImageView> Pages = new List<SpeciesImageView>();
+		public int IndexCounter = 0;
+		public int ElementCounter = 0;
+		public List<SpeciesImage> ImageList;
+
 
 		public Gallery()
 		{
 			InitializeComponent();
 
-			p00.Image = new SpeciesImage("dragonfly1.jpg", "Sara Phrida Kristina Norrhall", "12/3-14", "VERYLONGLICENSE");
-			p01.Image = new SpeciesImage("dragonfly2.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p02.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p10.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p11.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p12.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p20.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p21.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p22.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-
-			p00.GalleryTap.Tapped += HandleImageClick;
-			p01.GalleryTap.Tapped += HandleImageClick;
-			p02.GalleryTap.Tapped += HandleImageClick;
-			p10.GalleryTap.Tapped += HandleImageClick;
-			p11.GalleryTap.Tapped += HandleImageClick;
-			p12.GalleryTap.Tapped += HandleImageClick;
-			p20.GalleryTap.Tapped += HandleImageClick;
-			p21.GalleryTap.Tapped += HandleImageClick;
-			p22.GalleryTap.Tapped += HandleImageClick;
-
-			NextPageTapped = new TapGestureRecognizer();
-			nextPage.GestureRecognizers.Add(NextPageTapped);
-
-			NextPageTapped.Tapped += HandleNextPageClick;
+			//All pages in the Grid
+			Pages.Add(p00);
+			Pages.Add(p01);
+			Pages.Add(p02);
+			Pages.Add(p10);
+			Pages.Add(p11);
+			Pages.Add(p12);
+			Pages.Add(p20);
+			Pages.Add(p21);
+			Pages.Add(p22);
 
 
+			NextPage.Clicked += HandleNextPageClick;
+			PreviousPage.Clicked += HandlePreviousPageClick;
 
+			SetGalleryImages(Placeholders.NewGalleryImages());
 
 		}
 
+		public void SetGalleryImages(List<SpeciesImage> GalleryImage)
+		{
+			ImageList = GalleryImage;
 
+			for (int i = 0; i <= 8; i++)
+			{
+				IndexCounter++;
+				Pages.ElementAt(i).Image = ImageList[i];
+				Pages.ElementAt(i).GalleryTap.Tapped += HandleImageClick;
+			}
+		}
+
+		public void IncreaseGalleryImages()
+		{
+			for (int i = IndexCounter; i <= IndexCounter + 8; i++)
+			{
+				Pages.ElementAt(ElementCounter).Image = ImageList[i];
+				Pages.ElementAt(ElementCounter).GalleryTap.Tapped += HandleImageClick;
+				ElementCounter++;
+			}
+			IndexCounter += 9;
+			ElementCounter = 0;
+			
+		}
+
+		public void DecreaseGalleryImages()
+		{
+			for (int i = IndexCounter; i >= IndexCounter - 8; i--)
+			{
+				Pages.ElementAt(ElementCounter).Image = ImageList[i];
+				Pages.ElementAt(ElementCounter).GalleryTap.Tapped += HandleImageClick;
+				ElementCounter++;
+			}
+			IndexCounter -= 9;
+			ElementCounter = 0;
+		}
 
 		// Handle tap on image in Gallery
 		public async void HandleImageClick(object sender, EventArgs e)
@@ -65,7 +94,23 @@ namespace NbicDragonflies.Views
 		//Handle tap on "Next page" button
 		public async void HandleNextPageClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine("Tapped");
+			
+			if (sender.GetType() == typeof(Button))
+			{
+				System.Diagnostics.Debug.WriteLine("New Page");
+				IncreaseGalleryImages();	
+			}
+		}
+
+		//Handle tap on "Previous page" button
+		public async void HandlePreviousPageClick(object sender, EventArgs e)
+		{
+
+			if (sender.GetType() == typeof(Button))
+			{
+				System.Diagnostics.Debug.WriteLine("Previous Page");
+				DecreaseGalleryImages();
+			}
 		}
 
 		// Returns the SpeciesImage view to which an element belongs

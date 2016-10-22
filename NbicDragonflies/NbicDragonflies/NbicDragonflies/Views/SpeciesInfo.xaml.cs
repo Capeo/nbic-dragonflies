@@ -11,6 +11,8 @@ namespace NbicDragonflies.Views {
     {
 
         private Species _species;
+		public TapGestureRecognizer ImageTapped;
+		public SpeciesImage SpeciesImage;
 
         public Species Species
         {
@@ -32,7 +34,12 @@ namespace NbicDragonflies.Views {
             InitializeComponent();
 
             SetSpecies(species);
+
+			ImageTapped = new TapGestureRecognizer();
+
         }
+
+
 
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
@@ -79,10 +86,47 @@ namespace NbicDragonflies.Views {
 
             foreach (var image in species.Images)
             {
-                SpeciesImageView s = new SpeciesImageView(image);
+				
+				SpeciesImageView s = new SpeciesImageView(image);
                 ImageLayout.Children.Add(s);
+				ImageTapped = new TapGestureRecognizer();
+				//s.GestureRecognizers.Add(ImageTapped);
+				s.GalleryTap.Tapped += HandleImageClick;
+
+
             }
         }
+
+		// Handle tap on image in Gallery
+		public async void HandleImageClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Debug.WriteLine("Tapped");
+			if (sender.GetType() == typeof(Frame))
+			{
+				SpeciesImageView parent = GetAncestor((Frame)sender);
+				Navigation.PushAsync(new GalleryImage(parent.Image));
+
+
+			}
+		}
+
+		// Returns the SpeciesImage view to which an element belongs
+		private SpeciesImageView GetAncestor(VisualElement e)
+		{
+			if (e != null)
+			{
+				var parent = e.Parent;
+				while (parent != null)
+				{
+					if (parent is SpeciesImageView)
+					{
+						return (SpeciesImageView)parent;
+					}
+					parent = parent.Parent;
+				}
+			}
+			return null;
+		}
 
     }
 }
