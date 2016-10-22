@@ -9,7 +9,7 @@
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0">
       <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicBrown}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+        <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
                                     Factor=1}" Margin="12,8,12,0"/>
       </RelativeLayout>

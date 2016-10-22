@@ -12,7 +12,6 @@ namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
 
         public ListView ListView { get { return RecentObservationsList; } }
-        public SearchBar SearchBar { get { return SpeciesSearchBar; } }
         public async void OnSearchButtonPressed(object sender, EventArgs e)
         {
             ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
