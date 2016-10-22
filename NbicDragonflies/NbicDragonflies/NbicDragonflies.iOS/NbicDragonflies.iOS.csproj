@@ -129,6 +129,8 @@
     <BundleResource Include="Resources\identify.png" />
     <BundleResource Include="Resources\observations.png" />
     <BundleResource Include="Resources\hamburger.png" />
+    <BundleResource Include="Resources\artsdatabanken_trans.png" />
+    <BundleResource Include="Resources\drawer_dragonfly.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -187,6 +189,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_keyboard_arrow_right%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Norway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UnitedKingdom.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
