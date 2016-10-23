@@ -52,6 +52,10 @@
       <string>Icon-Small@3x</string>
     </array>
     <key>UILaunchStoryboardName</key>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Can we use your location for Observations</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We are using your location</string>
     <string>LaunchScreen</string>
   </dict>
 </plist>

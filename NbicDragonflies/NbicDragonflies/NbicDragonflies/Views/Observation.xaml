@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="NbicDragonflies.Views.Observation"
              Title="{x:Static resources:LanguageResource.ObservationsLabel}"
              BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
@@ -12,7 +13,10 @@
       <local:ObservationList />
     </ContentPage>
     <ContentPage Title="{x:Static resources:LanguageResource.ObservationMapLabel}">
-      <Label Text="I am a Map"></Label>
+      <maps:Map WidthRequest="320" HeightRequest="200"
+            x:Name="ObservationsMap"
+            MapType="Street"
+        />
     </ContentPage>
   </TabbedPage.Children>
 </TabbedPage>
