@@ -10,7 +10,6 @@ namespace NbicDragonflies.Views {
     public partial class Identify : TabbedPage {
 
         public ListView ListView1 { get { return ResultsList; } }
-        public ListView ListView2 { get { return AlternativesList; } }
 
         public Identify()
         {
@@ -18,24 +17,11 @@ namespace NbicDragonflies.Views {
 
             // Add alternatives
 
-            var alternativesItems = new List<AlternativeItem>();
+            IdentifyAlternative alt1 = new IdentifyAlternative("Vingene legges helt eller delvis bakover langs kroppen i hvile.", "hvilestilling1.png");
 
-            alternativesItems.Add(new AlternativeItem
-            {
-                ImageSource = "hvilestilling1.png",
-                Detail = "Vingene legges helt eller delvis bakover langs kroppen i hvile.",
-                TargetType = typeof(Home)
-            });
+            IdentifyAlternative alt2 = new IdentifyAlternative("Vingene står vinkelrett ut fra kroppen i hvile.", "hvilestilling2.png");
 
-            alternativesItems.Add(new AlternativeItem
-            {
-                ImageSource = "hvilestilling2.png",
-                Detail = "Vingene står vinkelrett ut fra kroppen i hvile.",
-                TargetType = typeof(Home)
-            });
-
-            AlternativesList.ItemsSource = alternativesItems;
-
+            SetQuestion("Hvilestilling", new List<IdentifyAlternative> {alt1, alt2});
 
 
             // Add items for results
@@ -99,6 +85,22 @@ namespace NbicDragonflies.Views {
             });
 
             ResultsList.ItemsSource = resultsItems;
+        }
+
+        private void SetQuestion(string title, List<IdentifyAlternative> alternatives)
+        {
+            AlternativeCategory.Text = title;
+            StackLayout.Children.Clear();
+            foreach (var alternative in alternatives)
+            {
+                IdentifyAlternativeView alternativeView = new IdentifyAlternativeView(alternative);
+                StackLayout.Children.Add(alternativeView);
+            }
+        }
+
+        private void HandleAlternativeTap(object sender, EventArgs e)
+        {
+            
         }
     }
 }

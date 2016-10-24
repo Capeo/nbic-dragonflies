@@ -5,21 +5,15 @@
              Title="Identify Species Page">
   <TabbedPage.Children >
     <ContentPage Title="Sporsmal">
-      <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="False">
-          <Frame.Content>
-            <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-              <Label x:Name="PropertyTitle" Text="Hvilestilling"/>
-              <ListView x:Name="AlternativesList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
-                <ListView.ItemTemplate>
-                  <DataTemplate>
-                    <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
-                  </DataTemplate>
-                </ListView.ItemTemplate>
-              </ListView>
-            </StackLayout>
-          </Frame.Content>
-        </Frame>
+      <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Label x:Name="AlternativeCategory" FontSize="14" FontAttributes="Bold"/>
+        <ScrollView x:Name="ScrollView" Margin="10">
+          <StackLayout x:Name="StackLayout"/>
+        </ScrollView>
+        <StackLayout Orientation="Horizontal">
+          <Button x:Name="NextQuestion"/>
+          <Button x:Name="PreviousQuestion"></Button>
+        </StackLayout>
       </StackLayout>
     </ContentPage>
     <ContentPage Title="Resultater">

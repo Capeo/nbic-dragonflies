@@ -8,7 +8,7 @@
         <Image x:Name="ImageContent" HorizontalOptions="FillAndExpand"/>
         <Label x:Name="Owner" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
         <Label x:Name="Date" HorizontalOptions="FillAndExpand" TextColor="Black"/>
-		<Label x:Name="License" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+		    <Label x:Name="License" HorizontalOptions="FillAndExpand" TextColor="Black"/>
       </StackLayout>
     </Frame.Content>
   </Frame>
