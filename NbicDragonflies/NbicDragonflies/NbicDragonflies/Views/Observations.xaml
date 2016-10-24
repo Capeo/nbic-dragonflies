@@ -5,7 +5,7 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             x:Class="NbicDragonflies.Views.Observation"
+             x:Class="NbicDragonflies.Views.Observations"
              Title="{x:Static resources:LanguageResource.ObservationsLabel}"
              BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children >

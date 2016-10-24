@@ -44,7 +44,7 @@
     <Compile Include="Models\AlternativeItem.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
     <Compile Include="Models\Taxon.cs" />
-    <Compile Include="Models\ObservationList.cs" />
+    <Compile Include="Models\Observation.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
@@ -77,8 +77,8 @@
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Observation.xaml.cs">
-      <DependentUpon>Observation.xaml</DependentUpon>
+    <Compile Include="Views\Observations.xaml.cs">
+      <DependentUpon>Observations.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ObservationList.xaml.cs">
       <DependentUpon>ObservationList.xaml</DependentUpon>
@@ -189,7 +189,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Observation.xaml">
+    <EmbeddedResource Include="Views\Observations.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

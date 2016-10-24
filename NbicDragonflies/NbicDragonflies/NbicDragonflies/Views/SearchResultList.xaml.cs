@@ -13,14 +13,15 @@ namespace NbicDragonflies.Views
     public partial class SearchResultList : ContentPage
     {
         public GestureRecognizer ResultTap;
+
         public async void OnSearchButtonPressed(object sender, EventArgs e)
         {
-            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
-            List<SearchResultItem> searchResultsResponse = await applicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
+            List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
             List<string> searchResults = searchResultsResponse[0].ScientificName;
 
             await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text, searchResults));
         }
+
         public void OnResultButtonPressed(object sender, EventArgs e)
         {
                 SpeciesInfo speciesInfoView = new SpeciesInfo(new Species());
@@ -28,6 +29,7 @@ namespace NbicDragonflies.Views
 
                 Navigation.PushAsync(speciesInfoView);
         }
+
         public SearchResultList(string searchText, List<String> searchResults)
         {
             InitializeComponent();
