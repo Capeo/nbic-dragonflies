@@ -45,7 +45,7 @@ namespace NbicDragonflies.Views {
             RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
 
 
-            SetInfo("Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et interdum ipsum.", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Sympetrum_flaveolum_-_side_%28aka%29.jpg/1920px-Sympetrum_flaveolum_-_side_%28aka%29.jpg");
+            SetInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg");
 
             // Add items to RecentObservations list
             FillRecentObservationsList();            
