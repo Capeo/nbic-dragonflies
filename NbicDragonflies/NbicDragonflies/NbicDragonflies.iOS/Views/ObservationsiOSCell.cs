@@ -13,36 +13,36 @@ namespace NbicDragonflies.iOS.Views {
         public ObservationsiOSCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
             SelectionStyle = UITableViewCellSelectionStyle.Gray;
-            
-            ContentView.BackgroundColor = UIColor.FromRGB(255, 255, 255);
+
+			ContentView.BackgroundColor = UIColor.White;
             
             imageView = new UIImageView();
-            
-            topLabel = new UILabel()
-            {
-                Font = UIFont.FromName("Helvetica", 12f),
-                TextColor = UIColor.FromRGB(0, 0, 0),
+
+			topLabel = new UILabel()
+			{
+				Font = UIFont.FromName("Helvetica", 18f),
+				TextColor = UIColor.Black,
                 BackgroundColor = UIColor.Clear
             };
 
-            midFirstLabel = new UILabel()
-            {
-                Font = UIFont.FromName("Helvetica", 12f),
-                TextColor = UIColor.FromRGB(38, 127, 0),
+			midFirstLabel = new UILabel()
+			{
+				Font = UIFont.FromName("Helvetica", 12f),
+				TextColor = UIColor.Black,
                 BackgroundColor = UIColor.Clear
             };
 
             midSecondLabel = new UILabel()
             {
                 Font = UIFont.FromName("Helvetica", 12f),
-                TextColor = UIColor.FromRGB(38, 127, 0),
+				TextColor = UIColor.Black,
                 BackgroundColor = UIColor.Clear
             };
 
             bottomLabel = new UILabel()
             {
                 Font = UIFont.FromName("Helvetica", 12f),
-                TextColor = UIColor.FromRGB(38, 127, 0),
+				TextColor = UIColor.Black,
                 BackgroundColor = UIColor.Clear
             };
 
@@ -67,9 +67,12 @@ namespace NbicDragonflies.iOS.Views {
         public override void LayoutSubviews () {
    			base.LayoutSubviews ();
 
-   			topLabel.Frame = new CoreGraphics.CGRect (5, 4, ContentView.Bounds.Width - 63, 25);
-   			midFirstLabel.Frame = new CoreGraphics.CGRect (100, 18, 100, 20);
-   			imageView.Frame = new CoreGraphics.CGRect (ContentView.Bounds.Width - 63, 5, 33, 33);
+   			topLabel.Frame = new CoreGraphics.CGRect (5, 4, ContentView.Bounds.Width, 20);
+			midFirstLabel.Frame = new CoreGraphics.CGRect (5, 18, ContentView.Bounds.Width, 20);
+			midSecondLabel.Frame = new CoreGraphics.CGRect(5, 36, ContentView.Bounds.Width, 40);
+			bottomLabel.Frame = new CoreGraphics.CGRect(5, 54, ContentView.Bounds.Width, 40);
+   			imageView.Frame = new CoreGraphics.CGRect (ContentView.Bounds.Width - 63, 5, ContentView.Bounds.Width, 33);
+			Console.WriteLine("Bounds width: " + ContentView.Bounds.Width);
  		}
     }
 }
