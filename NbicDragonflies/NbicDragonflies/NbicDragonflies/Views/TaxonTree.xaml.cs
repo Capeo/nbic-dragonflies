@@ -11,40 +11,41 @@ namespace NbicDragonflies.Views {
     public partial class TaxonTree : ContentPage
     {
 
-        private ApplicationDataManager applicationDataManager;
-
         private int offset = 15;
 
         public TaxonTree() {
             InitializeComponent();
-
-            applicationDataManager = new ApplicationDataManager(new RestService());
 
             CreateInitialTaxons(107, "order");
         }
 
         public async void CreateInitialTaxons(int rootScientificNameId, string taxonRank)
         {
-            Taxon root = await applicationDataManager.GetTaxon(rootScientificNameId);
-            root.taxonRank = taxonRank;
+            Taxon root = await ApplicationDataManager.GetTaxon(rootScientificNameId);
 
-            List<Taxon> children = await applicationDataManager.GetTaxonsFromHigherClassification(root);
-
-            TaxonButton rootButton = new TaxonButton(root, 0);
-            rootButton.SwitchState();
-            rootButton.NavigationTap.Tapped += HandleNavigationClick;
-            rootButton.InfoTap.Tapped += HandleInfoClick;
-            TaxonLayout.Children.Add(rootButton);
-
-            foreach (var taxon in children)
+            if(root != null) 
             {
-                TaxonButton button = new TaxonButton(taxon, 1);
-                rootButton.Children.Add(button);
-                button.NavigationTap.Tapped += HandleNavigationClick;
-                button.InfoTap.Tapped += HandleInfoClick;
-                button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
-                TaxonLayout.Children.Add(button);
+                root.taxonRank = taxonRank;
+
+                List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(root);
+
+                TaxonButton rootButton = new TaxonButton(root, 0);
+                rootButton.SwitchState();
+                rootButton.NavigationTap.Tapped += HandleNavigationClick;
+                rootButton.InfoTap.Tapped += HandleInfoClick;
+                TaxonLayout.Children.Add(rootButton);
+
+                foreach (var taxon in children)
+                {
+                    TaxonButton button = new TaxonButton(taxon, 1);
+                    rootButton.Children.Add(button);
+                    button.NavigationTap.Tapped += HandleNavigationClick;
+                    button.InfoTap.Tapped += HandleInfoClick;
+                    button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
+                    TaxonLayout.Children.Add(button);
+                }
             }
+            
         }
 
         // Handle tap on navigation part of TaxonButton
@@ -73,7 +74,7 @@ namespace NbicDragonflies.Views {
                         }
                         else
                         {
-                            List<Taxon> children = await applicationDataManager.GetTaxonsFromHigherClassification(parentTaxon);
+                            List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(parentTaxon);
                             foreach (var taxon in children) {
                                 TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
                                 parent.Children.Add(button);

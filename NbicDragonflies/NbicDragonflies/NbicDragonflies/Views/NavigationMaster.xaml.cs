@@ -39,7 +39,7 @@ namespace NbicDragonflies.Views {
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.ObservationsLabel,
                 IconSource = "observations.png",
-                TargetType = typeof(Observation)
+                TargetType = typeof(Observations)
             });
 
             navigationPageItems.Add(new NavigationListItem {
