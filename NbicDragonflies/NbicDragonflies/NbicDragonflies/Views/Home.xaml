@@ -7,7 +7,7 @@
              Title="Hjem"
              Padding="0">
   <ContentPage.Content>
-    <StackLayout x:Name="HomeLayout" Spacing="0">
+    <StackLayout x:Name="HomeLayout" Spacing="0" BackgroundColor="{x:Static utility:Constants.NbicBackground}">
       <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicOrange}" HeightRequest="60" HorizontalOptions="FillAndExpand">
         <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
@@ -17,20 +17,15 @@
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="false">
-              <Frame.Content>
-                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
+
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="10,10,10,20" HeightRequest="150" BackgroundColor="White">
                   <Label x:Name="InfoTitle" />
                   <Label x:Name="InfoText" />
                   <Image x:Name="InfoImage" />
                 </RelativeLayout>
-              </Frame.Content>
-            </Frame>
-            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
-              <Frame.Content>
-                <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                  <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner:"/>
-                  <ListView x:Name="RecentObservationsList">
+                <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.NbicBrown}" Margin="10,0,10,0">
+                  <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner" TextColor="White" FontSize="20" Margin="15,15,0,0" HeightRequest="35"/>
+                  <ListView x:Name="RecentObservationsList" BackgroundColor="White">
                     <ListView.ItemTemplate>
                       <DataTemplate>
                         <listItems:ObservationsCell Species="{Binding Species}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
@@ -38,8 +33,6 @@
                     </ListView.ItemTemplate>
                   </ListView>
                 </StackLayout>
-              </Frame.Content>
-            </Frame>
           </StackLayout>
         </ScrollView.Content>
       </ScrollView>
