@@ -11,5 +11,6 @@ namespace NbicDragonflies.Data
     {
         Task<string> FetchTaxonsAsync (string urlSuffix);
         Task<string> FetchObservationsAsync(string urlSuffix);
+        Task<string> FetchSearchResultsAsync(string urlSuffix);
     }
 }

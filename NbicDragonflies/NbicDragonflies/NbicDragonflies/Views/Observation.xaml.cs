@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-
+using Xamarin.Forms.Maps;
 
 namespace NbicDragonflies.Views
 {
@@ -17,6 +17,7 @@ namespace NbicDragonflies.Views
         public Observation()
         {
             InitializeComponent();
+            ObservationsMap.MoveToRegion(MapSpan.FromCenterAndRadius( new Position(63.487164718, 9.839663308), Distance.FromMiles(400)));
         }
     }
 }

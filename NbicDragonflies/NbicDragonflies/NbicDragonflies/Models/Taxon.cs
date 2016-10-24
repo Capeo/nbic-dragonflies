@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace NbicDragonflies.Models
 {
     public class Taxon {
-        public object _ { get; set; }
         public string Id { get; set; }
         public int scientificNameID { get; set; }
         public int taxonID { get; set; }
@@ -32,10 +31,35 @@ namespace NbicDragonflies.Models
             this.taxonRank = taxonRank;
         }
 
+
 		public Taxon(int taxonID)
 		{
 			taxonID = taxonID;
 		}
+
+        // Returns the vernacular name of the taxon for the current langauge. If not found, the first scientific name is returned.
+        public string GetPreferredName()
+        {
+            string ret = "";
+            if (vernacularNames != null && vernacularNames.Count > 0)
+            {
+                VernacularName vName = vernacularNames.Where(name => Utility.Language.CompareToCurrent(name.language)).ToList().FirstOrDefault();
+                if (vName != null)
+                {
+                    ret = vName.vernacularName;
+                }
+            }
+            if (ret == "" && scientificNames != null && scientificNames.Count > 0)
+            {
+                ScientificName sName = scientificNames.FirstOrDefault();
+                if (sName != null)
+                {
+                    ret = sName.scientificName;
+                }
+            }
+            return ret; 
+        }
+
     }
 
     public class ScientificName {

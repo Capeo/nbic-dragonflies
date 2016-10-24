@@ -9,8 +9,17 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views {
     public partial class Navigation : MasterDetailPage {
 
+        private ToolbarItem LanguageButton { get; }
+
+        private Type CurrentDetailType { get; set; }
+
         public Navigation() {
             InitializeComponent();
+
+            LanguageButton = new ToolbarItem("", "UnitedKingdom.png", ChangeLanguage);
+            StartPage.ToolbarItems.Add(LanguageButton);
+
+            CurrentDetailType = typeof(Home);
 
             NavigationMaster.ListView.ItemSelected += OnItemSelected;
         }
@@ -21,12 +30,38 @@ namespace NbicDragonflies.Views {
             var item = e.SelectedItem as NavigationListItem;
             if (item != null)
             {
-                NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                page.BarBackgroundColor = Utility.Constants.NbicBrown;
-                Detail = page;
+                CurrentDetailType = item.TargetType;
+                Detail = NewDetailPage(CurrentDetailType);
                 NavigationMaster.ListView.SelectedItem = null;
                 IsPresented = false;
             }
+        }
+
+        private NavigationPage NewDetailPage(Type type)
+        {
+            NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(type));
+            page.BarBackgroundColor = Utility.Constants.NbicOrange;
+            page.ToolbarItems.Add(LanguageButton);
+            return page;
+        }
+
+        // Change language of app and icon
+        void ChangeLanguage()
+        {
+            Utility.Language.Languages l = Utility.Language.SwitchLanguage();
+            if (l == Utility.Language.Languages.En)
+            {
+                LanguageButton.Icon.File = "Norway.png";
+            }
+            else
+            {
+                LanguageButton.Icon.File = "UnitedKingdom.png";
+            }
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                this.NavigationMaster.ReDrawNavigationList();
+                Detail = NewDetailPage(CurrentDetailType);
+            });
         }
     }
 }

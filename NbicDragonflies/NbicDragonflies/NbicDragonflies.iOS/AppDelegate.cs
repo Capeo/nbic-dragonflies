@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using CoreGraphics;
 
 namespace NbicDragonflies.iOS {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -18,8 +19,13 @@ namespace NbicDragonflies.iOS {
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
+
+		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
+	
+			UINavigationBar.Appearance.TintColor = UIColor.White;
+			UISearchBar.Appearance.BarTintColor = UIColor.Black;
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.FormsMaps.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

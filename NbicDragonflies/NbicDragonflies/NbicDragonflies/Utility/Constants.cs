@@ -10,7 +10,7 @@ namespace NbicDragonflies.Utility {
     {
 
         // Colors taken from NBIC webpage
-        public static readonly Color NbicBrown = Color.FromHex("4f453e");
+        public static readonly Color NbicBrown = Color.FromHex("4a4846");
         public static readonly Color NbicOrange = Color.FromHex("e86c19");
 
         // Hierarchy of orders

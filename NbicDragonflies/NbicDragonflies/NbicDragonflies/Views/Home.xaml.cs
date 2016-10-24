@@ -12,15 +12,23 @@ namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
 
         public ListView ListView { get { return RecentObservationsList; } }
-         
+        public async void OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
+            List<SearchResultItem> searchResultsResponse= await applicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
+            List<string> searchResults=new List<string>();
+            if (searchResultsResponse.Capacity!=0)
+            {
+                searchResults= searchResultsResponse[0].ScientificName;
+            }
+            
+            await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text,searchResults));
+        }
+
         public Home()
         {
             InitializeComponent();
-
-            // Position Search Bar within layout 
-            AbsoluteLayout.SetLayoutBounds(SearchBar, new Rectangle(.5, 0, -1, -1));
-            AbsoluteLayout.SetLayoutFlags(SearchBar, AbsoluteLayoutFlags.PositionProportional);
-            SearchLayout.Children.Add(SearchBar);
+            SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
 
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
@@ -54,6 +62,11 @@ namespace NbicDragonflies.Views {
 
             // Add items to RecentObservations list
             FillRecentObservationsList();            
+        }
+
+        private void SpeciesSearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public async void FillRecentObservationsList()
