@@ -16,7 +16,7 @@ namespace NbicDragonflies.Views {
         public Navigation() {
             InitializeComponent();
 
-            LanguageButton = new ToolbarItem("", "UnitedKingdom.png", ChangeLanguage);
+			LanguageButton = new ToolbarItem("", "UnitedKingdom.png", ChangeLanguage);
             StartPage.ToolbarItems.Add(LanguageButton);
 
             CurrentDetailType = typeof(Home);
