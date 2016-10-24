@@ -23,6 +23,10 @@ namespace NbicDragonflies.Models
         public AcceptedName AcceptedName { get; set; }
         public PreferredVernacularName PreferredVernacularName { get; set; }
 
+		public Taxon()
+		{
+		}
+
         public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank )
         {
             taxonID = taxonId;

@@ -35,9 +35,11 @@
 
 
 		</Grid>
-			<Button x:Name="NextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="Center"/>
+			<StackLayout Orientation="Horizontal">
+
 			<Button x:Name="PreviousPage" Text="Previous page" HorizontalOptions="Start" VerticalOptions="Center"/>
-				
+			<Button x:Name="NextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="Center"/>
+			</StackLayout>	
 		</StackLayout>	
 	</ContentPage.Content>
 </ContentPage>

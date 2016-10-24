@@ -98,7 +98,10 @@ namespace NbicDragonflies.Views
 			if (sender.GetType() == typeof(Button))
 			{
 				System.Diagnostics.Debug.WriteLine("New Page");
-				IncreaseGalleryImages();	
+				if (IndexCounter < ImageList.Count)
+				{
+					IncreaseGalleryImages();
+				}
 			}
 		}
 
@@ -109,7 +112,10 @@ namespace NbicDragonflies.Views
 			if (sender.GetType() == typeof(Button))
 			{
 				System.Diagnostics.Debug.WriteLine("Previous Page");
-				DecreaseGalleryImages();
+				if (IndexCounter > 0)
+				{
+					DecreaseGalleryImages();
+				}
 			}
 		}
 
