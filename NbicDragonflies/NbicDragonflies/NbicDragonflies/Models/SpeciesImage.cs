@@ -19,6 +19,11 @@ namespace NbicDragonflies.Models {
 		public string Description { get; set; }
 		public List<Taxon> Taxons { get; set; }
 
+	    public SpeciesImage()
+	    {
+	        
+	    }
+
 		public SpeciesImage(string ImageSource, string SpeciesName, string Owner, string Caption, string License, string Description, List<Taxon> Taxons)
 		{
 			this.ImageSource = ImageSource;

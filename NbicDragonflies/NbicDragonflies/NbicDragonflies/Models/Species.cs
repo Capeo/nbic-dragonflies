@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace NbicDragonflies.Models {
     public class Species {
 
+        // Taxon 
+        public Taxon Taxon { get; set; }
+
         // Header image of the species
         public SpeciesImage TopImage { get; set; }
 
@@ -32,6 +35,7 @@ namespace NbicDragonflies.Models {
 
 		public Species(Taxon taxon)
 		{
+		    Taxon = taxon;
 			CreatePlaceholderSpecies();
 		}
 
