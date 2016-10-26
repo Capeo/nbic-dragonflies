@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NbicDragonflies.Views.KeyQuestionView">
+  <ContentView.Content>
+    <StackLayout>
+      <Label x:Name="AlternativeCategory" FontSize="14" FontAttributes="Bold"/>
+      <ScrollView x:Name="ScrollView" Margin="10">
+        <StackLayout x:Name="StackLayout"/>
+      </ScrollView>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

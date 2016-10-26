@@ -2,21 +2,18 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.Identify"
+             xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
              Title="Identify Species Page">
   <TabbedPage.Children >
-    <ContentPage Title="Sporsmal">
-      <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Label x:Name="AlternativeCategory" FontSize="14" FontAttributes="Bold"/>
-        <ScrollView x:Name="ScrollView" Margin="10">
-          <StackLayout x:Name="StackLayout"/>
-        </ScrollView>
-        <StackLayout Orientation="Horizontal">
-          <Button x:Name="NextQuestion"/>
-          <Button x:Name="PreviousQuestion"></Button>
+    <ContentPage x:Name="QuestionTab" Title="Sporsmal">
+      <StackLayout x:Name="QuestionsLayout" Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+          <Button x:Name="NextQuestion" Text="Next" HorizontalOptions="End" VerticalOptions="Center"/>
+          <Button x:Name="PreviousQuestion" Text="Previous" HorizontalOptions="Start" VerticalOptions="Center"/>
         </StackLayout>
       </StackLayout>
     </ContentPage>
-    <ContentPage Title="Resultater">
+    <ContentPage x:Name="ResultsTab" Title="Resultater">
       <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
           <Frame.Content>

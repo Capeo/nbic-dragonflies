@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 namespace NbicDragonflies.Models
 {
 
-    class ResultItem
+    public class KeySuggestion
     {
         public string ImageSource { get; set; }
         public string Text { get; set; }

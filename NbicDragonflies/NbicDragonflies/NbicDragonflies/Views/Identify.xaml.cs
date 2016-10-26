@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Controllers;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
 
@@ -11,96 +12,53 @@ namespace NbicDragonflies.Views {
 
         public ListView ListView1 { get { return ResultsList; } }
 
-        public Identify()
+        private IKeyController _controller;
+
+        private bool _previousQuestion;
+
+        public Identify(IKeyController controller)
         {
             InitializeComponent();
 
-            // Add alternatives
+            _controller = controller;
 
-            IdentifyAlternative alt1 = new IdentifyAlternative("Vingene legges helt eller delvis bakover langs kroppen i hvile.", "hvilestilling1.png");
+            _previousQuestion = false;
 
-            IdentifyAlternative alt2 = new IdentifyAlternative("Vingene står vinkelrett ut fra kroppen i hvile.", "hvilestilling2.png");
+            SetQuestion(_controller.NextQuestion());
 
-            SetQuestion("Hvilestilling", new List<IdentifyAlternative> {alt1, alt2});
-
-
-            // Add items for results
-
-            var resultsItems = new List<ResultItem>();
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 1",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 2",
-                Detail = "Something latin", 
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 3",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 4",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 5",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 6",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 7",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            ResultsList.ItemsSource = resultsItems;
+            ResultsList.ItemsSource = _controller.GetSuggestions();
         }
 
-        private void SetQuestion(string title, List<IdentifyAlternative> alternatives)
+        public void SetController(IKeyController controller)
         {
-            AlternativeCategory.Text = title;
-            StackLayout.Children.Clear();
-            foreach (var alternative in alternatives)
+            _controller = controller;
+        }
+
+        private void SetQuestion(KeyQuestion question)
+        {
+            KeyQuestionView view = new KeyQuestionView(question);
+            foreach (var alternative in view.Alternatives)
             {
-                IdentifyAlternativeView alternativeView = new IdentifyAlternativeView(alternative);
-                StackLayout.Children.Add(alternativeView);
+                alternative.AlternativeTap.Tapped += HandleAlternativeTap;
             }
+            QuestionsLayout.Children.Insert(0, view);
+
+            NextQuestion.IsEnabled = _controller.HasNextQuestion();
+            PreviousQuestion.IsEnabled = _previousQuestion;
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)
         {
-            
+            // Send alternative
+            if (_controller.HasNextQuestion())
+            {
+                _previousQuestion = true;
+                SetQuestion(_controller.NextQuestion());
+            }
+            else
+            {
+                this.CurrentPage = ResultsTab;
+            }
         }
     }
 }

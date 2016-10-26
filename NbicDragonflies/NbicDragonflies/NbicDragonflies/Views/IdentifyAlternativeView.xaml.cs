@@ -23,6 +23,9 @@ namespace NbicDragonflies.Views {
         {
             InitializeComponent();
 
+            AlternativeTap = new TapGestureRecognizer();
+            Frame.GestureRecognizers.Add(AlternativeTap);
+
             Image.Source = alternative.Image;
             Text.Text = alternative.Text;
         }
