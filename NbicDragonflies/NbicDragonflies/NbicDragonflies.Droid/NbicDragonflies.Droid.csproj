@@ -144,12 +144,16 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\observations_xxhdpi.png" />
     <AndroidResource Include="Resources\drawable\drawer_dragonfly.png" />
     <AndroidResource Include="Resources\drawable\artsdatabanken_trans.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Info.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />
   </ItemGroup>
   <ItemGroup>

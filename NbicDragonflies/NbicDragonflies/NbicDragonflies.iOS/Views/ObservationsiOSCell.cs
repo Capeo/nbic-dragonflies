@@ -68,9 +68,9 @@ namespace NbicDragonflies.iOS.Views {
    			base.LayoutSubviews ();
 
    			topLabel.Frame = new CoreGraphics.CGRect (5, 4, ContentView.Bounds.Width, 20);
-			midFirstLabel.Frame = new CoreGraphics.CGRect (5, 18, ContentView.Bounds.Width, 20);
+			midFirstLabel.Frame = new CoreGraphics.CGRect (5, 20, ContentView.Bounds.Width, 20);
 			midSecondLabel.Frame = new CoreGraphics.CGRect(5, 36, ContentView.Bounds.Width, 40);
-			bottomLabel.Frame = new CoreGraphics.CGRect(5, 54, ContentView.Bounds.Width, 40);
+			bottomLabel.Frame = new CoreGraphics.CGRect(5, 52, ContentView.Bounds.Width, 40);
    			imageView.Frame = new CoreGraphics.CGRect (ContentView.Bounds.Width - 63, 5, ContentView.Bounds.Width, 33);
 			Console.WriteLine("Bounds width: " + ContentView.Bounds.Width);
  		}

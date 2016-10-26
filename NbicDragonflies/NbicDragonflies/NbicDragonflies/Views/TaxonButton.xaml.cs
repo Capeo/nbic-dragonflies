@@ -53,7 +53,9 @@ namespace NbicDragonflies.Views {
                 Icon.Aspect = Aspect.AspectFit;
                 Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
             }
-            
+
+            Info.Source = ImageSource.FromFile("Info.png");
+
             Children = new List<TaxonButton>();
 
         }

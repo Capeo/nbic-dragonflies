@@ -101,28 +101,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-    <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
-    <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\dragonfly1.jpg" />
     <BundleResource Include="Resources\dragonfly2.jpg" />
     <BundleResource Include="Resources\artsdatabanken.png" />
-    <BundleResource Include="Resources\ic_home.png" />
-    <BundleResource Include="Resources\ic_home%402x.png" />
-    <BundleResource Include="Resources\ic_home%403x.png" />
     <BundleResource Include="Resources\arter.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\gallery.png" />
@@ -131,6 +113,12 @@
     <BundleResource Include="Resources\hamburger.png" />
     <BundleResource Include="Resources\drawer_dragonfly.png" />
     <BundleResource Include="Resources\artsdatabanken_trans.png" />
+    <BundleResource Include="Resources\Info.png" />
+    <BundleResource Include="Resources\Default_750-1334.png" />
+    <BundleResource Include="Resources\Default_1536-2048.png" />
+    <BundleResource Include="Resources\Default_320-480.png" />
+    <BundleResource Include="Resources\Default_640-960.png" />
+    <BundleResource Include="Resources\Default_640-1136.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -189,6 +177,28 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_keyboard_arrow_right%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-57x57%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_640-1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_640-960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_320-480.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_1242-2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_750-1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_768-1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_1536-2048.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
