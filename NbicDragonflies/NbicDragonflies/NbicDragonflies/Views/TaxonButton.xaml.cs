@@ -11,9 +11,9 @@ namespace NbicDragonflies.Views {
     public partial class TaxonButton : ContentView
     {
 
-        private TaxonItem _taxon;
+        private Taxon _taxon;
 
-        public TaxonItem Taxon
+        public Taxon Taxon
         {
             get { return _taxon; }
             set
@@ -30,9 +30,11 @@ namespace NbicDragonflies.Views {
 
         public int Level { get; set; }
 
-        public List<TaxonButton> Subclasses { get; set; }
+        public List<TaxonButton> Children { get; set; }
 
-        public TaxonButton(TaxonItem taxon, int level)
+        public string Name { get; set; }
+
+        public TaxonButton(Taxon taxon, int level)
         {
             InitializeComponent();
 
@@ -46,19 +48,28 @@ namespace NbicDragonflies.Views {
             InfoFrame.GestureRecognizers.Add(InfoTap);
 
             Open = false;
-            if (Taxon.taxonRank != Utility.Constants.order.ElementAt(Utility.Constants.order.Count - 1))
+            if (Taxon.taxonRank != Utility.Constants.TaxonRanks.ElementAt(Utility.Constants.TaxonRanks.Count - 1))
             {
                 Icon.Aspect = Aspect.AspectFit;
                 Icon.Source = ImageSource.FromFile("ic_keyboard_arrow_right.png");
             }
             
-            Subclasses = new List<TaxonButton>();
+            Children = new List<TaxonButton>();
 
         }
 
-        private void SetTaxon(TaxonItem taxon)
+        private void SetTaxon(Taxon taxon)
         {
-            Name.Text = taxon.scientificName;
+            NameLabel.Text = CapitalizeFirstLetter(taxon.GetPreferredName());
+        }
+
+        private string CapitalizeFirstLetter(string str)
+        {
+            if (str.Length >= 1)
+            {
+                return str.Substring(0, 1).ToUpper() + str.Substring(1);
+            }
+            return str;
         }
 
         public void SwitchState()

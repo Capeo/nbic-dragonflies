@@ -18,8 +18,17 @@ namespace NbicDragonflies.iOS {
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
+
+		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
+
+			UINavigationBar.Appearance.TintColor = UIColor.White;
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+			{
+				TextColor = UIColor.White
+			});
+			UISearchBar.Appearance.TintColor = UIColor.DarkGray;
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.FormsMaps.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

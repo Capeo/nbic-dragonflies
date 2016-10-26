@@ -40,17 +40,6 @@ namespace NbicDragonflies.Data
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
 
-            /*
-            // Get TaxonID and ScientificName from json
-            int taxonId = Items["taxonID"];
-            JsonValue scientificNames = json["scientificNames"];
-            int scientificNameID = scientificNames["scientificNameID"];
-
-            TaxonItem taxon = new TaxonItem(taxonId, scientificNameID);
-
-            Items.Add(taxon);
-            */
-
             return "";
         }
 
@@ -76,6 +65,28 @@ namespace NbicDragonflies.Data
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return "";
+        }
+
+        public async Task<string> FetchSearchResultsAsync(string searchText)
+        {
+            var client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var address = Constants.SearchUrl + $"{searchText}";
+
+            try
+            {
+                var response = await client.GetAsync(address);
+                if (response.IsSuccessStatusCode)
+                {
+                    return response.Content.ReadAsStringAsync().Result;
+                }
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(@"				ERROR {0}", e.Message);
             }
             return "";
         }

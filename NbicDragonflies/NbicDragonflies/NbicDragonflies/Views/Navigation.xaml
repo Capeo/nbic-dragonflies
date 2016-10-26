@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
@@ -8,7 +8,7 @@
         <views:NavigationMaster x:Name="NavigationMaster" Padding="0" HeightRequest="100"/>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
-    <NavigationPage BarBackgroundColor="{x:Static utility:Constants.NbicBrown}">
+    <NavigationPage x:Name="StartPage" BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
       <x:Arguments>
         <views:Home/>
       </x:Arguments>

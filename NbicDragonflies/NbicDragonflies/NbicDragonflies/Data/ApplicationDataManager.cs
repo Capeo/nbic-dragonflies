@@ -5,82 +5,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
-using NbicDragonflies.Helpers;
 using Newtonsoft.Json;
 
 namespace NbicDragonflies.Data
 {
-    public class ApplicationDataManager
+    public static class ApplicationDataManager
     {
-        IRestService restService;
+        private static IRestService restService = new RestService();
 
-        public ApplicationDataManager (IRestService service)
-        {
-            restService = service;
-
-        }
-
-        public async Task<ObservationList> GetObservationListAsync (string urlSuffix)
+        public static async Task<ObservationList> GetObservationListAsync (string urlSuffix)
         {
             string observationsJson = await restService.FetchObservationsAsync(urlSuffix);
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
-        // Call this method to get the list of data retrieved from RefreshDataAsync
-        public async Task<string> GetTaxonsJsonAsync (string urlSuffix)
+        public static async Task<List<SearchResultItem>> GetSearchResultAsync(string searchText)
         {
-            var taxonsJson = await restService.FetchTaxonsAsync (urlSuffix);
-            Debug.WriteLine(taxonsJson);
-
-            return taxonsJson;
+            string searchResult = await restService.FetchSearchResultsAsync(searchText);
+            return JsonConvert.DeserializeObject<List<SearchResultItem>>(searchResult);
+        }
+        // Get a Taxon based on its scientificNameID
+        public static async Task<Taxon> GetTaxon(int scientificNameId)
+        {
+            String taxonJson = await restService.FetchTaxonsAsync($"Taxon/{scientificNameId}");
+            Taxon taxon = JsonConvert.DeserializeObject<Taxon>(taxonJson);
+            if(taxon != null) 
+            {
+                taxon.scientificNameID = scientificNameId;
+            }
+            return taxon;
         }
 
-        // Create Taxons from Json and return them
-        public async Task<List<TaxonItem>> GetTaxonsAsync (string urlSuffix)
+        // Get a list of sub-taxons from its direct higher classifications
+        public static async Task<List<Taxon>> GetTaxonsFromHigherClassification (Taxon higherClassification)
         {
-            String taxonsJson = await this.GetTaxonsJsonAsync (urlSuffix);
-
-            TaxonHelper taxonHelper = new TaxonHelper ();
-
-            List<TaxonItem> taxons = new List<TaxonItem>();
-
-            Boolean moreElements = false;
-            String currentJson = taxonsJson;
-
-            int prevElementIndex;
-            int elementIndex = taxonsJson.IndexOf("_");
-            if (elementIndex != -1)
+            int currentRankIndex = Utility.Constants.TaxonRanks.IndexOf(higherClassification.taxonRank);
+            if (currentRankIndex < Utility.Constants.TaxonRanks.Count)
             {
-                moreElements = true;
-                elementIndex += 1;
-            }
-
-            while (moreElements)
+                String taxonsJson = await restService.FetchTaxonsAsync($"Taxon/ScientificName?taxonRank={Utility.Constants.TaxonRanks.ElementAt(currentRankIndex + 1)}&higherClassificationID={higherClassification.scientificNameID}");
+                List<Taxon> taxons = JsonConvert.DeserializeObject<List<Taxon>>(taxonsJson);
+                foreach (var taxon in taxons)
             {
-                currentJson = currentJson.Substring(elementIndex);
-
-                TaxonItem taxon = taxonHelper.createTaxon(currentJson);
-                taxons.Add(taxon);
-
-                prevElementIndex = elementIndex;
-                elementIndex = currentJson.IndexOf("_");
-                if (elementIndex == -1)
-                {
-                    moreElements = false;
+                    await GetVernacularNames(taxon);
                 }
-                else
-                {
-                    elementIndex += 1;
+                return taxons;
                 }
+            return null;
             }
             
-            // Remove this loop if don't want to print the discovered taxons
-            foreach (TaxonItem taxon in taxons)
+        // Add vernacular names and accepted names to given Taxon
+        private static async Task GetVernacularNames(Taxon taxon)
             {
-                System.Diagnostics.Debug.WriteLine("ScientificNameID: " + taxon.scientificNameId + " TaxonID: " + taxon.taxonId + " ScientificName: " + taxon.scientificName);
+            String vernacularJson = await restService.FetchTaxonsAsync($"Taxon/{taxon.taxonID}");
+            VernacularTaxon vt = JsonConvert.DeserializeObject<VernacularTaxon>(vernacularJson);
+            if (vt != null)
+            {
+                taxon.scientificNames = vt.scientificNames;
+                taxon.vernacularNames = vt.vernacularNames;
+                taxon.PreferredVernacularName = vt.PreferredVernacularName;
+                taxon.AcceptedName = vt.AcceptedName; 
             }
-
-            return taxons;
         }
     }
 }
