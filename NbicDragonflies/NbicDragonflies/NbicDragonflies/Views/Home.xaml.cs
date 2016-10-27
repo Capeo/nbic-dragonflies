@@ -12,18 +12,6 @@ namespace NbicDragonflies.Views {
     public partial class Home : ContentPage {
 
         public ListView ListView { get { return RecentObservationsList; } }
-        public async void OnSearchButtonPressed(object sender, EventArgs e)
-        {
-            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
-            List<SearchResultItem> searchResultsResponse= await applicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
-            List<string> searchResults=new List<string>();
-            if (searchResultsResponse.Capacity!=0)
-            {
-                searchResults= searchResultsResponse[0].ScientificName;
-            }
-            
-            await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text,searchResults));
-        }
 
         public Home()
         {
@@ -57,8 +45,7 @@ namespace NbicDragonflies.Views {
             RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
 
 
-            SetInfo("Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et interdum ipsum.", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Sympetrum_flaveolum_-_side_%28aka%29.jpg/1920px-Sympetrum_flaveolum_-_side_%28aka%29.jpg");
-
+            SetInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg");
 
             // Add items to RecentObservations list
             FillRecentObservationsList();            
@@ -69,26 +56,37 @@ namespace NbicDragonflies.Views {
             throw new NotImplementedException();
         }
 
+        public async void OnSearchButtonPressed(object sender, EventArgs e) {
+            List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
+            List<string> searchResults = new List<string>();
+            if (searchResultsResponse.Capacity != 0) {
+                searchResults = searchResultsResponse[0].ScientificName;
+            }
+
+            await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text, searchResults));
+        }
+
         public async void FillRecentObservationsList()
         {
             //FIXME: refine url to filter nearest observations
-            ApplicationDataManager applicationDataManager = new ApplicationDataManager(new RestService());
-            Models.ObservationList recentObservationsList = await applicationDataManager.GetObservationListAsync("list");
-            var recentObservationsCells = new List<ObservationsCell>();
-            foreach (Models.Observation observation in recentObservationsList.Observations)
-            {
-                ObservationsCell cell = new ObservationsCell
+            Models.ObservationList recentObservationsList = await ApplicationDataManager.GetObservationListAsync("list");
+            if (recentObservationsList != null && recentObservationsList.Observations != null) {
+                var recentObservationsCells = new List<ObservationsCell>();
+                foreach (Models.Observation observation in recentObservationsList.Observations)
                 {
-                    Species = observation.Name == null ? observation.ScientificName : observation.Name + ", " + observation.ScientificName,
-                    Location = observation.GetLocationText(),
-                    Date = observation.CollctedDate,
-                    User = observation.Collector,
-                };
-                recentObservationsCells.Add(cell);
+                    ObservationsCell cell = new ObservationsCell
+                    {
+                        Species = observation.Name == null ? observation.ScientificName : observation.Name + ", " + observation.ScientificName,
+                        Location = observation.GetLocationText(),
+                        Date = observation.CollctedDate,
+                        User = observation.Collector,
+                    };
+                    recentObservationsCells.Add(cell);
+                }
+                RecentObservationsList.ItemsSource = recentObservationsCells;
             }
-            RecentObservationsList.ItemsSource = recentObservationsCells;
+            
         }
-
 
         public void SetInfo(string title, string text, string imageFilename)
         {

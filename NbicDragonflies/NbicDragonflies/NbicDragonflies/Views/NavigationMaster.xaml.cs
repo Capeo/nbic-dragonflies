@@ -26,31 +26,31 @@ namespace NbicDragonflies.Views {
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.HomeLabel,
-                IconSource = "hamburger.png",
+                IconSource = "home.png",
                 TargetType = typeof(Home)
             });
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.SpeciesLabel,
-                IconSource = "hamburger.png",
+                IconSource = "arter.png",
                 TargetType = typeof(TaxonTree)
             });
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.ObservationsLabel,
-                IconSource = "hamburger.png",
-                TargetType = typeof(Observation)
+                IconSource = "observations.png",
+                TargetType = typeof(Observations)
             });
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.GalleryLabel,
-                IconSource = "hamburger.png",
+                IconSource = "gallery.png",
                 TargetType = typeof(Gallery)
             });
 
             navigationPageItems.Add(new NavigationListItem {
                 Title = LanguageResource.IdentifyLabel,
-                IconSource = "hamburger.png",
+                IconSource = "identify.png",
                 TargetType = typeof(Identify)
             });
 

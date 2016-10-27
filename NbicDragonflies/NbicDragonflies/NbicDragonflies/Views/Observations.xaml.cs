@@ -12,9 +12,9 @@ using Xamarin.Forms.Maps;
 
 namespace NbicDragonflies.Views
 {
-    public partial class Observation : TabbedPage
+    public partial class Observations : TabbedPage
     {
-        public Observation()
+        public Observations()
         {
             InitializeComponent();
             ObservationsMap.MoveToRegion(MapSpan.FromCenterAndRadius( new Position(63.487164718, 9.839663308), Distance.FromMiles(400)));
