@@ -74,9 +74,12 @@ namespace NbicDragonflies.Views {
                 var recentObservationsCells = new List<ObservationsCell>();
                 foreach (Models.Observation observation in recentObservationsList.Observations)
                 {
+                    string name = observation.Name == null
+                        ? observation.ScientificName
+                        : observation.Name + ", " + observation.ScientificName;
                     ObservationsCell cell = new ObservationsCell
                     {
-                        Species = observation.Name == null ? observation.ScientificName : observation.Name + ", " + observation.ScientificName,
+                        Species = name,
                         Location = observation.GetLocationText(),
                         Date = observation.CollctedDate,
                         User = observation.Collector,
