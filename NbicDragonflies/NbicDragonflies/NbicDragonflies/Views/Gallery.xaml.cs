@@ -10,17 +10,23 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views
 {
+	/// <summary>
+	/// Contentpage - Gallery
+	/// </summary>
 	public partial class Gallery : ContentPage
 	{
 		public List<SpeciesImageView> Pages = new List<SpeciesImageView>();
 		private int _indexCounter = 0;
 	    private int _imagesCounter = 0;
 		public List<SpeciesImage> ImageList;
+		private IGalleryControllers _controller;
 
 
-		public Gallery()
+		public Gallery(IGalleryControllers controller)
 		{
 			InitializeComponent();
+
+			_controller = controller;
 
 			//All pages in the Grid
 			Pages.Add(p00);
@@ -38,10 +44,14 @@ namespace NbicDragonflies.Views
 			PreviousPage.Clicked += HandlePreviousPageClick;
 		    PreviousPage.IsEnabled = false;
 
-			SetGalleryImages(Placeholders.NewGalleryImages());
+			SetGalleryImages(controller.GetGalleryImages());
 
 		}
 
+		/// <summary>
+		/// Sets the gallery images from the beginning.
+		/// </summary>
+		/// <param name="galleryImages">Gallery images.</param>
 		public void SetGalleryImages(List<SpeciesImage> galleryImages)
 		{
 			ImageList = galleryImages;
@@ -62,6 +72,9 @@ namespace NbicDragonflies.Views
 		    _indexCounter += _imagesCounter;
 		}
 
+		/// <summary>
+		/// Set pictures in Gallery when pressing "Next page" button
+		/// </summary>
 		public void IncreaseGalleryImages()
 		{
 		    int elementCounter = 0;
@@ -82,6 +95,9 @@ namespace NbicDragonflies.Views
 		    _indexCounter += _imagesCounter;
 		}
 
+		/// <summary>
+		/// Set pictures in Gallery when pressing "Previous page" button
+		/// </summary>
 		public void DecreaseGalleryImages()
 		{
 		    int elementCounter = 8;
@@ -95,8 +111,12 @@ namespace NbicDragonflies.Views
 			    _imagesCounter++;
 			}
 		}
+		/// <summary>
+		/// Handle tap on image in Gallery
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 
-		// Handle tap on image in Gallery
 		public async void HandleImageClick(object sender, EventArgs e)
 		{
 			if (sender.GetType() == typeof(Frame))
@@ -106,7 +126,11 @@ namespace NbicDragonflies.Views
 			}
 		}
 
-		//Handle tap on "Next page" button
+		/// <summary>
+		/// Handles click on "Next page" button
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		public async void HandleNextPageClick(object sender, EventArgs e)
 		{
 			
@@ -124,7 +148,11 @@ namespace NbicDragonflies.Views
 			}
 		}
 
-		//Handle tap on "Previous page" button
+		/// <summary>
+		/// Handles click on "Previous page" button
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		public async void HandlePreviousPageClick(object sender, EventArgs e)
 		{
 
@@ -145,7 +173,11 @@ namespace NbicDragonflies.Views
 			}
 		}
 
-		// Returns the SpeciesImage view to which an element belongs
+		/// <summary>
+		/// Gets the ancestor - Returns the SpeciesImage view to which an element belongs
+		/// </summary>
+		/// <returns>The ancestor.</returns>
+		/// <param name="e">E.</param>
 		private SpeciesImageView GetAncestor(VisualElement e)
 		{
 			if (e != null)

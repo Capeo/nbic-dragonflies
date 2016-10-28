@@ -55,7 +55,10 @@ namespace NbicDragonflies.Views {
 			ImageContent.Aspect = Aspect.AspectFit;
 		}
 
-        // Fill view with content from image
+		/// <summary>
+		/// Fill view with content from image
+		/// </summary>
+		/// <param name="image">Image.</param>
         private void SetImage(SpeciesImage image)
         {
             ImageContent.Source = image.ImageSource;

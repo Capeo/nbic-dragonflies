@@ -4,13 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
-using Xamarin.Forms;
 
 namespace NbicDragonflies
 {
-	public class Placeholders
-	{
-		public static List<SpeciesImage> NewGalleryImages()
+	class PlaceholderGallery : IGalleryControllers {
+
+		private List<SpeciesImage> _galleryImages;
+
+		public PlaceholderGallery()
+		{
+			_galleryImages = new List<SpeciesImage>();
+
+
+		}
+
+		public List<SpeciesImage> GetGalleryImages()
 		{
 			//Examples of pictures in Gallery
 			List<SpeciesImage> list = new List<SpeciesImage> {
@@ -48,8 +56,8 @@ namespace NbicDragonflies
 				};
 			return list;
 		}
+
+
+
 	}
 }
-
-				
-

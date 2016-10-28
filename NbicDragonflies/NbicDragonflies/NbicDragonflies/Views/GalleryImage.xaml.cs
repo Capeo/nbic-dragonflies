@@ -6,6 +6,9 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies
 {
+	/// <summary>
+	/// Class shows content for each Image in Gallery.
+	/// </summary>
 	public partial class GalleryImage : ContentPage
 	{
 		public TapGestureRecognizer SpeciesTapped;
@@ -38,7 +41,11 @@ namespace NbicDragonflies
 			InitializeComponent();
 		}
 
-		// Handle tap on image in Gallery
+		/// <summary>
+		/// Handles click on SpeciesName
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		public async void HandleSpeciesClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Debug.WriteLine("Tapped");
@@ -51,8 +58,11 @@ namespace NbicDragonflies
 			}
 		}
 
-
-		// Returns the SpeciesInfo view to which an element belongs
+		/// <summary>
+		/// Returns the SpeciesImageView to which an element belongs
+		/// </summary>
+		/// <returns>The ancestor.</returns>
+		/// <param name="e">E.</param>
 		private SpeciesImageView GetAncestor(VisualElement e)
 		{
 			if (e != null)
