@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Utility\Constants.cs" />
     <Compile Include="Utility\Language.cs" />
+    <Compile Include="Utility\Utilities.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
       <DependentUpon>Gallery.xaml</DependentUpon>
     </Compile>
