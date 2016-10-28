@@ -10,9 +10,15 @@ namespace NbicDragonflies.Controllers {
     public interface IKeyController
     {
 
+        KeyQuestion CurrentQuestion();
+
         KeyQuestion NextQuestion();
 
+        KeyQuestion PreviousQuestion();
+
         bool HasNextQuestion();
+
+        bool HasPreviousQuestion();
 
         void SetAlternative(IdentifyAlternative alternative);
 

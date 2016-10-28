@@ -10,11 +10,7 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views {
     public partial class Identify : TabbedPage {
 
-        public ListView ListView1 { get { return ResultsList; } }
-
         private IKeyController _controller;
-
-        private bool _previousQuestion;
 
         public Identify(IKeyController controller)
         {
@@ -22,11 +18,11 @@ namespace NbicDragonflies.Views {
 
             _controller = controller;
 
-            _previousQuestion = false;
-
-            SetQuestion(_controller.NextQuestion());
-
+            SetQuestion(_controller.CurrentQuestion());
             ResultsList.ItemsSource = _controller.GetSuggestions();
+
+            NextQuestion.Clicked += NextButtonClicked;
+            PreviousQuestion.Clicked += PreviousButtonClicked;
         }
 
         public void SetController(IKeyController controller)
@@ -41,10 +37,11 @@ namespace NbicDragonflies.Views {
             {
                 alternative.AlternativeTap.Tapped += HandleAlternativeTap;
             }
+            QuestionsLayout.Children.Clear();
             QuestionsLayout.Children.Insert(0, view);
 
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
-            PreviousQuestion.IsEnabled = _previousQuestion;
+            PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)
@@ -52,7 +49,6 @@ namespace NbicDragonflies.Views {
             // Send alternative
             if (_controller.HasNextQuestion())
             {
-                _previousQuestion = true;
                 SetQuestion(_controller.NextQuestion());
             }
             else
@@ -60,5 +56,22 @@ namespace NbicDragonflies.Views {
                 this.CurrentPage = ResultsTab;
             }
         }
+
+        private void NextButtonClicked(object sender, EventArgs e)
+        {
+            if (_controller.HasNextQuestion()) 
+            {
+                SetQuestion(_controller.NextQuestion());
+            }
+        }
+
+        private void PreviousButtonClicked(object sender, EventArgs e)
+        {
+            if (_controller.HasPreviousQuestion())
+            {
+                SetQuestion(_controller.PreviousQuestion());
+            }
+        }
+
     }
 }

@@ -42,7 +42,7 @@ namespace NbicDragonflies.Views {
         {
             NavigationPage page;
             if (type == typeof(Identify)) {
-                page = new NavigationPage(new Identify(new Placeholder()));
+                page = new NavigationPage(new Identify(new PlaceholderKey()));
             }
             else {
                 page = new NavigationPage((Page)Activator.CreateInstance(type));

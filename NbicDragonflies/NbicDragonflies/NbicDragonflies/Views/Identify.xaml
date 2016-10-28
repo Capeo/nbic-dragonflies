@@ -7,7 +7,8 @@
              xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies">
   <TabbedPage.Children >
     <ContentPage x:Name="QuestionTab" Title="Sporsmal">
-      <StackLayout x:Name="QuestionsLayout" Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
           <Button x:Name="NextQuestion" Text="Next" HorizontalOptions="End" VerticalOptions="Center"/>
           <Button x:Name="PreviousQuestion" Text="Previous" HorizontalOptions="Start" VerticalOptions="Center"/>

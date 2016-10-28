@@ -12,6 +12,8 @@ namespace NbicDragonflies.Views {
 
         public TapGestureRecognizer AlternativeTap;
 
+        public IdentifyAlternative Alternative { get; set; }
+
         public IdentifyAlternativeView() {
             InitializeComponent();
 
