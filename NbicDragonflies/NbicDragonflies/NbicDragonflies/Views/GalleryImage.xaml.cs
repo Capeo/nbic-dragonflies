@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NbicDragonflies.Models;
 using NbicDragonflies.Views;
 using Xamarin.Forms;
+using NbicDragonflies.Resources;
 
 namespace NbicDragonflies
 {
@@ -20,12 +21,13 @@ namespace NbicDragonflies
 
 		    Title = image.SpeciesName;
 
+
 			BigImage.Source = image.ImageSource;
-			SpeciesName.Text = "Name of species: " + image.SpeciesName;
-			Photographer.Text = "Photographer: " + image.Owner;
-			Date.Text = "Captured: " + image.Date;
-			License.Text = "License: " + image.License;
-			SpeciesInformation.Text = "Description: " + image.Description;
+			SpeciesName.Text = LanguageResource.GalleryImageSpeciesLabel + ": " + image.SpeciesName;
+			Photographer.Text = LanguageResource.GalleryImagePhotographerLabel + ": " + image.Owner;
+			Date.Text = LanguageResource.GalleryImageDateLabel + ": " + image.Date;
+			License.Text = LanguageResource.GalleryImageLicenseLabel + ": " + image.License;
+			SpeciesInformation.Text = LanguageResource.GalleryImageDescriptionLabel + ": " + image.Description;
 			Taxons = image.Taxons;
 
 

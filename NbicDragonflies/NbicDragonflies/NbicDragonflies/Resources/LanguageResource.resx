@@ -157,4 +157,24 @@
     <value>Arter</value>
     <comment>Label for Species page</comment>
   </data>
+	<data name="GalleryImageSpeciesLabel" xml:space="preserve">
+    <value>Art</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="GalleryImagePhotographerLabel" xml:space="preserve">
+    <value>Fotograf</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="GalleryImageDateLabel" xml:space="preserve">
+    <value>Dato</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="GalleryImageLicenseLabel" xml:space="preserve">
+    <value>Lisens</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="GalleryImageDescriptionLabel" xml:space="preserve">
+    <value>Beskrivelse</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
 </root>
