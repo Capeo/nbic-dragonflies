@@ -9,37 +9,36 @@
 	<ContentPage.Content>
 	
 		<StackLayout>
+      
+		  <Grid>
+		    <Grid.RowDefinitions>
+		      <RowDefinition Height="1*"/>
+		      <RowDefinition Height="1*"/>
+			  <RowDefinition Height="1*" />
+		    </Grid.RowDefinitions>
+		    <Grid.ColumnDefinitions>
+		      <ColumnDefinition Width="1*" />
+		      <ColumnDefinition Width="1*" />
+			  <ColumnDefinition Width="1*" />
+		    </Grid.ColumnDefinitions>
 			
-		<Grid>
-		  <Grid.RowDefinitions>
-		    <RowDefinition Height="1*"/>
-		    <RowDefinition Height="1*"/>
-			<RowDefinition Height="1*" />
-		  </Grid.RowDefinitions>
-		  <Grid.ColumnDefinitions>
-		    <ColumnDefinition Width="1*" />
-		    <ColumnDefinition Width="1*" />
-			<ColumnDefinition Width="1*" />
-		  </Grid.ColumnDefinitions>
-			
+			  <views:SpeciesImageView x:Name="p00" Grid.Row="0" Grid.Column="0" />
+			  <views:SpeciesImageView x:Name="p01" Grid.Row="0" Grid.Column="1"/>
+			  <views:SpeciesImageView x:Name="p02" Grid.Row="0" Grid.Column="2"/>
+			  <views:SpeciesImageView x:Name="p10" Grid.Row="1" Grid.Column="0"/>
+   		  <views:SpeciesImageView x:Name="p11" Grid.Row="1" Grid.Column="1"/>
+			  <views:SpeciesImageView x:Name="p12" Grid.Row="1" Grid.Column="2"/>
+			  <views:SpeciesImageView x:Name="p20" Grid.Row="2" Grid.Column="0"/>
+			  <views:SpeciesImageView x:Name="p21" Grid.Row="2" Grid.Column="1"/>
+			  <views:SpeciesImageView x:Name="p22" Grid.Row="2" Grid.Column="2"/>
 
-			<views:SpeciesImageView x:Name="p00" Grid.Row="0" Grid.Column="0" />
-			<views:SpeciesImageView x:Name="p01" Grid.Row="0" Grid.Column="1"/>
-			<views:SpeciesImageView x:Name="p02" Grid.Row="0" Grid.Column="2"/>
-			<views:SpeciesImageView x:Name="p10" Grid.Row="1" Grid.Column="0"/>
-   			<views:SpeciesImageView x:Name="p11" Grid.Row="1" Grid.Column="1"/>
-			<views:SpeciesImageView x:Name="p12" Grid.Row="1" Grid.Column="2"/>
-			<views:SpeciesImageView x:Name="p20" Grid.Row="2" Grid.Column="0"/>
-			<views:SpeciesImageView x:Name="p21" Grid.Row="2" Grid.Column="1"/>
-			<views:SpeciesImageView x:Name="p22" Grid.Row="2" Grid.Column="2"/>
-
-
-		</Grid>
+		  </Grid>
+      
 			<StackLayout Orientation="Horizontal">
-
-			<Button x:Name="PreviousPage" Text="Previous page" HorizontalOptions="Start" VerticalOptions="Center"/>
-			<Button x:Name="NextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="Center"/>
+			  <Button x:Name="PreviousPage" Text="Previous page" HorizontalOptions="Start" VerticalOptions="Center"/>
+			  <Button x:Name="NextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="Center"/>
 			</StackLayout>	
+      
 		</StackLayout>	
 	</ContentPage.Content>
 </ContentPage>

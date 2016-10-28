@@ -44,6 +44,8 @@ namespace NbicDragonflies.Views {
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
         {
+            Title = species.Taxon.GetPreferredName();
+
             TopImage.Image = species.TopImage;
 
             foreach (var attribute in species.Attributes)

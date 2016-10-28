@@ -15,6 +15,8 @@ namespace NbicDragonflies
 		{
 			InitializeComponent();
 
+		    Title = image.SpeciesName;
+
 			BigImage.Source = image.ImageSource;
 			SpeciesName.Text = "Name of species: " + image.SpeciesName;
 			Photographer.Text = "Photographer: " + image.Owner;
@@ -27,13 +29,7 @@ namespace NbicDragonflies
 			SpeciesTapped = new TapGestureRecognizer();
 			SpeciesName.GestureRecognizers.Add(SpeciesTapped);
 
-			SpeciesTapped.Tapped += HandleSpeciesClick;
-
-
-
-
-
-
+		    SpeciesTapped.Tapped += HandleSpeciesClick;
 
 		}
 

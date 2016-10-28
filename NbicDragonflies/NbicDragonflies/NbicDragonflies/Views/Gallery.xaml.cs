@@ -13,8 +13,8 @@ namespace NbicDragonflies.Views
 	public partial class Gallery : ContentPage
 	{
 		public List<SpeciesImageView> Pages = new List<SpeciesImageView>();
-		public int IndexCounter = 0;
-		public int ElementCounter = 0;
+		private int _indexCounter = 0;
+	    private int _imagesCounter = 0;
 		public List<SpeciesImage> ImageList;
 
 
@@ -36,58 +36,73 @@ namespace NbicDragonflies.Views
 
 			NextPage.Clicked += HandleNextPageClick;
 			PreviousPage.Clicked += HandlePreviousPageClick;
+		    PreviousPage.IsEnabled = false;
 
 			SetGalleryImages(Placeholders.NewGalleryImages());
 
 		}
 
-		public void SetGalleryImages(List<SpeciesImage> GalleryImage)
+		public void SetGalleryImages(List<SpeciesImage> galleryImages)
 		{
-			ImageList = GalleryImage;
+			ImageList = galleryImages;
+		    _imagesCounter = 0;
 
 			for (int i = 0; i <= 8; i++)
 			{
-				IndexCounter++;
-				Pages.ElementAt(i).Image = ImageList[i];
-				Pages.ElementAt(i).GalleryTap.Tapped += HandleImageClick;
-			}
+			    if (i < ImageList.Count)
+			    {
+			        Pages.ElementAt(i).Image = ImageList[i];
+			        Pages.ElementAt(i).GalleryTap.Tapped += HandleImageClick;
+			        _imagesCounter++;
+			    }
+                else {
+                    Pages.ElementAt(i).Image = new SpeciesImage();
+                }
+            }
+		    _indexCounter += _imagesCounter;
 		}
 
 		public void IncreaseGalleryImages()
 		{
-			for (int i = IndexCounter; i <= IndexCounter + 8; i++)
+		    int elementCounter = 0;
+		    _imagesCounter = 0;
+			for (int i = _indexCounter; i <= _indexCounter + 8; i++)
 			{
-				Pages.ElementAt(ElementCounter).Image = ImageList[i];
-				Pages.ElementAt(ElementCounter).GalleryTap.Tapped += HandleImageClick;
-				ElementCounter++;
+			    if (i < ImageList.Count)
+			    {
+			        Pages.ElementAt(elementCounter).Image = ImageList[i];
+			        _imagesCounter++;
+			    }
+			    else
+			    {
+			        Pages.ElementAt(elementCounter).Image = new SpeciesImage();
+			    }
+                elementCounter++;
 			}
-			IndexCounter += 9;
-			ElementCounter = 0;
-			
+		    _indexCounter += _imagesCounter;
 		}
 
 		public void DecreaseGalleryImages()
 		{
-			for (int i = IndexCounter; i >= IndexCounter - 8; i--)
+		    int elementCounter = 8;
+		    int j = _indexCounter - _imagesCounter - 1;
+		    _indexCounter -= _imagesCounter;
+		    _imagesCounter = 0;
+			for (int i = j; i >= j - 8; i--)
 			{
-				Pages.ElementAt(ElementCounter).Image = ImageList[i];
-				Pages.ElementAt(ElementCounter).GalleryTap.Tapped += HandleImageClick;
-				ElementCounter++;
+				Pages.ElementAt(elementCounter).Image = ImageList[i];
+				elementCounter--;
+			    _imagesCounter++;
 			}
-			IndexCounter -= 9;
-			ElementCounter = 0;
 		}
 
 		// Handle tap on image in Gallery
 		public async void HandleImageClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine("Tapped");
 			if (sender.GetType() == typeof(Frame))
 			{
 				SpeciesImageView parent = GetAncestor((Frame)sender);
 				Navigation.PushAsync(new GalleryImage(parent.Image));
-
-
 			}
 		}
 
@@ -97,10 +112,14 @@ namespace NbicDragonflies.Views
 			
 			if (sender.GetType() == typeof(Button))
 			{
-				System.Diagnostics.Debug.WriteLine("New Page");
-				if (IndexCounter < ImageList.Count)
+				if (_indexCounter < ImageList.Count)
 				{
 					IncreaseGalleryImages();
+				    if (_indexCounter >= ImageList.Count)
+				    {
+				        NextPage.IsEnabled = false;
+				    }
+				    PreviousPage.IsEnabled = true;
 				}
 			}
 		}
@@ -111,10 +130,17 @@ namespace NbicDragonflies.Views
 
 			if (sender.GetType() == typeof(Button))
 			{
-				System.Diagnostics.Debug.WriteLine("Previous Page");
-				if (IndexCounter > 0)
+				if (_indexCounter > 0)
 				{
 					DecreaseGalleryImages();
+				    if (_indexCounter <= 9)
+				    {
+				        PreviousPage.IsEnabled = false;
+				    }
+				    if (_indexCounter <= ImageList.Count)
+				    {
+				        NextPage.IsEnabled = true;
+				    }
 				}
 			}
 		}
