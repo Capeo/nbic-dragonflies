@@ -27,6 +27,7 @@ namespace NbicDragonflies.Utility {
             IdentifyAlternative q2Alt1 = new IdentifyAlternative("Vingene smale med få ribber og smal basis. Fram- og bakvinge har samme fasong. (Små arter: opptil 40 mm.)", "vingefasong1.png");
             IdentifyAlternative q2Alt2 = new IdentifyAlternative("Vingene brede med tett ribbenett og smal basis. Fram- og bakvinge har samme fasong. (Middels store arter med metallisk grønn/blå kropp; lengde 45-50 mm.)", "vingefasong2.png");
             IdentifyAlternative q2Alt3 = new IdentifyAlternative("Vingene brede med tett ribbenett og bred basis. Bakvingen er bredere enn framvingen, særlig ved basis. (Små til store arter; lengde 29-84mm.)", "vingefasong3.png");
+            q2Alt3.Status = AlternativeStatus.Disabled;
             _questions.Add(new KeyQuestion("Vingefasong", new List<IdentifyAlternative> { q2Alt1, q2Alt2, q2Alt3 }));
         }
 

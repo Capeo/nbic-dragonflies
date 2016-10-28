@@ -20,8 +20,7 @@ namespace NbicDragonflies.Views {
             {
                 _species = value;
                 SetSpecies(value);
-            }
-                
+            }   
         }
 
         public SpeciesInfo() {

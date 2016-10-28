@@ -33,6 +33,7 @@ namespace NbicDragonflies.Views {
             else if (alternative.Status == AlternativeStatus.Disabled)
             {
                 Frame.BackgroundColor = Utility.Constants.KeyRed;
+                Frame.IsEnabled = false;
             }
         }
     }

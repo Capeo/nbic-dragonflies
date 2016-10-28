@@ -129,6 +129,14 @@
     <value>Identify species</value>
     <comment>Label for IdentifySpecies page</comment>
   </data>
+  <data name="KeyQuestionsTab" xml:space="preserve">
+    <value>Questions</value>
+    <comment>Label for questions tab in KeyPage</comment>
+  </data>
+  <data name="KeyResultsTab" xml:space="preserve">
+    <value>Suggestions</value>
+    <comment>Label for results tab in KeyPage</comment>
+  </data>
   <data name="NavigationLabel" xml:space="preserve">
     <value>Menu</value>
     <comment>Label for NavigationMaster page</comment>

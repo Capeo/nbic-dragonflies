@@ -26,7 +26,7 @@ namespace NbicDragonflies.Data
             try
             {
                 // GET method
-                var response = await client.GetAsync (address);
+                var response = await client.GetAsync(address).ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -54,7 +54,7 @@ namespace NbicDragonflies.Data
             try
             {
                 // GET method
-                var response = await client.GetAsync(address);
+                var response = await client.GetAsync(address).ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -78,7 +78,7 @@ namespace NbicDragonflies.Data
 
             try
             {
-                var response = await client.GetAsync(address);
+                var response = await client.GetAsync(address).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {
                     return response.Content.ReadAsStringAsync().Result;

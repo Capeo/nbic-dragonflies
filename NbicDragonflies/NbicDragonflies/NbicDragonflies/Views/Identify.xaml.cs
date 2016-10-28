@@ -84,15 +84,17 @@ namespace NbicDragonflies.Views {
         }
 
 
-        private void OnResultItemSelected(Object sender, SelectedItemChangedEventArgs e)
+        private async void OnResultItemSelected(Object sender, SelectedItemChangedEventArgs e)
         {
+            ResultsList.IsEnabled = false;
             var item = e.SelectedItem;
             if (item != null)
             {
                 KeySuggestion suggestion = (KeySuggestion)item;
+                await Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
                 ResultsList.SelectedItem = null;
-                Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
             }
+            ResultsList.IsEnabled = true;
         }
     }
 }
