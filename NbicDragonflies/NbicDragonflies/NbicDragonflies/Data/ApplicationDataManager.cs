@@ -24,6 +24,7 @@ namespace NbicDragonflies.Data
             string searchResult = await restService.FetchSearchResultsAsync(searchText);
             return JsonConvert.DeserializeObject<List<SearchResultItem>>(searchResult);
         }
+
         // Get a Taxon based on its scientificNameID
         public static async Task<Taxon> GetTaxon(int scientificNameId)
         {

@@ -11,6 +11,9 @@ using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
 namespace NbicDragonflies {
+    /// <summary>
+    ///  Main class of the Application
+    /// </summary>
     public class App : Application {
 
         public App() {
