@@ -11,7 +11,7 @@ namespace NbicDragonflies.Data
 {
     public static class ApplicationDataManager
     {
-        private static IRestService restService = new RestService();
+        private static readonly IRestService restService = new RestService();
 
         public static async Task<ObservationList> GetObservationListAsync (string urlSuffix)
         {

@@ -10,26 +10,30 @@ namespace NbicDragonflies.Views {
     public partial class IdentifyAlternativeView : ContentView
     {
 
-        public TapGestureRecognizer AlternativeTap;
+        public TapGestureRecognizer AlternativeTap { get; }
 
-        public IdentifyAlternative Alternative { get; set; }
-
-        public IdentifyAlternativeView() {
-            InitializeComponent();
-
-            AlternativeTap = new TapGestureRecognizer();
-            Frame.GestureRecognizers.Add(AlternativeTap);
-        }
+        public IdentifyAlternative Alternative { get; private set; }
 
         public IdentifyAlternativeView(IdentifyAlternative alternative)
         {
             InitializeComponent();
+
+            Alternative = alternative;
 
             AlternativeTap = new TapGestureRecognizer();
             Frame.GestureRecognizers.Add(AlternativeTap);
 
             Image.Source = alternative.Image;
             Text.Text = alternative.Text;
+
+            if (alternative.Status == AlternativeStatus.Selected)
+            {
+                Frame.BackgroundColor = Utility.Constants.KeyGreen;
+            }
+            else if (alternative.Status == AlternativeStatus.Disabled)
+            {
+                Frame.BackgroundColor = Utility.Constants.KeyRed;
+            }
         }
     }
 }

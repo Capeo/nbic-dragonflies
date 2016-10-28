@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,6 +53,18 @@ namespace NbicDragonflies.Models
                 }
             }
             return ret; 
+        }
+
+        public string GetScientificName()
+        {
+            string ret = "";
+            if (scientificNames != null && scientificNames.Count > 0) {
+                ScientificName sName = scientificNames.FirstOrDefault();
+                if (sName != null) {
+                    ret = sName.scientificName;
+                }
+            }
+            return ret;
         }
     }
 
@@ -105,7 +118,6 @@ namespace NbicDragonflies.Models
         public int taxonID { get; set; }
         public List<ScientificName> scientificNames { get; set; }
         public List<VernacularName> vernacularNames { get; set; }
-        //public List<object> dynamicProperties { get; set; }
         public AcceptedName AcceptedName { get; set; }
         public PreferredVernacularName PreferredVernacularName { get; set; }
     }

@@ -33,54 +33,14 @@ namespace NbicDragonflies.Utility {
         public List<KeySuggestion> GetSuggestions() {
             List<KeySuggestion> suggestions = new List<KeySuggestion>();
 
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 1",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
+            Taxon t = Data.ApplicationDataManager.GetTaxon(107).Result;
 
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 2",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 3",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 4",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 5",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 6",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            suggestions.Add(new KeySuggestion {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 7",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
+            suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));
+            suggestions.Add(new KeySuggestion(t, "dragonfly2.jpg"));
+            suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));
+            suggestions.Add(new KeySuggestion(t, "dragonfly2.jpg"));
+            suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));
+            suggestions.Add(new KeySuggestion(t, "dragonfly2.jpg"));
 
             return suggestions;
         }
@@ -127,7 +87,12 @@ namespace NbicDragonflies.Utility {
         }
 
         public void SetAlternative(IdentifyAlternative alternative) {
-            
+
+            foreach (var alt in CurrentQuestion().Alternatives)
+            {
+                alt.Status = AlternativeStatus.Enabled;
+            }
+            alternative.Status = AlternativeStatus.Selected;
         }
     }
 

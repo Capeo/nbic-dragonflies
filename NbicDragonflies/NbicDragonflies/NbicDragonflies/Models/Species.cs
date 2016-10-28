@@ -19,6 +19,9 @@ namespace NbicDragonflies.Models {
         // List of images associated with the species 
         public List<SpeciesImage> Images { get; set; }
 
+        public Taxon Taxon { get; set; }
+
+
         public Species()
         {
             Attributes = new List<Tuple<string, string>>();
@@ -28,6 +31,19 @@ namespace NbicDragonflies.Models {
             Images = new List<SpeciesImage>();
 
             CreatePlaceholderSpecies();            
+        }
+
+        public Species(Taxon taxon)
+        {
+            Taxon = taxon;
+
+            Attributes = new List<Tuple<string, string>>();
+
+            Content = new List<Tuple<string, string>>();
+
+            Images = new List<SpeciesImage>();
+
+            CreatePlaceholderSpecies();
         }
 
         private void CreatePlaceholderSpecies() {

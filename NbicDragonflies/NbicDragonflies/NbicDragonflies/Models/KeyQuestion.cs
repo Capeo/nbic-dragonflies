@@ -9,8 +9,8 @@ namespace NbicDragonflies.Models {
     public class KeyQuestion {
 
         public string Title { get; set; }
-
         public List<IdentifyAlternative> Alternatives { get; set; }
+        public IdentifyAlternative SelectedAlternative { get; set; } = null;
 
         public KeyQuestion(string title, List<IdentifyAlternative> alternatives)
         {

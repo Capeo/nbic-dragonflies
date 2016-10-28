@@ -42,19 +42,29 @@ namespace NbicDragonflies.Views {
 
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
             PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
+
+            ResultsList.ItemSelected += OnResultItemSelected;
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)
         {
-            // Send alternative
-            if (_controller.HasNextQuestion())
+            if (sender.GetType() == typeof(Frame))
             {
-                SetQuestion(_controller.NextQuestion());
+                IdentifyAlternativeView alternativeView = (IdentifyAlternativeView) Utility.Utilities.GetAncestor((Frame)sender, typeof(IdentifyAlternativeView));
+
+                _controller.SetAlternative(alternativeView.Alternative);
+
+                if (_controller.HasNextQuestion())
+                {
+                    SetQuestion(_controller.NextQuestion());
+                }
+                else
+                {
+                    SetQuestion(_controller.CurrentQuestion());
+                    this.CurrentPage = ResultsTab;
+                }
             }
-            else
-            {
-                this.CurrentPage = ResultsTab;
-            }
+            
         }
 
         private void NextButtonClicked(object sender, EventArgs e)
@@ -73,5 +83,16 @@ namespace NbicDragonflies.Views {
             }
         }
 
+
+        private void OnResultItemSelected(Object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem;
+            if (item != null)
+            {
+                KeySuggestion suggestion = (KeySuggestion)item;
+                ResultsList.SelectedItem = null;
+                Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
+            }
+        }
     }
 }

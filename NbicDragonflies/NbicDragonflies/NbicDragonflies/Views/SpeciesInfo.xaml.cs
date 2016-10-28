@@ -31,6 +31,11 @@ namespace NbicDragonflies.Views {
         public SpeciesInfo(Species species) {
             InitializeComponent();
 
+            if (species.Taxon != null)
+            {
+                Title = species.Taxon.GetPreferredName();
+            }
+
             SetSpecies(species);
         }
 
