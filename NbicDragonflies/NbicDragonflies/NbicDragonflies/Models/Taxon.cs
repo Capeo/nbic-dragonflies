@@ -23,6 +23,10 @@ namespace NbicDragonflies.Models
         public AcceptedName AcceptedName { get; set; }
         public PreferredVernacularName PreferredVernacularName { get; set; }
 
+		public Taxon()
+		{
+		}
+
         public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank )
         {
             taxonID = taxonId;
@@ -30,6 +34,12 @@ namespace NbicDragonflies.Models
             this.scientificName = scientificName;
             this.taxonRank = taxonRank;
         }
+
+
+		public Taxon(int taxonID)
+		{
+			taxonID = taxonID;
+		}
 
         // Returns the vernacular name of the taxon for the current langauge. If not found, the first scientific name is returned.
         public string GetPreferredName()
@@ -53,6 +63,7 @@ namespace NbicDragonflies.Models
             }
             return ret; 
         }
+
     }
 
     public class ScientificName {

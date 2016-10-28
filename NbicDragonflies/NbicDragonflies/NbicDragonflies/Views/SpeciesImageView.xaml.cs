@@ -39,6 +39,8 @@ namespace NbicDragonflies.Views {
 			Images = new List<SpeciesImageView>();
             // Style the view
             ImageContent.Aspect = Aspect.AspectFit;
+
+
         }
 
 		public SpeciesImageView()
@@ -53,7 +55,10 @@ namespace NbicDragonflies.Views {
 			ImageContent.Aspect = Aspect.AspectFit;
 		}
 
-        // Fill view with content from image
+		/// <summary>
+		/// Fill view with content from image
+		/// </summary>
+		/// <param name="image">Image.</param>
         private void SetImage(SpeciesImage image)
         {
             ImageContent.Source = image.ImageSource;
@@ -61,5 +66,7 @@ namespace NbicDragonflies.Views {
             Date.Text = image.Date;
 			License.Text = image.License;
         }
+
+
     }
 }

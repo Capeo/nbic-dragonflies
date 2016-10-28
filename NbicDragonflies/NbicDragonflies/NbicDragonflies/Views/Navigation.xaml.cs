@@ -39,7 +39,14 @@ namespace NbicDragonflies.Views {
 
         private NavigationPage NewDetailPage(Type type)
         {
-            NavigationPage page = new NavigationPage((Page)Activator.CreateInstance(type));
+			NavigationPage page = null;
+			if (type == typeof(Gallery)) {
+				page = new NavigationPage(new Gallery(new PlaceholderGallery()));
+			}
+			else {
+				page = new NavigationPage((Page)Activator.CreateInstance(type));
+			}
+			    
             page.BarBackgroundColor = Utility.Constants.NbicOrange;
             page.ToolbarItems.Add(LanguageButton);
             return page;

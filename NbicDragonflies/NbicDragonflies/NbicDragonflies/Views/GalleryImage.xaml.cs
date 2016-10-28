@@ -1,30 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
 using NbicDragonflies.Models;
+using NbicDragonflies.Views;
 using Xamarin.Forms;
 
 namespace NbicDragonflies
 {
+	/// <summary>
+	/// Class shows content for each Image in Gallery.
+	/// </summary>
 	public partial class GalleryImage : ContentPage
 	{
+		public TapGestureRecognizer SpeciesTapped;
+		public List<Taxon> Taxons;
+
 		public GalleryImage(SpeciesImage image)
 		{
 			InitializeComponent();
 
+		    Title = image.SpeciesName;
+
 			BigImage.Source = image.ImageSource;
-			SpeciesName.Text = "Odonata";
+			SpeciesName.Text = "Name of species: " + image.SpeciesName;
 			Photographer.Text = "Photographer: " + image.Owner;
 			Date.Text = "Captured: " + image.Date;
 			License.Text = "License: " + image.License;
-			SpeciesInformation.Text = "A dragonfly is an insect belonging to the order Odonata, suborder Anisoptera (from Greek ἄνισος anisos uneven and πτερόν pteron, wing, because the hindwing is broader than the forewing). Adult dragonflies are characterized by large multifaceted eyes, two pairs of strong transparent wings, sometimes with coloured patches and an elongated body.";
+			SpeciesInformation.Text = "Description: " + image.Description;
+			Taxons = image.Taxons;
 
 
-			//use label + image instead of view. 
+			SpeciesTapped = new TapGestureRecognizer();
+			SpeciesName.GestureRecognizers.Add(SpeciesTapped);
+
+		    SpeciesTapped.Tapped += HandleSpeciesClick;
+
 		}
 
 		public GalleryImage()
 		{
 			InitializeComponent();
 		}
+
+		/// <summary>
+		/// Handles click on SpeciesName
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
+		public async void HandleSpeciesClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Debug.WriteLine("Tapped");
+			if (sender.GetType() == typeof(Label))
+			{
+				SpeciesImageView parent = GetAncestor((Label)sender);
+				Navigation.PushAsync(new SpeciesInfo(new Species(Taxons[0])));
+
+
+			}
+		}
+
+		/// <summary>
+		/// Returns the SpeciesImageView to which an element belongs
+		/// </summary>
+		/// <returns>The ancestor.</returns>
+		/// <param name="e">E.</param>
+		private SpeciesImageView GetAncestor(VisualElement e)
+		{
+			if (e != null)
+			{
+				var parent = e.Parent;
+				while (parent != null)
+				{
+					if (parent is SpeciesImageView)
+					{
+						return (SpeciesImageView)parent;
+					}
+					parent = parent.Parent;
+				}
+			}
+			return null;
+		}
+
 	}
 }

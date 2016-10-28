@@ -4,12 +4,13 @@
              x:Class="NbicDragonflies.Views.SpeciesImageView">
   <Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="5">
     <Frame.Content>
-      <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Image x:Name="ImageContent" HorizontalOptions="FillAndExpand"/>
-        <Label x:Name="Owner" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
-        <Label x:Name="Date" HorizontalOptions="FillAndExpand" TextColor="Black"/>
-		<Label x:Name="License" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+      <StackLayout HorizontalOptions="Fill">
+        <Image x:Name="ImageContent" HorizontalOptions="Fill"/>
+        <Label x:Name="Owner" HorizontalOptions="Fill" TextColor="Gray" FontAttributes="Bold" FontFamily="Helvetica" FontSize="Small"/>
+        <Label x:Name="Date" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
+		<Label x:Name="License" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
       </StackLayout>
     </Frame.Content>
   </Frame>
+
 </ContentView>
