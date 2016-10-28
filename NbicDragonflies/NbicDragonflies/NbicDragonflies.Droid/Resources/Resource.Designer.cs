@@ -785,7 +785,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f010058
 			public const int popupTheme = 2130772056;
-			
+		
 			// aapt resource value: 0x7f01009e
 			public const int popupWindowStyle = 2130772126;
 			
@@ -1195,6 +1195,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f080018
 			public const int abc_search_url_text_selected = 2131230744;
+
 			
 			// aapt resource value: 0x7f080061
 			public const int abc_secondary_text_material_dark = 2131230817;
@@ -1471,7 +1472,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f08004d
 			public const int switch_thumb_normal_material_dark = 2131230797;
-			
+
 			// aapt resource value: 0x7f08004e
 			public const int switch_thumb_normal_material_light = 2131230798;
 			
@@ -2570,6 +2571,7 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f0a0062
 			public const int action_mode_bar = 2131361890;
 			
+
 			// aapt resource value: 0x7f0a0061
 			public const int action_mode_bar_stub = 2131361889;
 			
@@ -2599,7 +2601,8 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f0a0035
 			public const int bottom = 2131361845;
-			
+
+
 			// aapt resource value: 0x7f0a004f
 			public const int buttonPanel = 2131361871;
 			
@@ -3395,7 +3398,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f060006
 			public const int common_google_play_services_install_text_tablet = 2131099654;
-			
+
 			// aapt resource value: 0x7f060004
 			public const int common_google_play_services_install_title = 2131099652;
 			
@@ -3506,7 +3509,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0x7f06002d
 			public const int mr_user_route_category_name = 2131099693;
-			
+
 			// aapt resource value: 0x7f060041
 			public const int status_bar_notification_info_overflow = 2131099713;
 			
@@ -4657,6 +4660,7 @@ namespace NbicDragonflies.Droid
 			
 			public static int[] ActionBar = new int[]
 			{
+
 					2130772030,
 					2130772032,
 					2130772033,
@@ -4782,6 +4786,7 @@ namespace NbicDragonflies.Droid
 			
 			public static int[] ActionMenuView;
 			
+
 			public static int[] ActionMode = new int[]
 			{
 					2130772030,
@@ -4808,7 +4813,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 1
 			public const int ActionMode_titleTextStyle = 1;
-			
+
 			public static int[] ActivityChooserView = new int[]
 			{
 					2130772058,
@@ -4862,6 +4867,7 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 2
 			public const int AppBarLayout_expanded = 2;
 			
+
 			public static int[] AppBarLayout_LayoutParams = new int[]
 			{
 					2130772239,
@@ -5345,7 +5351,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 3
 			public const int AppCompatTheme_windowNoTitle = 3;
-			
+
 			public static int[] BottomSheetBehavior_Params = new int[]
 			{
 					2130772241,
@@ -5356,7 +5362,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0
 			public const int BottomSheetBehavior_Params_behavior_peekHeight = 0;
-			
+
 			public static int[] ButtonBarLayout = new int[]
 			{
 					2130772177};
@@ -5418,7 +5424,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 11
 			public const int CardView_contentPaddingTop = 11;
-			
+
 			public static int[] CollapsingAppBarLayout_LayoutParams = new int[]
 			{
 					2130772243,
@@ -5503,7 +5509,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 2
 			public const int CompoundButton_buttonTintMode = 2;
-			
+
 			public static int[] CoordinatorLayout = new int[]
 			{
 					2130772258,
@@ -5537,7 +5543,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 3
 			public const int CoordinatorLayout_LayoutParams_layout_keyline = 3;
-			
+
 			public static int[] DesignTheme = new int[]
 			{
 					2130772264,
@@ -5552,7 +5558,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 2
 			public const int DesignTheme_textColorError = 2;
-			
+
 			public static int[] DrawerArrowToggle = new int[]
 			{
 					2130772180,
@@ -5587,7 +5593,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 7
 			public const int DrawerArrowToggle_thickness = 7;
-			
+
 			public static int[] FloatingActionButton = new int[]
 			{
 					2130772055,
@@ -5706,7 +5712,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
-			
+
 			public static int[] LoadingImageView = new int[]
 			{
 					2130771985,
@@ -5721,7 +5727,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 0
 			public const int LoadingImageView_imageAspectRatioAdjust = 0;
-			
+
 			public static int[] MapAttrs = new int[]
 			{
 					2130771968,
@@ -5792,7 +5798,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 14
 			public const int MapAttrs_zOrderOnTop = 14;
-			
+
 			public static int[] MediaRouteButton = new int[]
 			{
 					16843071,
@@ -5994,7 +6000,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 1
 			public const int PopupWindow_overlapAnchor = 1;
-			
+
 			public static int[] PopupWindowBackgroundState = new int[]
 			{
 					2130772197};
@@ -6024,14 +6030,14 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 4
 			public const int RecyclerView_stackFromEnd = 4;
-			
+
 			public static int[] ScrimInsetsFrameLayout = new int[]
 			{
 					2130772279};
 			
 			// aapt resource value: 0
 			public const int ScrimInsetsFrameLayout_insetForeground = 0;
-			
+
 			public static int[] ScrollingViewBehavior_Params = new int[]
 			{
 					2130772280};
@@ -6109,7 +6115,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 12
 			public const int SearchView_voiceIcon = 12;
-			
+
 			public static int[] SignInButton = new int[]
 			{
 					2130771988,
@@ -6124,7 +6130,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 2
 			public const int SignInButton_scopeUris = 2;
-			
+
 			public static int[] SnackbarLayout = new int[]
 			{
 					16843039,
@@ -6220,7 +6226,7 @@ namespace NbicDragonflies.Droid
 			
 			// aapt resource value: 2
 			public const int TabItem_android_text = 2;
-			
+
 			public static int[] TabLayout = new int[]
 			{
 					2130772282,
