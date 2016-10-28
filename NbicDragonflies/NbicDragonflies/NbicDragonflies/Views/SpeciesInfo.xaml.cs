@@ -22,8 +22,7 @@ namespace NbicDragonflies.Views {
             {
                 _species = value;
                 SetSpecies(value);
-            }
-                
+            }   
         }
 
         public SpeciesInfo() {
@@ -33,18 +32,20 @@ namespace NbicDragonflies.Views {
         public SpeciesInfo(Species species) {
             InitializeComponent();
 
+            if (species.Taxon != null)
+            {
+                Title = species.Taxon.GetPreferredName();
+            }
+
             SetSpecies(species);
 
 			ImageTapped = new TapGestureRecognizer();
 
         }
 
-
-
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
         {
-            Title = species.Taxon.GetPreferredName();
 
             TopImage.Image = species.TopImage;
 

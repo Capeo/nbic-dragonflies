@@ -38,15 +38,17 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\IKeyController.cs" />
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
+    <Compile Include="Models\KeyQuestion.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
-    <Compile Include="Models\AlternativeItem.cs" />
+    <Compile Include="Models\IdentifyAlternative.cs" />
+    <Compile Include="Models\KeySuggestion.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
     <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\Observation.cs" />
-    <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +63,7 @@
       <DependentUpon>LanguageResource.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Controllers\PlaceholderKey.cs" />
     <Compile Include="Utility\Language.cs" />
     <Compile Include="Utility\Utilities.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
@@ -71,6 +74,12 @@
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdentifyAlternativeView.xaml.cs">
+      <DependentUpon>IdentifyAlternativeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyQuestionView.xaml.cs">
+      <DependentUpon>KeyQuestionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListItems\ObservationsCell.cs" />
     <Compile Include="Views\NavigationMaster.xaml.cs">
@@ -229,9 +238,20 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\IdentifyAlternativeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SearchResultList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\KeyQuestionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
