@@ -9,33 +9,35 @@ using Newtonsoft.Json;
 
 namespace NbicDragonflies.Data
 {
-    public class ApplicationDataManager
+    public static class ApplicationDataManager
     {
-        private IRestService restService;
+        private static IRestService restService = new RestService();
 
-        public ApplicationDataManager (IRestService service)
-        {
-            restService = service;
-
-        }
-
-        public async Task<ObservationList> GetObservationListAsync (string urlSuffix)
+        public static async Task<ObservationList> GetObservationListAsync (string urlSuffix)
         {
             string observationsJson = await restService.FetchObservationsAsync(urlSuffix);
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
+        public static async Task<List<SearchResultItem>> GetSearchResultAsync(string searchText)
+        {
+            string searchResult = await restService.FetchSearchResultsAsync(searchText);
+            return JsonConvert.DeserializeObject<List<SearchResultItem>>(searchResult);
+        }
         // Get a Taxon based on its scientificNameID
-        public async Task<Taxon> GetTaxon(int scientificNameId)
+        public static async Task<Taxon> GetTaxon(int scientificNameId)
         {
             String taxonJson = await restService.FetchTaxonsAsync($"Taxon/{scientificNameId}");
             Taxon taxon = JsonConvert.DeserializeObject<Taxon>(taxonJson);
-            taxon.scientificNameID = scientificNameId;
+            if(taxon != null) 
+            {
+                taxon.scientificNameID = scientificNameId;
+            }
             return taxon;
         }
 
         // Get a list of sub-taxons from its direct higher classifications
-        public async Task<List<Taxon>> GetTaxonsFromHigherClassification (Taxon higherClassification)
+        public static async Task<List<Taxon>> GetTaxonsFromHigherClassification (Taxon higherClassification)
         {
             int currentRankIndex = Utility.Constants.TaxonRanks.IndexOf(higherClassification.taxonRank);
             if (currentRankIndex < Utility.Constants.TaxonRanks.Count)
@@ -43,17 +45,17 @@ namespace NbicDragonflies.Data
                 String taxonsJson = await restService.FetchTaxonsAsync($"Taxon/ScientificName?taxonRank={Utility.Constants.TaxonRanks.ElementAt(currentRankIndex + 1)}&higherClassificationID={higherClassification.scientificNameID}");
                 List<Taxon> taxons = JsonConvert.DeserializeObject<List<Taxon>>(taxonsJson);
                 foreach (var taxon in taxons)
-                {
+            {
                     await GetVernacularNames(taxon);
                 }
                 return taxons;
-            }
+                }
             return null;
-        }
-
+            }
+            
         // Add vernacular names and accepted names to given Taxon
-        private async Task GetVernacularNames(Taxon taxon)
-        {
+        private static async Task GetVernacularNames(Taxon taxon)
+            {
             String vernacularJson = await restService.FetchTaxonsAsync($"Taxon/{taxon.taxonID}");
             VernacularTaxon vt = JsonConvert.DeserializeObject<VernacularTaxon>(vernacularJson);
             if (vt != null)

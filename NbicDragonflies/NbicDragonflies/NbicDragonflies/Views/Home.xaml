@@ -3,28 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Home"
-             Title="Hjem"
+             Title="{x:Static resources:LanguageResource.HomeLabel}"
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0" BackgroundColor="{x:Static utility:Constants.Background}">
       <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.NbicOrange}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-        <SearchBar x:Name="SearchBar" Placeholder="Søk arter..." BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+        <SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="White" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
                                     Factor=1}" Margin="12,8,12,0"/>
       </RelativeLayout>
-      
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
-          <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-
-                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="10,10,10,20" HeightRequest="150" BackgroundColor="White">
+      <!--StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="10,10,10,20" HeightRequest="150" BackgroundColor="White"-->
+          <StackLayout x:Name="HomeStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="false">
+              <Frame.Content>
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
                   <Label x:Name="InfoTitle" />
                   <Label x:Name="InfoText" />
                   <Image x:Name="InfoImage" />
                 </RelativeLayout>
+              </Frame.Content>
+            </Frame>
+            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
+              <Frame.Content>
                 <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.NbicBrown}" Margin="10,0,10,0">
-                  <Label x:Name="RecentObservationsTitle" Text="Nylige observasjoner" TextColor="White" FontSize="20" Margin="15,15,0,0" HeightRequest="35"/>
+                  <Label x:Name="RecentObservationsTitle" Text="{x:Static resources:LanguageResource.RecentObsLabel}" TextColor="White" FontSize="20" Margin="15,15,0,0" HeightRequest="35"/>
                   <ListView x:Name="RecentObservationsList" BackgroundColor="White" RowHeight="100">
                     <ListView.ItemTemplate>
                       <DataTemplate>
@@ -33,6 +40,8 @@
                     </ListView.ItemTemplate>
                   </ListView>
                 </StackLayout>
+			  </Frame.Content>
+		    </Frame>
           </StackLayout>
         </ScrollView.Content>
       </ScrollView>

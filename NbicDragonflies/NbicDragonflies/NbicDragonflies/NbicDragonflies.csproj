@@ -42,13 +42,25 @@
     <Compile Include="Data\RestService.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\AlternativeItem.cs" />
+    <Compile Include="Models\SearchResultItem.cs" />
     <Compile Include="Models\Taxon.cs" />
-    <Compile Include="Models\ObservationList.cs" />
+    <Compile Include="Models\Observation.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\LanguageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LanguageResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Utility\Language.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
       <DependentUpon>Gallery.xaml</DependentUpon>
     </Compile>
@@ -65,11 +77,17 @@
     <Compile Include="Views\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Observation.xaml.cs">
-      <DependentUpon>Observation.xaml</DependentUpon>
+    <Compile Include="Views\Observations.xaml.cs">
+      <DependentUpon>Observations.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ObservationList.xaml.cs">
       <DependentUpon>ObservationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchResultButton.xaml.cs">
+      <DependentUpon>SearchResultButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchResultList.xaml.cs">
+      <DependentUpon>SearchResultList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SpeciesImageView.xaml.cs">
       <DependentUpon>SpeciesImageView.xaml</DependentUpon>
@@ -116,6 +134,10 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
       <Private>True</Private>
@@ -126,6 +148,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\LanguageResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LanguageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -159,7 +189,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Observation.xaml">
+    <EmbeddedResource Include="Views\Observations.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -194,8 +224,18 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <EmbeddedResource Include="Views\SearchResultList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SearchResultButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
