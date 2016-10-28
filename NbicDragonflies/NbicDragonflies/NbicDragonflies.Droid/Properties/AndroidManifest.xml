@@ -9,6 +9,6 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-sdk android:minSdkVersion="15" />
 	<application android:label="NbicDragonflies.Droid">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBndVk92XJFOHqJDyevhUeeeRgd91arVPM" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBndVk92XJFOHqJDyevhUeeeRgd91arVPM" />
 	</application>
 </manifest>
