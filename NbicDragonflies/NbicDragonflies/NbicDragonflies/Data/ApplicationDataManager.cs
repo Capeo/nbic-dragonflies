@@ -15,20 +15,20 @@ namespace NbicDragonflies.Data
 
         public static async Task<ObservationList> GetObservationListAsync (string urlSuffix)
         {
-            string observationsJson = await restService.FetchObservationsAsync(urlSuffix);
+            string observationsJson = await restService.FetchDataAsync(Constants.ObservationRestUrl + $"{urlSuffix}");
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
         public static async Task<List<SearchResultItem>> GetSearchResultAsync(string searchText)
         {
-            string searchResult = await restService.FetchSearchResultsAsync(searchText);
+            string searchResult = await restService.FetchDataAsync(Constants.SearchRestUrl + $"{searchText}");
             return JsonConvert.DeserializeObject<List<SearchResultItem>>(searchResult);
         }
 
         // Get a Taxon based on its scientificNameID
         public static async Task<Taxon> GetTaxon(int scientificNameId)
         {
-            String taxonJson = await restService.FetchTaxonsAsync($"Taxon/{scientificNameId}");
+            String taxonJson = await restService.FetchDataAsync(Constants.TaxonRestUrl + $"Taxon/{scientificNameId}");
             Taxon taxon = JsonConvert.DeserializeObject<Taxon>(taxonJson);
             if(taxon != null) 
             {
@@ -43,7 +43,7 @@ namespace NbicDragonflies.Data
             int currentRankIndex = Utility.Constants.TaxonRanks.IndexOf(higherClassification.taxonRank);
             if (currentRankIndex < Utility.Constants.TaxonRanks.Count)
             {
-                String taxonsJson = await restService.FetchTaxonsAsync($"Taxon/ScientificName?taxonRank={Utility.Constants.TaxonRanks.ElementAt(currentRankIndex + 1)}&higherClassificationID={higherClassification.scientificNameID}");
+                String taxonsJson = await restService.FetchDataAsync(Constants.TaxonRestUrl + $"Taxon/ScientificName?taxonRank={Utility.Constants.TaxonRanks.ElementAt(currentRankIndex + 1)}&higherClassificationID={higherClassification.scientificNameID}");
                 List<Taxon> taxons = JsonConvert.DeserializeObject<List<Taxon>>(taxonsJson);
                 foreach (var taxon in taxons)
             {
@@ -57,7 +57,7 @@ namespace NbicDragonflies.Data
         // Add vernacular names and accepted names to given Taxon
         private static async Task GetVernacularNames(Taxon taxon)
             {
-            String vernacularJson = await restService.FetchTaxonsAsync($"Taxon/{taxon.taxonID}");
+            String vernacularJson = await restService.FetchDataAsync(Constants.TaxonRestUrl + $"Taxon/{taxon.taxonID}");
             VernacularTaxon vt = JsonConvert.DeserializeObject<VernacularTaxon>(vernacularJson);
             if (vt != null)
             {
