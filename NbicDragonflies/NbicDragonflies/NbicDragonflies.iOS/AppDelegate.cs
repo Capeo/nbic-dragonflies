@@ -20,7 +20,7 @@ namespace NbicDragonflies.iOS {
         //
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
-
+			
 			UINavigationBar.Appearance.TintColor = UIColor.White;
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{

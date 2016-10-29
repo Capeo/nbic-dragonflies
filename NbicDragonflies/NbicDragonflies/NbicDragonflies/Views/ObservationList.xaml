@@ -5,7 +5,7 @@
              x:Class="NbicDragonflies.Views.ObservationList">
   <ContentView.Content>
     <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-      <ListView x:Name="RecentObservationsList" RowHeight="100">
+      <ListView x:Name="RecentObservationsList" RowHeight="90">
         <ListView.ItemTemplate>
           <DataTemplate>
             <listItems:ObservationsCell Species="{Binding Species}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>

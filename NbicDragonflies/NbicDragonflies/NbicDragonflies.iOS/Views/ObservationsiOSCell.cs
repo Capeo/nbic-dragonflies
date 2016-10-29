@@ -67,12 +67,11 @@ namespace NbicDragonflies.iOS.Views {
         public override void LayoutSubviews () {
    			base.LayoutSubviews ();
 
-   			topLabel.Frame = new CoreGraphics.CGRect (5, 4, ContentView.Bounds.Width, 20);
-			midFirstLabel.Frame = new CoreGraphics.CGRect (5, 20, ContentView.Bounds.Width, 20);
-			midSecondLabel.Frame = new CoreGraphics.CGRect(5, 36, ContentView.Bounds.Width, 40);
-			bottomLabel.Frame = new CoreGraphics.CGRect(5, 52, ContentView.Bounds.Width, 40);
+   			topLabel.Frame = new CoreGraphics.CGRect (10, 1, ContentView.Bounds.Width, 40);
+			midFirstLabel.Frame = new CoreGraphics.CGRect (10, 37, ContentView.Bounds.Width, 20);
+			midSecondLabel.Frame = new CoreGraphics.CGRect(10, 53, ContentView.Bounds.Width, 20);
+			bottomLabel.Frame = new CoreGraphics.CGRect(10, 69, ContentView.Bounds.Width, 20);
    			imageView.Frame = new CoreGraphics.CGRect (ContentView.Bounds.Width - 63, 5, ContentView.Bounds.Width, 33);
-			Console.WriteLine("Bounds width: " + ContentView.Bounds.Width);
  		}
     }
 }

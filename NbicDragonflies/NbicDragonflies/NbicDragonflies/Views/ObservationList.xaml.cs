@@ -33,7 +33,7 @@ namespace NbicDragonflies.Views
 
                     ObservationsCell cell = new ObservationsCell
                     {
-                        Species = observation.Name==null?observation.ScientificName:observation.Name+", "+observation.ScientificName,
+						Species = observation.Name==null?observation.ScientificName:observation.Name + " (" + observation.ScientificName + ")",
                         Location = observation.GetLocationText(),
                         Date = observation.CollctedDate,
                         User = observation.Collector,
