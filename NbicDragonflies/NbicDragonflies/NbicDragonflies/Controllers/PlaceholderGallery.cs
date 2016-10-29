@@ -52,8 +52,8 @@ namespace NbicDragonflies
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12/3-14", "LC4400", "Description", new List<Taxon> { new Taxon(107) }),
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12/3-14", "LC4400", "Description", new List<Taxon> { new Taxon(107) }),
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12/3-14", "LC4400", "Description", new List<Taxon> { new Taxon(107) }),
-
-				};
+                new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12/3-14", "LC4400", "Description", new List<Taxon> { new Taxon(107) })
+                };
 			return list;
 		}
 
