@@ -62,6 +62,7 @@ namespace NbicDragonflies
 
 			SpeciesName.GestureRecognizers.Add(SpeciesTapped);
 			BigImage.GestureRecognizers.Add(SpeciesTapped);
+
 		    SpeciesTapped.Tapped += HandleSpeciesClick;
 
 		}

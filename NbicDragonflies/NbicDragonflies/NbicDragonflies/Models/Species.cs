@@ -1,10 +1,12 @@
-﻿using System;
+﻿using NbicDragonflies.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NbicDragonflies.Models {
+
     public class Species {
 
         // Taxon 
@@ -37,7 +39,7 @@ namespace NbicDragonflies.Models {
 		public Species(Taxon taxon)
 		{
 		    Taxon = taxon;
-			CreatePlaceholderSpecies();
+            CreatePlaceholderSpecies();
 		}
 
         private void CreatePlaceholderSpecies() {

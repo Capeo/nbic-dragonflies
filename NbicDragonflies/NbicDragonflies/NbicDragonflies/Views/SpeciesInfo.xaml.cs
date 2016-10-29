@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
+using NbicDragonflies.Controllers;
 
 namespace NbicDragonflies.Views {
 
@@ -13,6 +14,7 @@ namespace NbicDragonflies.Views {
 	/// </summary>
     public partial class SpeciesInfo : ContentPage
     {
+        private ISpeciesContentController _controller;
 
         private Species _species;
 		/// <summary>
@@ -61,13 +63,18 @@ namespace NbicDragonflies.Views {
             SetSpecies(species);
 
 			ImageTapped = new TapGestureRecognizer();
+        }
 
+        //TODO create SetSpeciesContent for view
+        public SpeciesInfo(Taxon taxon)
+        {
+            InitializeComponent();
+            SpeciesContent speciesContent = _controller.GetContentFromTaxon(taxon);
         }
 
         // Fills the SpeciesInfo view
         private void SetSpecies(Species species)
         {
-
             TopImage.Image = species.TopImage;
 
             foreach (var attribute in species.Attributes)
@@ -110,31 +117,22 @@ namespace NbicDragonflies.Views {
 
             foreach (var image in species.Images)
             {
-				
 				SpeciesImageView s = new SpeciesImageView(image);
                 ImageLayout.Children.Add(s);
 				ImageTapped = new TapGestureRecognizer();
 				//s.GestureRecognizers.Add(ImageTapped);
 				s.GalleryTap.Tapped += HandleImageClick;
-
-
             }
         }
 
-		/// <summary>
-		/// Handles tap on image in Gallery
-		/// </summary>
-		/// <param name="sender">Sender.</param>
-		/// <param name="e">E.</param>
-		public async void HandleImageClick(object sender, EventArgs e)
+		// Handle tap on image in Gallery
+		private void HandleImageClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Debug.WriteLine("Tapped");
 			if (sender.GetType() == typeof(Frame))
 			{
 				SpeciesImageView parent = GetAncestor((Frame)sender);
 				Navigation.PushAsync(new GalleryImage(parent.Image));
-
-
 			}
 		}
 

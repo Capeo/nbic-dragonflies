@@ -17,7 +17,7 @@
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout x:Name="HomeStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="false">
+            <Frame x:Name="InfoFrame" Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" HeightRequest="150" HasShadow="false">
               <Frame.Content>
                 <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
                   <Label x:Name="InfoTitle" />

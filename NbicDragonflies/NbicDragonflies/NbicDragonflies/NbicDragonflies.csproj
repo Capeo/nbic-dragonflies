@@ -38,15 +38,25 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\IHomeController.cs" />
     <Compile Include="Controllers\IKeyController.cs" />
+    <Compile Include="Controllers\IObservationsController.cs" />
+    <Compile Include="Controllers\ISpeciesContentController.cs" />
+    <Compile Include="Controllers\ITaxonTreeController.cs" />
+    <Compile Include="Controllers\PlaceholderHome.cs" />
+    <Compile Include="Controllers\PlaceholderObservations.cs" />
+    <Compile Include="Controllers\PlaceholderSpeciesContent.cs" />
+    <Compile Include="Controllers\TaxonTreeController.cs" />
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
+    <Compile Include="Models\HomeInfo.cs" />
     <Compile Include="Models\KeyQuestion.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Models\IdentifyAlternative.cs" />
     <Compile Include="Models\KeySuggestion.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
+    <Compile Include="Models\SpeciesContent.cs" />
     <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\Observation.cs" />
     <Compile Include="Models\Species.cs" />
@@ -90,9 +100,6 @@
     </Compile>
     <Compile Include="Views\Observations.xaml.cs">
       <DependentUpon>Observations.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ObservationList.xaml.cs">
-      <DependentUpon>ObservationList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchResultButton.xaml.cs">
       <DependentUpon>SearchResultButton.xaml</DependentUpon>
@@ -215,12 +222,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\ObservationList.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Views\SpeciesInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -262,9 +263,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
