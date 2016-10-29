@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Utility;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
@@ -50,10 +51,12 @@ namespace NbicDragonflies.Views {
 			if (type == typeof(Gallery)) {
 				page = new NavigationPage(new Gallery(new PlaceholderGallery()));
 			}
-			else {
+            else if (type == typeof(Identify)) {
+                page = new NavigationPage(new Identify(new PlaceholderKey()));
+            }
+            else {
 				page = new NavigationPage((Page)Activator.CreateInstance(type));
 			}
-			    
             page.BarBackgroundColor = Utility.Constants.NbicOrange;
             page.ToolbarItems.Add(LanguageButton);
             return page;

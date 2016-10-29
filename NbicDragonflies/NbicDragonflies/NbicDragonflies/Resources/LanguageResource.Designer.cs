@@ -65,6 +65,27 @@ namespace NbicDragonflies.Resources {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Spørsmål.
+        /// </summary>
+        public static string KeyQuestionsLabel {
+            get {
+                return ResourceManager.GetString("KeyQuestionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forslag.
+        /// </summary>
+        public static string KeyResultsLabel {
+            get {
+                return ResourceManager.GetString("KeyResultsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meny.
+        /// </summary>
         public static string NavigationLabel {
             get {
                 return ResourceManager.GetString("NavigationLabel", resourceCulture);

@@ -66,7 +66,7 @@ namespace NbicDragonflies.Views {
         {
             if (sender.GetType() == typeof(Frame))
             {
-                TaxonButton parent = GetAncestor((Frame) sender);
+                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame) sender, typeof(TaxonButton));
 
                 if (!parent.Open)
                 {
@@ -120,31 +120,13 @@ namespace NbicDragonflies.Views {
         {
             if (sender.GetType() == typeof(Frame))
             {
-                TaxonButton parent = GetAncestor((Frame)sender);
+                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame)sender, typeof(TaxonButton));
 
                 SpeciesInfo speciesInfoView = new SpeciesInfo(new Species());
                 speciesInfoView.Title = parent.Name;
 
                 Navigation.PushAsync(speciesInfoView);
             }
-        }
-
-        // Returns the TaxonButton view to which an element belongs
-        private TaxonButton GetAncestor(VisualElement e)
-        {
-            if (e != null)
-            {
-                var parent = e.Parent;
-                while (parent != null)
-                {
-                    if (parent is TaxonButton)
-                    {
-                        return (TaxonButton) parent;
-                    }
-                    parent = parent.Parent;
-                }
-            }
-            return null;
         }
 
         // Recursivly removes all descendants of a TaxonButton from the TaxonLayout stack layout

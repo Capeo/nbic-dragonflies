@@ -92,16 +92,7 @@ namespace NbicDragonflies.Views {
 
         private void SetTaxon(Taxon taxon)
         {
-            NameLabel.Text = CapitalizeFirstLetter(taxon.GetPreferredName());
-        }
-
-        private string CapitalizeFirstLetter(string str)
-        {
-            if (str.Length >= 1)
-            {
-                return str.Substring(0, 1).ToUpper() + str.Substring(1);
-            }
-            return str;
+            NameLabel.Text = Utility.Utilities.CapitalizeFirstLetter(taxon.GetPreferredName());
         }
 
 

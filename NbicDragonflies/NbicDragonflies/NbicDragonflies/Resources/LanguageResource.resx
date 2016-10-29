@@ -129,6 +129,14 @@
     <value>Identifiser art</value>
     <comment>Label for IdentifySpecies page</comment>
   </data>
+  <data name="KeyQuestionsLabel" xml:space="preserve">
+    <value>Spørsmål</value>
+    <comment>Label for questions tab in KeyPage</comment>
+  </data>
+  <data name="KeyResultsLabel" xml:space="preserve">
+    <value>Forslag</value>
+    <comment>Label for results tab in KeyPage</comment>
+  </data>
   <data name="NavigationLabel" xml:space="preserve">
     <value>Meny</value>
     <comment>Label for NavigationMaster page</comment>
