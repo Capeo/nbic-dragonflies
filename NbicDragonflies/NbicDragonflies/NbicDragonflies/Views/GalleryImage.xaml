@@ -6,17 +6,21 @@
 	
 	<ContentPage.Content>
 		<ScrollView>
-		<Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="10">
+		<Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="0">
     <Frame.Content>
 	
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Image x:Name="BigImage" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-		<Label x:Name="SpeciesName" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Large" FontFamily = "Helvetica" FontAttributes="Bold" />
-		<Label x:Name="MoreInfo" HorizontalTextAlignment="Start" TextColor="Silver" FontSize="Micro" />	
-		<Label x:Name="SpeciesInformation" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" FontFamily = "Helvetica"/>
-		<Label x:Name="Photographer" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" FontFamily = "Helvetica"/>
-		<Label x:Name="Date" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" FontFamily = "Helvetica"/>
-		<Label x:Name="License" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" FontFamily = "Helvetica"/>
+        <Image x:Name="BigImage" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"/>
+		<Label x:Name="MoreInfo" HorizontalTextAlignment="End" TextColor="Silver" FontSize="Micro" Margin="10,0,0,0"/>
+		<Label x:Name="SpeciesName" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Large" FontAttributes="Bold" Margin="10,0,0,0"/>
+		<Label x:Name="SpeciesInformationDescription" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Small" FontAttributes="Bold" Margin="10,0,0,0"/>
+		<Label x:Name="SpeciesInformation" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" Margin="10,0,0,0"/>
+		<Label x:Name="PhotographerDescription" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Small" FontAttributes="Bold" Margin="10,0,0,0"/>
+		<Label x:Name="Photographer" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" Margin="10,0,0,0"/>
+		<Label x:Name="DateDescription" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Small" FontAttributes="Bold" Margin="10,0,0,0"/>
+		<Label x:Name="Date" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" Margin="10,0,0,0"/>
+		<Label x:Name="LicenseDescription" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Small" FontAttributes="Bold" Margin="10,0,0,0"/>
+		<Label x:Name="License" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" Margin="10,0,0,10"/>
 
       </StackLayout>
     </Frame.Content>

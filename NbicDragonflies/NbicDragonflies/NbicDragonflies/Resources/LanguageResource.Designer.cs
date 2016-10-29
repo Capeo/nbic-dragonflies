@@ -65,27 +65,18 @@ namespace NbicDragonflies.Resources {
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to Spørsmål.
-        /// </summary>
         public static string KeyQuestionsLabel {
             get {
                 return ResourceManager.GetString("KeyQuestionsLabel", resourceCulture);
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to Forslag.
-        /// </summary>
         public static string KeyResultsLabel {
             get {
                 return ResourceManager.GetString("KeyResultsLabel", resourceCulture);
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to Meny.
-        /// </summary>
         public static string NavigationLabel {
             get {
                 return ResourceManager.GetString("NavigationLabel", resourceCulture);
@@ -128,12 +119,6 @@ namespace NbicDragonflies.Resources {
             }
         }
         
-        public static string GalleryImageSpeciesLabel {
-            get {
-                return ResourceManager.GetString("GalleryImageSpeciesLabel", resourceCulture);
-            }
-        }
-        
         public static string GalleryImagePhotographerLabel {
             get {
                 return ResourceManager.GetString("GalleryImagePhotographerLabel", resourceCulture);
@@ -161,6 +146,24 @@ namespace NbicDragonflies.Resources {
         public static string GalleryImageMoreInfoLabel {
             get {
                 return ResourceManager.GetString("GalleryImageMoreInfoLabel", resourceCulture);
+            }
+        }
+        
+        public static string SearchResultCouldNotFind {
+            get {
+                return ResourceManager.GetString("SearchResultCouldNotFind", resourceCulture);
+            }
+        }
+        
+        public static string SearchResultSuggestions {
+            get {
+                return ResourceManager.GetString("SearchResultSuggestions", resourceCulture);
+            }
+        }
+        
+        public static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
             }
         }
     }

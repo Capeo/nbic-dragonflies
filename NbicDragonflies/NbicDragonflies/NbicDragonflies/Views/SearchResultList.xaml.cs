@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Resources;
 
 using Xamarin.Forms;
 
@@ -33,6 +34,11 @@ namespace NbicDragonflies.Views
         public SearchResultList(string searchText, List<String> searchResults)
         {
             InitializeComponent();
+
+
+			Title = LanguageResource.SearchTitle;
+			LabelHeader.Text = LanguageResource.SearchResultSuggestions;
+
             SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
             if (searchText!=null)
             {
@@ -40,7 +46,7 @@ namespace NbicDragonflies.Views
                 
                 if (searchResults.Capacity==0)
                 {
-                    LabelHeader.Text = "Could not find " + searchText;                    
+					LabelHeader.Text = LanguageResource.SearchResultCouldNotFind + " " + '"' + searchText + '"';                    
                 }
                 else
                 {

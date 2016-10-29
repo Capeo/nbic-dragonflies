@@ -65,6 +65,18 @@ namespace NbicDragonflies.Resources {
             }
         }
         
+        public static string KeyQuestionsTab {
+            get {
+                return ResourceManager.GetString("KeyQuestionsTab", resourceCulture);
+            }
+        }
+        
+        public static string KeyResultsTab {
+            get {
+                return ResourceManager.GetString("KeyResultsTab", resourceCulture);
+            }
+        }
+        
         public static string NavigationLabel {
             get {
                 return ResourceManager.GetString("NavigationLabel", resourceCulture);
@@ -107,12 +119,6 @@ namespace NbicDragonflies.Resources {
             }
         }
         
-        public static string GalleryImageSpeciesLabel {
-            get {
-                return ResourceManager.GetString("GalleryImageSpeciesLabel", resourceCulture);
-            }
-        }
-        
         public static string GalleryImagePhotographerLabel {
             get {
                 return ResourceManager.GetString("GalleryImagePhotographerLabel", resourceCulture);
@@ -140,6 +146,24 @@ namespace NbicDragonflies.Resources {
         public static string GalleryImageMoreInfoLabel {
             get {
                 return ResourceManager.GetString("GalleryImageMoreInfoLabel", resourceCulture);
+            }
+        }
+        
+        public static string SearchResultCouldNotFind {
+            get {
+                return ResourceManager.GetString("SearchResultCouldNotFind", resourceCulture);
+            }
+        }
+        
+        public static string SearchResultSuggestions {
+            get {
+                return ResourceManager.GetString("SearchResultSuggestions", resourceCulture);
+            }
+        }
+        
+        public static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
             }
         }
     }
