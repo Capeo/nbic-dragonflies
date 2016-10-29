@@ -57,7 +57,6 @@ namespace NbicDragonflies.Views {
             {
                 Title = species.Taxon.GetPreferredName();
             }
-
             SetSpecies(species);
 
 			ImageTapped = new TapGestureRecognizer();
@@ -78,13 +77,15 @@ namespace NbicDragonflies.Views {
                 {
                     Text = attribute.Item1,
                     VerticalOptions = LayoutOptions.FillAndExpand,
-                    HorizontalOptions = LayoutOptions.FillAndExpand
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 14
                 };
-                title.FontAttributes = FontAttributes.Bold;
                 Label info = new Label
                 {
                     Text = attribute.Item2,
-                    VerticalOptions = LayoutOptions.FillAndExpand
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    FontSize = 14
                 };
                 s.Children.Add(title);
                 s.Children.Add(info);
@@ -95,9 +96,10 @@ namespace NbicDragonflies.Views {
             {
                 Label title = new Label
                 {
-                    Text = paragraph.Item1
+                    Text = paragraph.Item1,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 16
                 };
-                title.FontAttributes = FontAttributes.Bold;
                 Label info = new Label
                 {
                     Text = paragraph.Item2
@@ -110,8 +112,7 @@ namespace NbicDragonflies.Views {
             {
 				SpeciesImageView s = new SpeciesImageView(image);
                 ImageLayout.Children.Add(s);
-				ImageTapped = new TapGestureRecognizer();
-				//s.GestureRecognizers.Add(ImageTapped);
+                s.DescriptionLabel.IsVisible = true;
 				s.GalleryTap.Tapped += HandleImageClick;
             }
         }

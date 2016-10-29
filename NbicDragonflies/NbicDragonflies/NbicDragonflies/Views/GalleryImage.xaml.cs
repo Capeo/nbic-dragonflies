@@ -69,8 +69,6 @@ namespace NbicDragonflies
 			{
 				SpeciesImageView parent = GetAncestor((Label)sender);
 				Navigation.PushAsync(new SpeciesInfo(new Species(Taxons[0])));
-
-
 			}
 		}
 

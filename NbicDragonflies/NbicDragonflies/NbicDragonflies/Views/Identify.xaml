@@ -2,35 +2,29 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Identify"
-             Title="{x:Static resources:LanguageResource.IdentifyLabel}">
+             Title="{x:Static resources:LanguageResource.IdentifyLabel}"
+             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children >
     <ContentPage x:Name="QuestionTab" Title="{x:Static resources:LanguageResource.KeyQuestionsLabel}">
       <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-          <Button x:Name="PreviousQuestion" Text="Previous" HorizontalOptions="Start" VerticalOptions="Center"/>
-          <Button x:Name="NextQuestion" Text="Next" HorizontalOptions="End" VerticalOptions="Center"/>
+          <Button x:Name="PreviousQuestion" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "White"/>
+          <Button x:Name="NextQuestion" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="White" />
         </StackLayout>
       </StackLayout>
     </ContentPage>
     <ContentPage x:Name="ResultsTab" Title="{x:Static resources:LanguageResource.KeyResultsLabel}">
-      <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Frame Padding="5" Margin="10" OutlineColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasShadow="False">
-          <Frame.Content>
-            <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-              <ScrollView>
-                <ListView x:Name="ResultsList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
-                  <ListView.ItemTemplate>
-                    <DataTemplate>
-                      <ImageCell ImageSource = "{Binding ImageSource}" Text = "{Binding Text}" Detail = "{Binding Detail}"/>
-                    </DataTemplate>
-                  </ListView.ItemTemplate>
-                </ListView>
-              </ScrollView>
-            </StackLayout>
-          </Frame.Content>
-        </Frame>
+      <StackLayout Padding="10" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+          <ListView x:Name="ResultsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Text}" Detail="{Binding Detail}" TextColor="Black" DetailColor="Black"/>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
       </StackLayout>
     </ContentPage>
   </TabbedPage.Children>

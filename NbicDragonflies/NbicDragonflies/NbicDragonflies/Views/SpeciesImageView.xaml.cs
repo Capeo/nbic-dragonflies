@@ -16,6 +16,8 @@ namespace NbicDragonflies.Views {
 
         private SpeciesImage _image;
 
+        public Label DescriptionLabel { get { return Description; } }
+
 		/// <summary>
 		/// Gets or sets the image with all its content.
 		/// </summary>
@@ -84,7 +86,7 @@ namespace NbicDragonflies.Views {
         {
             ImageContent.Source = image.ImageSource;
 			SpeciesName.Text = image.SpeciesName;
-			//Photographer.Text = image.Owner;
+            Description.Text = image.Description;
             Date.Text = image.Date;
 
 			SpeciesName.TextColor = Utility.Constants.NbicBrown;
