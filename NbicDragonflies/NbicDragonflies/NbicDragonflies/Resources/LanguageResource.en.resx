@@ -185,4 +185,8 @@
     <value>Description</value>
     <comment>Label for Gallery Image</comment>
   </data>
+	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+    <value>Press name on species for more information</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
 </root>

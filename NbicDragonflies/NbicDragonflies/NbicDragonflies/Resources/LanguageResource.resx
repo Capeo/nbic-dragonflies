@@ -185,4 +185,8 @@
     <value>Beskrivelse</value>
     <comment>Label for Gallery Image</comment>
   </data>
+	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+    <value>Trykk på artnavn for mer informasjon</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
 </root>

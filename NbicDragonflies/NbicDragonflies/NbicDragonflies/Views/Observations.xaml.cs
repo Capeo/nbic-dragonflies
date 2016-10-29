@@ -12,8 +12,14 @@ using Xamarin.Forms.Maps;
 
 namespace NbicDragonflies.Views
 {
+	/// <summary>
+	/// Observations page.
+	/// </summary>
     public partial class Observations : TabbedPage
     {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Observations"/> class.
+		/// </summary>
         public Observations()
         {
             InitializeComponent();

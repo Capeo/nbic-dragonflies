@@ -8,11 +8,13 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+
     public partial class Identify : TabbedPage {
 
         private IKeyController _controller;
 
         public Identify(IKeyController controller)
+
         {
             InitializeComponent();
 

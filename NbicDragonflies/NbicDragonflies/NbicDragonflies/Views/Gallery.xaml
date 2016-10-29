@@ -35,8 +35,8 @@
 		  </Grid>
       
 			<StackLayout Orientation="Horizontal">
-			  <Button x:Name="PreviousPage" Text="Previous page" HorizontalOptions="Start" VerticalOptions="Center"/>
-			  <Button x:Name="NextPage" Text="Next page" HorizontalOptions="End" VerticalOptions="Center"/>
+			  <Button x:Name="PreviousPage" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "White"/>
+			  <Button x:Name="NextPage" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="White" />
 			</StackLayout>	
       
 		</StackLayout>	

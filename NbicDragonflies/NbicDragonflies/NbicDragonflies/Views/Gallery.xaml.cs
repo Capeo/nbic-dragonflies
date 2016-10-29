@@ -11,17 +11,26 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views
 {
 	/// <summary>
-	/// Contentpage - Gallery
+	/// Gallery page. 
 	/// </summary>
 	public partial class Gallery : ContentPage
 	{
+		/// <summary>
+		/// The pages in the grid.
+		/// </summary>
 		public List<SpeciesImageView> Pages = new List<SpeciesImageView>();
 		private int _indexCounter = 0;
 	    private int _imagesCounter = 0;
+		/// <summary>
+		/// List over Images to fill in all pages. 
+		/// </summary>
 		public List<SpeciesImage> ImageList;
 		private IGalleryControllers _controller;
 
-
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Gallery"/> class with IGalleryControllers as parameter.
+		/// </summary>
+		/// <param name="controller">Controller.</param>
 		public Gallery(IGalleryControllers controller)
 		{
 			InitializeComponent();
@@ -44,7 +53,13 @@ namespace NbicDragonflies.Views
 			PreviousPage.Clicked += HandlePreviousPageClick;
 		    PreviousPage.IsEnabled = false;
 
-			SetGalleryImages(controller.GetGalleryImages());
+			NextPage.BorderColor = Utility.Constants.NbicBrown;
+			PreviousPage.BorderColor = Utility.Constants.NbicBrown;
+			NextPage.TextColor = Utility.Constants.NbicBrown;
+			PreviousPage.TextColor = Utility.Constants.NbicBrown;
+
+
+			SetGalleryImages(_controller.GetGalleryImages());
 
 		}
 

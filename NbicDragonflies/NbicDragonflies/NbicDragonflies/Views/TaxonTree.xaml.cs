@@ -13,12 +13,20 @@ namespace NbicDragonflies.Views {
 
         private int offset = 15;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.TaxonTree"/> class.
+		/// </summary>
         public TaxonTree() {
             InitializeComponent();
 
             CreateInitialTaxons(107, "order");
         }
 
+		/// <summary>
+		/// Creates the initial taxons.
+		/// </summary>
+		/// <param name="rootScientificNameId">Root scientific name identifier.</param>
+		/// <param name="taxonRank">Taxon rank.</param>
         public async void CreateInitialTaxons(int rootScientificNameId, string taxonRank)
         {
             Taxon root = await ApplicationDataManager.GetTaxon(rootScientificNameId);
@@ -48,6 +56,11 @@ namespace NbicDragonflies.Views {
             
         }
 
+		/// <summary>
+		/// Handles click on the navigation part of TaxonButton
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
         // Handle tap on navigation part of TaxonButton
         public async void HandleNavigationClick(object sender, EventArgs e)
         {
@@ -98,6 +111,11 @@ namespace NbicDragonflies.Views {
             }
         }
 
+		/// <summary>
+		/// Handles click on info. 
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
         public void HandleInfoClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))

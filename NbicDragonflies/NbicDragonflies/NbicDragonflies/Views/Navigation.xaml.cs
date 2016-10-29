@@ -8,12 +8,19 @@ using NbicDragonflies.Utility;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+
+	/// <summary>
+	/// Navigation class for the Navigation bar.
+	/// </summary>
     public partial class Navigation : MasterDetailPage {
 
         private ToolbarItem LanguageButton { get; }
 
         private Type CurrentDetailType { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Navigation"/> class.
+		/// </summary>
         public Navigation() {
             InitializeComponent();
 
