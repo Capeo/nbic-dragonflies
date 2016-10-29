@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Controllers;
 using NbicDragonflies.Models;
 using NbicDragonflies.Views.ListItems;
 using Xamarin.Forms;
@@ -15,19 +16,16 @@ namespace NbicDragonflies.Views {
 	/// </summary>
     public partial class Home : ContentPage {
 
-		/// <summary>
-		/// Gets the list view of recent observations.
-		/// </summary>
-		/// <value>The list view.</value>
-        public ListView ListView { get { return RecentObservationsList; } }
+        //public ListView ListView { get { return RecentObservationsList; } }
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Home"/> class.
-		/// </summary>
-        public Home()
+        private IHomeController _controller;
+        private TapGestureRecognizer _infoTap;
+
+        public Home(IHomeController controller)
         {
             InitializeComponent();
-            SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
+            _controller = controller;
+            _infoTap = new TapGestureRecognizer();
 
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
@@ -55,43 +53,36 @@ namespace NbicDragonflies.Views {
 
             RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
 
-
-            SetInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg");
-
-            // Add items to RecentObservations list
-            FillRecentObservationsList();            
+            SetInfo(_controller.GetHomeInfo());
+            FillRecentObservationsList(_controller.GetRecentObservations());
+            
+            SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
         }
 
-        private void SpeciesSearchBar_SearchButtonPressed(object sender, EventArgs e)
+        private async void OnSearchButtonPressed(object sender, EventArgs e) 
         {
-            throw new NotImplementedException();
-        }
-
-		/// <summary>
-		/// Handles click on search button.
-		/// </summary>
-		/// <param name="sender">Sender.</param>
-		/// <param name="e">E.</param>
-        public async void OnSearchButtonPressed(object sender, EventArgs e) {
             List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
             List<string> searchResults = new List<string>();
             if (searchResultsResponse.Capacity != 0) {
                 searchResults = searchResultsResponse[0].ScientificName;
             }
 
-            await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text, searchResults));
+            await Navigation.PushAsync(new SearchResultList(SpeciesSearchBar.Text, searchResults));
         }
 
-		/// <summary>
-		/// Fills the recent observations list.
-		/// </summary>
-        public async void FillRecentObservationsList()
+        private void OnInfoPressed(object sender, EventArgs e)
         {
-            //FIXME: refine url to filter nearest observations
-            Models.ObservationList recentObservationsList = await ApplicationDataManager.GetObservationListAsync("list");
-            if (recentObservationsList != null && recentObservationsList.Observations != null) {
+            if (_controller.GetHomeInfo().Taxon != null)
+            {
+                Navigation.PushAsync(new SpeciesInfo(new Species(_controller.GetHomeInfo().Taxon)));
+            }
+        }
+
+        private void FillRecentObservationsList(List<Observation> observations)
+        {
+            if (observations != null) {
                 var recentObservationsCells = new List<ObservationsCell>();
-                foreach (Models.Observation observation in recentObservationsList.Observations)
+                foreach (Observation observation in observations)
                 {
                     string name = observation.Name == null
                         ? observation.ScientificName
@@ -110,17 +101,16 @@ namespace NbicDragonflies.Views {
             
         }
 
-		/// <summary>
-		/// Sets the info of species.
-		/// </summary>
-		/// <param name="title">Title.</param>
-		/// <param name="text">Text.</param>
-		/// <param name="imageFilename">Image filename.</param>
-        public void SetInfo(string title, string text, string imageFilename)
+        private void SetInfo(HomeInfo info)
         {
-            InfoTitle.Text = title;
-            InfoText.Text = text;
-            InfoImage.Source = imageFilename;
+            InfoText.Text = info.Text;
+            InfoImage.Source = info.Image;
+            InfoFrame.GestureRecognizers.Clear();
+            if (info.Taxon != null)
+            {
+                InfoFrame.GestureRecognizers.Add(_infoTap);
+                _infoTap.Tapped += OnInfoPressed;
+            }
         }
     }
 }

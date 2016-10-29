@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Controllers;
 using NbicDragonflies.Data;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
@@ -11,37 +12,28 @@ namespace NbicDragonflies.Views {
     public partial class TaxonTree : ContentPage
     {
 
-        private int offset = 15;
+        private const int offset = 15;
+        private ITaxonTreeController _controller;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.TaxonTree"/> class.
-		/// </summary>
-        public TaxonTree() {
+        public TaxonTree(ITaxonTreeController controller) {
             InitializeComponent();
 
-            CreateInitialTaxons(107, "order");
+            _controller = controller;
+
+            SetInitialTaxons(_controller.GetRootTaxon());
         }
 
-		/// <summary>
-		/// Creates the initial taxons.
-		/// </summary>
-		/// <param name="rootScientificNameId">Root scientific name identifier.</param>
-		/// <param name="taxonRank">Taxon rank.</param>
-        public async void CreateInitialTaxons(int rootScientificNameId, string taxonRank)
+        public void SetInitialTaxons(Taxon root)
         {
-            Taxon root = await ApplicationDataManager.GetTaxon(rootScientificNameId);
-
             if(root != null) 
             {
-                root.taxonRank = taxonRank;
-
-                List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(root);
-
                 TaxonButton rootButton = new TaxonButton(root, 0);
                 rootButton.SwitchState();
                 rootButton.NavigationTap.Tapped += HandleNavigationClick;
                 rootButton.InfoTap.Tapped += HandleInfoClick;
                 TaxonLayout.Children.Add(rootButton);
+
+                List<Taxon> children = _controller.GetSubTaxons(root);
 
                 foreach (var taxon in children)
                 {
@@ -62,11 +54,11 @@ namespace NbicDragonflies.Views {
 		/// <param name="sender">Sender.</param>
 		/// <param name="e">E.</param>
         // Handle tap on navigation part of TaxonButton
-        public async void HandleNavigationClick(object sender, EventArgs e)
+        private void HandleNavigationClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))
             {
-                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame) sender, typeof(TaxonButton));
+                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame)sender, typeof(TaxonButton));
 
                 if (!parent.Open)
                 {
@@ -87,7 +79,8 @@ namespace NbicDragonflies.Views {
                         }
                         else
                         {
-                            List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(parentTaxon);
+                            List<Taxon> children = _controller.GetSubTaxons(parentTaxon);
+
                             foreach (var taxon in children) {
                                 TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
                                 parent.Children.Add(button);
@@ -111,12 +104,7 @@ namespace NbicDragonflies.Views {
             }
         }
 
-		/// <summary>
-		/// Handles click on info. 
-		/// </summary>
-		/// <param name="sender">Sender.</param>
-		/// <param name="e">E.</param>
-        public void HandleInfoClick(object sender, EventArgs e)
+        private void HandleInfoClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))
             {

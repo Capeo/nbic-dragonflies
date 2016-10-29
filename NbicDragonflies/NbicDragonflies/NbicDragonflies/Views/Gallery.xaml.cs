@@ -98,12 +98,14 @@ namespace NbicDragonflies.Views
 			{
 			    if (i < ImageList.Count)
 			    {
+			        Pages.ElementAt(elementCounter).IsVisible = true;
 			        Pages.ElementAt(elementCounter).Image = ImageList[i];
 			        _imagesCounter++;
 			    }
 			    else
 			    {
 			        Pages.ElementAt(elementCounter).Image = new SpeciesImage();
+			        Pages.ElementAt(elementCounter).IsVisible = false;
 			    }
                 elementCounter++;
 			}
@@ -121,22 +123,23 @@ namespace NbicDragonflies.Views
 		    _imagesCounter = 0;
 			for (int i = j; i >= j - 8; i--)
 			{
+			    Pages.ElementAt(elementCounter).IsVisible = true;
 				Pages.ElementAt(elementCounter).Image = ImageList[i];
 				elementCounter--;
 			    _imagesCounter++;
 			}
 		}
+
 		/// <summary>
 		/// Handle tap on image in Gallery
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="e">E.</param>
-
-		public async void HandleImageClick(object sender, EventArgs e)
+		public void HandleImageClick(object sender, EventArgs e)
 		{
 			if (sender.GetType() == typeof(Frame))
 			{
-				SpeciesImageView parent = GetAncestor((Frame)sender);
+				SpeciesImageView parent = (SpeciesImageView)Utility.Utilities.GetAncestor((Frame)sender, typeof(SpeciesImageView));
 				Navigation.PushAsync(new GalleryImage(parent.Image));
 			}
 		}
@@ -146,7 +149,7 @@ namespace NbicDragonflies.Views
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="e">E.</param>
-		public async void HandleNextPageClick(object sender, EventArgs e)
+		public void HandleNextPageClick(object sender, EventArgs e)
 		{
 			
 			if (sender.GetType() == typeof(Button))
@@ -168,7 +171,7 @@ namespace NbicDragonflies.Views
 		/// </summary>
 		/// <param name="sender">Sender.</param>
 		/// <param name="e">E.</param>
-		public async void HandlePreviousPageClick(object sender, EventArgs e)
+		public void HandlePreviousPageClick(object sender, EventArgs e)
 		{
 
 			if (sender.GetType() == typeof(Button))
@@ -186,28 +189,6 @@ namespace NbicDragonflies.Views
 				    }
 				}
 			}
-		}
-
-		/// <summary>
-		/// Gets the ancestor - Returns the SpeciesImage view to which an element belongs
-		/// </summary>
-		/// <returns>The ancestor.</returns>
-		/// <param name="e">E.</param>
-		private SpeciesImageView GetAncestor(VisualElement e)
-		{
-			if (e != null)
-			{
-				var parent = e.Parent;
-				while (parent != null)
-				{
-					if (parent is SpeciesImageView)
-					{
-						return (SpeciesImageView)parent;
-					}
-					parent = parent.Parent;
-				}
-			}
-			return null;
 		}
 
 	}
