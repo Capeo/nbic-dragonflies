@@ -9,7 +9,6 @@ namespace NbicDragonflies.Controllers {
 
     public interface IObservationsController
     {
-
         List<Observation> GetObservations();
     }
 }
