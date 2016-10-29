@@ -9,10 +9,21 @@ using Xamarin.Forms;
 using NbicDragonflies.Data;
 
 namespace NbicDragonflies.Views {
+
+	/// <summary>
+	/// Home page.
+	/// </summary>
     public partial class Home : ContentPage {
 
+		/// <summary>
+		/// Gets the list view of recent observations.
+		/// </summary>
+		/// <value>The list view.</value>
         public ListView ListView { get { return RecentObservationsList; } }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Home"/> class.
+		/// </summary>
         public Home()
         {
             InitializeComponent();
@@ -56,6 +67,11 @@ namespace NbicDragonflies.Views {
             throw new NotImplementedException();
         }
 
+		/// <summary>
+		/// Handles click on search button.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
         public async void OnSearchButtonPressed(object sender, EventArgs e) {
             List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
             List<string> searchResults = new List<string>();
@@ -66,6 +82,9 @@ namespace NbicDragonflies.Views {
             await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text, searchResults));
         }
 
+		/// <summary>
+		/// Fills the recent observations list.
+		/// </summary>
         public async void FillRecentObservationsList()
         {
             //FIXME: refine url to filter nearest observations
@@ -91,6 +110,12 @@ namespace NbicDragonflies.Views {
             
         }
 
+		/// <summary>
+		/// Sets the info of species.
+		/// </summary>
+		/// <param name="title">Title.</param>
+		/// <param name="text">Text.</param>
+		/// <param name="imageFilename">Image filename.</param>
         public void SetInfo(string title, string text, string imageFilename)
         {
             InfoTitle.Text = title;

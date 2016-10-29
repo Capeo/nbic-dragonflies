@@ -7,11 +7,27 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+
+	/// <summary>
+	/// Identify Species page.
+	/// </summary>
     public partial class Identify : ContentPage {
 
+		/// <summary>
+		/// Gets the result list. 
+		/// </summary>
+		/// <value>The list view1.</value>
         public ListView ListView1 { get { return ResultsList; } }
-        public ListView ListView2 { get { return AlternativesList; } }
+        
+		/// <summary>
+		/// Gets the alternative list. 
+		/// </summary>
+		/// <value>The list view2.</value>
+		public ListView ListView2 { get { return AlternativesList; } }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Identify"/> class.
+		/// </summary>
         public Identify()
         {
             InitializeComponent();

@@ -6,9 +6,8 @@
     <Frame.Content>
       <StackLayout HorizontalOptions="Fill">
         <Image x:Name="ImageContent" HorizontalOptions="Fill"/>
-        <Label x:Name="Owner" HorizontalOptions="Fill" TextColor="Gray" FontAttributes="Bold" FontFamily="Helvetica" FontSize="Small"/>
-        <Label x:Name="Date" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
-		<Label x:Name="License" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
+        <Label x:Name="SpeciesName" VerticalOptions="StartAndExpand" FontAttributes="Bold" FontFamily="Helvetica" FontSize="Small"/>
+        <Label x:Name="Date" VerticalOptions="EndAndExpand" FontFamily="Helvetica" FontSize="Small"/>
       </StackLayout>
     </Frame.Content>
   </Frame>

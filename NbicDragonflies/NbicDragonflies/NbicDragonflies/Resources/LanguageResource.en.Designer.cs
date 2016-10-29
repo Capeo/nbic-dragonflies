@@ -136,5 +136,11 @@ namespace NbicDragonflies.Resources {
                 return ResourceManager.GetString("GalleryImageDescriptionLabel", resourceCulture);
             }
         }
+        
+        public static string GalleryImageMoreInfoLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageMoreInfoLabel", resourceCulture);
+            }
+        }
     }
 }

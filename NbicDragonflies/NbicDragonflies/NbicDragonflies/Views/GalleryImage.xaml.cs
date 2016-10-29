@@ -12,9 +12,20 @@ namespace NbicDragonflies
 	/// </summary>
 	public partial class GalleryImage : ContentPage
 	{
+		/// <summary>
+		/// TapGestureRecognizer for tap at SpeciesName. 
+		/// </summary>
 		public TapGestureRecognizer SpeciesTapped;
+		/// <summary>
+		/// The taxons.
+		/// </summary>
 		public List<Taxon> Taxons;
 
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.GalleryImage"/> class with a SpeciesImage as parameter. 
+		/// </summary>
+		/// <param name="image">Image.</param>
 		public GalleryImage(SpeciesImage image)
 		{
 			InitializeComponent();
@@ -24,6 +35,7 @@ namespace NbicDragonflies
 
 			BigImage.Source = image.ImageSource;
 			SpeciesName.Text = LanguageResource.GalleryImageSpeciesLabel + ": " + image.SpeciesName;
+			MoreInfo.Text = LanguageResource.GalleryImageMoreInfoLabel;
 			Photographer.Text = LanguageResource.GalleryImagePhotographerLabel + ": " + image.Owner;
 			Date.Text = LanguageResource.GalleryImageDateLabel + ": " + image.Date;
 			License.Text = LanguageResource.GalleryImageLicenseLabel + ": " + image.License;
@@ -38,6 +50,9 @@ namespace NbicDragonflies
 
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.GalleryImage"/> class.
+		/// </summary>
 		public GalleryImage()
 		{
 			InitializeComponent();

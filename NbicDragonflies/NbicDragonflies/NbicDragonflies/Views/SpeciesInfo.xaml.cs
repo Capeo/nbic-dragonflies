@@ -7,13 +7,27 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+
+	/// <summary>
+	/// Species info page. 
+	/// </summary>
     public partial class SpeciesInfo : ContentPage
     {
 
         private Species _species;
+		/// <summary>
+		/// TapGestureRecognizer for tap at image. 
+		/// </summary>
 		public TapGestureRecognizer ImageTapped;
+		/// <summary>
+		/// The species image with all content.
+		/// </summary>
 		public SpeciesImage SpeciesImage;
 
+		/// <summary>
+		/// Gets or sets the species.
+		/// </summary>
+		/// <value>The species.</value>
         public Species Species
         {
             get { return _species; }
@@ -26,10 +40,17 @@ namespace NbicDragonflies.Views {
                 
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.SpeciesInfo"/> class.
+		/// </summary>
         public SpeciesInfo() {
             InitializeComponent();
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.SpeciesInfo"/> class with Species as parameter.
+		/// </summary>
+		/// <param name="species">Species.</param>
         public SpeciesInfo(Species species) {
             InitializeComponent();
 
@@ -99,7 +120,11 @@ namespace NbicDragonflies.Views {
             }
         }
 
-		// Handle tap on image in Gallery
+		/// <summary>
+		/// Handles tap on image in Gallery
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		public async void HandleImageClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Debug.WriteLine("Tapped");
