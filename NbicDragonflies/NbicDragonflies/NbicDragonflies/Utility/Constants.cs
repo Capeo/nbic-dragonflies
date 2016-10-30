@@ -14,7 +14,7 @@ namespace NbicDragonflies.Utility {
         public static readonly Color NbicOrange = Color.FromHex("e86c19");
 
 		//Page background
-		public static readonly Color Background = Color.FromHex("e0e0e0");
+		public static readonly Color Background = Color.FromHex("e3e0da");
 
         // Hierarchy of orders
         public static readonly List<string> TaxonRanks = new List<string> { "kingdom", "phylum", "subphylum", "class", "order", "suborder", "family", "genus", "species" };

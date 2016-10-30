@@ -119,6 +119,10 @@
     <BundleResource Include="Resources\Default_320-480.png" />
     <BundleResource Include="Resources\Default_640-960.png" />
     <BundleResource Include="Resources\Default_640-1136.png" />
+    <BundleResource Include="Resources\UnitedKingdom.png" />
+    <BundleResource Include="Resources\Norway.png" />
+    <BundleResource Include="Resources\list.png" />
+    <BundleResource Include="Resources\map.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -207,10 +211,6 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_750-1334.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_768-1024.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default_1536-2048.png" />
-    <BundleResource Include="Resources\Norway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\UnitedKingdom.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\BrownDragonfly.jpg" />

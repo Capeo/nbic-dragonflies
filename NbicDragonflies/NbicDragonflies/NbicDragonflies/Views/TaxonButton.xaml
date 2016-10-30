@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NbicDragonflies.Views.TaxonButton">
   <ContentView.Content>
-    <Frame HeightRequest="35" HorizontalOptions="FillAndExpand" Padding="0" Margin="5">
-      <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" Margin="0">
+    <Frame HeightRequest="35" HorizontalOptions="FillAndExpand" Padding="0" Margin="5" HasShadow="false">
+	  <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" Margin="0">
       <Frame x:Name="NavigationFrame" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" HasShadow="False">
         <Frame.Content>
           <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">

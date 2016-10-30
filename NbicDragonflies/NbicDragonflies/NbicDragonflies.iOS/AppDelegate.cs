@@ -26,7 +26,7 @@ namespace NbicDragonflies.iOS {
 			{
 				TextColor = UIColor.White
 			});
-			UISearchBar.Appearance.TintColor = UIColor.DarkGray;
+			UISearchBar.Appearance.TintColor = UIColor.Clear;
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
             LoadApplication(new App());

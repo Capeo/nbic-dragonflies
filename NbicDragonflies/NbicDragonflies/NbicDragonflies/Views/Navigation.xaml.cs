@@ -18,7 +18,6 @@ namespace NbicDragonflies.Views {
 
 			LanguageButton = new ToolbarItem("", "UnitedKingdom.png", ChangeLanguage);
             StartPage.ToolbarItems.Add(LanguageButton);
-
             CurrentDetailType = typeof(Home);
 
             NavigationMaster.ListView.ItemSelected += OnItemSelected;

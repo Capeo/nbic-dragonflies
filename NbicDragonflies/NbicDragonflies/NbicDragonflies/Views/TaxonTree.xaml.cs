@@ -43,6 +43,7 @@ namespace NbicDragonflies.Views {
                     button.InfoTap.Tapped += HandleInfoClick;
                     button.Padding = new Thickness(offset*button.Level, 0, 0, 0);
                     TaxonLayout.Children.Add(button);
+
                 }
             }
             

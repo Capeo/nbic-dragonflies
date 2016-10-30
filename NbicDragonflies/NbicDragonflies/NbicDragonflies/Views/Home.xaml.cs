@@ -24,27 +24,34 @@ namespace NbicDragonflies.Views {
 				Constraint.RelativeToParent((parent) => parent.Y),
 				Constraint.RelativeToParent((parent) => (parent.Width)),
 				Constraint.RelativeToParent((parent) => parent.Height));
+			InfoImage.WidthRequest = InfoLayout.Width;
 			InfoImage.Aspect = Aspect.AspectFit;
+
+			//Create and position white box behind info text
+			InfoLayout.Children.Add(WhiteBox,
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.X),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Y + sibling.Height * 0.72),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Width),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Height - sibling.Height * 0.72));
+			WhiteBox.Opacity = 0.65;
+
 
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
-                Constraint.RelativeToView(InfoImage, (parent,sibling) => sibling.X),
-                Constraint.RelativeToView(InfoImage, (parent, sibling) => parent.Y + InfoImage.Height*0.6),
-                Constraint.RelativeToParent((parent) => parent.Width),
-                Constraint.RelativeToParent((parent) => parent.Height));
-			InfoTitle.FontSize = 30;
-			InfoTitle.TextColor = Color.White;
+                Constraint.RelativeToView(WhiteBox, (parent,sibling) => sibling.X + 10),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Y + 5),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 42.8));
+			InfoTitle.FontSize = 25;
 
             // Position text within InfoLayout
             InfoLayout.Children.Add(InfoText,
                 Constraint.RelativeToView(InfoTitle, (parent, sibling) => sibling.X),
-                Constraint.RelativeToView(InfoTitle, (parent, sibling) => (sibling.Y + 35)),
-                Constraint.RelativeToParent((parent) => parent.Width),
-                Constraint.RelativeToParent((parent) => parent.Height));
-			InfoText.TextColor = Color.White;
+                Constraint.RelativeToView(InfoTitle, (parent, sibling) => (sibling.Y + sibling.Height)),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 30));
+			InfoText.FontSize = 12;
             
-            RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
-
 
             SetInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg");
 
@@ -99,6 +106,7 @@ namespace NbicDragonflies.Views {
             InfoTitle.Text = title;
             InfoText.Text = text;
             InfoImage.Source = imageFilename;
+
         }
     }
 }

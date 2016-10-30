@@ -158,6 +158,14 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\map.png" />
+    <AndroidResource Include="Resources\drawable\list.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\map.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\map.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\map.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />

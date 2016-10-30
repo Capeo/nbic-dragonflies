@@ -9,22 +9,22 @@
              Padding="0">
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0" BackgroundColor="{x:Static utility:Constants.Background}">
-      <RelativeLayout x:Name="SearchLayout" BackgroundColor="{x:Static utility:Constants.Background}" HeightRequest="60" HorizontalOptions="FillAndExpand">
-			<SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="White"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+      <RelativeLayout x:Name="SearchLayout" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.Background}">
+			<SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="{x:Static utility:Constants.Background}" CancelButtonColor="Black" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
-                                    Factor=1}" Margin="8,8,8,0"/>
+                                    Factor=1}" Margin="0"/>
       </RelativeLayout>
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout x:Name="HomeStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,3" HeightRequest="260">
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,20" HeightRequest="260" BackgroundColor="White">
                   <Image x:Name="InfoImage" />
-				  <Label x:Name="InfoTitle" />
-                  <Label x:Name="InfoText" />
-
+				  <BoxView x:Name="WhiteBox" BackgroundColor="{x:Static utility:Constants.NbicOrange}" />
+				  <Label x:Name="InfoTitle" TextColor="White" />
+                  <Label x:Name="InfoText" TextColor="White"/>
                 </RelativeLayout>
-                <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.NbicBrown}" Margin="0,0,0,0">
-                  <Label x:Name="RecentObservationsTitle" Text="{x:Static resources:LanguageResource.RecentObsLabel}" TextColor="White" FontSize="20" Margin="15,7,0,0" HeightRequest="25"/>
+                <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,0,0">
+                  <Label x:Name="RecentObservationsTitle" Text="{x:Static resources:LanguageResource.RecentObsLabel}" TextColor="White" FontSize="20" Margin="10,7,0,0" HeightRequest="25"/>
                   <ListView x:Name="RecentObservationsList" BackgroundColor="White" RowHeight="90">
                     <ListView.ItemTemplate>
                       <DataTemplate>
