@@ -26,7 +26,7 @@ namespace NbicDragonflies.Data
             try
             {
                 // GET method
-                var response = await client.GetAsync(address).ConfigureAwait(false);
+                var response = await client.GetAsync(new Uri(address)).ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -34,9 +34,9 @@ namespace NbicDragonflies.Data
                     return json;
                 }
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+                Debug.WriteLine(@"				ERROR {0}", ex.StackTrace);
             }
             return "";
         }
