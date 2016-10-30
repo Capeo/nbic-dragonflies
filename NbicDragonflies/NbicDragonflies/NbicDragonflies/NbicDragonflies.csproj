@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="Controllers\IHomeController.cs" />
     <Compile Include="Controllers\IKeyController.cs" />
     <Compile Include="Controllers\IObservationsController.cs" />
@@ -50,6 +49,7 @@
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
+    <Compile Include="Models\AreaDataSet.cs" />
     <Compile Include="Models\HomeInfo.cs" />
     <Compile Include="Models\KeyQuestion.cs" />
     <Compile Include="Models\NavigationListItem.cs" />

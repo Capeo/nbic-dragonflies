@@ -30,7 +30,16 @@ namespace NbicDragonflies.Views
             _controller = controller;
 
             ObservationsMap.MoveToRegion(MapSpan.FromCenterAndRadius( new Position(63.487164718, 9.839663308), Distance.FromMiles(400)));
-
+            foreach(KeyValuePair<AreaDataSet,int> entry in _controller.GetObservationsMapPins())
+            {
+                var entryCoordinates = entry.Key.Location;
+                var pin = new Pin()
+                {
+                    Position = new Position(entryCoordinates.Latitude, entryCoordinates.Longitude),
+                    Label = entry.Key.Name + " " + entry.Value
+                };
+                ObservationsMap.Pins.Add(pin);
+            }
             FillObservationsList(_controller.GetObservations());
         }
 

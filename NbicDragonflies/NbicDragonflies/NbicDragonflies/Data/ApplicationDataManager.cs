@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using Newtonsoft.Json;
+using NbicDragonflies.Utility;
 
 namespace NbicDragonflies.Data
 {
@@ -17,6 +18,12 @@ namespace NbicDragonflies.Data
         {
             string observationsJson = await restService.FetchDataAsync(Constants.ObservationRestUrl + $"{urlSuffix}").ConfigureAwait(false);
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
+        }
+
+        public static async Task<AreaDataSet> GetAreaDataSetAsync (int areaId)
+        {
+            string areaDataSetJson = await restService.FetchDataAsync(Constants.AreaCountyDataRestUrl + $"{areaId}").ConfigureAwait(false);
+            return JsonConvert.DeserializeObject<AreaDataSet>(areaDataSetJson);
         }
 
         public static async Task<List<SearchResultItem>> GetSearchResultAsync(string searchText)
