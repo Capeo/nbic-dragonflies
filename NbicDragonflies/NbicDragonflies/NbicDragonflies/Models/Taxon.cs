@@ -75,6 +75,7 @@ namespace NbicDragonflies.Models
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Models.Taxon"/> class.
 		/// </summary>
+		/// <param name="vernacularName">Vernacular name.</param>
 		public Taxon()
 		{
 		}
@@ -86,7 +87,7 @@ namespace NbicDragonflies.Models
 		/// <param name="scientificNameId">Scientific name identifier.</param>
 		/// <param name="scientificName">Scientific name.</param>
 		/// <param name="taxonRank">Taxon rank.</param>
-        public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank )
+        public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank)
         {
             taxonID = taxonId;
             scientificNameID = scientificNameId;

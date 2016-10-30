@@ -89,7 +89,7 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trykk på artnavn for mer informasjon.
+        ///   Looks up a localized string similar to Trykk på bildet for mer informasjon.
         /// </summary>
         public static string GalleryImageMoreInfoLabel {
             get {
@@ -211,6 +211,33 @@ namespace NbicDragonflies.Resources {
         public static string SearchLabel {
             get {
                 return ResourceManager.GetString("SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finner ingen resultater for.
+        /// </summary>
+        public static string SearchResultCouldNotFind {
+            get {
+                return ResourceManager.GetString("SearchResultCouldNotFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forslag.
+        /// </summary>
+        public static string SearchResultSuggestions {
+            get {
+                return ResourceManager.GetString("SearchResultSuggestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Søk.
+        /// </summary>
+        public static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
             }
         }
         

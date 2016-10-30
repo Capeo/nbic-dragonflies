@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
+using NbicDragonflies.Controllers;
 
 namespace NbicDragonflies.Views {
 
@@ -13,6 +14,7 @@ namespace NbicDragonflies.Views {
 	/// </summary>
     public partial class SpeciesInfo : ContentPage
     {
+        private ISpeciesContentController _controller;
 
         private Species _species;
 		/// <summary>
@@ -60,6 +62,13 @@ namespace NbicDragonflies.Views {
             SetSpecies(species);
 
 			ImageTapped = new TapGestureRecognizer();
+        }
+
+        //TODO create SetSpeciesContent for view
+        public SpeciesInfo(Taxon taxon)
+        {
+            InitializeComponent();
+            SpeciesContent speciesContent = _controller.GetContentFromTaxon(taxon);
         }
 
         // Fills the SpeciesInfo view

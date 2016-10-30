@@ -41,9 +41,11 @@
     <Compile Include="Controllers\IHomeController.cs" />
     <Compile Include="Controllers\IKeyController.cs" />
     <Compile Include="Controllers\IObservationsController.cs" />
+    <Compile Include="Controllers\ISpeciesContentController.cs" />
     <Compile Include="Controllers\ITaxonTreeController.cs" />
     <Compile Include="Controllers\PlaceholderHome.cs" />
     <Compile Include="Controllers\PlaceholderObservations.cs" />
+    <Compile Include="Controllers\PlaceholderSpeciesContent.cs" />
     <Compile Include="Controllers\TaxonTreeController.cs" />
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Models\IdentifyAlternative.cs" />
     <Compile Include="Models\KeySuggestion.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
+    <Compile Include="Models\SpeciesContent.cs" />
     <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\Observation.cs" />
     <Compile Include="Models\Species.cs" />
@@ -169,10 +172,12 @@
     <EmbeddedResource Include="Resources\LanguageResource.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LanguageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

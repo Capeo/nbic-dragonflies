@@ -185,10 +185,6 @@
     <value>Description</value>
     <comment>Label for Gallery Image</comment>
   </data>
-  <data name="GalleryImageMoreInfoLabel" xml:space="preserve">
-    <value>Press name on species for more information</value>
-    <comment>Label for Gallery Image</comment>
-  </data>
   <data name="SpeciesInfoImages" xml:space="preserve">
     <value>Images</value>
     <comment>Label for images section in SpeciesInfo page</comment>
@@ -196,5 +192,21 @@
   <data name="SpeciesInfoAttributes" xml:space="preserve">
     <value>Attributes</value>
     <comment>Label for attributes section in SpeciesInfo page</comment>
+  </data>
+	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+    <value>Press picture for more information</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="SearchResultCouldNotFind" xml:space="preserve">
+    <value>Could not find</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchResultSuggestions" xml:space="preserve">
+    <value>Suggestions</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchTitle" xml:space="preserve">
+    <value>Search</value>
+    <comment>Label for Search Result List</comment>
   </data>
 </root>
