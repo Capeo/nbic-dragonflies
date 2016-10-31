@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
@@ -7,16 +7,16 @@
              Title="{x:Static resources:LanguageResource.IdentifyLabel}"
              BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children >
-    <ContentPage x:Name="QuestionTab" Title="{x:Static resources:LanguageResource.KeyQuestionsLabel}">
+    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-          <Button x:Name="PreviousQuestion" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "White"/>
-          <Button x:Name="NextQuestion" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="White" />
+          <Button x:Name="PreviousQuestion" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="10,0,0,0"/>
+          <Button x:Name="NextQuestion" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,10,0" />
         </StackLayout>
       </StackLayout>
     </ContentPage>
-    <ContentPage x:Name="ResultsTab" Title="{x:Static resources:LanguageResource.KeyResultsLabel}">
+    <ContentPage x:Name="ResultsTab" Icon="arter_white.png" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
           <ListView x:Name="ResultsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default">
             <ListView.ItemTemplate>

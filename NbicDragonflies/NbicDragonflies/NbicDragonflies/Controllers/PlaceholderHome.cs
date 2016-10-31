@@ -13,7 +13,7 @@ namespace NbicDragonflies.Controllers {
 
         public HomeInfo GetHomeInfo()
         {
-            return new HomeInfo("Dagens øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg", ApplicationDataManager.GetTaxon(32564).Result);
+            return new HomeInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg", ApplicationDataManager.GetTaxon(32564).Result);
         }
 
         public List<Observation> GetRecentObservations()

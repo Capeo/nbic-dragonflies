@@ -51,7 +51,7 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToView(WhiteBox, (parent,sibling) => sibling.X + 10),
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Y + 5),
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
-                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 42.8));
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 40));
 			InfoTitle.FontSize = 25;
 			InfoTitle.TextColor = Color.Black;
 

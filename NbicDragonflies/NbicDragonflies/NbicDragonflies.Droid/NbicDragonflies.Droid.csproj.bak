@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -149,15 +149,41 @@
     <AndroidResource Include="Resources\drawable\gallery.png" />
     <AndroidResource Include="Resources\drawable\identify.png" />
     <AndroidResource Include="Resources\drawable\observations.png" />
-    <AndroidResource Include="Resources\drawable\artsdatabanken_trans.png" />
     <AndroidResource Include="Resources\drawable\drawer_dragonfly.png" />
+    <AndroidResource Include="Resources\drawable\artsdatabanken_trans.png" />
+    <AndroidResource Include="Resources\drawable\Info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Info.png" />
     <AndroidResource Include="Resources\drawable\dragonfly4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\map_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable\Norway.png" />
+    <AndroidResource Include="Resources\drawable\UnitedKingdom.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Norway_hdpi.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\UnitedKingdom_hdpi.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\UnitedKingdom_xhdpi.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Norway_xhdpi.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Norway.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\UnitedKingdom.png" />
+    <AndroidResource Include="Resources\drawable\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arter_white.png" />
+    <AndroidResource Include="Resources\drawable\list.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />
@@ -202,12 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_keyboard_arrow_right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Norway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\UnitedKingdom.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\arter.png" />
