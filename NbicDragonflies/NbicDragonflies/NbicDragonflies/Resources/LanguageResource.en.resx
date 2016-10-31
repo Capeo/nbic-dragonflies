@@ -165,21 +165,33 @@
     <value>Species</value>
     <comment>Label for Species page</comment>
   </data>
-	<data name="GalleryImagePhotographerLabel" xml:space="preserve">
+  <data name="GalleryImageSpeciesLabel" xml:space="preserve">
+    <value>Species</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImagePhotographerLabel" xml:space="preserve">
     <value>Photographer</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDateLabel" xml:space="preserve">
+  <data name="GalleryImageDateLabel" xml:space="preserve">
     <value>Date</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageLicenseLabel" xml:space="preserve">
+  <data name="GalleryImageLicenseLabel" xml:space="preserve">
     <value>Licens</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDescriptionLabel" xml:space="preserve">
+  <data name="GalleryImageDescriptionLabel" xml:space="preserve">
     <value>Description</value>
     <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="SpeciesInfoImages" xml:space="preserve">
+    <value>Images</value>
+    <comment>Label for images section in SpeciesInfo page</comment>
+  </data>
+  <data name="SpeciesInfoAttributes" xml:space="preserve">
+    <value>Attributes</value>
+    <comment>Label for attributes section in SpeciesInfo page</comment>
   </data>
 	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
     <value>Press picture for more information</value>

@@ -27,11 +27,6 @@ namespace NbicDragonflies.Views {
             PreviousQuestion.Clicked += PreviousButtonClicked;
         }
 
-        public void SetController(IKeyController controller)
-        {
-            _controller = controller;
-        }
-
         private void SetQuestion(KeyQuestion question)
         {
             KeyQuestionView view = new KeyQuestionView(question);

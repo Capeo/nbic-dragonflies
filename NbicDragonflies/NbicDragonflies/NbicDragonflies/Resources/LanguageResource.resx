@@ -165,21 +165,33 @@
     <value>Arter</value>
     <comment>Label for Species page</comment>
   </data>
-	<data name="GalleryImagePhotographerLabel" xml:space="preserve">
+  <data name="GalleryImageSpeciesLabel" xml:space="preserve">
+    <value>Art</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImagePhotographerLabel" xml:space="preserve">
     <value>Fotograf</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDateLabel" xml:space="preserve">
+  <data name="GalleryImageDateLabel" xml:space="preserve">
     <value>Dato</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageLicenseLabel" xml:space="preserve">
+  <data name="GalleryImageLicenseLabel" xml:space="preserve">
     <value>Lisens</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDescriptionLabel" xml:space="preserve">
+  <data name="GalleryImageDescriptionLabel" xml:space="preserve">
     <value>Beskrivelse</value>
     <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="SpeciesInfoImages" xml:space="preserve">
+    <value>Bilder</value>
+    <comment>Label for images section in SpeciesInfo page</comment>
+  </data>
+  <data name="SpeciesInfoAttributes" xml:space="preserve">
+    <value>Egenskaper</value>
+    <comment>Label for attributes section in SpeciesInfo page</comment>
   </data>
 	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
     <value>Trykk på bildet for mer informasjon</value>
