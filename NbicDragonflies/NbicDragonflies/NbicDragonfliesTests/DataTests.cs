@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NbicDragonflies;
 using NbicDragonflies.Data;
 
 namespace NbicDragonfliesTests
@@ -9,21 +11,21 @@ namespace NbicDragonfliesTests
     {
         // Test if gets json from RESTservice
         [TestMethod]
-        public async void GetTaxonJsonFromApi_ValidJson_TaxonJsonRetrieved()
+        public async Task GetTaxonJsonFromApi_ValidJson_TaxonJsonRetrieved()
         {
             // Arrange
             RestService rest = new RestService();
             int taxonId = 107;
 
             // Act
-            String taxonJson = await rest.FetchDataAsync(NbicDragonflies.Constants.TaxonRestUrl + $"{taxonId}");
+            String taxonJson = await rest.FetchDataAsync(NbicDragonflies.Utility.Constants.TaxonRestUrl + $"{taxonId}");
 
             // Assert
             Assert.IsTrue(taxonJson.Length > 0);
         }
 
         [TestMethod]
-        public async void GetTaxonFromApi_ValidTaxon_TaxonRetrieved()
+        public async Task GetTaxonFromApi_ValidTaxon_TaxonRetrieved()
         {
             // Arrange
             int taxonId = 107;
@@ -32,7 +34,7 @@ namespace NbicDragonfliesTests
             var taxon = await NbicDragonflies.Data.ApplicationDataManager.GetTaxon(taxonId);
 
             // Assert
-            Assert.AreEqual(taxon.scientificName, "Odonata");
+            Assert.AreEqual(taxon.GetScientificName(), "Odonata");
         }
     }
 }

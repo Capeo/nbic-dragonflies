@@ -111,6 +111,8 @@ namespace NbicDragonflies.Views {
             {
                 TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame)sender, typeof(TaxonButton));
 
+                System.Diagnostics.Debug.WriteLine(parent.Taxon.taxonID + ", " + parent.Taxon.scientificNameID);
+
                 SpeciesInfo speciesInfoView = new SpeciesInfo(new Species(parent.Taxon));
 
                 Navigation.PushAsync(speciesInfoView);

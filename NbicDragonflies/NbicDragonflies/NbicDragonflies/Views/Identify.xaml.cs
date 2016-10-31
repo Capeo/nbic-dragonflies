@@ -41,7 +41,6 @@ namespace NbicDragonflies.Views {
 
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
             PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
-
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)

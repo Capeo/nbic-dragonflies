@@ -17,9 +17,6 @@ namespace NbicDragonflies.Models
     public class Observation
     {
         public string Id { get; set; }
-        public string Institution { get; set; }
-        public string InstitutionUrl { get; set; }
-        public string InstitutionLogoUrl { get; set; }
         public string Collection { get; set; }
         public object Sex { get; set; }
         public object IdentifiedBy { get; set; }
@@ -58,10 +55,7 @@ namespace NbicDragonflies.Models
         public string Precision { get; set; }
         public object Info { get; set; }
         public List<PropertyUrl> PropertyUrls { get; set; }
-        public List<string> ThumbImgUrls { get; set; }
         public string TaxonId { get; set; }
-        public object Behavior { get; set; }
-        public object FootprintWKT { get; set; }
 
         public string GetLocationText()
         {
