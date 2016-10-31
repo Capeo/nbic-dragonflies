@@ -160,14 +160,30 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable\map.png" />
+    <AndroidResource Include="Resources\drawable\map_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\map_white.png" />
+    <AndroidResource Include="Resources\drawable\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\identify_white.png" />
+    <AndroidResource Include="Resources\drawable\Norway.png" />
+    <AndroidResource Include="Resources\drawable\UnitedKingdom.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Norway_hdpi.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\UnitedKingdom_hdpi.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\UnitedKingdom_xhdpi.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Norway_xhdpi.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Norway.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\UnitedKingdom.png" />
+    <AndroidResource Include="Resources\drawable\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arter_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arter_white.png" />
     <AndroidResource Include="Resources\drawable\list.png" />
     <AndroidResource Include="Resources\drawable-hdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\map.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\map.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\map.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />
@@ -212,12 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_keyboard_arrow_right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Norway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\UnitedKingdom.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\arter.png" />

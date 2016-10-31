@@ -121,10 +121,24 @@
     <BundleResource Include="Resources\Default_320-480.png" />
     <BundleResource Include="Resources\Default_640-960.png" />
     <BundleResource Include="Resources\Default_640-1136.png" />
-    <BundleResource Include="Resources\UnitedKingdom.png" />
     <BundleResource Include="Resources\Norway.png" />
-    <BundleResource Include="Resources\list.png" />
-    <BundleResource Include="Resources\map.png" />
+    <BundleResource Include="Resources\Norway%402x.png" />
+    <BundleResource Include="Resources\Norway%403x.png" />
+    <BundleResource Include="Resources\UnitedKingdom.png" />
+    <BundleResource Include="Resources\UnitedKingdom%402x.png" />
+    <BundleResource Include="Resources\UnitedKingdom%403x.png" />
+    <BundleResource Include="Resources\map_white.png" />
+    <BundleResource Include="Resources\map_white%402x.png" />
+    <BundleResource Include="Resources\map_white%403x.png" />
+    <BundleResource Include="Resources\list_white.png" />
+    <BundleResource Include="Resources\list_white%402x.png" />
+    <BundleResource Include="Resources\list_white%403x.png" />
+    <BundleResource Include="Resources\identify_white.png" />
+    <BundleResource Include="Resources\identify_white%402x.png" />
+    <BundleResource Include="Resources\identify_white%403x.png" />
+    <BundleResource Include="Resources\arter_white.png" />
+    <BundleResource Include="Resources\arter_white%402x.png" />
+    <BundleResource Include="Resources\arter_white%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

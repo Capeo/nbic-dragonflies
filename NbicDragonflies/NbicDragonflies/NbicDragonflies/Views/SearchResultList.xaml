@@ -6,8 +6,8 @@
              x:Class="NbicDragonflies.Views.SearchResultList"
              Title="Søk">
   <ContentPage.Content>
-    <StackLayout x:Name="SearchPageLayout">
-      <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="White" Margin="12,8,12,0" HorizontalOptions="FillAndExpand"/>
+    <StackLayout x:Name="SearchPageLayout" BackgroundColor="{x:Static utility:Constants.Background}">
+      <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="{x:Static utility:Constants.Background}" Margin="0" HorizontalOptions="FillAndExpand"/>
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout x:Name="SearchStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">

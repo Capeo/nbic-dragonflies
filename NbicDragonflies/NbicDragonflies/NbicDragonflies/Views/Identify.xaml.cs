@@ -25,6 +25,8 @@ namespace NbicDragonflies.Views {
 
             NextQuestion.Clicked += NextButtonClicked;
             PreviousQuestion.Clicked += PreviousButtonClicked;
+
+			ResultsList.ItemSelected += OnResultItemSelected;
         }
 
         private void SetQuestion(KeyQuestion question)
@@ -40,7 +42,6 @@ namespace NbicDragonflies.Views {
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
             PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
 
-            ResultsList.ItemSelected += OnResultItemSelected;
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)
@@ -91,6 +92,7 @@ namespace NbicDragonflies.Views {
                 await Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
                 ResultsList.SelectedItem = null;
             }
+			System.Diagnostics.Debug.WriteLine("pressed");
             ResultsList.IsEnabled = true;
         }
     }

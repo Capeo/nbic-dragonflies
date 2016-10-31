@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
 			 xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
 			 xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
 			 x:Class="NbicDragonflies.Views.Gallery"
@@ -8,7 +9,7 @@
 			Padding = "0, 0, 0, 0">
 	<ContentPage.Content>
 	
-		<StackLayout>
+		<StackLayout BackgroundColor="{x:Static utility:Constants.Background}">
       
 		  <Grid>
 		    <Grid.RowDefinitions>
@@ -35,8 +36,8 @@
 		  </Grid>
       
 			<StackLayout Orientation="Horizontal">
-			  <Button x:Name="PreviousPage" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "White"/>
-			  <Button x:Name="NextPage" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="White" />
+			  <Button x:Name="PreviousPage" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="10,0,0,0"/>
+			  <Button x:Name="NextPage" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="0,0,10,0" />
 			</StackLayout>	
       
 		</StackLayout>	
