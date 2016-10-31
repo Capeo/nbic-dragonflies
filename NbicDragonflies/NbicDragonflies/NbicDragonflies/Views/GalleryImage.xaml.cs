@@ -21,6 +21,12 @@ namespace NbicDragonflies
 		/// </summary>
 		public List<Taxon> Taxons;
 
+		private string _photographer;
+		private string _date;
+		private string _license;
+		private string _description;
+		private string _moreInfo;
+
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:NbicDragonflies.GalleryImage"/> class with a SpeciesImage as parameter. 
@@ -31,20 +37,32 @@ namespace NbicDragonflies
 			InitializeComponent();
 
 		    Title = image.SpeciesName;
+			_photographer = LanguageResource.GalleryImagePhotographerLabel;
+			_date = LanguageResource.GalleryImageDateLabel;
+			_license = LanguageResource.GalleryImageLicenseLabel;
+			_description = LanguageResource.GalleryImageDescriptionLabel;
+			_moreInfo = LanguageResource.GalleryImageMoreInfoLabel;
 
 
 			BigImage.Source = image.ImageSource;
-			SpeciesName.Text = LanguageResource.GalleryImageSpeciesLabel + ": " + image.SpeciesName;
-			MoreInfo.Text = LanguageResource.GalleryImageMoreInfoLabel;
-			Photographer.Text = LanguageResource.GalleryImagePhotographerLabel + ": " + image.Owner;
-			Date.Text = LanguageResource.GalleryImageDateLabel + ": " + image.Date;
-			License.Text = LanguageResource.GalleryImageLicenseLabel + ": " + image.License;
-			SpeciesInformation.Text = LanguageResource.GalleryImageDescriptionLabel + ": " + image.Description;
+			SpeciesName.Text = image.SpeciesName;
+			MoreInfo.Text = _moreInfo;
+			PhotographerDescription.Text = _photographer;
+			Photographer.Text = image.Owner;
+			DateDescription.Text = _date;
+			Date.Text =  image.Date;
+			LicenseDescription.Text = _license;
+			License.Text = image.License;
+			SpeciesInformationDescription.Text = _description;
+			SpeciesInformation.Text = image.Description;
 			Taxons = image.Taxons;
 
 
 			SpeciesTapped = new TapGestureRecognizer();
+
 			SpeciesName.GestureRecognizers.Add(SpeciesTapped);
+			BigImage.GestureRecognizers.Add(SpeciesTapped);
+
 		    SpeciesTapped.Tapped += HandleSpeciesClick;
 
 		}
@@ -69,8 +87,11 @@ namespace NbicDragonflies
 			{
 				SpeciesImageView parent = GetAncestor((Label)sender);
 				Navigation.PushAsync(new SpeciesInfo(new Species(Taxons[0])));
-
-
+			}
+			else if (sender.GetType() == typeof(Image))
+			{
+				SpeciesImageView parent = GetAncestor((Image)sender);
+				Navigation.PushAsync(new SpeciesInfo(new Species(Taxons[0])));
 			}
 		}
 

@@ -36,8 +36,8 @@ namespace NbicDragonflies.Utility {
 
             Taxon t = Data.ApplicationDataManager.GetTaxon(107).Result;
 
-            suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));
-            suggestions.Add(new KeySuggestion(t, "dragonfly2.jpg"));
+            suggestions.Add(new KeySuggestion(t, "BrownDragonfly.jpg"));
+            suggestions.Add(new KeySuggestion(t, "BrownDragonfly1.jpg"));
             suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));
             suggestions.Add(new KeySuggestion(t, "dragonfly2.jpg"));
             suggestions.Add(new KeySuggestion(t, "dragonfly1.jpg"));

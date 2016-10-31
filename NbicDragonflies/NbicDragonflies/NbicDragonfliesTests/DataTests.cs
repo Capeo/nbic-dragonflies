@@ -6,21 +6,31 @@ namespace NbicDragonfliesTests
     [TestClass]
     public class DataTests
     {
+        // Test if gets json from RESTservice
         [TestMethod]
-        public void TestMethod1()
+        public async void GetTaxonJsonFromApi_ValidJson_TaxonJsonRetrieved()
         {
             // Arrange
+            int taxonId = 107;
 
             // Act
+            String taxonJson = await NbicDragonflies.Data.IRestService.FetchDataAsync(NbicDragonflies.Constants.TaxonRestUrl + $"{taxonId}");
 
             // Assert
-            Assert.AreEqual(true, true);
+            Assert.IsTrue(taxonJson.Length > 0);
+        }
 
+        [TestMethod]
+        public async void GetTaxonFromApi_ValidTaxon_TaxonRetrieved()
+        {
+            // Arrange
+            int taxonId = 107;
+
+            // Act
+            var taxon = await NbicDragonflies.Data.ApplicationDataManager.GetTaxon(taxonId);
+
+            // Assert
+            Assert.AreEqual(taxon.scientificName, "Odonata");
         }
     }
 }
-
-
-// Unit tests for APIs
-// TaxonButton: CapitalFirstLetter (private for now, move to Utilities?)
-// API calls

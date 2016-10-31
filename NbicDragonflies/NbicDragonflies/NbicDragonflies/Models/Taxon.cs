@@ -75,6 +75,7 @@ namespace NbicDragonflies.Models
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Models.Taxon"/> class.
 		/// </summary>
+		/// <param name="vernacularName">Vernacular name.</param>
 		public Taxon()
 		{
 		}
@@ -86,7 +87,7 @@ namespace NbicDragonflies.Models
 		/// <param name="scientificNameId">Scientific name identifier.</param>
 		/// <param name="scientificName">Scientific name.</param>
 		/// <param name="taxonRank">Taxon rank.</param>
-        public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank )
+        public Taxon(int taxonId, int scientificNameId, string scientificName , string taxonRank)
         {
             taxonID = taxonId;
             scientificNameID = scientificNameId;
@@ -97,10 +98,10 @@ namespace NbicDragonflies.Models
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Models.Taxon"/> class with only taxonID as parameter.
 		/// </summary>
-		/// <param name="taxonID">Taxon identifier.</param>
-		public Taxon(int taxonID)
+		/// <param name="taxonId">Taxon identifier.</param>
+		public Taxon(int taxonId)
 		{
-			taxonID = taxonID;
+			this.taxonID = taxonId;
 		}
 
 		/// <summary>
@@ -116,7 +117,7 @@ namespace NbicDragonflies.Models
                 VernacularName vName = vernacularNames.Where(name => Utility.Language.CompareToCurrent(name.language)).ToList().FirstOrDefault();
                 if (vName != null)
                 {
-                    ret = vName.vernacularName;
+                    ret = Utility.Utilities.CapitalizeFirstLetter(vName.vernacularName);
                 }
             }
             if (ret == "" && scientificNames != null && scientificNames.Count > 0)
@@ -124,7 +125,7 @@ namespace NbicDragonflies.Models
                 ScientificName sName = scientificNames.FirstOrDefault();
                 if (sName != null)
                 {
-                    ret = sName.scientificName;
+                    ret = Utility.Utilities.CapitalizeFirstLetter(sName.scientificName);
                 }
             }
             return ret; 
@@ -136,7 +137,7 @@ namespace NbicDragonflies.Models
             if (scientificNames != null && scientificNames.Count > 0) {
                 ScientificName sName = scientificNames.FirstOrDefault();
                 if (sName != null) {
-                    ret = sName.scientificName;
+                    ret = Utility.Utilities.CapitalizeFirstLetter(sName.scientificName);
                 }
             }
             return ret;

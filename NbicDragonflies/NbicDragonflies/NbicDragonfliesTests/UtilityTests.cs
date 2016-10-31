@@ -7,7 +7,7 @@ namespace NbicDragonfliesTests
     public class UtilityTests
     {
         [TestMethod]
-        public void CapitalFirstLetter_ValidString_FirstLetterCapitalized()
+        public void CapitalFirstLetter_ValidResult_FirstLetterCapitalized()
         {
             // Arrange
             string originalString = "odonata";
