@@ -3,102 +3,95 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Controllers;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
-    public partial class Identify : ContentPage {
 
-        public ListView ListView1 { get { return ResultsList; } }
-        public ListView ListView2 { get { return AlternativesList; } }
+    public partial class Identify : TabbedPage {
 
-        public Identify()
+        private IKeyController _controller;
+
+        public Identify(IKeyController controller)
+
         {
             InitializeComponent();
 
-            // Add alternatives
+            _controller = controller;
 
-            var alternativesItems = new List<AlternativeItem>();
+            SetQuestion(_controller.CurrentQuestion());
+            ResultsList.ItemsSource = _controller.GetSuggestions();
 
-            alternativesItems.Add(new AlternativeItem
+            NextQuestion.Clicked += NextButtonClicked;
+            PreviousQuestion.Clicked += PreviousButtonClicked;
+        }
+
+        private void SetQuestion(KeyQuestion question)
+        {
+            KeyQuestionView view = new KeyQuestionView(question);
+            foreach (var alternative in view.Alternatives)
             {
-                ImageSource = "hvilestilling1.png",
-                Detail = "Vingene legges helt eller delvis bakover langs kroppen i hvile.",
-                TargetType = typeof(Home)
-            });
+                alternative.AlternativeTap.Tapped += HandleAlternativeTap;
+            }
+            QuestionsLayout.Children.Clear();
+            QuestionsLayout.Children.Insert(0, view);
 
-            alternativesItems.Add(new AlternativeItem
+            NextQuestion.IsEnabled = _controller.HasNextQuestion();
+            PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
+
+            ResultsList.ItemSelected += OnResultItemSelected;
+        }
+
+        private void HandleAlternativeTap(object sender, EventArgs e)
+        {
+            if (sender.GetType() == typeof(Frame))
             {
-                ImageSource = "hvilestilling2.png",
-                Detail = "Vingene står vinkelrett ut fra kroppen i hvile.",
-                TargetType = typeof(Home)
-            });
+                IdentifyAlternativeView alternativeView = (IdentifyAlternativeView) Utility.Utilities.GetAncestor((Frame)sender, typeof(IdentifyAlternativeView));
 
-            AlternativesList.ItemsSource = alternativesItems;
+                _controller.SetAlternative(alternativeView.Alternative);
 
+                if (_controller.HasNextQuestion())
+                {
+                    SetQuestion(_controller.NextQuestion());
+                }
+                else
+                {
+                    SetQuestion(_controller.CurrentQuestion());
+                    this.CurrentPage = ResultsTab;
+                }
+            }
+            
+        }
 
-
-            // Add items for results
-
-            var resultsItems = new List<ResultItem>();
-
-            resultsItems.Add(new ResultItem
+        private void NextButtonClicked(object sender, EventArgs e)
+        {
+            if (_controller.HasNextQuestion()) 
             {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 1",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
+                SetQuestion(_controller.NextQuestion());
+            }
+        }
 
-            resultsItems.Add(new ResultItem
+        private void PreviousButtonClicked(object sender, EventArgs e)
+        {
+            if (_controller.HasPreviousQuestion())
             {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 2",
-                Detail = "Something latin", 
-                TargetType = typeof(Home)
-            });
+                SetQuestion(_controller.PreviousQuestion());
+            }
+        }
 
-            resultsItems.Add(new ResultItem
+
+        private async void OnResultItemSelected(Object sender, SelectedItemChangedEventArgs e)
+        {
+            ResultsList.IsEnabled = false;
+            var item = e.SelectedItem;
+            if (item != null)
             {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 3",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 4",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 5",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly2.jpg",
-                Text = "Dragonfly 6",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            resultsItems.Add(new ResultItem
-            {
-                ImageSource = "dragonfly1.jpg",
-                Text = "Dragonfly 7",
-                Detail = "Something latin",
-                TargetType = typeof(Home)
-            });
-
-            ResultsList.ItemsSource = resultsItems;
+                KeySuggestion suggestion = (KeySuggestion)item;
+                await Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
+                ResultsList.SelectedItem = null;
+            }
+            ResultsList.IsEnabled = true;
         }
     }
 }

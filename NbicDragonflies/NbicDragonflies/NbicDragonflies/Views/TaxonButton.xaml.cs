@@ -8,11 +8,16 @@ using NbicDragonflies.Models;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+
     public partial class TaxonButton : ContentView
     {
 
         private Taxon _taxon;
 
+		/// <summary>
+		/// Gets or sets the taxon.
+		/// </summary>
+		/// <value>The taxon.</value>
         public Taxon Taxon
         {
             get { return _taxon; }
@@ -23,17 +28,44 @@ namespace NbicDragonflies.Views {
             }
         }
 
+		/// <summary>
+		/// TapGestureRecognizer for tap to expanding Taxon tree. 
+		/// </summary>
         public TapGestureRecognizer NavigationTap;
-        public TapGestureRecognizer InfoTap;
+        /// <summary>
+        /// TapGestureRecognizer for tap to get information about species. 
+        /// </summary>
+		public TapGestureRecognizer InfoTap;
 
+		/// <summary>
+		/// Gets a value indicating whether this <see cref="T:NbicDragonflies.Views.TaxonButton"/> is open.
+		/// </summary>
+		/// <value><c>true</c> if open; otherwise, <c>false</c>.</value>
         public bool Open { get; private set; }
 
+		/// <summary>
+		/// Gets or sets the level in the taxon tree.
+		/// </summary>
+		/// <value>The level.</value>
         public int Level { get; set; }
 
+		/// <summary>
+		/// Gets or sets the children in the taxon tree.
+		/// </summary>
+		/// <value>The children.</value>
         public List<TaxonButton> Children { get; set; }
 
+		/// <summary>
+		/// Gets or sets the name of the taxon.
+		/// </summary>
+		/// <value>The name.</value>
         public string Name { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.TaxonButton"/> class with taxon and level as parameters.
+		/// </summary>
+		/// <param name="taxon">Taxon.</param>
+		/// <param name="level">Level.</param>
         public TaxonButton(Taxon taxon, int level)
         {
             InitializeComponent();
@@ -62,18 +94,13 @@ namespace NbicDragonflies.Views {
 
         private void SetTaxon(Taxon taxon)
         {
-            NameLabel.Text = CapitalizeFirstLetter(taxon.GetPreferredName());
+            NameLabel.Text = Utility.Utilities.CapitalizeFirstLetter(taxon.GetPreferredName());
         }
 
-        private string CapitalizeFirstLetter(string str)
-        {
-            if (str.Length >= 1)
-            {
-                return str.Substring(0, 1).ToUpper() + str.Substring(1);
-            }
-            return str;
-        }
 
+		/// <summary>
+		/// Switchs the state to another level.
+		/// </summary>
         public void SwitchState()
         {
             if (Open)

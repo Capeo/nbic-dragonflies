@@ -62,6 +62,60 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dato.
+        /// </summary>
+        public static string GalleryImageDateLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beskrivelse.
+        /// </summary>
+        public static string GalleryImageDescriptionLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lisens.
+        /// </summary>
+        public static string GalleryImageLicenseLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageLicenseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trykk på bildet for mer informasjon.
+        /// </summary>
+        public static string GalleryImageMoreInfoLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageMoreInfoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fotograf.
+        /// </summary>
+        public static string GalleryImagePhotographerLabel {
+            get {
+                return ResourceManager.GetString("GalleryImagePhotographerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Art.
+        /// </summary>
+        public static string GalleryImageSpeciesLabel {
+            get {
+                return ResourceManager.GetString("GalleryImageSpeciesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Galleri.
         /// </summary>
         public static string GalleryLabel {
@@ -85,6 +139,24 @@ namespace NbicDragonflies.Resources {
         public static string IdentifyLabel {
             get {
                 return ResourceManager.GetString("IdentifyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spørsmål.
+        /// </summary>
+        public static string KeyQuestionsLabel {
+            get {
+                return ResourceManager.GetString("KeyQuestionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forslag.
+        /// </summary>
+        public static string KeyResultsLabel {
+            get {
+                return ResourceManager.GetString("KeyResultsLabel", resourceCulture);
             }
         }
         
@@ -139,6 +211,51 @@ namespace NbicDragonflies.Resources {
         public static string SearchLabel {
             get {
                 return ResourceManager.GetString("SearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finner ingen resultater for.
+        /// </summary>
+        public static string SearchResultCouldNotFind {
+            get {
+                return ResourceManager.GetString("SearchResultCouldNotFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forslag.
+        /// </summary>
+        public static string SearchResultSuggestions {
+            get {
+                return ResourceManager.GetString("SearchResultSuggestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Søk.
+        /// </summary>
+        public static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Egenskaper.
+        /// </summary>
+        public static string SpeciesInfoAttributes {
+            get {
+                return ResourceManager.GetString("SpeciesInfoAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bilder.
+        /// </summary>
+        public static string SpeciesInfoImages {
+            get {
+                return ResourceManager.GetString("SpeciesInfoImages", resourceCulture);
             }
         }
         

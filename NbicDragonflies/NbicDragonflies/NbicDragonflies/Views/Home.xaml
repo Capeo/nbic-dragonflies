@@ -19,8 +19,8 @@
           <StackLayout x:Name="HomeStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,3" HeightRequest="260" BackgroundColor="White">
                   <Image x:Name="InfoImage"/>
-				  <BoxView x:Name="WhiteBox"/>
-				  <Label x:Name="InfoTitle"/>
+				          <BoxView x:Name="WhiteBox"/>
+				          <Label x:Name="InfoTitle"/>
                   <Label x:Name="InfoText"/>
                 </RelativeLayout>
                 <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,0">

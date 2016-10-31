@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NbicDragonflies.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,15 +38,27 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\IHomeController.cs" />
+    <Compile Include="Controllers\IKeyController.cs" />
+    <Compile Include="Controllers\IObservationsController.cs" />
+    <Compile Include="Controllers\ISpeciesContentController.cs" />
+    <Compile Include="Controllers\ITaxonTreeController.cs" />
+    <Compile Include="Controllers\PlaceholderHome.cs" />
+    <Compile Include="Controllers\PlaceholderObservations.cs" />
+    <Compile Include="Controllers\PlaceholderSpeciesContent.cs" />
+    <Compile Include="Controllers\TaxonTreeController.cs" />
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
+    <Compile Include="Models\HomeInfo.cs" />
+    <Compile Include="Models\KeyQuestion.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
-    <Compile Include="Models\AlternativeItem.cs" />
+    <Compile Include="Models\IdentifyAlternative.cs" />
+    <Compile Include="Models\KeySuggestion.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
+    <Compile Include="Models\SpeciesContent.cs" />
     <Compile Include="Models\Taxon.cs" />
     <Compile Include="Models\Observation.cs" />
-    <Compile Include="Models\ResultItem.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\SpeciesImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,7 +73,9 @@
       <DependentUpon>LanguageResource.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Controllers\PlaceholderKey.cs" />
     <Compile Include="Utility\Language.cs" />
+    <Compile Include="Utility\Utilities.cs" />
     <Compile Include="Views\Gallery.xaml.cs">
       <DependentUpon>Gallery.xaml</DependentUpon>
     </Compile>
@@ -69,6 +84,12 @@
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdentifyAlternativeView.xaml.cs">
+      <DependentUpon>IdentifyAlternativeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyQuestionView.xaml.cs">
+      <DependentUpon>KeyQuestionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListItems\ObservationsCell.cs" />
     <Compile Include="Views\NavigationMaster.xaml.cs">
@@ -79,9 +100,6 @@
     </Compile>
     <Compile Include="Views\Observations.xaml.cs">
       <DependentUpon>Observations.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ObservationList.xaml.cs">
-      <DependentUpon>ObservationList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchResultButton.xaml.cs">
       <DependentUpon>SearchResultButton.xaml</DependentUpon>
@@ -104,6 +122,9 @@
     <Compile Include="Views\GalleryImage.xaml.cs">
       <DependentUpon>GalleryImage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Placeholders.cs" />
+    <Compile Include="Controllers\IGalleryControllers.cs" />
+    <Compile Include="Controllers\PlaceholderGallery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -151,10 +172,12 @@
     <EmbeddedResource Include="Resources\LanguageResource.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LanguageResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -201,12 +224,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\ObservationList.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Views\SpeciesInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -224,9 +241,20 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\IdentifyAlternativeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SearchResultList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\KeyQuestionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -237,6 +265,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

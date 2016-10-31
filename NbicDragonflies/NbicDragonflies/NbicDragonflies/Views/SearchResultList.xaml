@@ -11,7 +11,7 @@
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
           <StackLayout x:Name="SearchStackLayout" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label x:Name="LabelHeader" Text="Did you mean" TextColor="Gray" HorizontalOptions="FillAndExpand" FontSize="18"/>
+            <Label x:Name="LabelHeader" TextColor="Gray" HorizontalOptions="FillAndExpand" FontSize="18" Margin="10,0,0,0"/>
           </StackLayout>
         </ScrollView.Content>
       </ScrollView>

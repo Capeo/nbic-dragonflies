@@ -16,77 +16,27 @@ namespace NbicDragonflies.Data
     public class RestService : IRestService
     {
 
-        public async Task<string> FetchTaxonsAsync (string urlSuffix)
-        {
-            var client = new HttpClient ();
-            client.MaxResponseContentBufferSize = 256000;
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var address = Constants.TaxonRestUrl + $"{urlSuffix}";
-
-            try
-            {
-                // GET method
-                var response = await client.GetAsync (address);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var taxonsJson = response.Content.ReadAsStringAsync().Result;
-					//var rootobject = JsonConvert.DeserializeObject<Rootobject>(taxonsJson);
-                    return taxonsJson;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(@"				ERROR {0}", ex.Message);
-            }
-
-            return "";
-        }
-
-        //FIXME avoid repetition, use a design pattern
-        public async Task<string> FetchObservationsAsync(string urlSuffix)
+        public async Task<string> FetchDataAsync(string restUrl)
         {
             var client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var address = Constants.ObservationRestUrl + $"{urlSuffix}";
+            var address = restUrl;
 
             try
             {
                 // GET method
-                var response = await client.GetAsync(address);
+                var response = await client.GetAsync(new Uri(address)).ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var observationsJson = response.Content.ReadAsStringAsync().Result;
-                    return observationsJson;
+                    var json = response.Content.ReadAsStringAsync().Result;
+                    return json;
                 }
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                Debug.WriteLine(@"				ERROR {0}", ex.Message);
-            }
-            return "";
-        }
-
-        public async Task<string> FetchSearchResultsAsync(string searchText)
-        {
-            var client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var address = Constants.SearchUrl + $"{searchText}";
-
-            try
-            {
-                var response = await client.GetAsync(address);
-                if (response.IsSuccessStatusCode)
-                {
-                    return response.Content.ReadAsStringAsync().Result;
-                }
-            }
-            catch(Exception e)
-            {
-                Debug.WriteLine(@"				ERROR {0}", e.Message);
+                Debug.WriteLine(@"				ERROR {0}", ex.StackTrace);
             }
             return "";
         }
