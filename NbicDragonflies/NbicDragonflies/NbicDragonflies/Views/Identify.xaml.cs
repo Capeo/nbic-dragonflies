@@ -25,6 +25,8 @@ namespace NbicDragonflies.Views {
 
             NextQuestion.Clicked += NextButtonClicked;
             PreviousQuestion.Clicked += PreviousButtonClicked;
+
+            ResultsList.ItemSelected += OnResultItemSelected;
         }
 
         private void SetQuestion(KeyQuestion question)
@@ -39,8 +41,6 @@ namespace NbicDragonflies.Views {
 
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
             PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
-
-            ResultsList.ItemSelected += OnResultItemSelected;
         }
 
         private void HandleAlternativeTap(object sender, EventArgs e)
