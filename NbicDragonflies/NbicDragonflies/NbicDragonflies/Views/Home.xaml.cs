@@ -27,35 +27,47 @@ namespace NbicDragonflies.Views {
             _controller = controller;
             _infoTap = new TapGestureRecognizer();
 
+			// Position image within InfoLayout
+			InfoLayout.Children.Add(InfoImage,
+				Constraint.RelativeToParent((parent) => parent.X),
+				Constraint.RelativeToParent((parent) => parent.Y),
+				Constraint.RelativeToParent((parent) => (parent.Width)),
+				Constraint.RelativeToParent((parent) => parent.Height));
+			InfoImage.WidthRequest = InfoLayout.Width;
+			InfoImage.Aspect = Aspect.AspectFit;
+
+			//Create and position white box behind info text
+			InfoLayout.Children.Add(WhiteBox,
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.X),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Y + sibling.Height * 0.72),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Width),
+                Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Height - sibling.Height * 0.72));
+			WhiteBox.BackgroundColor = Color.White;
+			WhiteBox.Opacity = 0.65;
+
+
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,
-                Constraint.RelativeToParent((parent) => parent.X),
-                Constraint.RelativeToParent((parent) => parent.Y),
-                Constraint.RelativeToParent((parent) => parent.Width*0.5),
-                Constraint.RelativeToParent((parent) => parent.Height*0.2));
-            InfoTitle.FontAttributes = FontAttributes.Bold;
+                Constraint.RelativeToView(WhiteBox, (parent,sibling) => sibling.X + 10),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Y + 5),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 42.8));
+			InfoTitle.FontSize = 25;
+			InfoTitle.TextColor = Color.Black;
 
             // Position text within InfoLayout
             InfoLayout.Children.Add(InfoText,
                 Constraint.RelativeToView(InfoTitle, (parent, sibling) => sibling.X),
-                Constraint.RelativeToView(InfoTitle, (parent, sibling) => (sibling.Y + sibling.Height + 4)),
-                Constraint.RelativeToParent((parent) => parent.Width * 0.5),
-                Constraint.RelativeToParent((parent) => parent.Height * 0.8)
-                );
-
-            // Position image within InfoLayout
-            InfoLayout.Children.Add(InfoImage,
-                Constraint.RelativeToView(InfoText, (parent, sibling) => (sibling.X + sibling.Width + 2)),
-                Constraint.RelativeToView(InfoText, (parent, sibling) => (sibling.Y)),
-                Constraint.RelativeToParent((parent) => (parent.Width * 0.45)),
-                Constraint.RelativeToParent((parent) => parent.Height * 0.7));
-            InfoImage.Aspect = Aspect.AspectFit;
-
-            RecentObservationsTitle.FontAttributes = FontAttributes.Bold;
+                Constraint.RelativeToView(InfoTitle, (parent, sibling) => (sibling.Y + sibling.Height)),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
+                Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 30));
+			InfoText.FontSize = 12;
+			InfoText.TextColor = Color.Black;
+            
 
             SetInfo(_controller.GetHomeInfo());
-            FillRecentObservationsList(_controller.GetRecentObservations());
-            
+            FillRecentObservationsList(_controller.GetRecentObservations());  
+                      
             SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
         }
 
@@ -84,12 +96,14 @@ namespace NbicDragonflies.Views {
                 var recentObservationsCells = new List<ObservationsCell>();
                 foreach (Observation observation in observations)
                 {
-                    string name = observation.Name == null
-                        ? observation.ScientificName
-                        : observation.Name + ", " + observation.ScientificName;
+					if (observation.Name != null)
+					{
+						observation.Name = observation.Name.Substring(0, 1).ToUpper() + observation.Name.Substring(1);
+					}
+
                     ObservationsCell cell = new ObservationsCell
                     {
-                        Species = name,
+                        Species = observation.Name == null ? observation.ScientificName : observation.Name + " (" + observation.ScientificName + ")",
                         Location = observation.GetLocationText(),
                         Date = observation.CollctedDate,
                         User = observation.Collector,
@@ -103,12 +117,14 @@ namespace NbicDragonflies.Views {
 
         private void SetInfo(HomeInfo info)
         {
+            InfoTitle.Text = info.Title;
             InfoText.Text = info.Text;
             InfoImage.Source = info.Image;
-            InfoFrame.GestureRecognizers.Clear();
+
+            InfoLayout.GestureRecognizers.Clear();
             if (info.Taxon != null)
             {
-                InfoFrame.GestureRecognizers.Add(_infoTap);
+                InfoLayout.GestureRecognizers.Add(_infoTap);
                 _infoTap.Tapped += OnInfoPressed;
             }
         }

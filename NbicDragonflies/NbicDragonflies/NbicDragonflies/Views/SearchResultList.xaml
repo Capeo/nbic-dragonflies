@@ -4,7 +4,7 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.SearchResultList"
-             Title="Search">
+             Title="Søk">
   <ContentPage.Content>
     <StackLayout x:Name="SearchPageLayout">
       <SearchBar x:Name="SpeciesSearchBar" Placeholder="Søk arter..." BackgroundColor="White" Margin="12,8,12,0" HorizontalOptions="FillAndExpand"/>
