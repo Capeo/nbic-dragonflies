@@ -19,7 +19,7 @@ namespace NbicDragonflies.Controllers {
         public List<Observation> GetRecentObservations()
         {
             ObservationList recentObservationsList =
-                ApplicationDataManager.GetObservationListAsync("list").Result;
+                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5").Result;
             if (recentObservationsList != null)
             {
                 return recentObservationsList.Observations;
