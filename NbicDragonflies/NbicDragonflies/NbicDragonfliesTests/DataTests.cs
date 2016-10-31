@@ -18,7 +18,7 @@ namespace NbicDragonfliesTests
             int taxonId = 107;
 
             // Act
-            String taxonJson = await rest.FetchDataAsync(Constants.TaxonRestUrl + $"Taxon/{taxonId}");
+            String taxonJson = await rest.FetchDataAsync(NbicDragonflies.Utility.Constants.TaxonRestUrl + $"{taxonId}");
 
             // Assert
             Assert.IsTrue(taxonJson.Length > 0);

@@ -31,6 +31,9 @@ namespace NbicDragonflies.Views
 
             ObservationsMap.MoveToRegion(MapSpan.FromCenterAndRadius( new Position(63.487164718, 9.839663308), Distance.FromMiles(400)));
 
+            //TODO Add pins here, will not work due to areas not being assigned to geocoordinates in the API
+            //AddMapPins(_controller.GetObservationsMapPins());
+
             FillObservationsList(_controller.GetObservations());
         }
 
@@ -48,6 +51,20 @@ namespace NbicDragonflies.Views
                     recentObservationsCells.Add(cell);
                 }
                 RecentObservationsList.ItemsSource = recentObservationsCells;
+            }
+        }
+
+        private void AddMapPins(Dictionary<AreaDataSet,int> observationMapPins)
+        {
+            foreach (KeyValuePair<AreaDataSet, int> entry in observationMapPins)
+            {
+                var entryCoordinates = entry.Key.Location;
+                var pin = new Pin()
+                {
+                    Position = new Position(entryCoordinates.Latitude, entryCoordinates.Longitude),
+                    Label = entry.Key.Name + " " + entry.Value
+                };
+                ObservationsMap.Pins.Add(pin);
             }
         }
     }

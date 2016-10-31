@@ -65,7 +65,7 @@ namespace NbicDragonflies.Models
         /// Gets or sets the vernacular names. 
         /// </summary>
         /// <value>The name of the vernacular.</value>
-		public List<object> VernacularName { get; set; }
+		public List<string> VernacularName { get; set; }
     }
 
 }

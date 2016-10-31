@@ -21,22 +21,23 @@ namespace NbicDragonflies.Data
             var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
             var address = restUrl;
 
             try
             {
                 // GET method
-                var response = await client.GetAsync(address).ConfigureAwait(false);
+                string response = await client.GetStringAsync(address).ConfigureAwait(false);
 
-                if (response.IsSuccessStatusCode)
+                if (response!=null)
                 {
-                    var taxonsJson = response.Content.ReadAsStringAsync().Result;
+                    var taxonsJson = response;
                     return taxonsJson;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+                Debug.WriteLine(@"				ERROR {0}", ex.StackTrace);
             }
 
             return "";
