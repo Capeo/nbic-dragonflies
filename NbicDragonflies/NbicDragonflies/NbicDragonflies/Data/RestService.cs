@@ -16,9 +16,9 @@ namespace NbicDragonflies.Data
     public class RestService : IRestService
     {
 
-        public async Task<string> FetchDataAsync(string restUrl)
+        public async Task<string> FetchDataAsync (string restUrl)
         {
-            var client = new HttpClient();
+            var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             var address = restUrl;
@@ -26,12 +26,12 @@ namespace NbicDragonflies.Data
             try
             {
                 // GET method
-                var response = await client.GetAsync(address);
+                var response = await client.GetAsync (address);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var json = response.Content.ReadAsStringAsync().Result;
-                    return json;
+                    var taxonsJson = response.Content.ReadAsStringAsync().Result;
+                    return taxonsJson;
                 }
             }
             catch (Exception ex)
