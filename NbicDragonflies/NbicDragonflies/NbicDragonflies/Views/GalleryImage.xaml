@@ -11,7 +11,7 @@
 	
       <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Image x:Name="BigImage" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"/>
-		<Label x:Name="MoreInfo" HorizontalTextAlignment="End" TextColor="Silver" FontSize="Micro" Margin="10,0,0,0"/>
+		<Label x:Name="MoreInfo" HorizontalTextAlignment="Start" TextColor="Silver" FontSize="Micro" Margin="10,0,0,0"/>
 		<Label x:Name="SpeciesName" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Large" FontAttributes="Bold" Margin="10,0,0,0"/>
 		<Label x:Name="SpeciesInformationDescription" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Small" FontAttributes="Bold" Margin="10,0,0,0"/>
 		<Label x:Name="SpeciesInformation" HorizontalTextAlignment="Start" TextColor="Gray" FontSize="Small" Margin="10,0,0,0"/>
