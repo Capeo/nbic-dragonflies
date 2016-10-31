@@ -33,6 +33,7 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Y + sibling.Height * 0.72),
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Width),
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Height - sibling.Height * 0.72));
+			WhiteBox.BackgroundColor = Color.White;
 			WhiteBox.Opacity = 0.65;
 
 
@@ -43,6 +44,7 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 42.8));
 			InfoTitle.FontSize = 25;
+			InfoTitle.TextColor = Color.Black;
 
             // Position text within InfoLayout
             InfoLayout.Children.Add(InfoText,
@@ -51,6 +53,7 @@ namespace NbicDragonflies.Views {
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Width - 20),
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Height - 30));
 			InfoText.FontSize = 12;
+			InfoText.TextColor = Color.Black;
             
 
             SetInfo("Brun øyenstikker", "En karakteristisk stor, nøttebrun øyenstikker med påfallende bruntonede vinger.", "BrownDragonfly.jpg");
