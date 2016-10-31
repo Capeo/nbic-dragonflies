@@ -155,6 +155,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\Info.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Info.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Info.png" />
+    <AndroidResource Include="Resources\drawable\dragonfly4.jpg" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />

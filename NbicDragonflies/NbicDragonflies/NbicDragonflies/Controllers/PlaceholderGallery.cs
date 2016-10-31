@@ -36,7 +36,7 @@ namespace NbicDragonflies
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
 				new SpeciesImage("dragonfly2.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
-				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
+				new SpeciesImage("dragonfly4.jpg", "Rødbrun høstlibelle", "Mats Egedal", "31.10.2016", "LC4400", "Rødbrun høstlibelle er utbredt i et belte fra vest i Europa til Sibir i Asia. Finnes i Danmark, og Sverige, men mangler i Finland. I sydlige Norge langs kysten til Nordland.", new List<Taxon> { t }),
 				new SpeciesImage("dragonfly2.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
 				new SpeciesImage("dragonfly1.jpg", "Odonata", "Phrida Norrhall", "12.03.2014", "LC4400", "Description", new List<Taxon> { t }),
