@@ -3,34 +3,34 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
-  <LinearLayout
-    android:id="@+id/Text"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingLeft="10dp">
-    <TextView
-      android:id="@+id/speciesText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-    <TextView
-      android:id="@+id/locationText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-    <TextView
-      android:id="@+id/dateText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-    <TextView
-      android:id="@+id/userText"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-  </LinearLayout>
-  <ImageView
-    android:id="@+id/Image"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:padding="5dp"
-    android:src="@drawable/icon"
-    android:layout_alignParentRight="true"/>
+    <LinearLayout
+        android:id="@+id/Text"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:id="@+id/speciesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/locationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/userText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="5dp"
+        android:src="@drawable/icon"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>

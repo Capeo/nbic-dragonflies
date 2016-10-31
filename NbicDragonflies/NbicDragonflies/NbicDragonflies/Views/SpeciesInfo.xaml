@@ -2,26 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
-             x:Class="NbicDragonflies.Views.SpeciesInfo"
-             Title="">
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.SpeciesInfo">
   <ContentPage.Content>
     <ScrollView x:Name="ContentView" HorizontalOptions="FillAndExpand">
-      <StackLayout>
-        <views:SpeciesImageView x:Name="TopImage" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
-        <Frame HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="0" Spacing="10">
+        <Frame HorizontalOptions="FillAndExpand" HasShadow="False" Padding="10">
+          <views:SpeciesImageView x:Name="TopImage" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        </Frame>
+        <Frame HorizontalOptions="FillAndExpand" HasShadow="False" Padding="5">
           <Frame.Content>
-            <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand"/>
+            <StackLayout x:Name="AttributesLayout" HorizontalOptions="FillAndExpand" Padding="7">
+              <Label Text="{x:Static resources:LanguageResource.SpeciesInfoAttributes}" FontAttributes="Bold" FontSize="16"/>
+            </StackLayout>
           </Frame.Content>
         </Frame>
-        <Frame HorizontalOptions="FillAndExpand">
+        <Frame HorizontalOptions="FillAndExpand" HasShadow="False" Padding="5">
           <Frame.Content>
-            <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand"/>
+            <StackLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" Padding="7"/>
           </Frame.Content>
         </Frame>
-        <Frame HorizontalOptions="FillAndExpand">
+        <Frame HorizontalOptions="FillAndExpand" Padding="5" Margin="0" HasShadow="False">
           <Frame.Content>
-            <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand">
-              <Label Text="Bilder" FontAttributes="Bold"/>
+            <StackLayout x:Name="ImageLayout" HorizontalOptions="FillAndExpand" Padding="0" Margin="0">
+              <Label Text="{x:Static resources:LanguageResource.SpeciesInfoImages}" FontAttributes="Bold" FontSize="16" Margin="7"/>
             </StackLayout>
           </Frame.Content>
         </Frame>

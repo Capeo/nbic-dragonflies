@@ -129,6 +129,14 @@
     <value>Identifiser art</value>
     <comment>Label for IdentifySpecies page</comment>
   </data>
+  <data name="KeyQuestionsLabel" xml:space="preserve">
+    <value>Spørsmål</value>
+    <comment>Label for questions tab in KeyPage</comment>
+  </data>
+  <data name="KeyResultsLabel" xml:space="preserve">
+    <value>Forslag</value>
+    <comment>Label for results tab in KeyPage</comment>
+  </data>
   <data name="NavigationLabel" xml:space="preserve">
     <value>Meny</value>
     <comment>Label for NavigationMaster page</comment>
@@ -156,5 +164,49 @@
   <data name="SpeciesLabel" xml:space="preserve">
     <value>Arter</value>
     <comment>Label for Species page</comment>
+  </data>
+  <data name="GalleryImageSpeciesLabel" xml:space="preserve">
+    <value>Art</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImagePhotographerLabel" xml:space="preserve">
+    <value>Fotograf</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImageDateLabel" xml:space="preserve">
+    <value>Dato</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImageLicenseLabel" xml:space="preserve">
+    <value>Lisens</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="GalleryImageDescriptionLabel" xml:space="preserve">
+    <value>Beskrivelse</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="SpeciesInfoImages" xml:space="preserve">
+    <value>Bilder</value>
+    <comment>Label for images section in SpeciesInfo page</comment>
+  </data>
+  <data name="SpeciesInfoAttributes" xml:space="preserve">
+    <value>Egenskaper</value>
+    <comment>Label for attributes section in SpeciesInfo page</comment>
+  </data>
+	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+    <value>Trykk på bildet for mer informasjon</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="SearchResultCouldNotFind" xml:space="preserve">
+    <value>Finner ingen resultater for</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchResultSuggestions" xml:space="preserve">
+    <value>Forslag</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchTitle" xml:space="preserve">
+    <value>Søk</value>
+    <comment>Label for Search Result List</comment>
   </data>
 </root>

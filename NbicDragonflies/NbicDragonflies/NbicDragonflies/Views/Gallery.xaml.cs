@@ -4,86 +4,191 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Utility;
 using Xamarin.Forms;
 
 
 namespace NbicDragonflies.Views
 {
+	/// <summary>
+	/// Gallery page. 
+	/// </summary>
 	public partial class Gallery : ContentPage
 	{
-		public TapGestureRecognizer NextPageTapped;
+		/// <summary>
+		/// The pages in the grid.
+		/// </summary>
+		public List<SpeciesImageView> Pages = new List<SpeciesImageView>();
+		private int _indexCounter = 0;
+	    private int _imagesCounter = 0;
+		/// <summary>
+		/// List over Images to fill in all pages. 
+		/// </summary>
+		public List<SpeciesImage> ImageList;
+		private IGalleryControllers _controller;
 
-		public Gallery()
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Gallery"/> class with IGalleryControllers as parameter.
+		/// </summary>
+		/// <param name="controller">Controller.</param>
+		public Gallery(IGalleryControllers controller)
 		{
 			InitializeComponent();
 
-			p00.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p01.Image = new SpeciesImage("dragonfly2.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p02.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p10.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p11.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p12.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p20.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p21.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
-			p22.Image = new SpeciesImage("dragonfly1.jpg", "Phrida Norrhall", "12/3-14", "LC4400");
+			_controller = controller;
 
-			p00.GalleryTap.Tapped += HandleImageClick;
-			p01.GalleryTap.Tapped += HandleImageClick;
-			p02.GalleryTap.Tapped += HandleImageClick;
-			p10.GalleryTap.Tapped += HandleImageClick;
-			p11.GalleryTap.Tapped += HandleImageClick;
-			p12.GalleryTap.Tapped += HandleImageClick;
-			p20.GalleryTap.Tapped += HandleImageClick;
-			p21.GalleryTap.Tapped += HandleImageClick;
-			p22.GalleryTap.Tapped += HandleImageClick;
-
-			NextPageTapped = new TapGestureRecognizer();
-			nextPage.GestureRecognizers.Add(NextPageTapped);
-
-			NextPageTapped.Tapped += HandleNextPageClick;
+			//All pages in the Grid
+			Pages.Add(p00);
+			Pages.Add(p01);
+			Pages.Add(p02);
+			Pages.Add(p10);
+			Pages.Add(p11);
+			Pages.Add(p12);
+			Pages.Add(p20);
+			Pages.Add(p21);
+			Pages.Add(p22);
 
 
+			NextPage.Clicked += HandleNextPageClick;
+			PreviousPage.Clicked += HandlePreviousPageClick;
+		    PreviousPage.IsEnabled = false;
 
+			NextPage.BorderColor = Utility.Constants.NbicBrown;
+			PreviousPage.BorderColor = Utility.Constants.NbicBrown;
+			NextPage.TextColor = Utility.Constants.NbicBrown;
+			PreviousPage.TextColor = Utility.Constants.NbicBrown;
+
+
+			SetGalleryImages(_controller.GetGalleryImages());
 
 		}
 
-
-
-		// Handle tap on image in Gallery
-		public async void HandleImageClick(object sender, EventArgs e)
+		/// <summary>
+		/// Sets the gallery images from the beginning.
+		/// </summary>
+		/// <param name="galleryImages">Gallery images.</param>
+		public void SetGalleryImages(List<SpeciesImage> galleryImages)
 		{
-			System.Diagnostics.Debug.WriteLine("Tapped");
+			ImageList = galleryImages;
+		    _imagesCounter = 0;
+
+			for (int i = 0; i <= 8; i++)
+			{
+			    if (i < ImageList.Count)
+			    {
+			        Pages.ElementAt(i).Image = ImageList[i];
+			        Pages.ElementAt(i).GalleryTap.Tapped += HandleImageClick;
+			        _imagesCounter++;
+			    }
+                else {
+                    Pages.ElementAt(i).Image = new SpeciesImage();
+                }
+            }
+		    _indexCounter += _imagesCounter;
+		}
+
+		/// <summary>
+		/// Set pictures in Gallery when pressing "Next page" button
+		/// </summary>
+		public void IncreaseGalleryImages()
+		{
+		    int elementCounter = 0;
+		    _imagesCounter = 0;
+			for (int i = _indexCounter; i <= _indexCounter + 8; i++)
+			{
+			    if (i < ImageList.Count)
+			    {
+			        Pages.ElementAt(elementCounter).IsVisible = true;
+			        Pages.ElementAt(elementCounter).Image = ImageList[i];
+			        _imagesCounter++;
+			    }
+			    else
+			    {
+			        Pages.ElementAt(elementCounter).Image = new SpeciesImage();
+			        Pages.ElementAt(elementCounter).IsVisible = false;
+			    }
+                elementCounter++;
+			}
+		    _indexCounter += _imagesCounter;
+		}
+
+		/// <summary>
+		/// Set pictures in Gallery when pressing "Previous page" button
+		/// </summary>
+		public void DecreaseGalleryImages()
+		{
+		    int elementCounter = 8;
+		    int j = _indexCounter - _imagesCounter - 1;
+		    _indexCounter -= _imagesCounter;
+		    _imagesCounter = 0;
+			for (int i = j; i >= j - 8; i--)
+			{
+			    Pages.ElementAt(elementCounter).IsVisible = true;
+				Pages.ElementAt(elementCounter).Image = ImageList[i];
+				elementCounter--;
+			    _imagesCounter++;
+			}
+		}
+
+		/// <summary>
+		/// Handle tap on image in Gallery
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
+		public void HandleImageClick(object sender, EventArgs e)
+		{
 			if (sender.GetType() == typeof(Frame))
 			{
-				SpeciesImageView parent = GetAncestor((Frame)sender);
+				SpeciesImageView parent = (SpeciesImageView)Utility.Utilities.GetAncestor((Frame)sender, typeof(SpeciesImageView));
 				Navigation.PushAsync(new GalleryImage(parent.Image));
-
-
 			}
 		}
 
-		//Handle tap on "Next page" button
-		public async void HandleNextPageClick(object sender, EventArgs e)
+		/// <summary>
+		/// Handles click on "Next page" button
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
+		public void HandleNextPageClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine("Tapped");
-		}
-
-		// Returns the SpeciesImage view to which an element belongs
-		private SpeciesImageView GetAncestor(VisualElement e)
-		{
-			if (e != null)
+			
+			if (sender.GetType() == typeof(Button))
 			{
-				var parent = e.Parent;
-				while (parent != null)
+				if (_indexCounter < ImageList.Count)
 				{
-					if (parent is SpeciesImageView)
-					{
-						return (SpeciesImageView)parent;
-					}
-					parent = parent.Parent;
+					IncreaseGalleryImages();
+				    if (_indexCounter >= ImageList.Count)
+				    {
+				        NextPage.IsEnabled = false;
+				    }
+				    PreviousPage.IsEnabled = true;
 				}
 			}
-			return null;
+		}
+
+		/// <summary>
+		/// Handles click on "Previous page" button
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
+		public void HandlePreviousPageClick(object sender, EventArgs e)
+		{
+
+			if (sender.GetType() == typeof(Button))
+			{
+				if (_indexCounter > 0)
+				{
+					DecreaseGalleryImages();
+				    if (_indexCounter <= 9)
+				    {
+				        PreviousPage.IsEnabled = false;
+				    }
+				    if (_indexCounter <= ImageList.Count)
+				    {
+				        NextPage.IsEnabled = true;
+				    }
+				}
+			}
 		}
 
 	}
