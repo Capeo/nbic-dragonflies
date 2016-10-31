@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Utility {
-    class Constants
+    public class Constants
     {
 
         // Colors taken from NBIC webpage

@@ -24,6 +24,7 @@ namespace NbicDragonflies.Controllers {
         public List<AreaDataSet> GetAreaDataSet()
         {
             List<AreaDataSet> areaDataSetResult = new List<AreaDataSet>();
+            //FIXME change hard coded numbers to a variable that receives total count of regions listed in the dataset
             for (int i = 1; i < 24; i++)
             {
                 areaDataSetResult.Add(ApplicationDataManager.GetAreaDataSetAsync(i).Result);

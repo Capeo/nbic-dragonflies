@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NbicDragonflies.Data;
 
 namespace NbicDragonfliesTests
 {
@@ -11,10 +12,11 @@ namespace NbicDragonfliesTests
         public async void GetTaxonJsonFromApi_ValidJson_TaxonJsonRetrieved()
         {
             // Arrange
+            RestService rest = new RestService();
             int taxonId = 107;
 
             // Act
-            String taxonJson = await NbicDragonflies.Data.IRestService.FetchDataAsync(NbicDragonflies.Constants.TaxonRestUrl + $"{taxonId}");
+            String taxonJson = await rest.FetchDataAsync(NbicDragonflies.Utility.Constants.TaxonRestUrl + $"{taxonId}");
 
             // Assert
             Assert.IsTrue(taxonJson.Length > 0);

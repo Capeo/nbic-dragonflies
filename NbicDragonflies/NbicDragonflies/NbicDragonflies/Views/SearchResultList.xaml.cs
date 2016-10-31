@@ -18,7 +18,7 @@ namespace NbicDragonflies.Views
         public async void OnSearchButtonPressed(object sender, EventArgs e)
         {
             List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
-            List<string> searchResults = searchResultsResponse[0].ScientificName;
+            List<string> searchResults = searchResultsResponse[0].VernacularName;
 
             await Navigation.PushAsync(new Views.SearchResultList(SpeciesSearchBar.Text, searchResults));
         }
