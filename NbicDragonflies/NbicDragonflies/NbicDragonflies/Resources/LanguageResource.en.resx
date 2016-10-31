@@ -129,6 +129,14 @@
     <value>Identify species</value>
     <comment>Label for IdentifySpecies page</comment>
   </data>
+  <data name="KeyQuestionsTab" xml:space="preserve">
+    <value>Questions</value>
+    <comment>Label for questions tab in KeyPage</comment>
+  </data>
+  <data name="KeyResultsTab" xml:space="preserve">
+    <value>Suggestions</value>
+    <comment>Label for results tab in KeyPage</comment>
+  </data>
   <data name="NavigationLabel" xml:space="preserve">
     <value>Menu</value>
     <comment>Label for NavigationMaster page</comment>
@@ -157,24 +165,48 @@
     <value>Species</value>
     <comment>Label for Species page</comment>
   </data>
-	<data name="GalleryImageSpeciesLabel" xml:space="preserve">
+  <data name="GalleryImageSpeciesLabel" xml:space="preserve">
     <value>Species</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImagePhotographerLabel" xml:space="preserve">
+  <data name="GalleryImagePhotographerLabel" xml:space="preserve">
     <value>Photographer</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDateLabel" xml:space="preserve">
+  <data name="GalleryImageDateLabel" xml:space="preserve">
     <value>Date</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageLicenseLabel" xml:space="preserve">
+  <data name="GalleryImageLicenseLabel" xml:space="preserve">
     <value>Licens</value>
     <comment>Label for Gallery Image</comment>
   </data>
-	<data name="GalleryImageDescriptionLabel" xml:space="preserve">
+  <data name="GalleryImageDescriptionLabel" xml:space="preserve">
     <value>Description</value>
     <comment>Label for Gallery Image</comment>
+  </data>
+  <data name="SpeciesInfoImages" xml:space="preserve">
+    <value>Images</value>
+    <comment>Label for images section in SpeciesInfo page</comment>
+  </data>
+  <data name="SpeciesInfoAttributes" xml:space="preserve">
+    <value>Attributes</value>
+    <comment>Label for attributes section in SpeciesInfo page</comment>
+  </data>
+	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+    <value>Press picture for more information</value>
+    <comment>Label for Gallery Image</comment>
+  </data>
+	<data name="SearchResultCouldNotFind" xml:space="preserve">
+    <value>Could not find</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchResultSuggestions" xml:space="preserve">
+    <value>Suggestions</value>
+    <comment>Label for Search Result List</comment>
+  </data>
+	<data name="SearchTitle" xml:space="preserve">
+    <value>Search</value>
+    <comment>Label for Search Result List</comment>
   </data>
 </root>

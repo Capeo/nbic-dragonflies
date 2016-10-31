@@ -2,15 +2,14 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NbicDragonflies.Views.SpeciesImageView">
-  <Frame x:Name = "ImageFrame" HorizontalOptions="FillAndExpand" Padding="5">
+  <Frame x:Name="ImageFrame" HorizontalOptions="FillAndExpand" Padding="5" HasShadow="False">
     <Frame.Content>
       <StackLayout HorizontalOptions="Fill">
         <Image x:Name="ImageContent" HorizontalOptions="Fill"/>
-        <Label x:Name="Owner" HorizontalOptions="Fill" TextColor="Gray" FontAttributes="Bold" FontFamily="Helvetica" FontSize="Small"/>
-        <Label x:Name="Date" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
-		<Label x:Name="License" HorizontalOptions="Fill" TextColor="Black" FontFamily="Helvetica" FontSize="Small"/>
+        <Label x:Name="SpeciesName" VerticalOptions="StartAndExpand" FontAttributes="Bold" FontFamily="Helvetica" FontSize="Small"/>
+        <Label x:Name="Description" VerticalOptions="StartAndExpand" FontFamily="Helvetica" FontSize="Small" IsVisible="False"/>
+        <Label x:Name="Date" VerticalOptions="EndAndExpand" FontFamily="Helvetica" FontSize="Small"/>
       </StackLayout>
     </Frame.Content>
   </Frame>
-
 </ContentView>

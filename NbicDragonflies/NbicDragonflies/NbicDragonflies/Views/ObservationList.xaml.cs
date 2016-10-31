@@ -10,8 +10,14 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views
 {
+	/// <summary>
+	/// Class to handle a list of all observations. 
+	/// </summary>
     public partial class ObservationList : ContentView
     {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.ObservationList"/> class.
+		/// </summary>
         public ObservationList()
         {
             InitializeComponent();
@@ -19,6 +25,9 @@ namespace NbicDragonflies.Views
             FillObservationsList();
         }
 
+		/// <summary>
+		/// Fills the observations list.
+		/// </summary>
         public async void FillObservationsList()
         {
             Models.ObservationList recentObservationsList = await ApplicationDataManager.GetObservationListAsync("list");

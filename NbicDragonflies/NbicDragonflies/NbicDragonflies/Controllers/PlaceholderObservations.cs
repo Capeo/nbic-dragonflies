@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NbicDragonflies.Data;
+using NbicDragonflies.Models;
+
+namespace NbicDragonflies.Controllers {
+
+    public class PlaceholderObservations : IObservationsController
+    {
+
+        public List<Observation> GetObservations()
+        {
+            Models.ObservationList recentObservationsList = ApplicationDataManager.GetObservationListAsync("list").Result;
+            if (recentObservationsList != null)
+            {
+                return recentObservationsList.Observations;
+            }
+            return null;
+        }
+    }
+}

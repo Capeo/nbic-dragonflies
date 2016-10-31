@@ -8,11 +8,19 @@ using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Views {
+	
 
     public partial class NavigationMaster : ContentPage {
 
+		/// <summary>
+		/// Gets the Navigation list view.
+		/// </summary>
+		/// <value>The list view.</value>
         public ListView ListView { get { return NavigationList; } }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.NavigationMaster"/> class.
+		/// </summary>
         public NavigationMaster() {
             InitializeComponent();
 
@@ -20,6 +28,9 @@ namespace NbicDragonflies.Views {
             ReDrawNavigationList();
         }
 
+		/// <summary>
+		/// Adds icons and labels to items in the Navigation list.
+		/// </summary>
         public void ReDrawNavigationList()
         {
             var navigationPageItems = new List<NavigationListItem>();

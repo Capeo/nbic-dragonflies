@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NbicDragonflies.Controllers;
 using NbicDragonflies.Data;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
@@ -11,29 +12,28 @@ namespace NbicDragonflies.Views {
     public partial class TaxonTree : ContentPage
     {
 
-        private int offset = 15;
+        private const int offset = 15;
+        private ITaxonTreeController _controller;
 
-        public TaxonTree() {
+        public TaxonTree(ITaxonTreeController controller) {
             InitializeComponent();
 
-            CreateInitialTaxons(107, "order");
+            _controller = controller;
+
+            SetInitialTaxons(_controller.GetRootTaxon());
         }
 
-        public async void CreateInitialTaxons(int rootScientificNameId, string taxonRank)
+        public void SetInitialTaxons(Taxon root)
         {
-            Taxon root = await ApplicationDataManager.GetTaxon(rootScientificNameId);
-
             if(root != null) 
             {
-                root.taxonRank = taxonRank;
-
-                List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(root);
-
                 TaxonButton rootButton = new TaxonButton(root, 0);
                 rootButton.SwitchState();
                 rootButton.NavigationTap.Tapped += HandleNavigationClick;
                 rootButton.InfoTap.Tapped += HandleInfoClick;
                 TaxonLayout.Children.Add(rootButton);
+
+                List<Taxon> children = _controller.GetSubTaxons(root);
 
                 foreach (var taxon in children)
                 {
@@ -48,12 +48,17 @@ namespace NbicDragonflies.Views {
             
         }
 
+		/// <summary>
+		/// Handles click on the navigation part of TaxonButton
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
         // Handle tap on navigation part of TaxonButton
-        public async void HandleNavigationClick(object sender, EventArgs e)
+        private void HandleNavigationClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))
             {
-                TaxonButton parent = GetAncestor((Frame) sender);
+                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame)sender, typeof(TaxonButton));
 
                 if (!parent.Open)
                 {
@@ -74,7 +79,8 @@ namespace NbicDragonflies.Views {
                         }
                         else
                         {
-                            List<Taxon> children = await ApplicationDataManager.GetTaxonsFromHigherClassification(parentTaxon);
+                            List<Taxon> children = _controller.GetSubTaxons(parentTaxon);
+
                             foreach (var taxon in children) {
                                 TaxonButton button = new TaxonButton(taxon, parent.Level + 1);
                                 parent.Children.Add(button);
@@ -98,35 +104,16 @@ namespace NbicDragonflies.Views {
             }
         }
 
-        public void HandleInfoClick(object sender, EventArgs e)
+        private void HandleInfoClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))
             {
-                TaxonButton parent = GetAncestor((Frame)sender);
+                TaxonButton parent = (TaxonButton)Utility.Utilities.GetAncestor((Frame)sender, typeof(TaxonButton));
 
-                SpeciesInfo speciesInfoView = new SpeciesInfo(new Species());
-                speciesInfoView.Title = parent.Name;
+                SpeciesInfo speciesInfoView = new SpeciesInfo(new Species(parent.Taxon));
 
                 Navigation.PushAsync(speciesInfoView);
             }
-        }
-
-        // Returns the TaxonButton view to which an element belongs
-        private TaxonButton GetAncestor(VisualElement e)
-        {
-            if (e != null)
-            {
-                var parent = e.Parent;
-                while (parent != null)
-                {
-                    if (parent is TaxonButton)
-                    {
-                        return (TaxonButton) parent;
-                    }
-                    parent = parent.Parent;
-                }
-            }
-            return null;
         }
 
         // Recursivly removes all descendants of a TaxonButton from the TaxonLayout stack layout
