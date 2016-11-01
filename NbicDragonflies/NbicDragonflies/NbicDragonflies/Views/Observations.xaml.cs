@@ -35,6 +35,8 @@ namespace NbicDragonflies.Views
             //AddMapPins(_controller.GetObservationsMapPins());
 
             FillObservationsList(_controller.GetObservations());
+
+            RecentObservationsList.ItemSelected += OnObservationSelected;
         }
 
         private void FillObservationsList(List<Observation> observations) 
@@ -72,6 +74,10 @@ namespace NbicDragonflies.Views
                 };
                 ObservationsMap.Pins.Add(pin);
             }
+        }
+
+        private void OnObservationSelected(Object sender, SelectedItemChangedEventArgs e) {
+            RecentObservationsList.SelectedItem = null;
         }
     }
 }

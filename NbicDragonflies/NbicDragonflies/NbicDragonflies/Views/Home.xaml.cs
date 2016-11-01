@@ -69,6 +69,8 @@ namespace NbicDragonflies.Views {
             FillRecentObservationsList(_controller.GetRecentObservations());  
                       
             SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
+
+            RecentObservationsList.ItemSelected += OnObservationSelected;
         }
 
         private async void OnSearchButtonPressed(object sender, EventArgs e) 
@@ -128,5 +130,10 @@ namespace NbicDragonflies.Views {
                 _infoTap.Tapped += OnInfoPressed;
             }
         }
+
+	    private void OnObservationSelected(Object sender, SelectedItemChangedEventArgs e)
+	    {
+	        RecentObservationsList.SelectedItem = null;
+	    }
     }
 }
