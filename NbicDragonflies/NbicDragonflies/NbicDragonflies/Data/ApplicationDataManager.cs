@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NbicDragonflies.Models;
 using Newtonsoft.Json;
 using NbicDragonflies.Utility;
+using Plugin.Geolocator;
 
 namespace NbicDragonflies.Data
 {
@@ -65,7 +66,38 @@ namespace NbicDragonflies.Data
             }
             return null;
         }
-            
+
+        public static async Task<List<LocationInfoItem>> GetLocationData(double latitude, double longitude)
+        {
+            string locationData = await restService.FetchDataAsync(Constants.AreaCountyDataRestUrl + $"{latitude}" + "," + $"{longitude}").ConfigureAwait(false);
+            return JsonConvert.DeserializeObject<List<LocationInfoItem>>(locationData);
+        }
+
+        public static async Task<Location> GetLocation()
+        {
+            try
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+
+                if (locator.IsGeolocationEnabled)
+                {
+                    var position = await locator.GetPositionAsync(timeoutMilliseconds: 100000);
+                    Debug.WriteLine(position.Timestamp);
+                    Debug.WriteLine(position.Latitude);
+                    Debug.WriteLine(position.Longitude);
+                    return new Location(position.Latitude, position.Longitude);
+                }
+                System.Diagnostics.Debug.WriteLine("Geolocation is disabled!");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Unable to get location, may need to increase timeout: " + ex);
+                return null;
+            }
+        }
+
         // Add vernacular names and accepted names to given Taxon
         private static async Task GetVernacularNames(Taxon taxon)
         {

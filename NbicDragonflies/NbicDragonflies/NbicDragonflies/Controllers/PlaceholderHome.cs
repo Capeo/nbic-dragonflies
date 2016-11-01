@@ -18,11 +18,51 @@ namespace NbicDragonflies.Controllers {
 
         public List<Observation> GetRecentObservations()
         {
+            string countyName = GetCountyName();
+            IObservationsController observationsController = new PlaceholderObservations();
+            List<AreaDataSet> areaDataSet = observationsController.GetAreaDataSet();
+            string bboxBounds = "0,0,0,0";
+            foreach (AreaDataSet area in areaDataSet)
+            {
+                if (countyName == area.Name)
+                {
+                    bboxBounds = area.GoogleMercatorBbox;
+                }
+            }
             ObservationList recentObservationsList =
                 ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5").Result;
             if (recentObservationsList != null)
             {
                 return recentObservationsList.Observations;
+            }
+            return null;
+        }
+
+        private string GetCountyName()
+        {
+            Location locationCoordinates = GetCurrentLocation();
+            List<LocationInfoItem> locationInfotItem = ApplicationDataManager.GetLocationData(locationCoordinates.Latitude, locationCoordinates.Longitude).Result;
+            if (locationInfotItem.Capacity != 0)
+            {
+                //FIXME there must be a better way to search for the County name in the JSON object using LINQ
+                foreach (AddressComponent addressComponent in locationInfotItem[0].address_components)
+                {
+                    if (addressComponent.types[0] == "administrative_area_level_1")
+                    {
+                        return addressComponent.long_name;
+                    }
+                }
+            }
+            return null;
+
+        }
+
+        private Location GetCurrentLocation()
+        {
+            Location locationCoordinates = ApplicationDataManager.GetLocation().Result;
+            if (locationCoordinates != null)
+            {
+                return locationCoordinates;
             }
             return null;
         }

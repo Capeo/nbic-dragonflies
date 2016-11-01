@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace NbicDragonflies.Models
 {
-    public class LocationCoordinates
+    public class Location
     {
-        public long Latitude { get; set; }
-        public long Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public Location(double Latitude, double Longitude)
+        {
+            this.Latitude = Latitude;
+            this.Longitude = Longitude;
+        }
     }
 
     public class AreaDataSet
@@ -20,6 +25,6 @@ namespace NbicDragonflies.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public object ParentFid { get; set; }
-        public LocationCoordinates Location { get; set; }
+        public Location Location { get; set; }
     }
 }

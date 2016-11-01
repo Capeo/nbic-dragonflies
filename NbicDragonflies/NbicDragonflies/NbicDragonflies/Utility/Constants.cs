@@ -27,5 +27,6 @@ namespace NbicDragonflies.Utility {
         public static string SearchRestUrl = "http://data.beta.artsdatabanken.no/Api/search?q=";
         public static string PlaceholderSpeciesContentUrl = "http://data.beta.artsdatabanken.no/api/content/";
         public static string AreaCountyDataRestUrl = "http://artskart2.artsdatabanken.no/Api/area/";
+        public static string AreaNameFromLatLong = "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng=";
     }
 }
