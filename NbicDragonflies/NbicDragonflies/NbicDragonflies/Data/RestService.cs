@@ -21,7 +21,6 @@ namespace NbicDragonflies.Data
             var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
             var address = restUrl;
 
             try

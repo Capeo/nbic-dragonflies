@@ -27,10 +27,11 @@ namespace NbicDragonflies.Controllers {
                 if (countyName == area.Name)
                 {
                     bboxBounds = area.GoogleMercatorBbox;
+                    break;
                 }
             }
             ObservationList recentObservationsList =
-                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5").Result;
+                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5&bounds="+$"{bboxBounds}").Result;
             if (recentObservationsList != null)
             {
                 return recentObservationsList.Observations;
@@ -41,7 +42,7 @@ namespace NbicDragonflies.Controllers {
         private string GetCountyName()
         {
             Location locationCoordinates = GetCurrentLocation();
-            List<LocationInfoItem> locationInfotItem = ApplicationDataManager.GetLocationData(locationCoordinates.Latitude, locationCoordinates.Longitude).Result;
+            List<Result> locationInfotItem = ApplicationDataManager.GetLocationData(locationCoordinates.Latitude, locationCoordinates.Longitude).Result;
             if (locationInfotItem.Capacity != 0)
             {
                 //FIXME there must be a better way to search for the County name in the JSON object using LINQ

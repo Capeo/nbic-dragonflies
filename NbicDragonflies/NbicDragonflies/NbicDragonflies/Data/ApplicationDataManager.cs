@@ -67,10 +67,11 @@ namespace NbicDragonflies.Data
             return null;
         }
 
-        public static async Task<List<LocationInfoItem>> GetLocationData(double latitude, double longitude)
+        public static async Task<List<Result>> GetLocationData(double latitude, double longitude)
         {
-            string locationData = await restService.FetchDataAsync(Constants.AreaCountyDataRestUrl + $"{latitude}" + "," + $"{longitude}").ConfigureAwait(false);
-            return JsonConvert.DeserializeObject<List<LocationInfoItem>>(locationData);
+            string locationData = await restService.FetchDataAsync(Constants.AreaNameFromLatLong + $"{latitude}" + "," + $"{longitude}").ConfigureAwait(false);
+            LocationInfo locationInfo = JsonConvert.DeserializeObject<LocationInfo>(locationData);
+            return locationInfo.results;
         }
 
         public static async Task<Location> GetLocation()
@@ -78,15 +79,12 @@ namespace NbicDragonflies.Data
             try
             {
                 var locator = CrossGeolocator.Current;
-                locator.DesiredAccuracy = 50;
 
                 if (locator.IsGeolocationEnabled)
                 {
-                    var position = await locator.GetPositionAsync(timeoutMilliseconds: 100000);
-                    Debug.WriteLine(position.Timestamp);
-                    Debug.WriteLine(position.Latitude);
-                    Debug.WriteLine(position.Longitude);
-                    return new Location(position.Latitude, position.Longitude);
+                    //TODO no longer works, work on alternative
+                    //var position = await locator.GetPositionAsync(10000);
+                    return new Location(63.410304, 10.435006);
                 }
                 System.Diagnostics.Debug.WriteLine("Geolocation is disabled!");
                 return null;
