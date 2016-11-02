@@ -154,7 +154,7 @@
     <comment>Label for observations page</comment>
   </data>
   <data name="RecentObsLabel" xml:space="preserve">
-    <value>Recent observations</value>
+    <value>Recent observations in</value>
     <comment>Label for RecentObservations</comment>
   </data>
   <data name="SearchLabel" xml:space="preserve">

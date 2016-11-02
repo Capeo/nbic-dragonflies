@@ -21,6 +21,8 @@ namespace NbicDragonflies.Views {
         private IHomeController _controller;
         private TapGestureRecognizer _infoTap;
 
+        public string CountyName { get; set; }
+
         public Home(IHomeController controller)
         {
             InitializeComponent();
@@ -111,6 +113,7 @@ namespace NbicDragonflies.Views {
                     recentObservationsCells.Add(cell);
                 }
                 RecentObservationsList.ItemsSource = recentObservationsCells;
+                RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
             }
             
         }

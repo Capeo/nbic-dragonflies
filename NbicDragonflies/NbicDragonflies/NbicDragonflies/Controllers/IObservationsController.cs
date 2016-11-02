@@ -11,8 +11,6 @@ namespace NbicDragonflies.Controllers {
     {
         List<Observation> GetObservations();
 
-        List<AreaDataSet> GetAreaDataSet();
-
         Dictionary<AreaDataSet, int> GetObservationsMapPins();
     }
 }

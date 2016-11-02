@@ -19,19 +19,18 @@ namespace NbicDragonflies.Controllers {
         public List<Observation> GetRecentObservations()
         {
             string countyName = GetCountyName();
-            IObservationsController observationsController = new PlaceholderObservations();
-            List<AreaDataSet> areaDataSet = observationsController.GetAreaDataSet();
-            string bboxBounds = "0,0,0,0";
+            List<AreaDataSet> areaDataSet = PlaceholderObservations.GetAreaDataSet();
+            string countyId = "";
             foreach (AreaDataSet area in areaDataSet)
             {
                 if (countyName == area.Name)
                 {
-                    bboxBounds = area.GoogleMercatorBbox;
+                    countyId = area.Id;
                     break;
                 }
             }
             ObservationList recentObservationsList =
-                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5&bounds="+$"{bboxBounds}").Result;
+                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5&countys[]="+$"{countyId}").Result;
             if (recentObservationsList != null)
             {
                 return recentObservationsList.Observations;

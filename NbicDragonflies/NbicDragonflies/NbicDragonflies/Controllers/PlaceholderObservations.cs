@@ -22,7 +22,7 @@ namespace NbicDragonflies.Controllers {
         }
 
         //FIXME Cache me please
-        public List<AreaDataSet> GetAreaDataSet()
+        public static List<AreaDataSet> GetAreaDataSet()
         {
             List<AreaDataSet> areaDataSetResult = new List<AreaDataSet>();
             //FIXME change hard coded numbers to a variable that receives total count of regions listed in the dataset

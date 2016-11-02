@@ -197,7 +197,7 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nylige observasjoner.
+        ///   Looks up a localized string similar to Nylige observasjoner i.
         /// </summary>
         public static string RecentObsLabel {
             get {
