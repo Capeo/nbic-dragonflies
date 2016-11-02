@@ -25,6 +25,7 @@
     <JavaOptions />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -34,17 +35,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <DocumentationFile>bin\Debug\NbicDragonflies.Droid.XML</DocumentationFile>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <BundleAssemblies>False</BundleAssemblies>
-    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
-    <AotAssemblies>False</AotAssemblies>
-    <EnableLLVM>False</EnableLLVM>
-    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
-    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,7 +47,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
@@ -191,6 +184,14 @@
     <AndroidResource Include="Resources\drawable-hdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
+    <AndroidResource Include="Resources\drawable\Arrow_Left.png" />
+    <AndroidResource Include="Resources\drawable\Arrow_Right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Arrow_Left.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Arrow_Right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Arrow_Left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Arrow_Right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow_Left.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow_Right.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />

@@ -7,7 +7,7 @@
              Title="{x:Static resources:LanguageResource.IdentifyLabel}"
              BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children >
-    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" BackgroundColor="{x:Static utility:Constants.Background}">
+    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" Title="Identifiser" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
@@ -16,9 +16,9 @@
         </StackLayout>
       </StackLayout>
     </ContentPage>
-    <ContentPage x:Name="ResultsTab" Icon="arter_white.png" BackgroundColor="{x:Static utility:Constants.Background}">
-      <StackLayout Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
-          <ListView x:Name="ResultsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default">
+    <ContentPage x:Name="ResultsTab" Icon="arter_white.png" Title="Resultat" BackgroundColor="{x:Static utility:Constants.Background}">
+      <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor = "White">
+          <ListView x:Name="ResultsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default" BackgroundColor="White">
             <ListView.ItemTemplate>
               <DataTemplate>
                 <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Text}" Detail="{Binding Detail}" TextColor="Black" DetailColor="Black"/>

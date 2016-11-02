@@ -36,8 +36,8 @@
 		  </Grid>
       
 			<StackLayout Orientation="Horizontal">
-			  <Button x:Name="PreviousPage" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="10,0,0,0"/>
-			  <Button x:Name="NextPage" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="0,0,10,0" />
+			  <Button x:Name="PreviousPage" Image ="Arrow_Left.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="100,0,0,0"/>
+			  <Button x:Name="NextPage" Image="Arrow_Right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="0,0,100,0" />
 			</StackLayout>	
       
 		</StackLayout>	

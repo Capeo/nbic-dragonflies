@@ -139,6 +139,12 @@
     <BundleResource Include="Resources\arter_white.png" />
     <BundleResource Include="Resources\arter_white%402x.png" />
     <BundleResource Include="Resources\arter_white%403x.png" />
+    <BundleResource Include="Resources\Arrow_Right.png" />
+    <BundleResource Include="Resources\Arrow_Right%402x.png" />
+    <BundleResource Include="Resources\Arrow_Right%403x.png" />
+    <BundleResource Include="Resources\Arrow_Left.png" />
+    <BundleResource Include="Resources\Arrow_Left%402x.png" />
+    <BundleResource Include="Resources\Arrow_Left%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

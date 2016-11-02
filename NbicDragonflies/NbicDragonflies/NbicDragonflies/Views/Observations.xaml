@@ -10,9 +10,9 @@
              Title="{x:Static resources:LanguageResource.ObservationsLabel}"
              BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children>
-    <ContentPage Icon="list_white.png">
+    <ContentPage Icon="list_white.png" Title="Liste">
       <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <ListView x:Name="RecentObservationsList" RowHeight="90">
+        <ListView x:Name="RecentObservationsList" RowHeight="90" BackgroundColor="White">
           <ListView.ItemTemplate>
             <DataTemplate>
               <listItems:ObservationsCell Species="{Binding Species}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
@@ -21,10 +21,10 @@
         </ListView>
       </StackLayout>
     </ContentPage>
-    <ContentPage Icon="map_white.png">
+    <ContentPage Icon="map_white.png" Title="Kart">
       <maps:Map WidthRequest="320" HeightRequest="200"
             x:Name="ObservationsMap"
-            MapType="Street"
+            MapType="Hybrid"
         />
     </ContentPage>
   </TabbedPage.Children>
