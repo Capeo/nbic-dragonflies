@@ -90,6 +90,10 @@ namespace NbicDragonflies.Views {
                                 {
                                     button.NavigationTap.Tapped += HandleNavigationClick;
                                 }
+                                else 
+                                {
+                                    button.NavigationTap.Tapped += HandleInfoClick;
+                                }
                                 button.InfoTap.Tapped += HandleInfoClick;
                                 TaxonLayout.Children.Insert(i, button);
                                 i++;

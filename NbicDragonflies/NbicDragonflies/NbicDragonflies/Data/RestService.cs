@@ -1,4 +1,4 @@
-﻿using System;
+﻿	using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,8 +30,8 @@ namespace NbicDragonflies.Data
 
                 if (response!=null)
                 {
-                    var taxonsJson = response;
-                    return taxonsJson;
+                    var json = response;
+                    return json;
                 }
             }
             catch (Exception ex)

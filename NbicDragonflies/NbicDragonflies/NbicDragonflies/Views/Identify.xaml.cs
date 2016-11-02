@@ -91,7 +91,6 @@ namespace NbicDragonflies.Views {
                 await Navigation.PushAsync(new SpeciesInfo(new Species(suggestion.Taxon)));
                 ResultsList.SelectedItem = null;
             }
-			System.Diagnostics.Debug.WriteLine("pressed");
             ResultsList.IsEnabled = true;
         }
     }
