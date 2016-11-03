@@ -16,7 +16,7 @@ namespace NbicDragonflies.Data
     public class RestService : IRestService
     {
 
-        public async Task<string> FetchDataAsync (string restUrl)
+        public async Task<string> FetchDataAsync(string restUrl)
         {
             var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
@@ -41,6 +41,7 @@ namespace NbicDragonflies.Data
 
             return "";
         }
+
     }
 }
 

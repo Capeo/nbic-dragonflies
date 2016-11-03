@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Models.Location;
+using NbicDragonflies.Models.Taxon;
 using Newtonsoft.Json;
 using NbicDragonflies.Utility;
 using Plugin.Geolocator;
@@ -21,10 +23,10 @@ namespace NbicDragonflies.Data
             return JsonConvert.DeserializeObject<ObservationList>(observationsJson);
         }
 
-        public static async Task<AreaDataSet> GetAreaDataSetAsync (int areaId)
+        public static async Task<CountyDataSet> GetAreaDataSetAsync (int areaId)
         {
             string areaDataSetJson = await restService.FetchDataAsync(Constants.AreaCountyDataRestUrl + $"{areaId}").ConfigureAwait(false);
-            return JsonConvert.DeserializeObject<AreaDataSet>(areaDataSetJson);
+            return JsonConvert.DeserializeObject<CountyDataSet>(areaDataSetJson);
         }
 
         public static async Task<List<SearchResultItem>> GetSearchResultAsync(string searchText)
@@ -33,11 +35,12 @@ namespace NbicDragonflies.Data
             return JsonConvert.DeserializeObject<List<SearchResultItem>>(searchResult);
         }
 
-        public static async Task<SpeciesContent> GetSpeciesContentFromTaxonAsync(Taxon taxon)
+        public static async Task<TaxonInfo> GetTaxonInfoFromTaxonAsync(Taxon taxon)
         {
-            string speciesContent = await restService.FetchDataAsync(Constants.PlaceholderSpeciesContentUrl + "135474").ConfigureAwait(false);
-            return JsonConvert.DeserializeObject<SpeciesContent>(speciesContent);
+            string taxonInfo = await restService.FetchDataAsync(Constants.PlaceholderSpeciesContentUrl + "135474").ConfigureAwait(false);
+            return JsonConvert.DeserializeObject<TaxonInfo>(taxonInfo);
         }
+
         // Get a Taxon based on its scientificNameID
         public static async Task<Taxon> GetTaxon(int scientificNameId)
         {
@@ -51,7 +54,7 @@ namespace NbicDragonflies.Data
         }
 
         // Get a list of sub-taxons from its direct higher classifications
-        public static async Task<List<Taxon>> GetTaxonsFromHigherClassification (Taxon higherClassification)
+        public static async Task<List<Taxon>> GetTaxonsFromHigherClassification(Taxon higherClassification)
         {
             int currentRankIndex = Utility.Constants.TaxonRanks.IndexOf(higherClassification.taxonRank);
             if (currentRankIndex < Utility.Constants.TaxonRanks.Count)
@@ -70,7 +73,7 @@ namespace NbicDragonflies.Data
         public static async Task<List<Result>> GetLocationData(double latitude, double longitude)
         {
             string locationData = await restService.FetchDataAsync(Constants.AreaNameFromLatLong + $"{latitude}" + "," + $"{longitude}").ConfigureAwait(false);
-            LocationInfo locationInfo = JsonConvert.DeserializeObject<LocationInfo>(locationData);
+            GoogleLocation locationInfo = JsonConvert.DeserializeObject<GoogleLocation>(locationData);
             return locationInfo.results;
         }
 

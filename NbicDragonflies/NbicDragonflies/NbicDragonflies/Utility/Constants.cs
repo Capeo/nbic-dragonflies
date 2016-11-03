@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace NbicDragonflies.Utility {
+namespace NbicDragonflies.Utility
+{
+
     public class Constants
     {
 
@@ -22,11 +24,11 @@ namespace NbicDragonflies.Utility {
         public static readonly List<string> TaxonRanks = new List<string> { "kingdom", "phylum", "subphylum", "class", "order", "suborder", "family", "genus", "species" };
 
         // URL of REST service
-        public static string TaxonRestUrl = "http://data.beta.artsdatabanken.no/Api/";
-        public static string ObservationRestUrl = "http://pavlov.itea.ntnu.no/artskart/Api/Observations/";
-        public static string SearchRestUrl = "http://data.beta.artsdatabanken.no/Api/search?q=";
-        public static string PlaceholderSpeciesContentUrl = "http://data.beta.artsdatabanken.no/api/content/";
-        public static string AreaCountyDataRestUrl = "http://artskart2.artsdatabanken.no/Api/area/";
-        public static string AreaNameFromLatLong = "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng=";
+        public static readonly string TaxonRestUrl = "http://data.beta.artsdatabanken.no/Api/";
+        public static readonly string ObservationRestUrl = "http://pavlov.itea.ntnu.no/artskart/Api/ObservationsPage/";
+        public static readonly string SearchRestUrl = "http://data.beta.artsdatabanken.no/Api/search?q=";
+        public static readonly string PlaceholderSpeciesContentUrl = "http://data.beta.artsdatabanken.no/api/content/";
+        public static readonly string AreaCountyDataRestUrl = "http://artskart2.artsdatabanken.no/Api/area/";
+        public static readonly string AreaNameFromLatLong = "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng=";
     }
 }

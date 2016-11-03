@@ -9,6 +9,7 @@ using NbicDragonflies.Views;
 using NbicDragonflies.Models;
 using NbicDragonflies.Resources;
 using Xamarin.Forms;
+using NavigationPage = NbicDragonflies.Views.Pages.NavigationPage;
 
 namespace NbicDragonflies {
     /// <summary>
@@ -21,7 +22,7 @@ namespace NbicDragonflies {
 		/// </summary>
         public App() {
             // The root page of your application
-            MasterDetailPage content = new Navigation();
+            MasterDetailPage content = new NavigationPage();
             MainPage = content;
         }
 

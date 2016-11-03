@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.Pages.NavigationDrawer"
+             Padding="40,0,0,0"
+             Title="{x:Static resources:LanguageResource.NavigationLabel}"
+             Icon="hamburger.png">
+  <ContentPage.Content>
+
+    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.NbicBrown}" Spacing="20">
+	  <StackLayout x:Name="LogoField">
+        <Image Source="artsdatabanken_trans.png" WidthRequest="180" HeightRequest="121" Margin="0,40,0,0" />
+      </StackLayout>
+	  <StackLayout Margin="0,20,0,0">
+      <ListView x:Name="NavigationList" VerticalOptions="FillAndExpand" SeparatorVisibility="None" RowHeight="45" BackgroundColor="{x:Static utility:Constants.NbicBrown}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+			  <StackLayout x:Name="NavigationStack" Orientation="Horizontal" Padding="10" Spacing="10" Margin="10,0,0,0">
+				<Image Source="{Binding IconSource}"/>
+				<Label Font="20" Text="{Binding Title}" TextColor="White"/>
+			  </StackLayout>
+			</ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+	  </StackLayout>
+	  <StackLayout Margin="0,40,0,0">
+	    <Image Source="drawer_dragonfly.png" WidthRequest="100" HeightRequest="100" />
+	  </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

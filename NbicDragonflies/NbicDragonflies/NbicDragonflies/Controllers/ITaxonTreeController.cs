@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Models.Taxon;
 
 namespace NbicDragonflies.Controllers {
 

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
-namespace NbicDragonflies.Utility {
+namespace NbicDragonflies.Utility
+{
+
     class Language
     {
 
@@ -21,20 +23,20 @@ namespace NbicDragonflies.Utility {
 
         public static Languages SwitchLanguage()
         {
-            CultureInfo ci;
+            CultureInfo cultureInfo;
             if (CurrentCulture == Languages.En)
             {
                 CurrentCulture = Languages.No;
                 System.Diagnostics.Debug.WriteLine(CurrentCulture.ToString());
-                ci = new CultureInfo(CurrentCulture.ToString());
+                cultureInfo = new CultureInfo(CurrentCulture.ToString());
             }
             else
             {
                 CurrentCulture = Languages.En;
                 System.Diagnostics.Debug.WriteLine(CurrentCulture.ToString());
-                ci = new CultureInfo(CurrentCulture.ToString());
+                cultureInfo = new CultureInfo(CurrentCulture.ToString());
             }
-            LanguageResource.Culture = ci;
+            LanguageResource.Culture = cultureInfo;
             return CurrentCulture;
         }
 

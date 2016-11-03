@@ -107,7 +107,7 @@
     <BundleResource Include="Resources\dragonfly1.jpg" />
     <BundleResource Include="Resources\dragonfly2.jpg" />
     <BundleResource Include="Resources\artsdatabanken.png" />
-    <BundleResource Include="Resources\arter.png" />
+    <BundleResource Include="Resources\taxon.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\gallery.png" />
     <BundleResource Include="Resources\identify.png" />

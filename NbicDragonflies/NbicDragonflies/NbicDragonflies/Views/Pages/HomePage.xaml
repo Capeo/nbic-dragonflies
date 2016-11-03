@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.HomePage"
+             Title="{x:Static resources:LanguageResource.HomeLabel}"
+             Padding="0">
+  <ContentPage.Content>
+    <StackLayout x:Name="HomeLayout" Spacing="0" BackgroundColor="{x:Static utility:Constants.Background}">
+      <RelativeLayout x:Name="SearchLayout" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.Background}">
+			<SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="{x:Static utility:Constants.Background}" CancelButtonColor="Black" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                    Property=Width, 
+                                    Factor=1}" Margin="0"/>
+      </RelativeLayout>
+      <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView.Content>
+          <StackLayout x:Name="HomeStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,3" HeightRequest="260" BackgroundColor="White">
+                  <Image x:Name="InfoImage"/>
+				          <BoxView x:Name="WhiteBox"/>
+				          <Label x:Name="InfoTitle"/>
+                  		  <Label x:Name="InfoText"/>
+                </RelativeLayout>
+                <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,0">
+                  <Label x:Name="RecentObservationsTitle" Text="{x:Static resources:LanguageResource.RecentObsLabel}" TextColor="Gray" FontSize="20" Margin="10,10,0,10" HeightRequest="25"/>
+				          <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.NbicOrange}" Margin="15,0,0,0" />
+                  <ListView x:Name="RecentObservationsList" VerticalOptions="FillAndExpand" BackgroundColor="White" RowHeight="90" HeightRequest="500" Margin="0,0,0,0">
+                    <ListView.ItemTemplate>
+                      <DataTemplate>
+                        <listItems:ObservationsCell Species="{Binding Species}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
+                      </DataTemplate>
+                    </ListView.ItemTemplate>
+                  </ListView>
+                </StackLayout>
+          </StackLayout>
+        </ScrollView.Content>
+      </ScrollView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

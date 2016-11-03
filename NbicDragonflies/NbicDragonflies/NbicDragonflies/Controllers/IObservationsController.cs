@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
+using NbicDragonflies.Models.Location;
 
 namespace NbicDragonflies.Controllers {
 
@@ -11,6 +12,6 @@ namespace NbicDragonflies.Controllers {
     {
         List<Observation> GetObservations();
 
-        Dictionary<AreaDataSet, int> GetObservationsMapPins();
+        Dictionary<CountyDataSet, int> GetObservationsMapPins();
     }
 }

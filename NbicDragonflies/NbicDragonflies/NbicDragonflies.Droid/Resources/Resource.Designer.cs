@@ -2536,29 +2536,32 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f0200e4
 			public const int Norway_xhdpi = 2130837732;
 			
-			// aapt resource value: 0x7f0200ec
-			public const int notification_template_icon_bg = 2130837740;
+			// aapt resource value: 0x7f0200ed
+			public const int notification_template_icon_bg = 2130837741;
 			
 			// aapt resource value: 0x7f0200e5
 			public const int observations = 2130837733;
 			
 			// aapt resource value: 0x7f0200e6
-			public const int UnitedKingdom = 2130837734;
+			public const int taxon = 2130837734;
 			
 			// aapt resource value: 0x7f0200e7
-			public const int UnitedKingdom_hdpi = 2130837735;
+			public const int UnitedKingdom = 2130837735;
 			
 			// aapt resource value: 0x7f0200e8
-			public const int UnitedKingdom_xhdpi = 2130837736;
+			public const int UnitedKingdom_hdpi = 2130837736;
 			
 			// aapt resource value: 0x7f0200e9
-			public const int vingefasong1 = 2130837737;
+			public const int UnitedKingdom_xhdpi = 2130837737;
 			
 			// aapt resource value: 0x7f0200ea
-			public const int vingefasong2 = 2130837738;
+			public const int vingefasong1 = 2130837738;
 			
 			// aapt resource value: 0x7f0200eb
-			public const int vingefasong3 = 2130837739;
+			public const int vingefasong2 = 2130837739;
+			
+			// aapt resource value: 0x7f0200ec
+			public const int vingefasong3 = 2130837740;
 			
 			static Drawable()
 			{
