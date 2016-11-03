@@ -25,7 +25,7 @@ namespace NbicDragonflies.Utility
 
         // URL of REST service
         public static readonly string TaxonRestUrl = "http://data.beta.artsdatabanken.no/Api/";
-        public static readonly string ObservationRestUrl = "http://pavlov.itea.ntnu.no/artskart/Api/ObservationsPage/";
+        public static readonly string ObservationRestUrl = "http://pavlov.itea.ntnu.no/artskart/Api/Observations/";
         public static readonly string SearchRestUrl = "http://data.beta.artsdatabanken.no/Api/search?q=";
         public static readonly string PlaceholderSpeciesContentUrl = "http://data.beta.artsdatabanken.no/api/content/";
         public static readonly string AreaCountyDataRestUrl = "http://artskart2.artsdatabanken.no/Api/area/";

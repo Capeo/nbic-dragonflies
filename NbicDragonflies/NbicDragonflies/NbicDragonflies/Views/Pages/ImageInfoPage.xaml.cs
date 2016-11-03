@@ -89,7 +89,7 @@ namespace NbicDragonflies.Views.Pages
 			}
 			else if (sender.GetType() == typeof(Image))
 			{
-				ViewElements.ImageElementView parent = (ViewElements.ImageElementView)Utility.Utilities.GetWrapperView((Label)sender, typeof(ViewElements.ImageElementView)); ;
+				ViewElements.ImageElementView parent = (ViewElements.ImageElementView)Utility.Utilities.GetWrapperView((Image)sender, typeof(ViewElements.ImageElementView)); ;
 				Navigation.PushAsync(new TaxonContentPage(Taxons[0]));
 			}
 		}

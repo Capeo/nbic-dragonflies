@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GalleryLabel" xml:space="preserve">
-    <value>GalleryPage</value>
+    <value>Gallery</value>
     <comment>Label for GalleryPage Page</comment>
   </data>
   <data name="HomeLabel" xml:space="preserve">
-    <value>HomePage</value>
+    <value>Home</value>
     <comment>Label for HomePage page</comment>
   </data>
   <data name="IdentifyLabel" xml:space="preserve">
-    <value>IdentifyPage species</value>
+    <value>Identify Species</value>
     <comment>Label for IdentifyPageContent page</comment>
   </data>
   <data name="KeyQuestionsTab" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>Label for map tab in ObservationsPage Page</comment>
   </data>
   <data name="ObservationsLabel" xml:space="preserve">
-    <value>ObservationsPage</value>
+    <value>Observations</value>
     <comment>Label for observations page</comment>
   </data>
   <data name="RecentObsLabel" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>Label for SearchBar</comment>
   </data>
   <data name="SpeciesLabel" xml:space="preserve">
-    <value>Content</value>
+    <value>Species</value>
     <comment>Label for Content page</comment>
   </data>
   <data name="GalleryImageSpeciesLabel" xml:space="preserve">
@@ -178,11 +178,11 @@
     <comment>Label for GalleryPage Image</comment>
   </data>
   <data name="GalleryImageLicenseLabel" xml:space="preserve">
-    <value>Licens</value>
+    <value>License</value>
     <comment>Label for GalleryPage Image</comment>
   </data>
   <data name="GalleryImageDescriptionLabel" xml:space="preserve">
-    <value>description</value>
+    <value>Description</value>
     <comment>Label for GalleryPage Image</comment>
   </data>
   <data name="SpeciesInfoImages" xml:space="preserve">
