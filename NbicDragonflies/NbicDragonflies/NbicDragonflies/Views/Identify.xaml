@@ -5,14 +5,14 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Identify"
              Title="{x:Static resources:LanguageResource.IdentifyLabel}"
-             BarBackgroundColor="{x:Static utility:Constants.Background}">
+             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
   <TabbedPage.Children >
     <ContentPage x:Name="QuestionTab" Icon="identify_white.png" Title="{x:Static resources:LanguageResource.KeyQuestionsLabel}" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-          <Button x:Name="PreviousQuestion" Image ="Arrow_Left.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="100,0,0,0"/>
-          <Button x:Name="NextQuestion" Image="Arrow_Right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,100,0" />
+          <Button x:Name="PreviousQuestion" Image ="Arrow.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="80,0,0,0" HeightRequest="50" WidthRequest="70"/>
+          <Button x:Name="NextQuestion" Image="Arrow.png" Rotation="180" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,80,0" HeightRequest="50" WidthRequest="70"/>
         </StackLayout>
       </StackLayout>
     </ContentPage>

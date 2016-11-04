@@ -184,14 +184,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
-    <AndroidResource Include="Resources\drawable\Arrow_Left.png" />
-    <AndroidResource Include="Resources\drawable\Arrow_Right.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow_Left.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow_Right.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\Arrow_Left.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\Arrow_Right.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\Arrow_Left.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\Arrow_Right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow.png" />
+    <AndroidResource Include="Resources\drawable\Arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />
