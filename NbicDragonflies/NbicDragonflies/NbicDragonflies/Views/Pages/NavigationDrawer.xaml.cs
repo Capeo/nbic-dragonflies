@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views.Pages {
 	
+    /// <summary>
+    /// NavigationDrawer page 
+    /// </summary>
     public partial class NavigationDrawer : ContentPage {
 
 		/// <summary>
@@ -14,7 +17,7 @@ namespace NbicDragonflies.Views.Pages {
         public ListView ListView { get { return NavigationList; } }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.NavigationDrawer"/> class.
+		/// Constructor. Initializes a new instance of the class.
 		/// </summary>
         public NavigationDrawer() {
             InitializeComponent();
@@ -28,16 +31,12 @@ namespace NbicDragonflies.Views.Pages {
 		/// </summary>
         public void ReDrawNavigationList()
         {
-            var navigationPageItems = new List<NavigationListItem>();
+            List<NavigationListItem> navigationPageItems = new List<NavigationListItem>();
 
             navigationPageItems.Add(new NavigationListItem(LanguageResource.HomeLabel, "home.png", typeof(HomePage)));
-
             navigationPageItems.Add(new NavigationListItem(LanguageResource.SpeciesLabel, "taxon.png", typeof(TaxonTreePage)));
-
             navigationPageItems.Add(new NavigationListItem(LanguageResource.ObservationsLabel, "observations.png", typeof(ObservationsPage)));
-
             navigationPageItems.Add(new NavigationListItem(LanguageResource.GalleryLabel, "gallery.png", typeof(GalleryPage)));
-
             navigationPageItems.Add(new NavigationListItem(LanguageResource.IdentifyLabel, "identify.png", typeof(IdentifyPage)));
 
             NavigationList.ItemsSource = navigationPageItems;

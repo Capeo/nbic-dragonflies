@@ -33,7 +33,7 @@ namespace NbicDragonflies.iOS.Views {
                 i = UIImage.FromFile("");
             }
 
-            c.UpdateCell(x.Species, x.Location, x.Date, x.User, i);
+            c.UpdateCell(x.Taxon, x.Location, x.Date, x.User, i);
 
             return c;
         }

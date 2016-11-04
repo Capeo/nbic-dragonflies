@@ -9,15 +9,34 @@ using NbicDragonflies.Models.Taxon;
 
 namespace NbicDragonflies.Controllers
 {
+
+    /// <summary>
+    /// Implementation of ITaxonContentController interface
+    /// </summary>
     public class TaxonContentController : ITaxonContentController
     {
+
+        /// <summary>
+        /// Retrieves info about given taxon from NBIC API.
+        /// </summary>
+        /// <param name="taxon">Taxon object. Should have taxonId and/or scientificNameId</param>
+        /// <returns>TaxonInfo containing info about given taxon.</returns>
         public TaxonInfo GetInfoFromTaxon(Taxon taxon)
         {
+            // TODO Currently unused. May be used to create TaxonContent
+
             return ApplicationDataManager.GetTaxonInfoFromTaxonAsync(taxon).Result;
         }
 
-        TaxonContent ITaxonContentController.GetContentFromTaxon(Taxon taxon)
+        /// <summary>
+        /// Creates or retrieves a TaxonContent object with info and images of the given taxon. Used to populate TaxonContent page.
+        /// </summary>
+        /// <param name="taxon">Taxon object. Should have taxonId and/or scientificNameId</param>
+        /// <returns>TaxonContent with content relating to given taxon.</returns>
+        public TaxonContent GetContentFromTaxon(Taxon taxon)
         {
+            // TODO Currently only returns placeholder content. Should return actual content.
+
             ImageElement topImage = new ImageElement("BrownDragonflyTop.png", "Brun øyenstikker", "Phrida Norrhall", "12/3-14", "LC4400", "Description", new List<Taxon> { taxon });
 
             List<Tuple<string, string>> attributes = new List<Tuple<string, string>> { new Tuple<string, string>("Vitenskapelig navn ", "Aeshna grandis"), new Tuple<string, string>("Taksonomisk kategori ", "Art"), new Tuple<string, string>("Autor ", "(Linnaeus, 1758)"), new Tuple<string, string>("Bokmål ", "Brun øyenstikker") };

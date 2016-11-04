@@ -7,33 +7,27 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views.Pages {
 
 	/// <summary>
-	/// Content info page. 
+	/// Taxon content/info page. 
 	/// </summary>
     public partial class TaxonContentPage : ContentPage
     {
-        private ITaxonContentController _controller;
 
-        private TaxonContent _content;
-		/// <summary>
-		/// TapGestureRecognizer for tap at image. 
-		/// </summary>
+        private ITaxonContentController _controller;
+        private TaxonContent _taxonContent;
 		private TapGestureRecognizer ImageTapped;
-		/// <summary>
-		/// The content image with all content.
-		/// </summary>
 		private ImageElement _topImage;
 
 		/// <summary>
-		/// Gets or sets the content.
+		/// Gets or sets the content of the page.
 		/// </summary>
 		/// <value>The content.</value>
-        public TaxonContent Content
+        public TaxonContent TaxonContent
         {
-            get { return _content; }
+            get { return _taxonContent; }
 
             set
             {
-                _content = value;
+                _taxonContent = value;
                 SetContent(value);
             }   
         }
@@ -42,17 +36,21 @@ namespace NbicDragonflies.Views.Pages {
 		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.TaxonContentPage"/> class.
 		/// </summary>
         public TaxonContentPage() {
+            // TODO remove?
             InitializeComponent();
         }
 
-        //TODO create SetSpeciesContent for view
+        /// <summary>
+        /// Constructor. Initializes new TaxonContent page from taxon object.
+        /// </summary>
+        /// <param name="taxon">The taxon associated with this page instance.</param>
         public TaxonContentPage(Taxon taxon)
         {
             InitializeComponent();
 
             _controller = new TaxonContentController();
 
-            Content = _controller.GetContentFromTaxon(taxon);
+            TaxonContent = _controller.GetContentFromTaxon(taxon);
         }
 
         // Fills the TaxonContentPage view

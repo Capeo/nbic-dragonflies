@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NbicDragonflies.Controllers;
-using NbicDragonflies.Models;
-using NbicDragonflies.Views.ListItems;
-using Xamarin.Forms;
 using NbicDragonflies.Data;
-using NbicDragonflies.Models.Taxon;
+using NbicDragonflies.Models;
+using Xamarin.Forms;
 
-namespace NbicDragonflies.Views {
+namespace NbicDragonflies.Views.Pages {
 
 	/// <summary>
 	/// HomePage page.
@@ -22,6 +17,9 @@ namespace NbicDragonflies.Views {
         private IHomeController _controller;
         private TapGestureRecognizer _infoTap;
 
+        /// <summary>
+        /// Constructor. Initializes new home page
+        /// </summary>
         public HomePage()
         {
             InitializeComponent();
@@ -95,8 +93,11 @@ namespace NbicDragonflies.Views {
 
         private void FillRecentObservationsList(List<Observation> observations)
         {
-                RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
+            RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
+            if (observations != null && observations.Count > 0)
+            {
                 RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
+            }
         }
 
         private void SetNotice(HomeNotice notice)

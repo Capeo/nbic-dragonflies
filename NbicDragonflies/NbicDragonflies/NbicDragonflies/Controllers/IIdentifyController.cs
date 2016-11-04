@@ -10,18 +10,16 @@ namespace NbicDragonflies.Controllers {
 
 
     /// <summary>
-    /// Ïnterface for Identification Key Page controller. Binds data between Identification Key Page view and model classes.
+    /// Interface for Identification Key Page controller. Binds data between Identification Key Page view and model classes.
     /// </summary>
     public interface IIdentifyController
     {
-
 
         /// <summary>
         /// Retrieves the current question for the Identification Key.
         /// </summary>
         /// <returns>IdentifyQuestion</returns>
         IdentifyQuestion GetCurrentQuestion();
-
 
         /// <summary>
         /// Retrieves next question for the Identification Key.
@@ -41,20 +39,17 @@ namespace NbicDragonflies.Controllers {
         /// <returns>bool</returns>
         bool HasNextQuestion();
 
-
         /// <summary>
         /// Checks if there exists a previous question.
         /// </summary>
         /// <returns>bool</returns>
         bool HasPreviousQuestion();
 
-
         /// <summary>
         /// Sets the option selected by the user for the current question.
         /// </summary>
         /// <param name="option">The selected option</param>
         void SetSelectedOption(IdentifyOption option);
-
 
         /// <summary>
         /// Retrieves list of suggetions.

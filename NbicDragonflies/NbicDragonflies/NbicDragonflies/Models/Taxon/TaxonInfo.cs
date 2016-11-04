@@ -80,7 +80,9 @@ namespace NbicDragonflies.Models.Taxon
         public string Changed { get; set; }
     }
 
-
+    /// <summary>
+    /// TaxonInfo class retrieved from NBIC API.
+    /// </summary>
     public class TaxonInfo
     {
         public string Heading { get; set; }

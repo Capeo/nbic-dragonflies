@@ -24,15 +24,15 @@
 			  <ColumnDefinition Width="1*" />
 		    </Grid.ColumnDefinitions>
 			
-			  <viewElements:ImageElementView x:Name="p00" Grid.Row="0" Grid.Column="0" />
-			  <viewElements:ImageElementView x:Name="p01" Grid.Row="0" Grid.Column="1"/>
-			  <viewElements:ImageElementView x:Name="p02" Grid.Row="0" Grid.Column="2"/>
-			  <viewElements:ImageElementView x:Name="p10" Grid.Row="1" Grid.Column="0"/>
-   		  <viewElements:ImageElementView x:Name="p11" Grid.Row="1" Grid.Column="1"/>
-			  <viewElements:ImageElementView x:Name="p12" Grid.Row="1" Grid.Column="2"/>
-			  <viewElements:ImageElementView x:Name="p20" Grid.Row="2" Grid.Column="0"/>
-			  <viewElements:ImageElementView x:Name="p21" Grid.Row="2" Grid.Column="1"/>
-			  <viewElements:ImageElementView x:Name="p22" Grid.Row="2" Grid.Column="2"/>
+			  <viewElements:ImageElementView x:Name="P00" Grid.Row="0" Grid.Column="0" />
+			  <viewElements:ImageElementView x:Name="P01" Grid.Row="0" Grid.Column="1"/>
+			  <viewElements:ImageElementView x:Name="P02" Grid.Row="0" Grid.Column="2"/>
+			  <viewElements:ImageElementView x:Name="P10" Grid.Row="1" Grid.Column="0"/>
+   		  <viewElements:ImageElementView x:Name="P11" Grid.Row="1" Grid.Column="1"/>
+			  <viewElements:ImageElementView x:Name="P12" Grid.Row="1" Grid.Column="2"/>
+			  <viewElements:ImageElementView x:Name="P20" Grid.Row="2" Grid.Column="0"/>
+			  <viewElements:ImageElementView x:Name="P21" Grid.Row="2" Grid.Column="1"/>
+			  <viewElements:ImageElementView x:Name="P22" Grid.Row="2" Grid.Column="2"/>
 
 		  </Grid>
       

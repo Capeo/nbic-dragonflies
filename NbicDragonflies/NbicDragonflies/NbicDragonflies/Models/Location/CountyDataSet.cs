@@ -1,5 +1,9 @@
 ﻿namespace NbicDragonflies.Models.Location
 {
+
+    /// <summary>
+    /// Model class representing a County. Fetched from API
+    /// </summary>
     public class CountyDataSet
     {
         public string GoogleMercatorBbox { get; set; }

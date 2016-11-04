@@ -7,10 +7,16 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views.Pages {
 
+    /// <summary>
+    /// Identification key page.
+    /// </summary>
     public partial class IdentifyPage : TabbedPage {
 
         private IIdentifyController _controller;
 
+        /// <summary>
+        /// Constructor. Initializes new Identify page
+        /// </summary>
         public IdentifyPage()
         {
             InitializeComponent();
@@ -18,11 +24,9 @@ namespace NbicDragonflies.Views.Pages {
             _controller = new IdentifyController();
 
             SetQuestion(_controller.GetCurrentQuestion());
-            SuggestionsList.ItemsSource = _controller.GetSuggestions();
 
             NextQuestion.Clicked += OnNextButtonClicked;
             PreviousQuestion.Clicked += OnPreviousButtonClicked;
-
 			SuggestionsList.ItemSelected += OnSuggestedItemSelected;
         }
 
@@ -38,6 +42,9 @@ namespace NbicDragonflies.Views.Pages {
 
             NextQuestion.IsEnabled = _controller.HasNextQuestion();
             PreviousQuestion.IsEnabled = _controller.HasPreviousQuestion();
+
+            SuggestionsList.ItemsSource = null;
+            SuggestionsList.ItemsSource = _controller.GetSuggestions();
         }
 
         private void OnOptionTap(object sender, EventArgs e)
@@ -66,6 +73,7 @@ namespace NbicDragonflies.Views.Pages {
             if (_controller.HasNextQuestion()) 
             {
                 SetQuestion(_controller.GetNextQuestion());
+                
             }
         }
 

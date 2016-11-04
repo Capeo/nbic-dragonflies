@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace NbicDragonflies.Models.Taxon
 {
+
+    /// <summary>
+    /// Model class for taxons. Fields received from NBIC API
+    /// </summary>
     public class Taxon {
         /// <summary>
         /// Gets or sets the Id of the taxon.
@@ -68,11 +72,10 @@ namespace NbicDragonflies.Models.Taxon
         /// <value>The name of the preferred vernacular.</value>
 		public PreferredVernacularName PreferredVernacularName { get; set; }
 
-		/// <summary>
-		/// Returns the vernacular name of the taxon for the current language. If not found, the first scientific name is returned. 
-		/// </summary>
-		/// <returns>The preferred name.</returns>
-        // Returns the vernacular name of the taxon for the current langauge. If not found, the first scientific name is returned.
+        /// <summary>
+        /// Returns the vernacular name of the taxon for the current language. If not found, the first scientific name is returned. If no names are found an empty string is returned.
+        /// </summary>
+        /// <returns>The preferred name.</returns>
         public string GetPreferredName()
         {
             string ret = "";
@@ -95,6 +98,10 @@ namespace NbicDragonflies.Models.Taxon
             return ret; 
         }
 
+        /// <summary>
+        /// Returns the first scientific name of the taxon. If none are found an empty string is returned.
+        /// </summary>
+        /// <returns>Scientific name of taxon</returns>
         public string GetScientificName()
         {
             string ret = "";
@@ -108,7 +115,9 @@ namespace NbicDragonflies.Models.Taxon
         }
     }
 
-
+    /// <summary>
+    /// Class used to represent a scientific name from NBIC API
+    /// </summary>
     public class ScientificName {
         /// <summary>
         /// Gets or sets the Id of the scientific name.
@@ -153,6 +162,9 @@ namespace NbicDragonflies.Models.Taxon
         public string nameAccordingTo { get; set; }
     }
 
+    /// <summary>
+    /// Class used to represent a verncaular name from NBIC API
+    /// </summary>
     public class VernacularName {
         /// <summary>
         /// Gets or sets the vernacular name Id for vernacular names.

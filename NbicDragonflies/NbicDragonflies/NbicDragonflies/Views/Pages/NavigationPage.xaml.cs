@@ -15,7 +15,7 @@ namespace NbicDragonflies.Views.Pages {
         private Type CurrentDetailType { get; set; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.NavigationPage"/> class.
+		/// Constructor. Initializes a new instance of the class.
 		/// </summary>
         public NavigationPage() {
             InitializeComponent();
@@ -28,8 +28,11 @@ namespace NbicDragonflies.Views.Pages {
             NavigationMaster.ListView.ItemSelected += OnItemSelected;
         }
 
-        // EventHandler for itemSelection in NavigationList.
-        // Creates new Page and sets the page as current detail.
+        /// <summary>
+        /// EventHandler for itemSelection in NavigationList. Creates new Page and sets the page as current detail.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnItemSelected(Object sender, SelectedItemChangedEventArgs e) {
             var item = e.SelectedItem as NavigationListItem;
             if (item != null)
@@ -68,7 +71,7 @@ namespace NbicDragonflies.Views.Pages {
         }
 
         // Change language of app and icon
-        void ChangeLanguage()
+        private void ChangeLanguage()
         {
             Utility.Language.Languages l = Utility.Language.SwitchLanguage();
             if (l == Utility.Language.Languages.En)

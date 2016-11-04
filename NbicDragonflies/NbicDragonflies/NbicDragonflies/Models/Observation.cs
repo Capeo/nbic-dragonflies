@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace NbicDragonflies.Models
 {
 
+    /// <summary>
+    /// Class for observations retrieved from NBIC API.
+    /// </summary>
     public class Observation
     {
         public string Id { get; set; }

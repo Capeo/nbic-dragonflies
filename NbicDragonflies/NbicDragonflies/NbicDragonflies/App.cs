@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using NavigationPage = NbicDragonflies.Views.Pages.NavigationPage;
 
 namespace NbicDragonflies {
+
     /// <summary>
     ///  Main class of the Application
     /// </summary>

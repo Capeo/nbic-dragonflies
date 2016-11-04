@@ -7,17 +7,25 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views.ListItems {
 
-    // Custom cell class used in ObservationsPage list
+    /// <summary>
+    /// Custom cell class used in ObservationsPage list
+    /// </summary>
     public class ObservationsCell : ViewCell {
 
-        public static readonly BindableProperty SpeciesProperty = BindableProperty.Create("Content", typeof(string), typeof(ObservationsCell), "");
+        /// <summary>
+        /// Property for associated taxon
+        /// </summary>
+        public static readonly BindableProperty TaxonProperty = BindableProperty.Create("TaxonContent", typeof(string), typeof(ObservationsCell), "");
 
-        public string Species
+        public string Taxon
         {
-            get { return (string) GetValue(SpeciesProperty); }
-            set { SetValue(SpeciesProperty, value); }
+            get { return (string) GetValue(TaxonProperty); }
+            set { SetValue(TaxonProperty, value); }
         }
 
+        /// <summary>
+        /// Property for associated location
+        /// </summary>
         public static readonly BindableProperty LocationProperty = BindableProperty.Create("Location", typeof(string), typeof(ObservationsCell), "");
 
         public string Location
@@ -26,6 +34,9 @@ namespace NbicDragonflies.Views.ListItems {
             set { SetValue(LocationProperty, value); }
         }
 
+        /// <summary>
+        /// Property for associated date
+        /// </summary>
         public static readonly BindableProperty DateProperty = BindableProperty.Create("Date", typeof(string), typeof(ObservationsCell), "");
 
         public string Date
@@ -34,6 +45,9 @@ namespace NbicDragonflies.Views.ListItems {
             set { SetValue(DateProperty, value); }
         }
 
+        /// <summary>
+        /// Property for associated user.
+        /// </summary>
         public static readonly BindableProperty UserProperty = BindableProperty.Create("User", typeof(string), typeof(ObservationsCell), "");
 
         public string User
@@ -42,6 +56,9 @@ namespace NbicDragonflies.Views.ListItems {
             set { SetValue(UserProperty, value); }
         }
 
+        /// <summary>
+        /// Property for associated image filename
+        /// </summary>
         public static readonly BindableProperty ImageFilenameProperty = BindableProperty.Create("ImageFilname", typeof(string), typeof(ObservationsCell), "");
 
         public string ImageFilename

@@ -16,7 +16,7 @@ namespace NbicDragonflies.Views.Pages
         private IObservationsController _controller;
 
         /// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.ObservationsPage"/> class.
+		/// Constructor. Initializes a new instance of the class.
 		/// </summary>
         public ObservationsPage()
         {

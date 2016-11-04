@@ -9,7 +9,7 @@ namespace NbicDragonflies.Controllers {
 
 
     /// <summary>
-    /// Ïnterface for Home Page controller. Binds data between Home Page view and model classes.
+    /// Interface for Home Page controller. Binds data between Home Page view and model classes.
     /// </summary>
     public interface IHomeController {
 

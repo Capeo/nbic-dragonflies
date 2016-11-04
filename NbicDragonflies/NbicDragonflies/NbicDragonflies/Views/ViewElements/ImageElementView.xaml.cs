@@ -5,13 +5,16 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views.ViewElements {
 
 	/// <summary>
-	/// Content image view class.
+	/// Image view class containing image and associated information.
 	/// </summary>
     public partial class ImageElementView : ContentView
     {
 
         private ImageElement _image;
 
+        /// <summary>
+        /// Label for the description element of the image.
+        /// </summary>
         public Label DescriptionLabel { get { return Description; } }
 
 		/// <summary>
@@ -29,11 +32,12 @@ namespace NbicDragonflies.Views.ViewElements {
             }
         }
 
-		/// <summary>
-		/// Gets or sets the images.
-		/// </summary>
-		/// <value>The images.</value>
-		public List<ImageElementView> Images { get; set; }
+        // TODO remove?
+		///// <summary>
+		///// Gets or sets the images.
+		///// </summary>
+		///// <value>The images.</value>
+		//public List<ImageElementView> Images { get; set; }
 
 		/// <summary>
 		/// TapGestureRecognizer for tap in GalleryPage.
@@ -41,7 +45,7 @@ namespace NbicDragonflies.Views.ViewElements {
 		public TapGestureRecognizer GalleryTap;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.ViewElements.ImageElementView"/> class with a SpeciesImage as argument.
+		/// Constructor. Initializes a new instance of the view from the given image.
 		/// </summary>
 		/// <param name="image">Image.</param>
 		public ImageElementView(ImageElement image) {
@@ -52,24 +56,20 @@ namespace NbicDragonflies.Views.ViewElements {
 			GalleryTap = new TapGestureRecognizer();
 			ImageFrame.GestureRecognizers.Add(GalleryTap);
 
-			Images = new List<ImageElementView>();
             // Style the view
             ImageContent.Aspect = Aspect.AspectFit;
-
-
         }
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.ViewElements.ImageElementView"/> class.
-		/// </summary>
-		public ImageElementView()
+        /// <summary>
+        /// Constructor. Initializes a new, empty instance of the view.
+        /// </summary>
+        public ImageElementView()
 		{
 			InitializeComponent();
 
 			GalleryTap = new TapGestureRecognizer();
 			ImageFrame.GestureRecognizers.Add(GalleryTap);
 
-			Images = new List<ImageElementView>();
 			// Style the view
 			ImageContent.Aspect = Aspect.AspectFit;
 		}
@@ -87,9 +87,6 @@ namespace NbicDragonflies.Views.ViewElements {
 
 			TaxonName.TextColor = Utility.Constants.NbicBrown;
 			Date.TextColor = Utility.Constants.NbicBrown;
-			//Photographer.TextColor = Utility.Constants.NbicBrown;
         }
-
-
     }
 }

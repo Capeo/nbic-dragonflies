@@ -12,21 +12,15 @@ namespace NbicDragonflies.Views.Pages
 	/// </summary>
 	public partial class GalleryPage : ContentPage
 	{
-		/// <summary>
-		/// The pages in the grid.
-		/// </summary>
-		private List<ViewElements.ImageElementView> GridElements = new List<ViewElements.ImageElementView>();
-		/// <summary>
-		/// List over Images to fill in all pages. 
-		/// </summary>
-		private List<ImageElement> ImageList;
 
+		private List<ViewElements.ImageElementView> _gridElements = new List<ViewElements.ImageElementView>();
+		private List<ImageElement> _imageList;
 		private IGalleryController _controller;
         private int _indexCounter = 0;
 	    private int _imagesCounter = 0;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.GridElements.GalleryPage"/> class with IGalleryControllers as parameter.
+		/// Initializes a new instance of the class.
 		/// </summary>
 		public GalleryPage()
 		{
@@ -34,16 +28,16 @@ namespace NbicDragonflies.Views.Pages
 
 			_controller = new GalleryController();
 
-			//All pages in the Grid
-			GridElements.Add(p00);
-			GridElements.Add(p01);
-			GridElements.Add(p02);
-			GridElements.Add(p10);
-			GridElements.Add(p11);
-			GridElements.Add(p12);
-			GridElements.Add(p20);
-			GridElements.Add(p21);
-			GridElements.Add(p22);
+			//Add pages to the Grid
+			_gridElements.Add(P00);
+			_gridElements.Add(P01);
+			_gridElements.Add(P02);
+			_gridElements.Add(P10);
+			_gridElements.Add(P11);
+			_gridElements.Add(P12);
+			_gridElements.Add(P20);
+			_gridElements.Add(P21);
+			_gridElements.Add(P22);
 
 
 			NextPage.Clicked += OnNextPageClick;
@@ -66,19 +60,19 @@ namespace NbicDragonflies.Views.Pages
 		/// <param name="galleryImages">GalleryPage images.</param>
 		private void SetGalleryImages(List<ImageElement> galleryImages)
 		{
-			ImageList = galleryImages;
+			_imageList = galleryImages;
 		    _imagesCounter = 0;
 
 			for (int i = 0; i <= 8; i++)
 			{
-			    if (i < ImageList.Count)
+			    if (i < _imageList.Count)
 			    {
-			        GridElements.ElementAt(i).Image = ImageList[i];
-			        GridElements.ElementAt(i).GalleryTap.Tapped += OnImageClick;
+			        _gridElements.ElementAt(i).Image = _imageList[i];
+			        _gridElements.ElementAt(i).GalleryTap.Tapped += OnImageClick;
 			        _imagesCounter++;
 			    }
                 else {
-                    GridElements.ElementAt(i).Image = new ImageElement();
+                    _gridElements.ElementAt(i).Image = new ImageElement();
                 }
             }
 		    _indexCounter += _imagesCounter;
@@ -93,16 +87,16 @@ namespace NbicDragonflies.Views.Pages
 		    _imagesCounter = 0;
 			for (int i = _indexCounter; i <= _indexCounter + 8; i++)
 			{
-			    if (i < ImageList.Count)
+			    if (i < _imageList.Count)
 			    {
-			        GridElements.ElementAt(elementCounter).IsVisible = true;
-			        GridElements.ElementAt(elementCounter).Image = ImageList[i];
+			        _gridElements.ElementAt(elementCounter).IsVisible = true;
+			        _gridElements.ElementAt(elementCounter).Image = _imageList[i];
 			        _imagesCounter++;
 			    }
 			    else
 			    {
-			        GridElements.ElementAt(elementCounter).Image = new ImageElement();
-			        GridElements.ElementAt(elementCounter).IsVisible = false;
+			        _gridElements.ElementAt(elementCounter).Image = new ImageElement();
+			        _gridElements.ElementAt(elementCounter).IsVisible = false;
 			    }
                 elementCounter++;
 			}
@@ -120,8 +114,8 @@ namespace NbicDragonflies.Views.Pages
 		    _imagesCounter = 0;
 			for (int i = j; i >= j - 8; i--)
 			{
-			    GridElements.ElementAt(elementCounter).IsVisible = true;
-				GridElements.ElementAt(elementCounter).Image = ImageList[i];
+			    _gridElements.ElementAt(elementCounter).IsVisible = true;
+				_gridElements.ElementAt(elementCounter).Image = _imageList[i];
 				elementCounter--;
 			    _imagesCounter++;
 			}
@@ -151,10 +145,10 @@ namespace NbicDragonflies.Views.Pages
 			
 			if (sender.GetType() == typeof(Button))
 			{
-				if (_indexCounter < ImageList.Count)
+				if (_indexCounter < _imageList.Count)
 				{
 					IncreaseGalleryImages();
-				    if (_indexCounter >= ImageList.Count)
+				    if (_indexCounter >= _imageList.Count)
 				    {
 				        NextPage.IsEnabled = false;
 				    }
@@ -180,7 +174,7 @@ namespace NbicDragonflies.Views.Pages
 				    {
 				        PreviousPage.IsEnabled = false;
 				    }
-				    if (_indexCounter <= ImageList.Count)
+				    if (_indexCounter <= _imageList.Count)
 				    {
 				        NextPage.IsEnabled = true;
 				    }

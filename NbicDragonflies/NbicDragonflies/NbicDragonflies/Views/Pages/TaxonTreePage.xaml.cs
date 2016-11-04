@@ -7,12 +7,18 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views.Pages {
 
+    /// <summary>
+    /// Taxon tree page
+    /// </summary>
     public partial class TaxonTreePage : ContentPage
     {
 
         private const int _offset = 15;
         private ITaxonTreeController _controller;
 
+        /// <summary>
+        /// Constructor. Initializes new taxon tree page.
+        /// </summary>
         public TaxonTreePage() {
             InitializeComponent();
 
@@ -46,12 +52,6 @@ namespace NbicDragonflies.Views.Pages {
             
         }
 
-		/// <summary>
-		/// Handles click on the navigation part of TaxonButton
-		/// </summary>
-		/// <param name="sender">Sender.</param>
-		/// <param name="e">E.</param>
-        // Handle tap on navigation part of TaxonButton
         private void OnNavigationClick(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Frame))

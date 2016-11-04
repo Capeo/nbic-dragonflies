@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NbicDragonflies.Models {
 
 	/// <summary>
-	/// Content information with image and content
+	/// Model class representing an image and associated information
 	/// </summary>
 	public class ImageElement
 	{
@@ -19,9 +19,9 @@ namespace NbicDragonflies.Models {
 		/// <value>The image source.</value>
 		public string ImageSource { get; set; }
 		/// <summary>
-		/// Gets or sets the name of the species.
+		/// Gets or sets the name of the taxon.
 		/// </summary>
-		/// <value>The name of the species.</value>
+		/// <value>The name of the taxon.</value>
 		public string TaxonName { get; set; }
 		/// <summary>
 		/// Gets or sets the owner of the image.
@@ -50,18 +50,18 @@ namespace NbicDragonflies.Models {
 		public List<Taxon.Taxon> Taxons { get; set; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Models.SpeciesImage"/> class.
+		/// Initializes a new instance of the class.
 		/// </summary>
 	    public ImageElement()
 	    {
-	        
+	        // TODO Remove?
 	    }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Models.SpeciesImage"/> class with all the content as parameters.
+		/// Constructor. Initializes a new instance of the class with all the content as parameters.
 		/// </summary>
 		/// <param name="imageSource">Image source.</param>
-		/// <param name="taxonName">Content name.</param>
+		/// <param name="taxonName">TaxonContent name.</param>
 		/// <param name="owner">owner.</param>
 		/// <param name="caption">caption.</param>
 		/// <param name="license">license.</param>

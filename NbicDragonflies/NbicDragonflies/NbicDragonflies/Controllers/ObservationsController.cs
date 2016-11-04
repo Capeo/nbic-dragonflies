@@ -9,9 +9,16 @@ using NbicDragonflies.Models.Location;
 
 namespace NbicDragonflies.Controllers {
 
+    /// <summary>
+    /// Implementation of IObservationsController interface
+    /// </summary>
     public class ObservationsController : IObservationsController
     {
 
+        /// <summary>
+        /// Retrieves list of observations for Observations page. Should be sorted by observation time.
+        /// </summary>
+        /// <returns>List of recent observations.</returns>
         public List<Observation> GetObservations()
         {
             Models.ObservationList recentObservationsList = ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=30").Result;
@@ -22,11 +29,14 @@ namespace NbicDragonflies.Controllers {
             return null;
         }
 
-        //FIXME Cache me please
+        /// <summary>
+        /// Retrieves a list of all counties in Norway used by NBIC API
+        /// </summary>
+        /// <returns>List of CountyDataSets</returns>
         public static List<CountyDataSet> GetCountyDataSet()
         {
             List<CountyDataSet> areaDataSetResult = new List<CountyDataSet>();
-            //FIXME change hard coded numbers to a variable that receives total count of regions listed in the dataset
+            //TODO change hard coded numbers to a variable that receives total count of regions listed in the dataset
             for (int i = 1; i < 24; i++)
             {
                 areaDataSetResult.Add(ApplicationDataManager.GetAreaDataSetAsync(i).Result);
@@ -34,6 +44,10 @@ namespace NbicDragonflies.Controllers {
             return areaDataSetResult;
         }
 
+        /// <summary>
+        /// Retrieves the number of recent observations for each county in Norway.
+        /// </summary>
+        /// <returns>Dictionary containing county and number of recent observations.</returns>
         public Dictionary<CountyDataSet, int> GetObservationsMapPins()
         {
             Dictionary<CountyDataSet, int>  observationsMap = new Dictionary<CountyDataSet, int>();

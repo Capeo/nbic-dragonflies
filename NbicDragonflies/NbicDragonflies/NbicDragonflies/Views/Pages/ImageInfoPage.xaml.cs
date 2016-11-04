@@ -8,7 +8,7 @@ using Xamarin.Forms;
 namespace NbicDragonflies.Views.Pages
 {
 	/// <summary>
-	/// Class shows content for each Image in Gallery.
+	/// Shows image with and details
 	/// </summary>
 	public partial class ImageInfoPage : ContentPage
 	{
@@ -16,6 +16,7 @@ namespace NbicDragonflies.Views.Pages
 		/// TapGestureRecognizer for tap at TaxonName. 
 		/// </summary>
 		public TapGestureRecognizer TaxonTap;
+
 		/// <summary>
 		/// The taxons.
 		/// </summary>
@@ -29,7 +30,7 @@ namespace NbicDragonflies.Views.Pages
 
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.ImageInfoPage"/> class with a ImageElement as parameter. 
+		/// Constructor. Initializes a new instance of the class. 
 		/// </summary>
 		/// <param name="image">Image.</param>
 		public ImageInfoPage(ImageElement image)
@@ -72,6 +73,7 @@ namespace NbicDragonflies.Views.Pages
 		/// </summary>
 		public ImageInfoPage()
 		{
+            // TODO Remove?
 			InitializeComponent();
 		}
 

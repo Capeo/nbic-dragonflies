@@ -14,7 +14,6 @@ namespace NbicDragonflies.Controllers
 	public interface IGalleryController
 	{
 
-
 		/// <summary>
 		/// Retrieves images from the API/Database.
 		/// </summary>

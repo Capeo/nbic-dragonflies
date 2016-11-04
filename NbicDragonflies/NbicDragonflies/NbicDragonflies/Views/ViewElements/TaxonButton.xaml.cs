@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace NbicDragonflies.Views.ViewElements {
 
+    /// <summary>
+    /// 'Button' used in taxon tree
+    /// </summary>
     public partial class TaxonButton : ContentView
     {
 

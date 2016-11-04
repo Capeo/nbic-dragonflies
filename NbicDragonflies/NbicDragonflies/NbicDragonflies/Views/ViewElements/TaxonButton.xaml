@@ -13,8 +13,7 @@
       </Frame>
       <Frame x:Name="InfoFrame" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" Padding="0" Margin="0" HasShadow="False" WidthRequest="50">
         <Frame.Content>
-		  <Image x:Name="Info" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="0,4,10,4"/>
-          <!--Label x:Name="Info" Text="Info" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/-->
+		      <Image x:Name="Info" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="0,4,10,4"/>
         </Frame.Content>
       </Frame>
     </StackLayout>
