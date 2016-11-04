@@ -45,7 +45,7 @@ namespace NbicDragonflies.Views {
 			WhiteBox.BackgroundColor = Utility.Constants.Background;
 			WhiteBox.Opacity = 0.65;
 
-            // Position title within InfoLayout
+            // Position title related to WhiteBox
             InfoLayout.Children.Add(InfoTitle,
                 Constraint.RelativeToView(WhiteBox, (parent,sibling) => sibling.X + 10),
                 Constraint.RelativeToView(WhiteBox, (parent, sibling) => sibling.Y + 5),
@@ -54,7 +54,7 @@ namespace NbicDragonflies.Views {
 			InfoTitle.FontSize = 25;
 			InfoTitle.TextColor = Color.Black;
 
-            // Position text within InfoLayout
+            // Position text related to Title
             InfoLayout.Children.Add(InfoText,
                 Constraint.RelativeToView(InfoTitle, (parent, sibling) => sibling.X),
                 Constraint.RelativeToView(InfoTitle, (parent, sibling) => (sibling.Y + sibling.Height)),
