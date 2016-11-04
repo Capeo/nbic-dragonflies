@@ -193,20 +193,24 @@
     <value>Attributes</value>
     <comment>Label for attributes section in TaxonContentPage page</comment>
   </data>
-	<data name="GalleryImageMoreInfoLabel" xml:space="preserve">
+  <data name="GalleryImageMoreInfoLabel" xml:space="preserve">
     <value>Press picture for more information</value>
     <comment>Label for GalleryPage Image</comment>
   </data>
-	<data name="SearchResultCouldNotFind" xml:space="preserve">
+  <data name="SearchResultCouldNotFind" xml:space="preserve">
     <value>Could not find</value>
     <comment>Label for Search Result List</comment>
   </data>
-	<data name="SearchResultSuggestions" xml:space="preserve">
+  <data name="SearchResultSuggestions" xml:space="preserve">
     <value>Suggestions</value>
     <comment>Label for Search Result List</comment>
   </data>
-	<data name="SearchTitle" xml:space="preserve">
+  <data name="SearchTitle" xml:space="preserve">
     <value>Search</value>
     <comment>Label for Search Result List</comment>
+  </data>
+  <data name="GeoLocatorOff" xml:space="preserve">
+    <value>Switch on Location</value>
+    <comment>Label for Location Off Warning</comment>
   </data>
 </root>

@@ -125,6 +125,15 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Slå på posisjon.
+        /// </summary>
+        public static string GeoLocatorOff {
+            get {
+                return ResourceManager.GetString("GeoLocatorOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hjem.
         /// </summary>
         public static string HomeLabel {

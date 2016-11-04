@@ -9,6 +9,7 @@ using NbicDragonflies.Views.ListItems;
 using Xamarin.Forms;
 using NbicDragonflies.Data;
 using NbicDragonflies.Models.Taxon;
+using NbicDragonflies.Resources;
 
 namespace NbicDragonflies.Views {
 
@@ -77,14 +78,10 @@ namespace NbicDragonflies.Views {
         private async void OnSearchButtonPressed(object sender, EventArgs e) 
         {
             List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
-            List<string> searchResults = new List<string>();
-            if (searchResultsResponse.Capacity != 0) {
-                searchResults = searchResultsResponse[0].ScientificName;
-            }
 
-            await Navigation.PushAsync(new SearchResultPage(SpeciesSearchBar.Text, searchResults));
+            await Navigation.PushAsync(new SearchResultPage(SpeciesSearchBar.Text, searchResultsResponse));
         }
-
+        
         private void OnInfoPressed(object sender, EventArgs e)
         {
             if (_controller.GetHomeNotice().Taxon != null)
@@ -95,8 +92,16 @@ namespace NbicDragonflies.Views {
 
         private void FillRecentObservationsList(List<Observation> observations)
         {
+            if (observations != null)
+            {
                 RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
                 RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
+            }
+            else
+            {
+                RecentObservationsList.ItemsSource = "";
+                RecentObservationsTitle.Text = LanguageResource.GeoLocatorOff;
+            }
         }
 
         private void SetNotice(HomeNotice notice)
