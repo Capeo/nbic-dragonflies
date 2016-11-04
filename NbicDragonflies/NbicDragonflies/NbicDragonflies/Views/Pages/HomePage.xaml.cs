@@ -4,6 +4,8 @@ using NbicDragonflies.Controllers;
 using NbicDragonflies.Data;
 using NbicDragonflies.Models;
 using Xamarin.Forms;
+using NbicDragonflies.Models.Taxon;
+using NbicDragonflies.Resources;
 
 namespace NbicDragonflies.Views.Pages {
 
@@ -68,21 +70,16 @@ namespace NbicDragonflies.Views.Pages {
             FillRecentObservationsList(_controller.GetRecentObservations());  
                       
             SpeciesSearchBar.SearchButtonPressed += OnSearchButtonPressed;
-
             RecentObservationsList.ItemSelected += OnObservationSelected;
         }
 
         private async void OnSearchButtonPressed(object sender, EventArgs e) 
         {
             List<SearchResultItem> searchResultsResponse = await ApplicationDataManager.GetSearchResultAsync(SpeciesSearchBar.Text);
-            List<string> searchResults = new List<string>();
-            if (searchResultsResponse.Capacity != 0) {
-                searchResults = searchResultsResponse[0].ScientificName;
-            }
 
-            await Navigation.PushAsync(new SearchResultPage(SpeciesSearchBar.Text, searchResults));
+            await Navigation.PushAsync(new SearchResultPage(SpeciesSearchBar.Text, searchResultsResponse));
         }
-
+        
         private void OnInfoPressed(object sender, EventArgs e)
         {
             if (_controller.GetHomeNotice().Taxon != null)
@@ -93,10 +90,18 @@ namespace NbicDragonflies.Views.Pages {
 
         private void FillRecentObservationsList(List<Observation> observations)
         {
-            RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
-            if (observations != null && observations.Count > 0)
+            if (observations != null)
             {
+                RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
                 RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
+            }
+            else
+            {
+                // TODO remove
+                System.Diagnostics.Debug.WriteLine("Testing");
+                RecentObservationsList.ItemsSource = null;
+                RecentObservationsTitle.Text = "";
+                DisplayAlert(LanguageResource.AlertTitle, LanguageResource.GeoLocatorOff, "Ok");
             }
         }
 

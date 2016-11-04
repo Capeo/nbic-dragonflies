@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Foundation;
 using NbicDragonflies.iOS.Views;
-using NbicDragonflies.Views.ListItems;
+using NbicDragonflies.Views.ViewElements;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;

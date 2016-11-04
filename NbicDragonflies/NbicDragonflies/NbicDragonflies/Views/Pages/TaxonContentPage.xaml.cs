@@ -56,6 +56,8 @@ namespace NbicDragonflies.Views.Pages {
         // Fills the TaxonContentPage view
         private void SetContent(TaxonContent content)
         {
+            Title = content.Taxon.GetPreferredName();
+
             TopImage.Image = content.TopImage;
 
             foreach (var attribute in content.Attributes)

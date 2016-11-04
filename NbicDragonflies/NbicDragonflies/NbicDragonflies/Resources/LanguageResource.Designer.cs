@@ -62,6 +62,15 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Varsel.
+        /// </summary>
+        public static string AlertTitle {
+            get {
+                return ResourceManager.GetString("AlertTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dato.
         /// </summary>
         public static string GalleryImageDateLabel {
@@ -121,6 +130,15 @@ namespace NbicDragonflies.Resources {
         public static string GalleryLabel {
             get {
                 return ResourceManager.GetString("GalleryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For best opplevelse vennligst slå på posisjon..
+        /// </summary>
+        public static string GeoLocatorOff {
+            get {
+                return ResourceManager.GetString("GeoLocatorOff", resourceCulture);
             }
         }
         

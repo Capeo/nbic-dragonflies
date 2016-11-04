@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using NbicDragonflies.Models;
-using NbicDragonflies.Views.ListItems;
+using NbicDragonflies.Views.ViewElements;
 using Xamarin.Forms;
 
 namespace NbicDragonflies.Utility

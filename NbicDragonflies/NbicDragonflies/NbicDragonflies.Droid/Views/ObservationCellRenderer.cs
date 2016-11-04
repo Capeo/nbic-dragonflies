@@ -11,9 +11,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using NbicDragonflies.Droid.Views;
+using NbicDragonflies.Views.ViewElements;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using NbicDragonflies.Views.ListItems;
 
 [assembly: ExportRenderer(typeof(ObservationsCell), typeof(ObservationCellRenderer))]
 

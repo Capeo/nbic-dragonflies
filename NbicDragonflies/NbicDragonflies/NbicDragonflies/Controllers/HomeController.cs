@@ -35,21 +35,29 @@ namespace NbicDragonflies.Controllers {
             string countyName = GetCountyName();
             List<CountyDataSet> areaDataSet = ObservationsController.GetCountyDataSet();
             string countyId = "";
-            foreach (CountyDataSet area in areaDataSet)
+            if (countyName != null)
             {
-                if (countyName == area.Name)
+                foreach (CountyDataSet area in areaDataSet)
                 {
-                    countyId = area.Id;
-                    break;
+                    if (countyName == area.Name)
+                    {
+                        countyId = area.Id;
+                        break;
+                    }
+                }
+                ObservationList recentObservationsList =
+                    ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5&countys[]=" + $"{countyId}").Result;
+                if (recentObservationsList != null)
+                {
+                    return recentObservationsList.Observations;
                 }
             }
-            ObservationList recentObservationsList =
-                ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5&countys[]="+$"{countyId}").Result;
-            if (recentObservationsList != null)
-            {
-                return recentObservationsList.Observations;
-            }
             return null;
+        }
+
+        public Models.Taxon.Taxon GetTaxonFromId(int id)
+        {
+            return ApplicationDataManager.GetTaxon(id).Result;
         }
 
         private string GetCountyName()

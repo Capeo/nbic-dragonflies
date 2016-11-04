@@ -66,6 +66,7 @@ namespace NbicDragonflies.Models
         /// </summary>
         /// <value>The name of the vernacular.</value>
 		public List<string> VernacularName { get; set; }
+
     }
 
 }

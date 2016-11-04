@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace NbicDragonflies.Views.ListItems {
+namespace NbicDragonflies.Views.ViewElements {
 
     /// <summary>
     /// Custom cell class used in ObservationsPage list
