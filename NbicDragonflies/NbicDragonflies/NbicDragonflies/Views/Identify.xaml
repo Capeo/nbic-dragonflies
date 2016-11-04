@@ -5,18 +5,18 @@
              xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Identify"
              Title="{x:Static resources:LanguageResource.IdentifyLabel}"
-             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
+             BarBackgroundColor="{x:Static utility:Constants.Background}">
   <TabbedPage.Children >
-    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" Title="Identifiser" BackgroundColor="{x:Static utility:Constants.Background}">
+    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" Title="{x:Static resources:LanguageResource.KeyQuestionsLabel}" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-          <Button x:Name="PreviousQuestion" Image ="ic_keyboard_arrow_right.png" Rotation="180" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="10,0,0,0"/>
-          <Button x:Name="NextQuestion" Image="ic_keyboard_arrow_right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,10,0" />
+          <Button x:Name="PreviousQuestion" Image ="Arrow_Left.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="100,0,0,0"/>
+          <Button x:Name="NextQuestion" Image="Arrow_Right.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,100,0" />
         </StackLayout>
       </StackLayout>
     </ContentPage>
-    <ContentPage x:Name="ResultsTab" Icon="arter_white.png" Title="Resultat" BackgroundColor="{x:Static utility:Constants.Background}">
+    <ContentPage x:Name="ResultsTab" Icon="arter_white.png" Title="{x:Static resources:LanguageResource.KeySuggestionsLabel}" BackgroundColor="{x:Static utility:Constants.Background}">
       <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor = "White">
           <ListView x:Name="ResultsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default" BackgroundColor="White">
             <ListView.ItemTemplate>

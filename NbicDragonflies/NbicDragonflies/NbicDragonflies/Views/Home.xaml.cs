@@ -36,15 +36,14 @@ namespace NbicDragonflies.Views {
 			InfoImage.WidthRequest = InfoLayout.Width;
 			InfoImage.Aspect = Aspect.AspectFit;
 
-			//Create and position white box behind info text
+			//Create and position white box related to InfoImage
 			InfoLayout.Children.Add(WhiteBox,
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.X),
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Y + sibling.Height * 0.72),
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Width),
                 Constraint.RelativeToView(InfoImage, (parent, sibling) => sibling.Height - sibling.Height * 0.72));
-			WhiteBox.BackgroundColor = Color.White;
+			WhiteBox.BackgroundColor = Utility.Constants.Background;
 			WhiteBox.Opacity = 0.65;
-
 
             // Position title within InfoLayout
             InfoLayout.Children.Add(InfoTitle,

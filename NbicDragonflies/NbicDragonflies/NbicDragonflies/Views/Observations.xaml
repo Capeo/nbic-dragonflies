@@ -8,9 +8,9 @@
              xmlns:listItems="clr-namespace:NbicDragonflies.Views.ListItems;assembly=NbicDragonflies"
              x:Class="NbicDragonflies.Views.Observations"
              Title="{x:Static resources:LanguageResource.ObservationsLabel}"
-             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
+             BarBackgroundColor="{x:Static utility:Constants.Background}">
   <TabbedPage.Children>
-    <ContentPage Icon="list_white.png" Title="Liste">
+    <ContentPage Icon="list_white.png" Title="{x:Static resources:LanguageResource.ObservationListLabel}">
       <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <ListView x:Name="RecentObservationsList" RowHeight="90" BackgroundColor="White">
           <ListView.ItemTemplate>
@@ -21,7 +21,7 @@
         </ListView>
       </StackLayout>
     </ContentPage>
-    <ContentPage Icon="map_white.png" Title="Kart">
+    <ContentPage Icon="map_white.png" Title="{x:Static resources:LanguageResource.ObservationMapLabel}">
       <maps:Map WidthRequest="320" HeightRequest="200"
             x:Name="ObservationsMap"
             MapType="Hybrid"

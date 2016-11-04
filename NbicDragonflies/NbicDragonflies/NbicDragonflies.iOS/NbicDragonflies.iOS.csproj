@@ -145,6 +145,9 @@
     <BundleResource Include="Resources\Arrow_Left.png" />
     <BundleResource Include="Resources\Arrow_Left%402x.png" />
     <BundleResource Include="Resources\Arrow_Left%403x.png" />
+    <BundleResource Include="Resources\vingefasong1.png" />
+    <BundleResource Include="Resources\vingefasong2.png" />
+    <BundleResource Include="Resources\vingefasong3.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -10,14 +10,14 @@
   <ContentPage.Content>
     <StackLayout x:Name="HomeLayout" Spacing="0" BackgroundColor="{x:Static utility:Constants.Background}">
       <RelativeLayout x:Name="SearchLayout" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.Background}">
-			<SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="{x:Static utility:Constants.Background}" CancelButtonColor="Black" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
+			<SearchBar x:Name="SpeciesSearchBar" Placeholder="{x:Static resources:LanguageResource.SearchLabel}" BackgroundColor="{x:Static utility:Constants.Background}" CancelButtonColor="Black"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, 
                                     Property=Width, 
                                     Factor=1}" Margin="0"/>
       </RelativeLayout>
       <ScrollView x:Name="HomeScrollView" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView.Content>
-          <StackLayout x:Name="HomeStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,3" HeightRequest="260" BackgroundColor="White">
+          <StackLayout x:Name="HomeStackLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static utility:Constants.Background}">
+                <RelativeLayout x:Name="InfoLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0,0,0,3" HeightRequest="260" BackgroundColor="{x:Static utility:Constants.Background}">
                   <Image x:Name="InfoImage"/>
 				          <BoxView x:Name="WhiteBox"/>
 				          <Label x:Name="InfoTitle"/>

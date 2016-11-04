@@ -129,11 +129,11 @@
     <value>Identify species</value>
     <comment>Label for IdentifySpecies page</comment>
   </data>
-  <data name="KeyQuestionsTab" xml:space="preserve">
+  <data name="KeyQuestionsLabel" xml:space="preserve">
     <value>Questions</value>
     <comment>Label for questions tab in KeyPage</comment>
   </data>
-  <data name="KeyResultsTab" xml:space="preserve">
+  <data name="KeySuggestionsLabel" xml:space="preserve">
     <value>Suggestions</value>
     <comment>Label for results tab in KeyPage</comment>
   </data>

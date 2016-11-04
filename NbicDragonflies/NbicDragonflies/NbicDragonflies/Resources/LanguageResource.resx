@@ -133,7 +133,7 @@
     <value>Spørsmål</value>
     <comment>Label for questions tab in KeyPage</comment>
   </data>
-  <data name="KeyResultsLabel" xml:space="preserve">
+  <data name="KeySuggestionsLabel" xml:space="preserve">
     <value>Forslag</value>
     <comment>Label for results tab in KeyPage</comment>
   </data>

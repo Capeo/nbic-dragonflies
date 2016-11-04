@@ -27,7 +27,6 @@ namespace NbicDragonflies.iOS {
 				TextColor = UIColor.White
 			});
 
-			UITabBar.Appearance.BackgroundColor = UIColor.White;
 			UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(232, 108, 25);
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
