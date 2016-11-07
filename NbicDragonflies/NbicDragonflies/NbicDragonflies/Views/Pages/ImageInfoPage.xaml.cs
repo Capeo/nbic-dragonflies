@@ -69,15 +69,6 @@ namespace NbicDragonflies.Views.Pages
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.ImageInfoPage"/> class.
-		/// </summary>
-		public ImageInfoPage()
-		{
-            // TODO Remove?
-			InitializeComponent();
-		}
-
-		/// <summary>
 		/// Handles click on TaxonName
 		/// </summary>
 		/// <param name="sender">Sender.</param>

@@ -32,13 +32,6 @@ namespace NbicDragonflies.Views.ViewElements {
             }
         }
 
-        // TODO remove?
-		///// <summary>
-		///// Gets or sets the images.
-		///// </summary>
-		///// <value>The images.</value>
-		//public List<ImageElementView> Images { get; set; }
-
 		/// <summary>
 		/// TapGestureRecognizer for tap in GalleryPage.
 		/// </summary>
@@ -80,10 +73,13 @@ namespace NbicDragonflies.Views.ViewElements {
 		/// <param name="image">Image.</param>
         private void SetImage(ImageElement image)
         {
-            ImageContent.Source = image.ImageSource;
-			TaxonName.Text = image.TaxonName;
-            Description.Text = image.Description;
-            Date.Text = image.Date;
+            if (image != null)
+            {
+                ImageContent.Source = image.ImageSource;
+			    TaxonName.Text = image.TaxonName;
+                Description.Text = image.Description;
+                Date.Text = image.Date;
+            }
 
 			TaxonName.TextColor = Utility.Constants.NbicBrown;
 			Date.TextColor = Utility.Constants.NbicBrown;

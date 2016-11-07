@@ -14,8 +14,6 @@ namespace NbicDragonflies.Views.Pages {
 
         private ITaxonContentController _controller;
         private TaxonContent _taxonContent;
-		private TapGestureRecognizer ImageTapped;
-		private ImageElement _topImage;
 
 		/// <summary>
 		/// Gets or sets the content of the page.
@@ -30,14 +28,6 @@ namespace NbicDragonflies.Views.Pages {
                 _taxonContent = value;
                 SetContent(value);
             }   
-        }
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.Pages.TaxonContentPage"/> class.
-		/// </summary>
-        public TaxonContentPage() {
-            // TODO remove?
-            InitializeComponent();
         }
 
         /// <summary>

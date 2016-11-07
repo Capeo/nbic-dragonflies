@@ -217,4 +217,8 @@
     <value>Alert</value>
     <comment>Label for title for alerts</comment>
   </data>
+  <data name="InternetOff" xml:space="preserve">
+    <value>For optimal experience, please enable WiFi or mobile data.</value>
+    <comment>Label for internet off warning</comment>
+  </data>
 </root>

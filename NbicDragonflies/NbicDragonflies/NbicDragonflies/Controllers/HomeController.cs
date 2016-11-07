@@ -55,11 +55,6 @@ namespace NbicDragonflies.Controllers {
             return null;
         }
 
-        public Models.Taxon.Taxon GetTaxonFromId(int id)
-        {
-            return ApplicationDataManager.GetTaxon(id).Result;
-        }
-
         private string GetCountyName()
         {
             Location locationCoordinates = GetCurrentLocation();

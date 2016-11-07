@@ -96,8 +96,6 @@ namespace NbicDragonflies.Views.Pages {
 					}
             else
                     {
-                // TODO remove
-                System.Diagnostics.Debug.WriteLine("Testing");
                 RecentObservationsList.ItemsSource = null;
                 RecentObservationsTitle.Text = "";
                 DisplayAlert(LanguageResource.AlertTitle, LanguageResource.GeoLocatorOff, "Ok");
@@ -116,6 +114,10 @@ namespace NbicDragonflies.Views.Pages {
                 InfoLayout.GestureRecognizers.Add(_infoTap);
                 _infoTap.Tapped += OnInfoPressed;
             }
+            else
+            {
+                DisplayAlert(LanguageResource.AlertTitle, LanguageResource.InternetOff, "Ok");
+        }
         }
 
 	    private void OnObservationSelected(Object sender, SelectedItemChangedEventArgs e)

@@ -20,15 +20,6 @@ namespace NbicDragonflies.Views.ViewElements {
         public List<ViewElements.IdentifyOptionView> Options { get; private set; } 
 
         /// <summary>
-        /// Default, empty constructor. Initializes empty question view.
-        /// </summary>
-        public IdentifyQuestionView()
-        {
-            // TODO remove?
-            InitializeComponent();
-        }
-
-        /// <summary>
         /// Constructor. Initializes new instance of the view from given question.
         /// </summary>
         /// <param name="question">Question associated with the view.</param>

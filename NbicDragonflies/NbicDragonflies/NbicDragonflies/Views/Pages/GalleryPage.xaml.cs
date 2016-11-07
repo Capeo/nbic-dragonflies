@@ -72,7 +72,7 @@ namespace NbicDragonflies.Views.Pages
 			        _imagesCounter++;
 			    }
                 else {
-                    _gridElements.ElementAt(i).Image = new ImageElement();
+                    _gridElements.ElementAt(i).Image = null;
                 }
             }
 		    _indexCounter += _imagesCounter;
@@ -95,7 +95,7 @@ namespace NbicDragonflies.Views.Pages
 			    }
 			    else
 			    {
-			        _gridElements.ElementAt(elementCounter).Image = new ImageElement();
+			        _gridElements.ElementAt(elementCounter).Image = null;
 			        _gridElements.ElementAt(elementCounter).IsVisible = false;
 			    }
                 elementCounter++;

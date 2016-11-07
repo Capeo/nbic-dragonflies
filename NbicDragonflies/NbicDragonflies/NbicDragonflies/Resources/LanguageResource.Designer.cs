@@ -203,6 +203,15 @@ namespace NbicDragonflies.Resources
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to For best opplevelse vennligst slå på WiFi eller mobildata..
+        /// </summary>
+        public static string InternetOff {
+            get {
+                return ResourceManager.GetString("InternetOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spørsmål.
         /// </summary>
         public static string KeyQuestionsLabel

@@ -13,12 +13,16 @@ namespace NbicDragonflies.Views.ViewElements
 		/// </summary>
         public TapGestureRecognizer ButtonTap;
 
+        /// <summary>
+        /// Taxon associated with result
+        /// </summary>
         public Taxon Taxon { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:NbicDragonflies.Views.ViewElements.SearchResultButton"/> class with a string as parameter.
         /// </summary>
         /// <param name="searchLabelText">Search label text.</param>
+        /// <param name="taxon">Taxon associated with result.</param>
         public SearchResultButton(string searchLabelText, Taxon taxon)
         {
             InitializeComponent();
