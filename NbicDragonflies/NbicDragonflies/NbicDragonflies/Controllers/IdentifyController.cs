@@ -39,7 +39,7 @@ namespace NbicDragonflies.Controllers {
             Taxon t1 = Data.ApplicationDataManager.GetTaxon(32564).Result;
 
             _suggestions.Add(new IdentifySuggestion(t1, "BrownDragonfly.jpg"));
-            _suggestions.Add(new IdentifySuggestion(t, "BrownDragonfly1.jpg"));
+            _suggestions.Add(new IdentifySuggestion(t, "dragonfly4.jpg"));
             _suggestions.Add(new IdentifySuggestion(t, "dragonfly1.jpg"));
             _suggestions.Add(new IdentifySuggestion(t, "dragonfly2.jpg"));
             _suggestions.Add(new IdentifySuggestion(t, "dragonfly1.jpg"));

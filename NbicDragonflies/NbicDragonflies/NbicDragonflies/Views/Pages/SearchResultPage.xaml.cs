@@ -41,25 +41,25 @@ namespace NbicDragonflies.Views.Pages
                 }
                 else
                 {
-                    if (searchResults.Capacity > 10)
-                    {
-                        searchResults = searchResults.GetRange(0, 10);
-                    }
                     foreach(SearchResultItem searchItem in searchResults)
                     {
                         if (searchItem.VernacularName.Capacity != 0)
                         {
                             string taxonDirectory = searchItem.Resource.Id;
-                            int taxonId;
-                            int.TryParse(taxonDirectory.Substring(taxonDirectory.IndexOf("/") + 1), out taxonId);
-                            Taxon taxon = ApplicationDataManager.GetTaxon(taxonId).Result;
-                            _resultTap = new TapGestureRecognizer();
+                            if (taxonDirectory.Contains("Taxon"))
+                            {
+                                int taxonId;
+                                int.TryParse(taxonDirectory.Substring(taxonDirectory.IndexOf("/") + 1), out taxonId);
+                                Taxon taxon = ApplicationDataManager.GetTaxon(taxonId).Result;
+                                _resultTap = new TapGestureRecognizer();
 
-                            string vernacularName = searchItem.VernacularName[0];
-                            string searchResultButtonLabel = vernacularName.Substring(0, 1).ToUpper() + vernacularName.Substring(1) + ", " + searchItem.ScientificName[0];
-                            ViewElements.SearchResultButton searchResultButton = new ViewElements.SearchResultButton(searchResultButtonLabel, taxon);
-                            SearchStackLayout.Children.Add(searchResultButton);
-                            searchResultButton.ButtonTap.Tapped += OnResultButtonPressed;
+                                string vernacularName = searchItem.VernacularName[0];
+                                string searchResultButtonLabel = vernacularName.Substring(0, 1).ToUpper() + vernacularName.Substring(1) + ", " + searchItem.ScientificName[0];
+                                ViewElements.SearchResultButton searchResultButton = new ViewElements.SearchResultButton(searchResultButtonLabel, taxon);
+                                SearchStackLayout.Children.Add(searchResultButton);
+                                searchResultButton.ButtonTap.Tapped += OnResultButtonPressed;
+                            }
+                            
                         }
                     }
                 }
