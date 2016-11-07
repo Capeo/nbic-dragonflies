@@ -23,14 +23,16 @@ namespace NbicDragonflies {
 		/// </summary>
         public App() {
             // The root page of your application
-            MasterDetailPage content = new NavigationPage();
-            MainPage = content;
+            //MasterDetailPage content = new NavigationPage();
+            //MainPage = content;
         }
 
 		/// <summary>
 		/// On start.
 		/// </summary>
         protected override void OnStart() {
+            MasterDetailPage content = new NavigationPage();
+            MainPage = content;
             // Handle when your app starts
         }
 

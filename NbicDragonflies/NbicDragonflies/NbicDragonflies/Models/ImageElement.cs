@@ -50,14 +50,6 @@ namespace NbicDragonflies.Models {
 		public List<Taxon.Taxon> Taxons { get; set; }
 
 		/// <summary>
-		/// Initializes a new instance of the class.
-		/// </summary>
-	    public ImageElement()
-	    {
-	        // TODO Remove?
-	    }
-
-		/// <summary>
 		/// Constructor. Initializes a new instance of the class with all the content as parameters.
 		/// </summary>
 		/// <param name="imageSource">Image source.</param>

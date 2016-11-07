@@ -52,7 +52,7 @@ namespace NbicDragonflies.Views.Pages
                             string taxonDirectory = searchItem.Resource.Id;
                             int taxonId;
                             int.TryParse(taxonDirectory.Substring(taxonDirectory.IndexOf("/") + 1), out taxonId);
-                            Taxon taxon = _controller.GetTaxonFromId(taxonId);
+                            Taxon taxon = ApplicationDataManager.GetTaxon(taxonId).Result;
                             _resultTap = new TapGestureRecognizer();
 
                             string vernacularName = searchItem.VernacularName[0];

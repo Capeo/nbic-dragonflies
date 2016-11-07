@@ -26,13 +26,5 @@ namespace NbicDragonflies.Controllers {
         /// </summary>
         /// <returns>List of recent, nearby observarionts.</returns>
         List<Observation> GetRecentObservations();
-
-        /// <summary>
-        /// Retrieves a Taxon object of the corresponding Taxon ID
-        /// </summary>
-        /// <param name="id">ID of the Taxon</param>
-        /// <returns>Taxon Object</returns>
-        Models.Taxon.Taxon GetTaxonFromId(int id);
-
     }
 }
