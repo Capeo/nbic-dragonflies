@@ -11,9 +11,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using NbicDragonflies.Droid.Views;
+using NbicDragonflies.Views.ViewElements;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using NbicDragonflies.Views.ListItems;
 
 [assembly: ExportRenderer(typeof(ObservationsCell), typeof(ObservationCellRenderer))]
 
@@ -32,7 +32,7 @@ namespace NbicDragonflies.Droid.Views {
                 view = (context as Activity).LayoutInflater.Inflate(Resource.Layout.ObservationCellLayout, null);
             }
 
-            view.FindViewById<TextView>(Resource.Id.speciesText).Text = x.Species;
+            view.FindViewById<TextView>(Resource.Id.speciesText).Text = x.Taxon;
             view.FindViewById<TextView>(Resource.Id.locationText).Text = x.Location;
             view.FindViewById<TextView>(Resource.Id.dateText).Text = x.Date;
             view.FindViewById<TextView>(Resource.Id.userText).Text = x.User;

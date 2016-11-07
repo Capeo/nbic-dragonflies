@@ -38,29 +38,31 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Controllers\IHomeController.cs" />
-    <Compile Include="Controllers\IKeyController.cs" />
+    <Compile Include="Controllers\IIdentifyController.cs" />
     <Compile Include="Controllers\IObservationsController.cs" />
-    <Compile Include="Controllers\ISpeciesContentController.cs" />
+    <Compile Include="Controllers\ITaxonContentController.cs" />
     <Compile Include="Controllers\ITaxonTreeController.cs" />
-    <Compile Include="Controllers\PlaceholderHome.cs" />
-    <Compile Include="Controllers\PlaceholderObservations.cs" />
-    <Compile Include="Controllers\PlaceholderSpeciesContent.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ObservationsController.cs" />
+    <Compile Include="Controllers\TaxonContentController.cs" />
     <Compile Include="Controllers\TaxonTreeController.cs" />
     <Compile Include="Data\ApplicationDataManager.cs" />
     <Compile Include="Data\IRestService.cs" />
     <Compile Include="Data\RestService.cs" />
-    <Compile Include="Models\AreaDataSet.cs" />
-    <Compile Include="Models\HomeInfo.cs" />
-    <Compile Include="Models\KeyQuestion.cs" />
+    <Compile Include="Models\Location\CountyDataSet.cs" />
+    <Compile Include="Models\HomeNotice.cs" />
+    <Compile Include="Models\IdentificationKey\IdentifyQuestion.cs" />
+    <Compile Include="Models\Location\GoogleLocation.cs" />
+    <Compile Include="Models\Location\Location.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
-    <Compile Include="Models\IdentifyAlternative.cs" />
-    <Compile Include="Models\KeySuggestion.cs" />
+    <Compile Include="Models\IdentificationKey\IdentifyOption.cs" />
+    <Compile Include="Models\IdentificationKey\IdentifySuggestion.cs" />
     <Compile Include="Models\SearchResultItem.cs" />
-    <Compile Include="Models\SpeciesContent.cs" />
-    <Compile Include="Models\Taxon.cs" />
+    <Compile Include="Models\Taxon\TaxonInfo.cs" />
+    <Compile Include="Models\Taxon\Taxon.cs" />
     <Compile Include="Models\Observation.cs" />
-    <Compile Include="Models\Species.cs" />
-    <Compile Include="Models\SpeciesImage.cs" />
+    <Compile Include="Models\Taxon\TaxonContent.cs" />
+    <Compile Include="Models\ImageElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\LanguageResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -73,62 +75,60 @@
       <DependentUpon>LanguageResource.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Utility\Constants.cs" />
-    <Compile Include="Controllers\PlaceholderKey.cs" />
+    <Compile Include="Controllers\IdentifyController.cs" />
     <Compile Include="Utility\Language.cs" />
     <Compile Include="Utility\Utilities.cs" />
-    <Compile Include="Views\Gallery.xaml.cs">
-      <DependentUpon>Gallery.xaml</DependentUpon>
+    <Compile Include="Views\Pages\GalleryPage.xaml.cs">
+      <DependentUpon>GalleryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Identify.xaml.cs">
-      <DependentUpon>Identify.xaml</DependentUpon>
+    <Compile Include="Views\Pages\IdentifyPage.xaml.cs">
+      <DependentUpon>IdentifyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Views\Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\IdentifyAlternativeView.xaml.cs">
-      <DependentUpon>IdentifyAlternativeView.xaml</DependentUpon>
+    <Compile Include="Views\ViewElements\IdentifyOptionView.xaml.cs">
+      <DependentUpon>IdentifyOptionView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\KeyQuestionView.xaml.cs">
-      <DependentUpon>KeyQuestionView.xaml</DependentUpon>
+    <Compile Include="Views\ViewElements\IdentifyQuestionView.xaml.cs">
+      <DependentUpon>IdentifyQuestionView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListItems\ObservationsCell.cs" />
-    <Compile Include="Views\NavigationMaster.xaml.cs">
-      <DependentUpon>NavigationMaster.xaml</DependentUpon>
+    <Compile Include="Views\ViewElements\ObservationsCell.cs" />
+    <Compile Include="Views\Pages\NavigationDrawer.xaml.cs">
+      <DependentUpon>NavigationDrawer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Navigation.xaml.cs">
-      <DependentUpon>Navigation.xaml</DependentUpon>
+    <Compile Include="Views\Pages\NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Observations.xaml.cs">
-      <DependentUpon>Observations.xaml</DependentUpon>
+    <Compile Include="Views\Pages\ObservationsPage.xaml.cs">
+      <DependentUpon>ObservationsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchResultButton.xaml.cs">
+    <Compile Include="Views\ViewElements\SearchResultButton.xaml.cs">
       <DependentUpon>SearchResultButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchResultList.xaml.cs">
-      <DependentUpon>SearchResultList.xaml</DependentUpon>
+    <Compile Include="Views\Pages\SearchResultPage.xaml.cs">
+      <DependentUpon>SearchResultPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SpeciesImageView.xaml.cs">
-      <DependentUpon>SpeciesImageView.xaml</DependentUpon>
+    <Compile Include="Views\ViewElements\ImageElementView.xaml.cs">
+      <DependentUpon>ImageElementView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SpeciesInfo.xaml.cs">
-      <DependentUpon>SpeciesInfo.xaml</DependentUpon>
+    <Compile Include="Views\Pages\TaxonContentPage.xaml.cs">
+      <DependentUpon>TaxonContentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TaxonButton.xaml.cs">
+    <Compile Include="Views\ViewElements\TaxonButton.xaml.cs">
       <DependentUpon>TaxonButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TaxonTree.xaml.cs">
-      <DependentUpon>TaxonTree.xaml</DependentUpon>
+    <Compile Include="Views\Pages\TaxonTreePage.xaml.cs">
+      <DependentUpon>TaxonTreePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GalleryImage.xaml.cs">
-      <DependentUpon>GalleryImage.xaml</DependentUpon>
+    <Compile Include="Views\Pages\ImageInfoPage.xaml.cs">
+      <DependentUpon>ImageInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Placeholders.cs" />
-    <Compile Include="Controllers\IGalleryControllers.cs" />
-    <Compile Include="Controllers\PlaceholderGallery.cs" />
+    <Compile Include="Controllers\IGalleryController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +137,14 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -179,88 +187,88 @@
       <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Home.xaml">
+    <EmbeddedResource Include="Views\Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\GalleryImage.xaml">
+    <EmbeddedResource Include="Views\Pages\ImageInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\NavigationMaster.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Gallery.xaml">
+    <EmbeddedResource Include="Views\Pages\NavigationDrawer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Navigation.xaml">
+    <EmbeddedResource Include="Views\Pages\GalleryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Identify.xaml">
+    <EmbeddedResource Include="Views\Pages\NavigationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Observations.xaml">
+    <EmbeddedResource Include="Views\Pages\IdentifyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\TaxonTree.xaml">
+    <EmbeddedResource Include="Views\Pages\ObservationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\SpeciesInfo.xaml">
+    <EmbeddedResource Include="Views\Pages\TaxonTreePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\SpeciesImageView.xaml">
+    <EmbeddedResource Include="Views\Pages\TaxonContentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\TaxonButton.xaml">
+    <EmbeddedResource Include="Views\ViewElements\ImageElementView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\IdentifyAlternativeView.xaml">
+    <EmbeddedResource Include="Views\ViewElements\TaxonButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\SearchResultList.xaml">
+    <EmbeddedResource Include="Views\ViewElements\IdentifyOptionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\KeyQuestionView.xaml">
+    <EmbeddedResource Include="Views\Pages\SearchResultPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\SearchResultButton.xaml">
+    <EmbeddedResource Include="Views\ViewElements\IdentifyQuestionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewElements\SearchResultButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

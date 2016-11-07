@@ -7,40 +7,69 @@ using System.Threading.Tasks;
 using NbicDragonflies.Resources;
 using Xamarin.Forms;
 
-namespace NbicDragonflies.Utility {
-    class Language
+namespace NbicDragonflies.Utility
+{
+
+    /// <summary>
+    /// Utility class for handling language
+    /// </summary>
+    public class Language
     {
 
+        /// <summary>
+        /// Enum for currently supported languages
+        /// </summary>
         public enum Languages
         {
+            /// <summary>
+            /// English language
+            /// </summary>
             En,
+
+            /// <summary>
+            /// Norwegian Bokmål language
+            /// </summary>
             No
         }
 
-        public static Languages CurrentCulture { get; private set; } = Languages.No;
+        /// <summary>
+        /// Field for the current language. Default norwegian
+        /// </summary>
+        public static Languages CurrentLanguage { get; private set; } = Languages.No;
 
+        /// <summary>
+        /// Switches the langauge
+        /// </summary>
+        /// <returns>The new language</returns>
         public static Languages SwitchLanguage()
         {
-            CultureInfo ci;
-            if (CurrentCulture == Languages.En)
+            CultureInfo cultureInfo;
+            if (CurrentLanguage == Languages.En)
             {
-                CurrentCulture = Languages.No;
-                System.Diagnostics.Debug.WriteLine(CurrentCulture.ToString());
-                ci = new CultureInfo(CurrentCulture.ToString());
+                CurrentLanguage = Languages.No;
+                System.Diagnostics.Debug.WriteLine(CurrentLanguage.ToString());
+                cultureInfo = new CultureInfo(CurrentLanguage.ToString());
             }
             else
             {
-                CurrentCulture = Languages.En;
-                System.Diagnostics.Debug.WriteLine(CurrentCulture.ToString());
-                ci = new CultureInfo(CurrentCulture.ToString());
+                CurrentLanguage = Languages.En;
+                System.Diagnostics.Debug.WriteLine(CurrentLanguage.ToString());
+                cultureInfo = new CultureInfo(CurrentLanguage.ToString());
             }
-            LanguageResource.Culture = ci;
-            return CurrentCulture;
+            LanguageResource.Culture = cultureInfo;
+            return CurrentLanguage;
         }
 
+        /// <summary>
+        /// Compares a given string representation of language with the current language
+        /// </summary>
+        /// <param name="language">String representation of a language</param>
+        /// <returns>True if the current language matches the given parameter, else false</returns>
         public static bool CompareToCurrent(string language)
         {
-            if (language == "nb-NO" && CurrentCulture == Languages.No)
+            // TODO Add test for english. Add more tests if necessary
+
+            if (language == "nb-NO" && CurrentLanguage == Languages.No)
             {
                 return true;
             }

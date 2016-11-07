@@ -7,8 +7,18 @@ using NbicDragonflies.Models;
 
 namespace NbicDragonflies.Data
 {
+
+    /// <summary>
+    /// Interface used to fetch data from REST APIs
+    /// </summary>
     public interface IRestService
     {
-        Task<string> FetchDataAsync (string urlSuffix);
+
+        /// <summary>
+        /// Fetch data from REST API accessed by given url
+        /// </summary>
+        /// <param name="url">URL query</param>
+        /// <returns>Results, usually JSON object, in string form</returns>
+        Task<string> FetchDataAsync (string url);
     }
 }

@@ -13,16 +13,24 @@ using System.IO;
 
 namespace NbicDragonflies.Data
 {
+
+    /// <summary>
+    /// Implementation of IRestService interface
+    /// </summary>
     public class RestService : IRestService
     {
 
-        public async Task<string> FetchDataAsync (string restUrl)
+        /// <summary>
+        /// Fetches data from API using given url query
+        /// </summary>
+        /// <param name="url">URL query</param>
+        /// <returns>Results, usually JSON object, in string form</returns>
+        public async Task<string> FetchDataAsync(string url)
         {
             var client = new HttpClient ();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-            var address = restUrl;
+            var address = url;
 
             try
             {
@@ -42,6 +50,7 @@ namespace NbicDragonflies.Data
 
             return "";
         }
+
     }
 }
 

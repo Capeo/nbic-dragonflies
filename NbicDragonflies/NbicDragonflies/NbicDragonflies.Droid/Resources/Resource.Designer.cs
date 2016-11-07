@@ -2536,6 +2536,9 @@ namespace NbicDragonflies.Droid
 			// aapt resource value: 0x7f0200e4
 			public const int Norway_hdpi = 2130837732;
 			
+			// aapt resource value: 0x7f0200ed
+			public const int notification_template_icon_bg = 2130837741;
+			
 			// aapt resource value: 0x7f0200e5
 			public const int Norway_xhdpi = 2130837733;
 			
@@ -2543,6 +2546,7 @@ namespace NbicDragonflies.Droid
 			public const int notification_template_icon_bg = 2130837741;
 			
 			// aapt resource value: 0x7f0200e6
+			public const int taxon = 2130837734;
 			public const int observations = 2130837734;
 			
 			// aapt resource value: 0x7f0200e7
