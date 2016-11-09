@@ -90,17 +90,25 @@ namespace NbicDragonflies.Views.Pages {
         private void FillRecentObservationsList(List<Observation> observations)
         {
             if (observations != null)
+            {
+                if (observations[0].County != null)
                 {
-                RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
-                RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
-					}
-            else
-                    {
-                RecentObservationsList.ItemsSource = null;
-                RecentObservationsTitle.Text = "";
-                DisplayAlert(LanguageResource.AlertTitle, LanguageResource.GeoLocatorOff, "Ok");
+                    RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
+                    RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + observations[0].County;
                 }
+                else
+                {
+                    RecentObservationsList.ItemsSource = Utility.Utilities.GetObservationCellList(observations);
+                    RecentObservationsTitle.Text = RecentObservationsTitle.Text + " " + LanguageResource.Norway;
+                    DisplayAlert(LanguageResource.AlertTitle, LanguageResource.GeoLocatorOff, "Ok");
+                }
+			}
+            else
+            {
+                RecentObservationsList.ItemsSource = null;
+                RecentObservationsTitle.Text = "No Observations Found";
             }
+        }
             
         private void SetNotice(HomeNotice notice)
         {

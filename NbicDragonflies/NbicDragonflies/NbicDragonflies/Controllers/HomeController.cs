@@ -52,6 +52,16 @@ namespace NbicDragonflies.Controllers {
                     return recentObservationsList.Observations;
                 }
             }
+            else
+            {
+                ObservationList recentObservationsList =
+                    ApplicationDataManager.GetObservationListAsync("list?taxons=107&pageSize=5").Result;
+                if (recentObservationsList != null)
+                {
+                    recentObservationsList.Observations[0].County = null;
+                    return recentObservationsList.Observations;
+                }
+            }
             return null;
         }
 

@@ -221,4 +221,8 @@
     <value>For optimal experience, please enable WiFi or mobile data.</value>
     <comment>Label for internet off warning</comment>
   </data>
+  <data name="Norway" xml:space="preserve">
+    <value>Norway</value>
+    <comment>Label for Location Name Norway</comment>
+  </data>
 </root>
