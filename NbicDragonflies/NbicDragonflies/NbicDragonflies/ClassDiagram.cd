@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NbicDragonflies.Controllers.GalleryController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\GalleryController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Controllers.HomeController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAQAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Controllers.IdentifyController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAAAAAAAJAAAAEAAACAAEAAQAEAAAAACAAAA=</HashCode>
+      <FileName>Controllers\IdentifyController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Controllers.ObservationsController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ObservationsController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Controllers.TaxonContentController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Controllers\TaxonContentController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Controllers.TaxonTreeController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA=</HashCode>
+      <FileName>Controllers\TaxonTreeController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Data.ApplicationDataManager" Collapsed="true">
+    <Position X="9.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAiAAAAEAAAAAAAAABAAAAIAEAIAAQAAAA=</HashCode>
+      <FileName>Data\ApplicationDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Data.RestService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\RestService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NbicDragonflies.Models.HomeNotice" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAACAAAAQA=</HashCode>
+      <FileName>Models\HomeNotice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.ImageElement" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAASAAAAgAAAAAAEAAAAAAAAAAAABAAAAAAAACQA=</HashCode>
+      <FileName>Models\ImageElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.NavigationListItem" Collapsed="true">
+    <Position X="6.25" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\NavigationListItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Observation" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EABSAAAAAAAAZAAAAAAAAAQBoAYAAAAAEAAAAEQAAAA=</HashCode>
+      <FileName>Models\Observation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.SearchResultItem" Collapsed="true">
+    <Position X="5.25" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAIAAAIAAAAAAAAAAAAAAQAAAAAAAoACAAAAA=</HashCode>
+      <FileName>Models\SearchResultItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.IdentificationKey.IdentifyOption" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\IdentificationKey\IdentifyOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.IdentificationKey.IdentifyQuestion" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\IdentificationKey\IdentifyQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.IdentificationKey.IdentifySuggestion" Collapsed="true">
+    <Position X="1.75" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAACQA=</HashCode>
+      <FileName>Models\IdentificationKey\IdentifySuggestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Location.GoogleLocation" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Location\GoogleLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Location.Location" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Location\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Taxon.Taxon" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAABAQAAMAgAAAAAAAACAAASAAAAAQAEA=</HashCode>
+      <FileName>Models\Taxon\Taxon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Taxon.TaxonContent" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAhAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Taxon\TaxonContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Taxon.TaxonInfo" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IEACAAAACkAAAEAADAABAAAAAAAQAEQACQAAACAECIA=</HashCode>
+      <FileName>Models\Taxon\TaxonInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.GalleryPage" Collapsed="true">
+    <Position X="5.75" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAgCAEABAAAAAAAAAAAAAAIAAABAAAAAVAAAAA=</HashCode>
+      <FileName>Views\Pages\GalleryPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.HomePage" Collapsed="true">
+    <Position X="8" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKAAAAAAAAAAAAAAAAAABAAIIAAAAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\HomePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.IdentifyPage" Collapsed="true">
+    <Position X="10.25" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIBBAAAAAAAAAACAAAAAAAAACAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\IdentifyPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.ImageInfoPage" Collapsed="true">
+    <Position X="12.5" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAoAIAAAAAAAAAAEBACAAAAAAAACAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Views\Pages\ImageInfoPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.NavigationDrawer" Collapsed="true">
+    <Position X="14.75" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\NavigationDrawer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.NavigationPage" Collapsed="true">
+    <Position X="5.75" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAkAIIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\NavigationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.ObservationsPage" Collapsed="true">
+    <Position X="8" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAACAAAAAAABAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\ObservationsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.SearchResultPage" Collapsed="true">
+    <Position X="10.25" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\SearchResultPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.TaxonContentPage" Collapsed="true">
+    <Position X="12.5" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAQIAAAAIAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\TaxonContentPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.Pages.TaxonTreePage" Collapsed="true">
+    <Position X="14.75" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABIAJAAAAAAAAAAEAAAAAAAEAAAAA=</HashCode>
+      <FileName>Views\Pages\TaxonTreePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.IdentifyOptionView" Collapsed="true">
+    <Position X="8" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ViewElements\IdentifyOptionView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.IdentifyQuestionView" Collapsed="true">
+    <Position X="10.25" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAA=</HashCode>
+      <FileName>Views\ViewElements\IdentifyQuestionView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.ImageElementView" Collapsed="true">
+    <Position X="12.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAABAAEAAAAAQBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ViewElements\ImageElementView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.ObservationsCell" Collapsed="true">
+    <Position X="8" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAEgAAAAAAAAAIAIAAAAAAAAAABAAAAAAACAQA=</HashCode>
+      <FileName>Views\ViewElements\ObservationsCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.SearchResultButton" Collapsed="true">
+    <Position X="10.25" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Views\ViewElements\SearchResultButton.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Views.ViewElements.TaxonButton" Collapsed="true">
+    <Position X="12.5" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAIAABIAAEQAQAAAEAAAABAAAAAAAAAQA=</HashCode>
+      <FileName>Views\ViewElements\TaxonButton.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Utility.Constants" Collapsed="true">
+    <Position X="17.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAAAAAAIAAAAIAAACAAAAAAgQAAAAgCgAAEEAAA=</HashCode>
+      <FileName>Utility\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Utility.Language" Collapsed="true">
+    <Position X="17.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABQAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utility\Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Utility.Utilities" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAEAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Utility\Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NbicDragonflies.Models.Location.CountyDataSet" Collapsed="true">
+    <Position X="6.25" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\Location\CountyDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="NbicDragonflies.Controllers.IGalleryController" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IGalleryController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Controllers.IHomeController" Collapsed="true">
+    <Position X="11.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IHomeController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Controllers.IIdentifyController" Collapsed="true">
+    <Position X="14" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAAAAAAAAAAAAEAAAAAAEAAQAEAAAAACAAAA=</HashCode>
+      <FileName>Controllers\IIdentifyController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Controllers.IObservationsController" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IObservationsController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Controllers.ITaxonContentController" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Controllers\ITaxonContentController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Controllers.ITaxonTreeController" Collapsed="true">
+    <Position X="14" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Controllers\ITaxonTreeController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NbicDragonflies.Data.IRestService" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\IRestService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
