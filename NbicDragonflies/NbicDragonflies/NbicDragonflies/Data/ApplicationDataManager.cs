@@ -17,10 +17,13 @@ namespace NbicDragonflies.Data
     /// <summary>
     /// Static class used to retrieve data from the API
     /// </summary>
-    public static class ApplicationDataManager
+    public class ApplicationDataManager
     {
         private static readonly IRestService RestService = new RestService();
 
+        ApplicationDataManager()
+        {
+        }
         /// <summary>
         /// Fetches list of observations from API using query in given url
         /// </summary>
@@ -159,6 +162,11 @@ namespace NbicDragonflies.Data
                 taxon.PreferredVernacularName = vt.PreferredVernacularName;
                 taxon.AcceptedName = vt.AcceptedName; 
             }
+        }
+
+        public static void Method()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

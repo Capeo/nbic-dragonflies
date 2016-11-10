@@ -32,7 +32,8 @@ namespace NbicDragonflies.Controllers {
         /// <returns>Root taxon object</returns>
         public Taxon GetRootTaxon()
         {
-            Taxon root = ApplicationDataManager.GetTaxon(_rootScientificNameId).Result;
+            ApplicationDataManager adm = new ApplicationDataManager();
+            Taxon root = adm.GetTaxon(_rootScientificNameId).Result;
             if (root != null)
             {
                 root.taxonRank = _rootRank;

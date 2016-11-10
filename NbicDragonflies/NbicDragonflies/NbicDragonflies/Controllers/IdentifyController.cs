@@ -13,6 +13,7 @@ namespace NbicDragonflies.Controllers {
         private int _currentQuestion;
         private List<IdentifyQuestion> _questions;
         private List<IdentifySuggestion> _suggestions;
+        private int ApplicationDataManager;
 
         /// <summary>
         /// Default constructor.
