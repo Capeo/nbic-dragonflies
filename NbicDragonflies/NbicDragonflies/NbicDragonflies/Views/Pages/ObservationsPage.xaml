@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:viewElements="clr-namespace:NbicDragonflies.Views.ViewElements;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.Pages.ObservationsPage"
+             Title="{x:Static resources:LanguageResource.ObservationsLabel}"
+             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
+  <TabbedPage.Children>
+    <ContentPage Icon="list_white.png" Title="{x:Static resources:LanguageResource.ObservationListLabel}">
+      <StackLayout Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ListView x:Name="RecentObservationsList" RowHeight="90" BackgroundColor="White">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <viewElements:ObservationsCell Taxon="{Binding Taxon}" Location="{Binding Location}" Date="{Binding Date}" User="{Binding User}" ImageFilename="{Binding ImageFilename}"/>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage Icon="map_white.png" Title="{x:Static resources:LanguageResource.ObservationMapLabel}">
+      <maps:Map WidthRequest="320" HeightRequest="200"
+            x:Name="ObservationsMap"
+            MapType="Hybrid"
+        />
+    </ContentPage>
+  </TabbedPage.Children>
+</TabbedPage>

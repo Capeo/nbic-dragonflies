@@ -62,6 +62,15 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Varsel.
+        /// </summary>
+        public static string AlertTitle {
+            get {
+                return ResourceManager.GetString("AlertTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dato.
         /// </summary>
         public static string GalleryImageDateLabel {
@@ -125,6 +134,15 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For best opplevelse vennligst slå på posisjon..
+        /// </summary>
+        public static string GeoLocatorOff {
+            get {
+                return ResourceManager.GetString("GeoLocatorOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hjem.
         /// </summary>
         public static string HomeLabel {
@@ -143,6 +161,15 @@ namespace NbicDragonflies.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For best opplevelse vennligst slå på WiFi eller mobildata..
+        /// </summary>
+        public static string InternetOff {
+            get {
+                return ResourceManager.GetString("InternetOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spørsmål.
         /// </summary>
         public static string KeyQuestionsLabel {
@@ -154,9 +181,9 @@ namespace NbicDragonflies.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Forslag.
         /// </summary>
-        public static string KeyResultsLabel {
+        public static string KeySuggestionsLabel {
             get {
-                return ResourceManager.GetString("KeyResultsLabel", resourceCulture);
+                return ResourceManager.GetString("KeySuggestionsLabel", resourceCulture);
             }
         }
         
@@ -166,6 +193,15 @@ namespace NbicDragonflies.Resources {
         public static string NavigationLabel {
             get {
                 return ResourceManager.GetString("NavigationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Norge.
+        /// </summary>
+        public static string Norway {
+            get {
+                return ResourceManager.GetString("Norway", resourceCulture);
             }
         }
         

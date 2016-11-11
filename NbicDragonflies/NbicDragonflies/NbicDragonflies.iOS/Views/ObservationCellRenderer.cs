@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Foundation;
 using NbicDragonflies.iOS.Views;
-using NbicDragonflies.Views.ListItems;
+using NbicDragonflies.Views.ViewElements;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -33,7 +33,7 @@ namespace NbicDragonflies.iOS.Views {
                 i = UIImage.FromFile("");
             }
 
-            c.UpdateCell(x.Species, x.Location, x.Date, x.User, i);
+            c.UpdateCell(x.Taxon, x.Location, x.Date, x.User, i);
 
             return c;
         }

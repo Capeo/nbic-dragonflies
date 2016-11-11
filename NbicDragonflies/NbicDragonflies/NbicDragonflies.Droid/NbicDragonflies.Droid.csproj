@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -25,6 +25,7 @@
     <JavaOptions />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -34,17 +35,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <DocumentationFile>bin\Debug\NbicDragonflies.Droid.XML</DocumentationFile>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <BundleAssemblies>False</BundleAssemblies>
-    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
-    <AotAssemblies>False</AotAssemblies>
-    <EnableLLVM>False</EnableLLVM>
-    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
-    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,7 +47,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
@@ -172,7 +165,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\artsdatabanken.png" />
-    <AndroidResource Include="Resources\drawable\arter.png" />
+    <AndroidResource Include="Resources\drawable\taxon.png" />
     <AndroidResource Include="Resources\drawable\home.png" />
     <AndroidResource Include="Resources\drawable\gallery.png" />
     <AndroidResource Include="Resources\drawable\identify.png" />
@@ -211,6 +204,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\list.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\list.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Arrow.png" />
+    <AndroidResource Include="Resources\drawable\Arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dragonfly1.jpg" />

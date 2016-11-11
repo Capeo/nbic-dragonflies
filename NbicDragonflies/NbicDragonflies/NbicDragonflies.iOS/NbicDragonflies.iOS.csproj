@@ -100,14 +100,11 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
-    <None Include="Resources\dragonfly4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <BundleResource Include="Resources\dragonfly1.jpg" />
-    <BundleResource Include="Resources\dragonfly2.jpg" />
     <BundleResource Include="Resources\artsdatabanken.png" />
-    <BundleResource Include="Resources\arter.png" />
+    <BundleResource Include="Resources\taxon.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\gallery.png" />
     <BundleResource Include="Resources\identify.png" />
@@ -139,6 +136,13 @@
     <BundleResource Include="Resources\arter_white.png" />
     <BundleResource Include="Resources\arter_white%402x.png" />
     <BundleResource Include="Resources\arter_white%403x.png" />
+    <BundleResource Include="Resources\Arrow.png" />
+    <BundleResource Include="Resources\Arrow%402x.png" />
+    <BundleResource Include="Resources\Arrow%403x.png" />
+    <BundleResource Include="Resources\vingefasong1.png" />
+    <BundleResource Include="Resources\vingefasong2.png" />
+    <BundleResource Include="Resources\vingefasong3.png" />
+    <BundleResource Include="Resources\dragonfly4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">

@@ -20,14 +20,22 @@ namespace NbicDragonflies.iOS {
         //
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
-			
+
+			//Set color in navigation bar (hamburger icon and language icon)
 			UINavigationBar.Appearance.TintColor = UIColor.White;
+			//Set page title color
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
 			{
 				TextColor = UIColor.White
 			});
-			UITabBar.Appearance.TintColor = UIColor.White;
-			//UITabBarItem.UITabBarItemAppearance.
+
+			//Set background image to enable change of background color
+			UITabBar.Appearance.BackgroundImage = new UIImage();
+			//Set default iOS background color  
+			UITabBar.Appearance.BackgroundColor = UIColor.FromRGB(247, 247, 247);
+			//Set Nbic orange color to tab bar icons
+			UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(232, 108, 25);
+
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
             LoadApplication(new App());
