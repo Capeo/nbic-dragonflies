@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NbicDragonflies.Views.ViewElements.TaxonButton">
+  <ContentView.Content>
+    <Frame HeightRequest="35" HorizontalOptions="FillAndExpand" Padding="0" Margin="5" HasShadow="false">
+	  <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="0" Margin="0">
+      <Frame x:Name="NavigationFrame" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" HasShadow="False">
+        <Frame.Content>
+          <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0" Margin="0">
+            <Image x:Name="Icon" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="NameLabel" VerticalOptions="CenterAndExpand" TextColor="Black"/>
+          </StackLayout>
+        </Frame.Content>
+      </Frame>
+      <Frame x:Name="InfoFrame" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" Padding="0" Margin="0" HasShadow="False" WidthRequest="50">
+        <Frame.Content>
+		      <Image x:Name="Info" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="0,4,10,4"/>
+        </Frame.Content>
+      </Frame>
+    </StackLayout>
+   </Frame> 
+  </ContentView.Content>
+</ContentView>

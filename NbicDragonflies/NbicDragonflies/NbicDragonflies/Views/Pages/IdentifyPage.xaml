@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:NbicDragonflies.Resources;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.Pages.IdentifyPage"
+             Title="{x:Static resources:LanguageResource.IdentifyLabel}"
+             BarBackgroundColor="{x:Static utility:Constants.NbicOrange}">
+  <TabbedPage.Children >
+    <ContentPage x:Name="QuestionTab" Icon="identify_white.png" Title="{x:Static resources:LanguageResource.KeyQuestionsLabel}" BackgroundColor="{x:Static utility:Constants.Background}">
+      <StackLayout Margin="10" Spacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout x:Name="QuestionsLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+          <Button x:Name="PreviousQuestion" Image ="Arrow.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" BackgroundColor = "{x:Static utility:Constants.Background}" Margin="80,0,0,0" HeightRequest="50" WidthRequest="70"/>
+          <Button x:Name="NextQuestion" Image="Arrow.png" Rotation="180" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{x:Static utility:Constants.Background}" Margin="0,0,80,0" HeightRequest="50" WidthRequest="70"/>
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
+    <ContentPage x:Name="SuggestionsTab" Icon="arter_white.png" Title="{x:Static resources:LanguageResource.KeySuggestionsLabel}" BackgroundColor="{x:Static utility:Constants.Background}">
+      <StackLayout Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor = "White">
+          <ListView x:Name="SuggestionsList" RowHeight="70" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default" BackgroundColor="White">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Text}" Detail="{Binding Detail}" TextColor="Black" DetailColor="Black"/>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+      </StackLayout>
+    </ContentPage>
+  </TabbedPage.Children>
+</TabbedPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:NbicDragonflies.Views;assembly=NbicDragonflies"
+             xmlns:utility="clr-namespace:NbicDragonflies.Utility;assembly=NbicDragonflies"
+             xmlns:controllers="clr-namespace:NbicDragonflies.Controllers;assembly=NbicDragonflies"
+             xmlns:pages="clr-namespace:NbicDragonflies.Views.Pages;assembly=NbicDragonflies"
+             x:Class="NbicDragonflies.Views.Pages.NavigationPage">
+  <MasterDetailPage.Master>
+        <pages:NavigationDrawer x:Name="NavigationMaster" Padding="0" HeightRequest="100"/>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail/>
+</MasterDetailPage>
